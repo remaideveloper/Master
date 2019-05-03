@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/add_to_favorite"
+        android:icon="@drawable/ic_favorite_false"
+        android:title="@string/add_to_favorite"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_share_white"
+        android:title="@string/share"
+        app:showAsAction="always"/>
+
+    <group
+        android:id="@+id/group_skins"
+        android:visible="false"
+        tools:visible="true">
+        <item
+            android:id="@+id/edit"
+            android:icon="@drawable/ic_brush_white"
+            android:title="@string/edit"
+            app:showAsAction="always"/>
+    </group>
+
+    <item
+        android:id="@+id/shop"
+        android:icon="@drawable/ic_shop_white"
+        android:title="@string/shop"
+        app:showAsAction="always"/>
+
+</menu>

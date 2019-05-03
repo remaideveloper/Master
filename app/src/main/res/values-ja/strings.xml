@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- settings -->
+    <string name="settings">設定</string>
+    <string name="settings_general_summary">一般情報</string>
+    <string name="settings_general">一般</string>
+    <string name="settings_aboutus_summary">情報の応用</string>
+    <string name="settings_aboutus">報</string>
+    <string name="settings_aboutus_header">報</string>
+    <string name="settings_aboutus_version">版</string>
+
+    <!-- General -->
+    <string name="loading">読み込み中…</string>
+    <string name="extra">追加</string>
+    <string name="share">シェア</string>
+    <string name="send">送信</string>
+    <string name="share_choise">シェアで</string>
+    <string name="rate">アプリを評価</string>
+    <string name="download_file">ダウンロードファイル..</string>
+    <string name="save_to_minecraft">保存Minecraft PE</string>
+    <string name="save_to_gallery">保存するギャラリー</string>
+    <string name="back_pressed">をクリックしてください。終了</string>
+
+    <!--Activity Name-->
+    <string name="activity_offerwall">アプリ</string>
+    <string name="activity_wallpaper">壁紙</string>
+    <string name="activity_wallpaper_set">壁紙に設定</string>
+    <string name="activity_skins">皮</string>
+    <string name="activity_skin_stealer">皮膚Stealer</string>
+    <string name="activity_favorite">好きな</string>
+    <string name="activity_search">検索</string>
+
+    <!--Activity Favorite-->
+    <string name="favorite_is_empty">好きなが空である</string>
+    <string name="add_to_favorite">にお気に入りに追加</string>
+    <string name="added_to_favorite">にお気に入りに追加</string>
+    <string name="removed_from_favorite">外からお好きな</string>
+
+    <!--Activity Wallpaper-->
+    <string name="save">Save</string>
+    <string name="set_as_wallpaper">壁紙登</string>
+    <string name="wallpaper_set_title">壁紙に設定</string>
+    <string name="wallpaper_set_description">壁紙の設置に成功し、デスクトップのデバイスです。</string>
+    <string name="wallpaper_not_set_title">壁紙に設定しない</string>
+    <string name="wallpaper_not_set_description">壁紙インストールされていないのデスクトップのデバイスです。</string>
+
+    <!--Activity Skins-->
+
+    <!--Activity WebView-->
+
+    <!--Activity Content-->
+
+    <!--Activity Server-->
+    <string name="server_address">住所:</string>
+    <string name="server_port">港:</string>
+
+    <!--Activity Offerwall-->
+
+    <!--Fragment Name-->
+
+    <!--Dialogs-->
+    <string name="open">開いた</string>
+    <string name="download">ダウンロード</string>
+
+    <!--File Save Dialog-->
+    <string name="file_saved">ファイルが保存されました</string>
+
+    <!--Content Dialogs-->
+    <string name="skin_dialog_description_success">Minecraft PEにインストールされ、適用されたスキン。 \n\nMinecraft PEを開きますか？</string>
+    <string name="mod_dialog_description">Minecraft PEのインポートモデ？</string>
+    <string name="texture_dialog_blocklauncher_description">Minecraft PEのテクスチャをインポートしますか？</string>
+
+    <!--Minecraft Dialog-->
+    <string name="minecraft_not_installed">Minecraft PEがインストールされていません</string>
+
+    <!--BlockLauncher Dialog-->
+    <string name="blocklauncher_not_installed">BlockLauncherがインストールされていません</string>
+
+    <!--Network Dialog-->
+
+    <!--Version Selection Dialog-->
+    <string name="version">バージョン</string>
+    <string name="all_version">すべてのバージョン</string>
+    <string name="sort_by_version">バージョンで並べ替え</string>
+
+    <!--Error Dialog-->
+    <string name="error">エラー</string>
+
+    <!--In-app-->
+
+    <!--Permission-->
+    <string name="permission_denied">アクセス拒否</string>
+
+    <!--Rate Us Dialog-->
+    <string name="like_app">あなたは好きですか？ %1$s ?</string>
+    <string name="rate_us_on_google">Google Playのアプリを評価してください。</string>
+
+    <!--Menu-->
+    <string name="search">サーチ</string>
+
+    <!--Email-->
+    <string name="not_email_client">電子メールクライアントはインストールされていません。</string>
+    <string name="close">閉じる</string>
+    <string name="no_network">ネットワーク接続なし</string>
+    <string name="description">説明</string>
+    <string name="feedback">フィードバック</string>
+    <string name="close_minecraft">閉じるMinecraft PE</string>
+    <string name="create_one_map">地図を少なくとも1つ作成してください</string>
+    <string name="no_maps_found">地図が見つかりません</string>
+    <string name="select_map">地図を選択</string>
+    <string name="edit">編集</string>
+
+    <string name="any_fuel">どれか 燃料</string>
+    <string name="brewing">ポーション</string>
+    <string name="crafting">製作</string>
+    <string name="drops">ドロップ</string>
+    <string name="eggs">卵</string>
+    <string name="experience">経験</string>
+    <string name="food">フード</string>
+    <string name="health">健康</string>
+    <string name="item">項目</string>
+    <string name="mob">Mob</string>
+    <string name="music_discs">音楽ディスク</string>
+    <string name="other">その他</string>
+    <string name="spawn_requirements">スポーン 要件</string>
+    <string name="tap_to_open">タップするとこのアイテムが開きます</string>
+    <string name="tools">ツール</string>
+    <string name="transport">輸送</string>
+    <string name="used_to_make">中古 に 作る</string>
+    <string name="with">〜と</string>
+    <string name="biome">バイオーム</string>
+    <string name="biomes">バイオーム</string>
+    <string name="items">項目</string>
+    <string name="mobs">モッブ</string>
+    <string name="basic">基本的な</string>
+    <string name="defence">防衛</string>
+    <string name="blocks">ブロック</string>
+    <string name="mechanism">機構</string>
+    <string name="wool">ウール</string>
+    <string name="dyes">染料</string>
+    <string name="temperature">温度</string>
+    <string name="features">特徴</string>
+    <string name="none">なし</string>
+    <string name="not_craft_item">このアイテムを作ることはできません</string>
+    <string name="item_not_exist">アイテムが存在しません</string>
+    <string name="mob_not_exist">モブは存在しない</string>
+    <string name="strength">強</string>
+    <string name="easy">簡単</string>
+    <string name="normal">正常</string>
+    <string name="hard">ハード</string>
+    <string name="plants">工場</string>
+    <string name="resources">リソース</string>
+    <string name="ingredients">材料</string>
+    <string name="carpets">カーペット</string>
+    <string name="glass">ガラス</string>
+
+    <!--Skin Editor Strings-->
+       
+    <string name="skin_editor">スキンエディタ</string>
+
+       
+    <string name="di_menu_title">メニュー</string>
+       
+    <string name="di_menu_item_more_from_us">もっと私たちから!</string>
+       
+    <string name="di_menu_item_rate_app">私たちを評価してください</string>
+       
+    <string name="di_menu_item_about_us">私たちに関しては</string>
+
+       
+    <string name="di_about_us_title">Version %1$s</string><![CDATA[
+       
+
+       
+    ]]>
+    <string name="di_error_skin_size_title">サポートされていないスキンサイズ</string>
+       
+    <string name="di_error_skin_size_text">64x32または64x64のスキンのみがサポートされています。</string>
+
+       
+    <string name="di_palette_title">色を選択してください</string>
+       
+    <string name="di_palette_positive">選択する</string>
+       
+    <string name="di_palette_negative">キャンセル</string>
+
+       
+    <string name="di_parts_title">隠す/ショー 体 部品</string>
+
+       
+    <string name="di_new_character_title">新しいキャラクター</string>
+       
+    <string name="di_new_character_negative">キャンセル</string>
+       
+    <string name="di_new_character_item_steve_skin">スティーブスキン</string>
+       
+    <string name="di_new_character_item_gallery">ブラウズギャラリー</string>
+
+       
+    <string name="di_save_success_title">成功!</string>
+       
+    <string name="di_save_success_text">皮膚が保存されます!</string>
+
+       
+    <string name="di_save_error_title">エラー!</string>
+       
+    <string name="di_save_error_text">スキンはギャラリーに保存されません。</string><![CDATA[
+
+       
+
+       
+
+       
+    ]]>
+    <string name="permission_accepted">許可された許可</string>
+       
+    <string name="di_skin_catalog">スキンカタログ</string>
+    <string name="skin_dialog_description">Minecraft PEのスキンをインポートしますか？</string>
+    <string name="premium">プレミアム</string>
+    <string name="unlock">ロックを解除する</string>
+    <string name="settings_title_licenses">ライセンス</string>
+    <string name="settings_summary_licenses">使用されるソフトウェアの使用許諾契約</string>
+    <string name="settings_title_confidentiality" tools:ignore="ExtraTranslation">守秘義務ポリシー</string>
+    <string name="settings_summary_confidentiality" tools:ignore="ExtraTranslation">プライバシーポリシー個人情報</string>
+    <string name="downloading_progress_format">%1$s の %2$s</string>
+    <string name="later">後で</string>
+    <string name="file_error_import">ファイルのインポート中にエラー</string>
+    <string name="file_success_import">ファイルを正常にインポートしました</string>
+    <string name="never">絶対に</string>
+    <string name="related">関連する</string>
+    <string name="shop">ショップ</string>
+    <string name="installing">インストール</string>
+    <string name="free_coins">無料コイン</string>
+    <string name="watch">時計</string>
+    <string name="watch_and_gain">ビデオを見て無料のコインを獲得しよう！</string>
+    <string name="press_again_to_cancell">もう一度押すと、ダウンロードを終了して終了します。</string>
+    <string name="file_storage_error">保存エラーのため保存されなかったファイル</string>
+    <string name="file_network_error">ネットワークエラーのため保存されていないファイル</string>
+    <string name="you_earned_coins">あなたは%1$dコインを獲得しました！</string>
+    <string name="bonus_format">ボーナス %1$d%%</string>
+    <string name="coins_amount_format">%1$d コイン</string>
+    <string name="get">取得する</string>
+    <string name="settings_title_consent_policy_key">同意ポリシー</string>
+    <string name="settings_summary_consent_policy_key">欧州ユーザーからの同意ポリシー</string>
+    <string name="retry">リトライ</string>
+    <string name="get_more_coins">より多くのコインを得る</string>
+    <string name="get_more_coins_description">%2$d%%個の割引で%1$d個のコインを手に入れよう！</string>
+    <string name="free">無料</string>
+    <string name="watch_video">ビデオを見る</string>
+    <string name="buy">購入</string>
+    <string name="paid">有料</string>
+    <string name="more">もっと</string>
+    <string name="read_more">続きを読む</string>
+
+</resources>

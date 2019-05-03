@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- offerwall -->
+    <string name="activity_offerwall">Приложения</string>
+
+    <!--in-app-->
+
+    <!-- settings -->
+    <string name="settings_general_summary">Основная информация</string>
+    <string name="settings_general">Основное</string>
+
+    <string name="settings_aboutus_summary">Информация о нашем приложении</string>
+    <string name="settings_aboutus">О приложении</string>
+    <string name="settings_aboutus_header">О приложении</string>
+    <string name="settings_aboutus_version">Версия</string>
+
+    <!-- General -->
+    <string name="settings">Настройки</string>
+    <string name="loading">Загрузка…</string>
+    <string name="extra">Дополнительно</string>
+    <string name="share">Поделиться</string>
+    <string name="share_choise">Поделиться этим</string>
+    <string name="rate">Оценить</string>
+    <string name="back_pressed">Пожалуйста, нажмите НАЗАД, чтобы выйти</string>
+
+    <!--  webview  -->
+
+    <!--Dialogs-->
+    <string name="download">Скачать</string>
+    <string name="open">Открыть</string>
+
+    <string name="skin_dialog_description_success">Скин устанавлен и применен в Minecraft PE. \n\nОткрыть Minecraft PE?</string>
+
+    <string name="mod_dialog_description">Импортировать мод в Minecraft PE?</string>
+
+    <string name="blocklauncher_not_installed">BlockLauncher не установлен</string>
+
+    <string name="no_network">Нет подключения к интернету</string>
+
+    <!--Not Translated-->
+
+    <!-- Example -->
+
+    <!-- navigation drawer -->
+
+    <!--Preference-->
+
+    <!--Package Name-->
+    <string name="download_file">Загрузка файла..</string>
+    <string name="file_saved">Файл успешно загружен</string>
+    <string name="save_to_gallery">Сохранить в галерее</string>
+    <string name="save_to_minecraft">Сохранить в Minecraft PE</string>
+    <string name="wallpaper_set_title">Обои установлены</string>
+    <string name="wallpaper_set_description">Обои успешно установлены на рабочий стол вашего устройства.</string>
+    <string name="wallpaper_not_set_description">Обои не установлены на рабочий стол вашего устройства.</string>
+    <string name="wallpaper_not_set_title">Обои не установлены</string>
+    <string name="activity_skin_stealer">Вор Скинов</string>
+    <string name="activity_skins">Скины</string>
+    <string name="activity_wallpaper">Обои</string>
+    <string name="activity_wallpaper_set">Установить Обои</string>
+    <string name="rate_us_on_google">Пожалуйста, оцените наше приложение в Google Play!</string>
+    <string name="send">Отправить</string>
+    <string name="not_email_client">Почтовые клиенты не установлены.</string>
+    <string name="activity_favorite">Избранное</string>
+    <string name="add_to_favorite">Добавить в избранное</string>
+    <string name="added_to_favorite">Добавлено в избранное</string>
+    <string name="server_address">Адрес:</string>
+    <string name="server_port">Порт:</string>
+    <string name="favorite_is_empty">Избранное пусто</string>
+    <string name="save">Сохранить</string>
+    <string name="set_as_wallpaper">Установить обои</string>
+    <string name="error">Ошибка</string>
+    <string name="minecraft_not_installed">Minecraft PE не установлен</string>
+    <string name="like_app">Вам нравится %1$s ?</string>
+    <string name="sort_by_version">Сортировать по версии</string>
+    <string name="version">Версия :</string>
+    <string name="texture_dialog_blocklauncher_description">Импортировать текстуру в Minecraft PE?</string>
+    <string name="all_version">Все версии</string>
+    <string name="permission_denied">Доступ запрещен</string>
+    <string name="search">Поиск</string>
+    <string name="removed_from_favorite">Удалено из избранного</string>
+    <string name="activity_search">Поиск</string>
+    <string name="close">ЗАКРЫТЬ</string>
+    <string name="description">Описание</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="close_minecraft">Закройте Minecraft PE</string>
+    <string name="create_one_map">Создайте хотя бы одну карту.</string>
+    <string name="no_maps_found">Карты не найдены</string>
+    <string name="select_map">Выберите карту</string>
+    <string name="edit">Редактировать</string>
+
+    <string name="any_fuel">Любое топливо</string>
+    <string name="brewing">Зельеварение</string>
+    <string name="crafting">Крафтинг</string>
+    <string name="drops">Выпавшее</string>
+    <string name="eggs">Яйца</string>
+    <string name="experience">Опыт</string>
+    <string name="food">Еда</string>
+    <string name="health">Здоровье</string>
+    <string name="item">Предмет</string>
+    <string name="mob">Моб</string>
+    <string name="music_discs">Музыкальные Диски</string>
+    <string name="other">Другое</string>
+    <string name="spawn_requirements">Требования к Порождению</string>
+    <string name="tap_to_open">Нажмите, чтобы открыть этот элемент</string>
+    <string name="tools">Инструменты</string>
+    <string name="transport">Транспорт</string>
+    <string name="used_to_make">Используется для Создания</string>
+    <string name="with">вместе</string>
+    <string name="biome">Биом</string>
+    <string name="biomes">Биомы</string>
+    <string name="items">Предметы</string>
+    <string name="mobs">Мобы</string>
+    <string name="basic">Основное</string>
+    <string name="defence">Защита</string>
+    <string name="blocks">Блоки</string>
+    <string name="mechanism">Механизмы</string>
+    <string name="wool">Шерсть</string>
+    <string name="dyes">Красители</string>
+    <string name="temperature">Температура</string>
+    <string name="features">Особенности</string>
+    <string name="none">Никто</string>
+    <string name="not_craft_item">Не удалось создать этот предмет</string>
+    <string name="item_not_exist">Предмет не существует</string>
+    <string name="mob_not_exist">Моб не существует</string>
+    <string name="strength">Прочность</string>
+    <string name="easy">Легко</string>
+    <string name="normal">Нормально</string>
+    <string name="hard">Сложно</string>
+    <string name="plants">Растения</string>
+    <string name="resources">Ресурсы</string>
+    <string name="ingredients">Ингредиенты</string>
+    <string name="carpets">Ковры</string>
+    <string name="glass">Стекло</string>
+
+    <!--Skin Editor Strings-->
+       
+    <string name="skin_editor">Редактор Скинов</string>
+
+       
+    <string name="di_menu_title">Меню</string>
+       
+    <string name="di_menu_item_more_from_us">Больше от Нас!</string>
+       
+    <string name="di_menu_item_rate_app">Оценить Нас</string>
+       
+    <string name="di_menu_item_about_us">О нас</string>
+
+       
+    <string name="di_about_us_title">Version %1$s</string>
+       
+    <string name="di_error_skin_size_title">Неподдерживаемый размер Скина</string>
+       
+    <string name="di_error_skin_size_text">Мы поддерживаем 64x32 или 64x64 скины.</string>
+
+       
+    <string name="di_palette_title">Выберите цвет</string>
+       
+    <string name="di_palette_positive">Выбрать</string>
+       
+    <string name="di_palette_negative">Отменить</string>
+
+       
+    <string name="di_parts_title">Спрятать/Показать части тела</string>
+
+       
+    <string name="di_new_character_title">Новый персонаж</string>
+       
+    <string name="di_new_character_negative">Отменить</string>
+       
+    <string name="di_new_character_item_steve_skin">Скин Стива</string>
+       
+    <string name="di_new_character_item_gallery">Посмотреть Галерею</string>
+
+       
+    <string name="di_save_success_title">Успешно!</string>
+       
+    <string name="di_save_success_text">Скин сохранён!</string>
+
+       
+    <string name="di_save_error_title">Ошибка!</string>
+       
+    <string name="di_save_error_text">Скин не сохранился в галерею.</string><![CDATA[
+       
+       
+    ]]>
+    <string name="permission_accepted">Разрешение принято</string>
+       
+    <string name="di_skin_catalog">Каталог Скинов</string>
+    <string name="skin_dialog_description">Импортировать скин в Minecraft PE?</string>
+    <string name="premium">Премиум</string>
+    <string name="unlock">Открыть</string>
+    <string name="settings_title_licenses">Лицензии</string>
+    <string name="settings_summary_licenses">Лицензионное соглашение используемого программного обеспечения</string>
+    <string name="settings_title_confidentiality" tools:ignore="ExtraTranslation">Политика конфиденциальности</string>
+    <string name="settings_summary_confidentiality" tools:ignore="ExtraTranslation">Политика конфиденциальности личной информации</string>
+    <string name="downloading_progress_format">%1$s из %2$s</string>
+    <string name="later">Позже</string>
+    <string name="file_error_import">Ошибка импорта файла</string>
+    <string name="file_success_import">Файл успешно импортирован</string>
+    <string name="never">Никогда</string>
+    <string name="installing">Установка</string>
+    <string name="shop">Магазин</string>
+    <string name="watch_and_gain">Посмотрите видео и получите бесплатные монеты!</string>
+    <string name="press_again_to_cancell">Нажмите еще раз, чтобы отменить загрузку и выйти</string>
+    <string name="watch">Смотреть</string>
+    <string name="free_coins">Бесплатные монеты</string>
+    <string name="bonus_format">Бонус %1$d%%</string>
+    <string name="coins_amount_format">%1$d монет</string>
+    <string name="related">Похожее</string>
+    <string name="file_network_error">Файл не сохраняется из-за сетевой ошибки</string>
+    <string name="file_storage_error">Файл не сохраняется из-за ошибки хранилища</string>
+    <string name="you_earned_coins">Вы заработали %1$d монет!</string>
+    <string name="get">Получить</string>
+    <string name="settings_title_consent_policy_key">Политика согласия</string>
+    <string name="settings_summary_consent_policy_key">Политика согласия для Европейских пользователей</string>
+    <string name="retry">Повторить</string>
+    <string name="get_more_coins">Получить больше монет</string>
+    <string name="get_more_coins_description">Получите %1$d монет с %2$d%% скидкой!</string>
+    <string name="free">Бесплатно</string>
+    <string name="watch_video">Смотреть видео</string>
+    <string name="buy">Купить</string>
+    <string name="paid">Платно</string>
+    <string name="more">Еще</string>
+    <string name="read_more">Подробнее</string>
+
+</resources>

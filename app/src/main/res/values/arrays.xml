@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="library_names" tools:ignore="MissingTranslation">
+        <item>Android Support</item>
+        <item>GSON</item>
+        <item>Firebase</item>
+        <item>Android In-app Billing</item>
+        <item>Volley</item>
+        <item>Universal Image Loader</item>
+        <item>Butterknife</item>
+        <item>Nine Old Androids</item>
+        <item>EventBus</item>
+        <item>Material-dialogs</item>
+        <item>HoloColorPicker</item>
+        <item>Picasso</item>
+        <item>FloatingActionButton</item>
+        <item>Zip4j</item>
+        <item>PageIndicatorView</item>
+    </string-array>
+
+    <string-array name="library_authors" tools:ignore="MissingTranslation">
+        <item>Google</item>
+        <item>Google</item>
+        <item>Google</item>
+        <item>anjlab</item>
+        <item>Google</item>
+        <item>nostra13</item>
+        <item>Jake Wharton</item>
+        <item>Jake Wharton</item>
+        <item>greenrobot</item>
+        <item>afollestad</item>
+        <item>LarsWerkman</item>
+        <item>Square</item>
+        <item>Clans</item>
+        <item>Lingala</item>
+        <item>Roman Danylyk</item>
+    </string-array>
+
+    <string-array name="library_links" tools:ignore="MissingTranslation">
+        <item>https://github.com/google</item>
+        <item>https://github.com/google/gson</item>
+        <item>https://github.com/google</item>
+        <item>https://github.com/anjlab/android-inapp-billing-v3</item>
+        <item>https://github.com/google/volley</item>
+        <item>https://github.com/nostra13/Android-Universal-Image-Loader</item>
+        <item>https://github.com/JakeWharton/butterknife</item>
+        <item>https://github.com/JakeWharton/NineOldAndroids</item>
+        <item>https://github.com/greenrobot/EventBus</item>
+        <item>https://github.com/afollestad/material-dialogs</item>
+        <item>https://github.com/LarsWerkman/HoloColorPicker</item>
+        <item>https://github.com/square/picasso</item>
+        <item>https://github.com/Clans/FloatingActionButton</item>
+        <item>http://www.lingala.net/zip4j/</item>
+        <item>https://github.com/romandanylyk/PageIndicatorView</item>
+    </string-array>
+</resources>

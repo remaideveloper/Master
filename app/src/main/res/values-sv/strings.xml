@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- settings -->
+    <string name="settings">Settings</string>
+    <string name="settings_general_summary">General information</string>
+    <string name="settings_general">General</string>
+    <string name="settings_aboutus_summary">Information om vår ansökan</string>
+    <string name="settings_aboutus">Handla om</string>
+    <string name="settings_aboutus_header">Handla om</string>
+    <string name="settings_aboutus_version">Version</string>
+
+    <!-- General -->
+    <string name="loading">Läser in…</string>
+    <string name="extra">Extra</string>
+    <string name="share">Dela med sig</string>
+    <string name="send">Skicka</string>
+    <string name="share_choise">Dela det</string>
+    <string name="rate">Betygsätt</string>
+    <string name="download_file">Hämtar fil ..</string>
+    <string name="save_to_minecraft">Spara till Minecraft PE</string>
+    <string name="save_to_gallery">Spara i Galleri</string>
+    <string name="back_pressed">Vänligen klicka på BACK igen för att avsluta</string>
+    <string name="description">Beskrivning</string>
+    <string name="feedback">Återkoppling</string>
+
+    <!--Activity Name-->
+    <string name="activity_offerwall">Tillämpningar</string>
+    <string name="activity_wallpaper">Bakgrunds</string>
+    <string name="activity_wallpaper_set">Bakgrundssats</string>
+    <string name="activity_skins">Skinn</string>
+    <string name="activity_skin_stealer">Stealer</string>
+    <string name="activity_favorite">Favorit</string>
+    <string name="activity_search">Sök</string>
+
+    <!--Activity Favorite-->
+    <string name="favorite_is_empty">Favorit är tomt</string>
+    <string name="add_to_favorite">Lägg i favoriter</string>
+    <string name="added_to_favorite">Tillagd till favorit</string>
+    <string name="removed_from_favorite">Ta bort från favorit</string>
+
+    <!--Activity Wallpaper-->
+    <string name="save">Spara</string>
+    <string name="set_as_wallpaper">Använd som bakgrund</string>
+    <string name="wallpaper_set_title">Bakgrundsbild</string>
+    <string name="wallpaper_set_description">Bakgrundsbilder har installerats på skrivbordet på din enhet.</string>
+    <string name="wallpaper_not_set_title">Bakgrunden är inte inställd</string>
+    <string name="wallpaper_not_set_description">Bakgrundsbilder inte installerade på skrivbordet på din enhet.</string>
+
+    <!--Activity Skins-->
+
+    <!--Activity WebView-->
+
+    <!--Activity Content-->
+
+    <!--Activity Server-->
+    <string name="server_address">Adress:</string>
+    <string name="server_port">Hamn:</string>
+
+    <!--Activity Offerwall-->
+
+    <!--Fragment Name-->
+
+    <!--Dialogs-->
+    <string name="open">Öppen</string>
+    <string name="download">Ladda ner</string>
+
+    <!--File Save Dialog-->
+    <string name="file_saved">Filen sparades framgångsrikt</string>
+
+    <!--Content Dialogs-->
+    <string name="mod_dialog_description">Importera mod i Minecraft PE?</string>
+    <string name="skin_dialog_description">Importera huden i Minecraft PE?</string>
+    <string name="texture_dialog_blocklauncher_description">Importera textur i Minecraft PE?</string>
+    <string name="skin_dialog_description_success">Hud installerad och applicerad i Minecraft PE. Öppna Minecraft PE?</string>
+
+    <!--Minecraft Dialog-->
+    <string name="minecraft_not_installed">Minecraft PE inte installerad</string>
+
+    <!--BlockLauncher Dialog-->
+    <string name="blocklauncher_not_installed">BlockLauncher inte installerat</string>
+
+    <!--Network Dialog-->
+    <string name="no_network">Ingen nätverksanslutning</string>
+    <string name="close">STÄNGA</string>
+
+    <!--Version Selection Dialog-->
+    <string name="version">Version</string>
+    <string name="all_version">Alla versioner</string>
+    <string name="sort_by_version">Sortera efter Version</string>
+
+    <!--Social Dialog-->
+
+    <!--Error Dialog-->
+    <string name="error">Fel</string>
+
+    <!--In-app-->
+
+    <!--Permission-->
+    <string name="permission_denied">Åtkomst nekad</string>
+
+    <!--Rate Us Dialog-->
+    <string name="like_app">Gillar du %1$s ?</string>
+    <string name="rate_us_on_google">Betygsätt vår ansökan i Google Play!</string>
+
+    <!--Menu-->
+    <string name="search">Sök</string>
+
+    <!--Email-->
+    <string name="not_email_client">Det finns inga e-postklienter installerade.</string>
+
+    <!--Not Translated-->
+
+    <!--Example-->
+
+    <!--Navigation drawer-->
+
+    <!--Preference-->
+
+    <!--Package Name-->
+
+    <!--Files and Foldes-->
+
+    <!--Protocol-->
+
+    <string name="close_minecraft">Stäng Minecraft PE</string>
+    <string name="select_map">Välj en karta</string>
+    <string name="no_maps_found">Inga kartor hittades</string>
+    <string name="create_one_map">Var god skapa minst en karta</string>
+    <string name="edit">Redigera</string>
+
+    <!--Craft Guide Strings-->
+    <string name="any_fuel">Eventuellt bränsle</string>
+    <string name="brewing">Potions</string>
+    <string name="crafting">Crafting</string>
+    <string name="drops">Droppar</string>
+    <string name="eggs">ägg</string>
+    <string name="experience">Erfarenhet</string>
+    <string name="food">Mat</string>
+    <string name="health">Hälsa</string>
+    <string name="item">Artikel</string>
+    <string name="mob">Folkhop</string>
+    <string name="music_discs">Musik skivor</string>
+    <string name="other">Andra</string>
+    <string name="spawn_requirements">Kryddkrav</string>
+    <string name="tap_to_open">Tryck för att öppna det här objektet</string>
+    <string name="tools">Verktyg</string>
+    <string name="transport">Transport</string>
+    <string name="used_to_make">Brukade göra</string>
+    <string name="with">med</string>
+    <string name="biome">Biome</string>
+    <string name="biomes">Biomes</string>
+    <string name="items">Artiklar</string>
+    <string name="mobs">Mobs</string>
+    <string name="basic">Grundläggande</string>
+    <string name="defence">Försvar</string>
+    <string name="blocks">Blockera</string>
+    <string name="mechanism">Mekanism</string>
+    <string name="wool">Ull</string>
+    <string name="dyes">Färgämnen</string>
+    <string name="temperature">Temperatur</string>
+    <string name="features">Funktioner</string>
+    <string name="none">Ingen</string>
+    <string name="not_craft_item">Kan inte skapa denna artikel</string>
+    <string name="item_not_exist">Artikeln finns inte</string>
+    <string name="mob_not_exist">Mob existerar inte</string>
+    <string name="strength">Styrka</string>
+    <string name="easy">Lätt</string>
+    <string name="normal">Vanligt</string>
+    <string name="hard">Hård</string>
+    <string name="plants">Växter</string>
+    <string name="resources">Medel</string>
+    <string name="ingredients">Ingredienser</string>
+    <string name="carpets">Mattor</string>
+    <string name="glass">Glas</string>
+
+    <!--Skin Editor Strings-->
+    <string name="skin_editor">Skinnredigerare</string>
+
+    <string name="di_menu_title">Meny</string>
+    <string name="di_menu_item_more_from_us">Mer från oss!</string>
+    <string name="di_menu_item_rate_app">Gradera oss</string>
+    <string name="di_menu_item_about_us">Om oss</string>
+
+    <string name="di_about_us_title">Version %1$s</string>
+
+    <string name="di_error_skin_size_title">Utan stöd Hud Storlek</string>
+    <string name="di_error_skin_size_text">Vi stöder endast 64x32 eller 64x64 hud.</string>
+
+    <string name="di_palette_title">Välj färg</string>
+    <string name="di_palette_positive">Välja</string>
+    <string name="di_palette_negative">Annullera</string>
+
+    <string name="di_parts_title">Dölj/Visa Kropp Delar</string>
+
+    <string name="di_new_character_title">Ny karaktär</string>
+    <string name="di_new_character_negative">Annullera</string>
+    <string name="di_new_character_item_steve_skin">Steve Hud</string>
+    <string name="di_new_character_item_gallery">Bläddra i Galleri</string>
+
+    <string name="di_save_success_title">Framgång!</string>
+    <string name="di_save_success_text">Hud är sparad!</string>
+
+    <string name="di_save_error_title">Fel!</string>
+    <string name="di_save_error_text">Hud sparas inte i galleriet.</string>
+
+    <string name="permission_accepted">Tillstånd accepterat</string>
+    <string name="di_skin_catalog">Skinn Katalog</string>
+    <string name="premium">Premie</string>
+    <string name="unlock">Låsa upp</string>
+    <string name="settings_title_licenses">Llicenser</string>
+    <string name="settings_summary_licenses">Licensavtal för den använda mjukvaran</string>
+    <string name="settings_title_confidentiality" tools:ignore="ExtraTranslation">Sekretesspolicy</string>
+    <string name="settings_summary_confidentiality" tools:ignore="ExtraTranslation">Sekretesspolicy personuppgifter</string>
+    <string name="downloading_progress_format">%1$s av %2$s</string>
+    <string name="later">Senare</string>
+    <string name="file_error_import">Fel vid import av fil</string>
+    <string name="file_success_import">Filen importerades framgångsrikt</string>
+    <string name="never">Aldrig</string>
+    <string name="related">Relaterad</string>
+    <string name="shop">affär</string>
+    <string name="installing">installera</string>
+    <string name="free_coins">Gratis mynt</string>
+    <string name="watch">Kolla på</string>
+    <string name="watch_and_gain">Titta på video och få gratis mynt!</string>
+    <string name="press_again_to_cancell">Tryck igen för att avbryta nedladdning och avsluta</string>
+    <string name="file_storage_error">Filen sparades inte på grund av lagringsfel</string>
+    <string name="file_network_error">Filen sparades inte på grund av nätverksfel</string>
+    <string name="you_earned_coins">Du har tjänat %1$d mynt!</string>
+    <string name="bonus_format">Bonus %1$d%%</string>
+    <string name="coins_amount_format">%1$d mynt</string>
+    <string name="get">skaffa sig</string>
+    <string name="settings_title_consent_policy_key">Samtyckepolitik</string>
+    <string name="settings_summary_consent_policy_key">Samtyckespolicy från europeiska användare</string>
+    <string name="retry">Försök igen</string>
+    <string name="get_more_coins">Få fler mynt</string>
+    <string name="get_more_coins_description">Få %1$d mynt med %2$d%% rabatt!</string>
+    <string name="free">Fri</string>
+    <string name="watch_video">Kolla på video</string>
+    <string name="buy">köpa</string>
+    <string name="paid">betald</string>
+    <string name="more">Mer</string>
+    <string name="read_more">Läs mer</string>
+
+    <!-- licenses -->
+
+</resources>

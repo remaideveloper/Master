@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CropImageView">
+        <attr name="guidelines">
+            <enum name="on" value="2" />
+            <enum name="onTouch" value="1" />
+            <enum name="off" value="0" />
+        </attr>
+        <attr name="fixAspectRatio" format="boolean" />
+        <attr name="aspectRatioX" format="integer" />
+        <attr name="aspectRatioY" format="integer" />
+        <attr name="imageResource" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="RoundedImageView">
+        <attr name="corner_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="round_background" format="boolean" />
+        <attr name="is_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+
+    <!--Skin Editor-->
+    <declare-styleable name="AppTheme">
+        <attr name="atColorPrimary" format="color|reference" />
+        <attr name="atColorPrimaryDark" format="color|reference" />
+        <attr name="atColorPrimaryLight" format="color|reference" />
+        <attr name="atColorAccent" format="color|reference" />
+    </declare-styleable>
+    <declare-styleable name="AppAttr">
+        <attr name="leftButton" format="integer|reference" />
+        <attr name="leftButtons" format="integer|reference" />
+        <attr name="rightButton" format="integer|reference" />
+        <attr name="rightButtons" format="integer|reference" />
+
+        <!--<attr name="font" format="string|reference" />-->
+        <attr name="text" format="string|reference" />
+        <attr name="mark" format="string|reference" />
+        <attr name="ttitle" format="string|reference" />
+        <attr name="tsubtitle" format="string|reference" />
+        <attr name="textSize" format="dimension|reference" />
+        <attr name="textColor" format="color|reference" />
+        <attr name="drawable" format="integer|reference" />
+        <attr name="modeSmall" format="boolean|reference" />
+
+        <attr name="editorFont" format="string|reference" />
+        <attr name="editorText" format="string|reference" />
+        <attr name="editorTextSize" format="dimension|reference" />
+        <attr name="editorTextColor" format="color|reference" />
+        <attr name="editorDrawable" format="integer|reference" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- settings -->
+    <string name="settings">Beállítások</string>
+    <string name="settings_general_summary">Általános információ</string>
+    <string name="settings_general">Tábornok</string>
+    <string name="settings_aboutus_summary">Tájékoztatás kérésünkről</string>
+    <string name="settings_aboutus">Ról ről</string>
+    <string name="settings_aboutus_header">Ról ről</string>
+    <string name="settings_aboutus_version">Változat</string>
+
+    <!-- General -->
+    <string name="loading">Betöltés…</string>
+    <string name="extra">Külön</string>
+    <string name="share">Ossza meg</string>
+    <string name="send">Elküld</string>
+    <string name="share_choise">Oszd meg</string>
+    <string name="rate">Rate</string>
+    <string name="download_file">Fájl letöltése ..</string>
+    <string name="save_to_minecraft">Mentés a Minecraft PE-be</string>
+    <string name="save_to_gallery">Mentés a Galériába</string>
+    <string name="back_pressed">A kilépéshez kattintson a BACK gombra</string>
+    <string name="description">Leírás</string>
+    <string name="feedback">Visszacsatolás</string>
+
+    <!--Activity Name-->
+    <string name="activity_offerwall">Alkalmazások</string>
+    <string name="activity_wallpaper">Háttérképek</string>
+    <string name="activity_wallpaper_set">Háttérkép</string>
+    <string name="activity_skins">Bőr</string>
+    <string name="activity_skin_stealer">Tolvaj</string>
+    <string name="activity_favorite">Kedvenc</string>
+    <string name="activity_search">Keresés</string>
+
+    <!--Activity Favorite-->
+    <string name="favorite_is_empty">Kedvenc üres</string>
+    <string name="add_to_favorite">Hozzáadás a kedvencekhez</string>
+    <string name="added_to_favorite">Hozzáadva a kedvencekhez</string>
+    <string name="removed_from_favorite">Eltávolítva a kedvencek közül</string>
+
+    <!--Activity Wallpaper-->
+    <string name="save">Mentés</string>
+    <string name="set_as_wallpaper">Beállítás háttérképként</string>
+    <string name="wallpaper_set_title">Háttérkép</string>
+    <string name="wallpaper_set_description">A háttérképek sikeresen telepítésre kerültek az eszköz asztalán.</string>
+    <string name="wallpaper_not_set_title">Háttérkép nincs beállítva</string>
+    <string name="wallpaper_not_set_description">Háttérképek nincsenek telepítve az eszköz asztalán.</string>
+
+    <!--Activity Skins-->
+
+    <!--Activity WebView-->
+
+    <!--Activity Content-->
+
+    <!--Activity Server-->
+    <string name="server_address">Cím:</string>
+    <string name="server_port">Kikötő:</string>
+
+    <!--Activity Offerwall-->
+
+    <!--Fragment Name-->
+
+    <!--Dialogs-->
+    <string name="open">Nyisd ki</string>
+    <string name="download">Letöltés</string>
+
+    <!--File Save Dialog-->
+    <string name="file_saved">A fájl sikeresen mentve</string>
+
+    <!--Content Dialogs-->
+    <string name="mod_dialog_description">Import mod a Minecraft PE-ben?</string>
+    <string name="skin_dialog_description">Importálja a bőrt a Minecraft PE-ben?</string>
+    <string name="texture_dialog_blocklauncher_description">Textúrák importálása a Minecraft PE-ben?</string>
+    <string name="skin_dialog_description_success">A Minecraft PE-ben telepített és alkalmazott bőr. Nyissa meg a Minecraft PE-t?</string>
+
+    <!--Minecraft Dialog-->
+    <string name="minecraft_not_installed">A Minecraft PE nincs telepítve</string>
+
+    <!--BlockLauncher Dialog-->
+    <string name="blocklauncher_not_installed">A BlockLauncher nincs telepítve</string>
+
+    <!--Network Dialog-->
+    <string name="no_network">Nincs hálózati kapcsolat</string>
+    <string name="close">BEZÁRÁS</string>
+
+    <!--Version Selection Dialog-->
+    <string name="version">Változat</string>
+    <string name="all_version">Minden verzió</string>
+    <string name="sort_by_version">Rendezés verzió szerint</string>
+
+    <!--Social Dialog-->
+
+    <!--Error Dialog-->
+    <string name="error">Hiba</string>
+
+    <!--In-app-->
+
+    <!--Permission-->
+    <string name="permission_denied">Hozzáférés megtagadva</string>
+
+    <!--Rate Us Dialog-->
+    <string name="like_app">Szereted-e %1$s ?</string>
+    <string name="rate_us_on_google">Az Ön visszajelzése nagyon fontos számunkra. Kérjük, értékelje alkalmazásunkat a Google Playen!</string>
+
+    <!--Menu-->
+    <string name="search">Keresés</string>
+
+    <!--Email-->
+    <string name="not_email_client">Nincs telepítve e-mail kliens.</string>
+
+    <!--Not Translated-->
+
+    <!--Example-->
+
+    <!--Navigation drawer-->
+
+    <!--Preference-->
+
+    <!--Package Name-->
+
+    <!--Files and Foldes-->
+
+    <!--Protocol-->
+
+    <string name="close_minecraft">Zárja be a Minecraft PE-t</string>
+    <string name="select_map">Válasszon ki egy térképet</string>
+    <string name="no_maps_found">Nincs térkép</string>
+    <string name="create_one_map">Legalább egy térképet hozzon létre</string>
+    <string name="edit">Szerkesztése</string>
+
+    <!--Craft Guide Strings-->
+    <string name="any_fuel">Bármely üzemanyag</string>
+    <string name="brewing">Bájitalok</string>
+    <string name="crafting">Gyárts</string>
+    <string name="drops">Cseppek</string>
+    <string name="eggs">Tojás</string>
+    <string name="experience">Tapasztalat</string>
+    <string name="food">Élelmiszer</string>
+    <string name="health">Egészség</string>
+    <string name="item">Tétel</string>
+    <string name="mob">Mob</string>
+    <string name="music_discs">Zenei lemezek</string>
+    <string name="other">Más</string>
+    <string name="spawn_requirements">Spawn követelmények</string>
+    <string name="tap_to_open">Érintse meg az elem megnyitásához</string>
+    <string name="tools">Eszközök</string>
+    <string name="transport">Szállítás</string>
+    <string name="used_to_make">Használt a Make</string>
+    <string name="with">val vel</string>
+    <string name="biome">Biome</string>
+    <string name="biomes">Biomes</string>
+    <string name="items">Példány</string>
+    <string name="mobs">Mobs</string>
+    <string name="basic">Alapvető</string>
+    <string name="defence">Védelem</string>
+    <string name="blocks">Blocks</string>
+    <string name="mechanism">Mechanizmus</string>
+    <string name="wool">Gyapjú</string>
+    <string name="dyes">Színezékek</string>
+    <string name="temperature">Hőmérséklet</string>
+    <string name="features">Jellemzők</string>
+    <string name="none">Egyik sem</string>
+    <string name="not_craft_item">Nem lehet kézbesíteni ezt az elemet</string>
+    <string name="item_not_exist">A tétel nem létezik</string>
+    <string name="mob_not_exist">A mob nem létezik</string>
+    <string name="strength">Erő</string>
+    <string name="easy">Könnyen</string>
+    <string name="normal">Normál</string>
+    <string name="hard">Kemény</string>
+    <string name="plants">Növények</string>
+    <string name="resources">Erőforrások</string>
+    <string name="ingredients">Hozzávalók</string>
+    <string name="carpets">Szőnyegek</string>
+    <string name="glass">Üveg</string>
+
+    <!--Skin Editor Strings-->
+    <string name="skin_editor">Skins Szerkesztő</string>
+
+    <string name="di_menu_title">Menü</string>
+    <string name="di_menu_item_more_from_us">Többet tőlünk!</string>
+    <string name="di_menu_item_rate_app">Értékelj minket</string>
+    <string name="di_menu_item_about_us">Rólunk</string>
+
+    <string name="di_about_us_title">Változat %1$s</string>
+
+    <string name="di_error_skin_size_title">Nem támogatott bőrméret</string>
+    <string name="di_error_skin_size_text">Csak 64x32 vagy 64x64 bõrt támogatunk.</string>
+
+    <string name="di_palette_title">Válasszon színt</string>
+    <string name="di_palette_positive">Választ</string>
+    <string name="di_palette_negative">Megszünteti</string>
+
+    <string name="di_parts_title">Elrejt/Előadás Test Alkatrészek</string>
+
+    <string name="di_new_character_title">Új karakter</string>
+    <string name="di_new_character_negative">Megszünteti</string>
+    <string name="di_new_character_item_steve_skin">Steve Bőrét</string>
+    <string name="di_new_character_item_gallery">Tallózás a Galériában</string>
+
+    <string name="di_save_success_title">Siker!</string>
+    <string name="di_save_success_text">Bőr mentett!</string>
+
+    <string name="di_save_error_title">Hiba!</string>
+    <string name="di_save_error_text">A bőrt nem mentették a galériába.</string>
+
+    <string name="permission_accepted">Engedély elfogadva</string>
+    <string name="di_skin_catalog">Skins Katalógus</string>
+    <string name="premium">Prémium</string>
+    <string name="unlock">Kinyit</string>
+    <string name="settings_title_licenses">Az engedélyeket</string>
+    <string name="settings_summary_licenses">A használt szoftver licencszerződése</string>
+    <string name="settings_title_confidentiality" tools:ignore="ExtraTranslation">Titoktartási politika</string>
+    <string name="settings_summary_confidentiality" tools:ignore="ExtraTranslation">Adatvédelmi irányelvek személyes adatai</string>
+    <string name="downloading_progress_format">%1$s közül %2$s</string>
+    <string name="later">A későbbiekben</string>
+    <string name="file_error_import">Hiba történt a fájl importálásakor</string>
+    <string name="file_success_import">A fájl sikeresen importált</string>
+    <string name="never">Soha</string>
+    <string name="related">Terkait</string>
+    <string name="shop">Üzlet</string>
+    <string name="installing">telepítése</string>
+    <string name="free_coins">Ingyenes érmék</string>
+    <string name="watch">Néz</string>
+    <string name="watch_and_gain">Nézze meg a videót és szerezzen ingyen érméket!</string>
+    <string name="press_again_to_cancell">Nyomja meg újra a gombot a letöltés és kilépés visszavonásához</string>
+    <string name="file_storage_error">A fájl nem menthető tárolási hiba miatt</string>
+    <string name="file_network_error">A fájl nem mentett hálózati hiba miatt</string>
+    <string name="you_earned_coins">%1$d érmet szerzett!</string>
+    <string name="bonus_format">pótlék %1$d%%</string>
+    <string name="coins_amount_format">%1$d érmék</string>
+    <string name="get">kap</string>
+    <string name="settings_title_consent_policy_key">Hozzájárulási irányelvek</string>
+    <string name="settings_summary_consent_policy_key">Az európai felhasználók engedélyezési politikája</string>
+    <string name="retry">Próbálja újra</string>
+    <string name="get_more_coins">Szerezz több érmét</string>
+    <string name="get_more_coins_description">Szerezd meg az %1$d érmét egy %2$d%% kedvezményes áron!</string>
+    <string name="free">Ingyenes</string>
+    <string name="watch_video">Videót nézni</string>
+    <string name="buy">megvesz</string>
+    <string name="paid">Fizetett</string>
+    <string name="more">Több</string>
+    <string name="read_more">Olvass tovább</string>
+
+    <!-- licenses -->
+
+</resources>

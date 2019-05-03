@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:key="preferenceScreen">
+    <PreferenceCategory
+        android:key="general"
+        android:summary="@string/settings_general_summary"
+        android:title="@string/settings_general">
+        <Preference
+            android:key="about"
+            android:summary="@string/settings_aboutus_summary"
+            android:title="@string/settings_aboutus"/>
+        <Preference
+            android:key="@string/settings_key_open_licenses"
+            android:summary="@string/settings_summary_licenses"
+            android:title="@string/settings_title_licenses"/>
+        <Preference
+            android:key="@string/settings_confidentiality_key"
+            android:summary="@string/settings_summary_confidentiality"
+            android:title="@string/settings_title_confidentiality"/>
+        <Preference
+            android:key="@string/settings_consent_policy_key"
+            android:summary="@string/settings_summary_consent_policy_key"
+            android:title="@string/settings_title_consent_policy_key" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

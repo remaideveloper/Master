@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group
+        android:id="@+id/group_search"
+        android:visible="false"
+        tools:visible="true">
+        <item
+            android:id="@+id/search"
+            android:icon="@drawable/ic_search"
+            android:title="@string/search"
+            app:showAsAction="always" />
+    </group>
+
+    <group
+        android:id="@+id/group_version"
+        android:visible="false"
+        tools:visible="true">
+        <item
+            android:id="@+id/version"
+            android:icon="@drawable/ic_sort"
+            android:title="@string/version"
+            app:showAsAction="always" />
+    </group>
+
+    <item
+        android:id="@+id/shop"
+        android:icon="@drawable/ic_shop_white"
+        android:title="@string/shop"
+        app:showAsAction="always"/>
+
+</menu>

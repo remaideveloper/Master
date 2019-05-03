@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- settings -->
+    <string name="settings">Pengaturan</string>
+    <string name="settings_general_summary">Informasi umum</string>
+    <string name="settings_general">Umum</string>
+    <string name="settings_aboutus_summary">Informasi tentang aplikasi kita</string>
+    <string name="settings_aboutus">Tentang</string>
+    <string name="settings_aboutus_header">Tentang</string>
+    <string name="settings_aboutus_version">Versi</string>
+
+    <!-- General -->
+    <string name="loading">Loading…</string>
+    <string name="extra">Tambahan</string>
+    <string name="share">Berbagi</string>
+    <string name="send">Kirim</string>
+    <string name="share_choise">Berbagi</string>
+    <string name="rate">Beri nilai</string>
+    <string name="download_file">Men-download file..</string>
+    <string name="save_to_minecraft">Simpan untuk Minecraft PE</string>
+    <string name="save_to_gallery">Simpan ke Galeri</string>
+    <string name="back_pressed">Silahkan klik KEMBALI lagi untuk keluar</string>
+
+    <!--Activity Name-->
+    <string name="activity_offerwall">Aplikasi</string>
+    <string name="activity_wallpaper">Wallpaper</string>
+    <string name="activity_wallpaper_set">Wallpaper Set</string>
+    <string name="activity_skins">Kulit</string>
+    <string name="activity_skin_stealer">Skin Stealer</string>
+    <string name="activity_favorite">Favorit</string>
+    <string name="activity_search">Pencarian</string>
+
+    <!--Activity Favorite-->
+    <string name="favorite_is_empty">Favorit kosong</string>
+    <string name="add_to_favorite">Tambahkan ke favorit</string>
+    <string name="added_to_favorite">Ditambahkan ke favorit</string>
+    <string name="removed_from_favorite">Hapus dari favorit</string>
+
+    <!--Activity Wallpaper-->
+    <string name="save">Save</string>
+    <string name="set_as_wallpaper">Set Sebagai Wallpaper</string>
+    <string name="wallpaper_set_title">Wallpaper set</string>
+    <string name="wallpaper_set_description">Wallpaper berhasil diinstal pada desktop perangkat anda.</string>
+    <string name="wallpaper_not_set_title">Wallpaper tidak diatur</string>
+    <string name="wallpaper_not_set_description">Wallpaper tidak diinstal pada desktop perangkat anda.</string>
+
+    <!--Activity Skins-->
+
+    <!--Activity WebView-->
+
+    <!--Activity Content-->
+
+    <!--Activity Server-->
+    <string name="server_address">Alamat:</string>
+    <string name="server_port">Port:</string>
+
+    <!--Activity Offerwall-->
+
+    <!--Fragment Name-->
+
+    <!--Dialogs-->
+    <string name="open">Buka</string>
+    <string name="download">Download</string>
+
+    <!--File Save Dialog-->
+    <string name="file_saved">File berhasil disimpan</string>
+
+    <!--Content Dialogs-->
+    <string name="skin_dialog_description_success">Kulit diinstal dan diterapkan di Minecraft PE. \n\nBuka Minecraft PE?</string>
+    <string name="mod_dialog_description">Impor mod di Minecraft PE?</string>
+    <string name="texture_dialog_blocklauncher_description">Impor tekstur di Minecraft PE?</string>
+
+    <!--Minecraft Dialog-->
+    <string name="minecraft_not_installed">Minecraft PE tidak diinstal</string>
+
+    <!--BlockLauncher Dialog-->
+    <string name="blocklauncher_not_installed">BlockLauncher tidak diinstal</string>
+
+    <!--Network Dialog-->
+
+    <!--Version Selection Dialog-->
+    <string name="version">Versi</string>
+    <string name="all_version">Semua Versi</string>
+    <string name="sort_by_version">Urutkan berdasarkan Versi</string>
+
+    <!--Error Dialog-->
+    <string name="error">Kesalahan</string>
+
+    <!--In-app-->
+
+    <!--Permission-->
+    <string name="permission_denied">Izin ditolak</string>
+
+    <!--Rate Us Dialog-->
+    <string name="like_app">Apakah anda menyukai %1$s ?</string>
+    <string name="rate_us_on_google">Tanggapan anda sangat penting bagi kami.\nSilakan menilai aplikasi kita di Google Play!</string>
+
+    <!--Menu-->
+    <string name="search">Pencarian</string>
+
+    <!--Email-->
+    <string name="not_email_client">Tidak ada email klien yang diinstal.</string>
+    <string name="close">DEKAT</string>
+    <string name="no_network">Tidak ada koneksi jaringan</string>
+    <string name="description">Deskripsi</string>
+    <string name="feedback">Umpan balik</string>
+    <string name="close_minecraft">Tutup Minecraft PE</string>
+    <string name="create_one_map">Buat setidaknya satu peta</string>
+    <string name="no_maps_found">Peta tidak ditemukan</string>
+    <string name="select_map">Pilih peta</string>
+    <string name="edit">Edit</string>
+    <string name="any_fuel">Bahan bakar apapun</string>
+    <string name="basic">Dasar</string>
+    <string name="biome">Biome</string>
+    <string name="biomes">Biomes</string>
+    <string name="blocks">Blok</string>
+    <string name="brewing">Pembuatan bir</string>
+    <string name="carpets">Karpet</string>
+    <string name="crafting">Kerajinan</string>
+    <string name="defence">Pertahanan</string>
+    <string name="di_about_us_title">Version %1$s</string>
+    <string name="di_error_skin_size_text">Kami hanya mendukung kulit 64x32 atau 64x64.</string>
+    <string name="di_error_skin_size_title">Ukuran Kulit yang Tidak Didukung</string>
+    <string name="di_menu_item_about_us">Tentang kami</string>
+    <string name="di_menu_item_more_from_us">Lebih dari Kami!</string>
+    <string name="di_menu_item_rate_app">Beri peringkat kami</string>
+    <string name="di_menu_title">Menu</string>
+    <string name="di_new_character_item_gallery">Jelajahi Galeri</string>
+    <string name="di_new_character_item_steve_skin">Steve Skin</string>
+    <string name="di_new_character_negative">Membatalkan</string>
+    <string name="di_new_character_title">Karakter baru</string>
+    <string name="di_palette_negative">Membatalkan</string>
+    <string name="di_palette_positive">Memilih</string>
+    <string name="di_palette_title">Pilih warna</string>
+    <string name="di_parts_title">Sembunyikan / Tampilkan Bagian Tubuh</string>
+    <string name="di_save_error_text">Kulit tidak disimpan ke galeri.</string>
+    <string name="di_save_error_title">Kesalahan!</string>
+    <string name="di_save_success_text">Kulit diselamatkan!</string>
+    <string name="di_save_success_title">Keberhasilan!</string>
+    <string name="di_skin_catalog">Katalog Kulit</string>
+    <string name="drops">Tetes</string>
+    <string name="dyes">Pewarna</string>
+    <string name="easy">Mudah</string>
+    <string name="eggs">Telur</string>
+    <string name="experience">Pengalaman</string>
+    <string name="features">Fitur</string>
+    <string name="food">Makanan</string>
+    <string name="glass">Kaca</string>
+    <string name="hard">Keras</string>
+    <string name="health">Kesehatan</string>
+    <string name="ingredients">Bahan</string>
+    <string name="item">Barang</string>
+    <string name="item_not_exist">Item tidak ada</string>
+    <string name="items">Item</string>
+    <string name="mechanism">Mekanisme</string>
+    <string name="mob">Massa</string>
+    <string name="mob_not_exist">Mob tidak ada</string>
+    <string name="mobs">Mobs</string>
+    <string name="music_discs">Cakram musik</string>
+    <string name="none">Tidak ada</string>
+    <string name="normal">Normal</string>
+    <string name="not_craft_item">Tidak bisa membuat barang ini</string>
+    <string name="other">Lain</string>
+    <string name="permission_accepted">Izin diterima</string>
+    <string name="plants">Tanaman</string>
+    <string name="resources">Sumber daya</string>
+    <string name="skin_dialog_description">Mengimpor kulit di Minecraft PE?</string>
+    <string name="skin_editor">Skins Editor</string>
+    <string name="spawn_requirements">Persyaratan Penanaman Diperpanjang</string>
+    <string name="strength">Kekuatan</string>
+    <string name="tap_to_open">Ketuk untuk membuka item ini</string>
+    <string name="temperature">Suhu</string>
+    <string name="tools">Alat</string>
+    <string name="transport">Mengangkut</string>
+    <string name="used_to_make">Digunakan untuk membuat</string>
+    <string name="with">dengan</string>
+    <string name="wool">Wol</string>
+    <string name="premium">Premium</string>
+    <string name="unlock">Membuka kunci</string>
+    <string name="settings_title_licenses">Lisensi</string>
+    <string name="settings_summary_licenses">Perjanjian lisensi perangkat lunak yang digunakan</string>
+    <string name="settings_title_confidentiality" tools:ignore="ExtraTranslation">Kebijakan Kerahasiaan</string>
+    <string name="settings_summary_confidentiality" tools:ignore="ExtraTranslation">Kebijakan privasi informasi pribadi</string>
+    <string name="downloading_progress_format">%1$s dari %2$s</string>
+    <string name="later">Kemudian</string>
+    <string name="file_error_import">Kesalahan mengimpor file</string>
+    <string name="file_success_import">File berhasil diimpor</string>
+    <string name="never">Tak pernah</string>
+    <string name="related">Terkait</string>
+    <string name="shop">Toko</string>
+    <string name="installing">Instalasi</string>
+    <string name="free_coins">Koin gratis</string>
+    <string name="watch">Menonton</string>
+    <string name="watch_and_gain">Tonton video dan dapatkan koin gratis!</string>
+    <string name="press_again_to_cancell">Tekan lagi untuk membatalkan download dan keluar</string>
+    <string name="file_storage_error">File tidak disimpan karena kesalahan penyimpanan</string>
+    <string name="file_network_error">File tidak disimpan karena kesalahan jaringan</string>
+    <string name="you_earned_coins">Anda mendapatkan %1$d koin!</string>
+    <string name="bonus_format">Bonus %1$d%%</string>
+    <string name="coins_amount_format">%1$d koin</string>
+    <string name="get">mendapatkan</string>
+    <string name="settings_title_consent_policy_key">Kebijakan Persetujuan</string>
+    <string name="settings_summary_consent_policy_key">Kebijakan Persetujuan dari Pengguna Eropa</string>
+    <string name="retry">Coba lagi</string>
+    <string name="get_more_coins">Dapatkan lebih banyak koin</string>
+    <string name="get_more_coins_description">Dapatkan %1$d koin dengan %2$d%% diskon!</string>
+    <string name="free">Bebas</string>
+    <string name="watch_video">Menonton video</string>
+    <string name="buy">Membeli</string>
+    <string name="paid">Berbayar</string>
+    <string name="more">Lebih</string>
+    <string name="read_more">Baca lebih lajut</string>
+
+</resources>

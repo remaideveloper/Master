@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- settings -->
+    <string name="settings">Ayarlar</string>
+    <string name="settings_general_summary">Genel bilgi</string>
+    <string name="settings_general">Genel</string>
+    <string name="settings_aboutus_summary">Başvurumuz hakkında bilgi</string>
+    <string name="settings_aboutus">Hakkında</string>
+    <string name="settings_aboutus_header">Hakkında</string>
+    <string name="settings_aboutus_version">Sürüm</string>
+
+    <!-- General -->
+    <string name="loading">Yükleniyor…</string>
+    <string name="extra">Ekstra</string>
+    <string name="share">Pay</string>
+    <string name="send">Gönder</string>
+    <string name="share_choise">Paylaş</string>
+    <string name="rate">Oyla</string>
+    <string name="download_file">Dosya indiriliyor..</string>
+    <string name="save_to_minecraft">Minecraft PE\'ye kaydet</string>
+    <string name="save_to_gallery">Galeri\'ye kaydet</string>
+    <string name="back_pressed">Çıkmak için lütfen GERİ düğmesini tekrar tıklayın.</string>
+
+    <!--Activity Name-->
+    <string name="activity_offerwall">Uygulamalar</string>
+    <string name="activity_wallpaper">Duvar Kağıtları</string>
+    <string name="activity_wallpaper_set">Duvar Kağıdı Seti</string>
+    <string name="activity_skins">Kaplamalar</string>
+    <string name="activity_skin_stealer">Cilt soyguncusu</string>
+    <string name="activity_favorite">sevdiğim</string>
+    <string name="activity_search">Arama</string>
+
+    <!--Activity Favorite-->
+    <string name="favorite_is_empty">Favori boş</string>
+    <string name="add_to_favorite">Favorilere ekle</string>
+    <string name="added_to_favorite">Favorilere eklendi</string>
+    <string name="removed_from_favorite">Favoriden kaldırıldı</string>
+
+    <!--Activity Wallpaper-->
+    <string name="save">Kayıt etmek</string>
+    <string name="set_as_wallpaper">Duvar kağıdı olarak ayarlamak</string>
+    <string name="wallpaper_set_title">Duvar kağıdı seti</string>
+    <string name="wallpaper_set_description">Duvar kağıtları, cihazınızın masaüstüne başarıyla kuruldu.</string>
+    <string name="wallpaper_not_set_title">Duvar kağıdı ayarlanmadı</string>
+    <string name="wallpaper_not_set_description">Duvar kağıdı cihazınızın masaüstüne yüklenmedi.</string>
+
+    <!--Activity Skins-->
+
+    <!--Activity WebView-->
+
+    <!--Activity Content-->
+
+    <!--Activity Server-->
+    <string name="server_address">Adres:</string>
+    <string name="server_port">Liman:</string>
+
+    <!--Activity Offerwall-->
+
+    <!--Fragment Name-->
+
+    <!--Dialogs-->
+    <string name="open">Açık</string>
+    <string name="download">İndir</string>
+
+    <!--File Save Dialog-->
+    <string name="file_saved">Dosya başarıyla kaydedildi</string>
+
+    <!--Content Dialogs-->
+    <string name="skin_dialog_description_success">Minecraft PE\'de cilt kuruldu ve uygulandı. \n\nMinecraft PE\'yi açar mısın?</string>
+    <string name="mod_dialog_description">Minecraft PE\'de ithalat modu?</string>
+    <string name="texture_dialog_blocklauncher_description">Minecraft PE\'de doku al?</string>
+
+    <!--Minecraft Dialog-->
+    <string name="minecraft_not_installed">Minecraft PE kurulu değil</string>
+
+    <!--BlockLauncher Dialog-->
+    <string name="blocklauncher_not_installed">BlockLauncher yüklenmedi</string>
+
+    <!--Network Dialog-->
+
+    <!--Version Selection Dialog-->
+    <string name="version">Sürüm</string>
+    <string name="all_version">Tüm Sürümler</string>
+    <string name="sort_by_version">Versiyona göre sırala</string>
+
+    <!--Error Dialog-->
+    <string name="error">Hata</string>
+
+    <!--In-app-->
+
+    <!--Permission-->
+    <string name="permission_denied">İzin reddedildi</string>
+
+    <!--Rate Us Dialog-->
+    <string name="like_app">Sever misin %1$s ?</string>
+    <string name="rate_us_on_google">Lütfen uygulamanızı Google Play\'de değerlendirin!</string>
+
+    <!--Menu-->
+    <string name="search">Arama</string>
+
+    <!--Email-->
+    <string name="not_email_client">Hiçbir e-posta istemcisi yüklü değil.</string>
+    <string name="close">KAPAT</string>
+    <string name="no_network">Ağ bağlantısı yok</string>
+    <string name="description">Açıklama</string>
+    <string name="feedback">geri bildirim</string>
+    <string name="close_minecraft">Minecraft PE\'yi kapat</string>
+    <string name="create_one_map">Lütfen en az bir harita oluştur</string>
+    <string name="no_maps_found">Harita bulunamadı</string>
+    <string name="select_map">Bir harita seçin</string>
+    <string name="edit">Düzenleme</string>
+
+    <string name="any_fuel">Herhangi Yakıt</string>
+    <string name="brewing">Iksirler</string>
+    <string name="crafting">Zanaat</string>
+    <string name="drops">Düşürmek</string>
+    <string name="eggs">Yumurtalar</string>
+    <string name="experience">Deneyim</string>
+    <string name="food">Gıda</string>
+    <string name="health">Sağlık</string>
+    <string name="item">şey</string>
+    <string name="mob">Mob</string>
+    <string name="music_discs">Müzik Diskleri</string>
+    <string name="other">Diğer</string>
+    <string name="spawn_requirements">Spawn Gereksinimleri</string>
+    <string name="tap_to_open">Bu öğeyi açmak için hafifçe vurun</string>
+    <string name="tools">Araçlar</string>
+    <string name="transport">Taşıma</string>
+    <string name="used_to_make">Kullanılmış için Yapmak</string>
+    <string name="with">Ile</string>
+    <string name="biome">Biomlar</string>
+    <string name="biomes">Biomlar</string>
+    <string name="items">ürün</string>
+    <string name="mobs">Mob\'lar</string>
+    <string name="basic">Temel</string>
+    <string name="defence">Savunma</string>
+    <string name="blocks">Bloklar</string>
+    <string name="mechanism">Mekanizma</string>
+    <string name="wool">Yün</string>
+    <string name="dyes">Boyalar</string>
+    <string name="temperature">Sıcaklık</string>
+    <string name="features">Özellikler</string>
+    <string name="none">Kimse</string>
+    <string name="not_craft_item">Bu öğeyi hazırlayamazsın</string>
+    <string name="item_not_exist">Öğe mevcut değil</string>
+    <string name="mob_not_exist">Mob mevcut değil</string>
+    <string name="strength">Kuvvet</string>
+    <string name="easy">Kolay</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Zor</string>
+    <string name="plants">Bitkiler</string>
+    <string name="resources">Kaynaklar</string>
+    <string name="ingredients">Malzemeler</string>
+    <string name="carpets">Halılar</string>
+    <string name="glass">Bardak</string>
+
+    <!--Skin Editor Strings-->
+       
+    <string name="skin_editor">Cilt Editör</string>
+
+       
+    <string name="di_menu_title">Menü</string>
+       
+    <string name="di_menu_item_more_from_us">Daha itibaren Bize!</string>
+       
+    <string name="di_menu_item_rate_app">Oran Bize</string>
+       
+    <string name="di_menu_item_about_us">Hakkında Bize</string>
+
+       
+    <string name="di_about_us_title">Version %1$s</string>
+       
+    <string name="di_error_skin_size_title">Desteklenmeyen Cilt Boyutu</string>
+       
+    <string name="di_error_skin_size_text">Yalnızca 64x32 veya 64x64 cildi destekliyoruz.</string>
+
+       
+    <string name="di_palette_title">Renk seçin</string>
+       
+    <string name="di_palette_positive">Seçmek</string>
+       
+    <string name="di_palette_negative">İptal etmek</string>
+
+       
+    <string name="di_parts_title">Saklamak/Göstermek Vücut kısımları</string>
+
+       
+    <string name="di_new_character_title">Yeni Karakter</string>
+       
+    <string name="di_new_character_negative">İptal etmek</string>
+       
+    <string name="di_new_character_item_steve_skin">Steve Derisi</string>
+       
+    <string name="di_new_character_item_gallery">Galeriye Gözat</string>
+
+       
+    <string name="di_save_success_title">Başarı!</string>
+       
+    <string name="di_save_success_text">Cilt kaydedildi!</string>
+
+       
+    <string name="di_save_error_title">Hata!</string>
+       
+    <string name="di_save_error_text">Cilt galerisi kaydedilmedi.</string><![CDATA[
+
+       
+       
+    ]]>
+    <string name="permission_accepted">Izin kabul edildi</string>
+       
+    <string name="di_skin_catalog">Cilt Kataloğu</string>
+    <string name="skin_dialog_description">Minecraft PE\'de cilt ithal etmek mi?</string>
+    <string name="premium">Prim</string>
+    <string name="unlock">kilidini açmak</string>
+    <string name="settings_title_licenses">Lisanslar</string>
+    <string name="settings_summary_licenses">Kullanılan yazılımın lisans sözleşmesi</string>
+    <string name="settings_title_confidentiality" tools:ignore="ExtraTranslation">Gizlilik Politikası</string>
+    <string name="settings_summary_confidentiality" tools:ignore="ExtraTranslation">Gizlilik politikası kişisel bilgiler</string>
+    <string name="downloading_progress_format">%1$s of %2$s</string>
+    <string name="later">Sonra</string>
+    <string name="file_error_import">Dosya içe aktarılırken bir hata oluştu</string>
+    <string name="file_success_import">Dosya başarıyla içe aktarıldı</string>
+    <string name="never">Asla</string>
+    <string name="related">İlgili</string>
+    <string name="shop">Dükkan</string>
+    <string name="installing">yükleme</string>
+    <string name="free_coins">Serbest paralar</string>
+    <string name="watch">İzlemek</string>
+    <string name="watch_and_gain">Videoyu izleyin ve bedava paralar kazanın!</string>
+    <string name="press_again_to_cancell">İndirme işlemini iptal etmek ve çıkmak için tekrar basın</string>
+    <string name="file_storage_error">Depolama hatası nedeniyle dosya kaydedilmedi</string>
+    <string name="file_network_error">Ağ hatası nedeniyle dosya kaydedilmedi</string>
+    <string name="you_earned_coins">%1$d para kazandın!</string>
+    <string name="bonus_format">Bonus %1$d%%</string>
+    <string name="coins_amount_format">%1$d madeni para</string>
+    <string name="get">almak</string>
+    <string name="settings_title_consent_policy_key">Onay Politikası</string>
+    <string name="settings_summary_consent_policy_key">Avrupa Kullanıcılarından Onay Politikası</string>
+    <string name="retry">Tekrar dene</string>
+    <string name="get_more_coins">Daha fazla para al</string>
+    <string name="get_more_coins_description">%2$d%% indirim ile %1$d sikke alın!</string>
+    <string name="free">Ücretsiz</string>
+    <string name="watch_video">Video izle</string>
+    <string name="buy">satın almak</string>
+    <string name="paid">ödenmiş</string>
+    <string name="more">Daha</string>
+    <string name="read_more">Daha fazla oku</string>
+
+</resources>

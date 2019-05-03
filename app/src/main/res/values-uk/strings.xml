@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- settings -->
+    <string name="settings">Настройки</string>
+    <string name="settings_general_summary">Загальна інформація</string>
+    <string name="settings_general">Загальний</string>
+    <string name="settings_aboutus_summary">Інформація про наш додатку</string>
+    <string name="settings_aboutus">Про</string>
+    <string name="settings_aboutus_header">Про</string>
+    <string name="settings_aboutus_version">Версія</string>
+
+    <!-- General -->
+    <string name="loading">Завантаження…</string>
+    <string name="extra">Екстра</string>
+    <string name="share">Частка</string>
+    <string name="send">Послати</string>
+    <string name="share_choise">Розділіть це</string>
+    <string name="rate">Оцінити</string>
+    <string name="download_file">Завантаження файлу ..</string>
+    <string name="save_to_minecraft">Зберегти в Minecraft PE</string>
+    <string name="save_to_gallery">Зберегти в галереї</string>
+    <string name="back_pressed">Будь ласка, натисніть НАЗАД, щоб вийти</string>
+
+    <!--Activity Name-->
+    <string name="activity_offerwall">Додатки</string>
+    <string name="activity_wallpaper">Шпалери</string>
+    <string name="activity_wallpaper_set">Набір шпалер</string>
+    <string name="activity_skins">Оболонки</string>
+    <string name="activity_skin_stealer">Викрадач шкіри</string>
+    <string name="activity_favorite">Улюблений</string>
+    <string name="activity_search">Пошук</string>
+
+    <!--Activity Favorite-->
+    <string name="favorite_is_empty">Улюблений порожній</string>
+    <string name="add_to_favorite">Додати в обране</string>
+    <string name="added_to_favorite">Додано в обране</string>
+    <string name="removed_from_favorite">Виключений з коханою</string>
+
+    <!--Activity Wallpaper-->
+    <string name="save">Зберегти</string>
+    <string name="set_as_wallpaper">Встановити як шпалери</string>
+    <string name="wallpaper_set_title">набір шпалер</string>
+    <string name="wallpaper_set_description">Шпалери успішно встановлений на робочому столі вашого пристрою.</string>
+    <string name="wallpaper_not_set_title">Шпалери не встановлені</string>
+    <string name="wallpaper_not_set_description">Шпалери на робочий стіл не встановлено на робочому столі вашого пристрою.</string>
+
+    <!--Activity Skins-->
+
+    <!--Activity WebView-->
+
+    <!--Activity Content-->
+
+    <!--Activity Server-->
+    <string name="server_address">Адреса:</string>
+    <string name="server_port">Порт:</string>
+
+    <!--Activity Offerwall-->
+
+    <!--Fragment Name-->
+
+    <!--Dialogs-->
+    <string name="open">ВІДЧИНЕНО</string>
+    <string name="download">Cкачати</string>
+
+    <!--File Save Dialog-->
+    <string name="file_saved">Файл успішно збережений</string>
+
+    <!--Content Dialogs-->
+    <string name="skin_dialog_description_success">Шкіра встановлюється і застосовується в Minecraft PE. \n\nВідкрити Minecraft PE?</string>
+    <string name="mod_dialog_description">Імпорт мод в Minecraft PE?</string>
+    <string name="texture_dialog_blocklauncher_description">Імпорт текстури в Minecraft PE?</string>
+
+    <!--Minecraft Dialog-->
+    <string name="minecraft_not_installed">Minecraft PE не встановлено</string>
+
+    <!--BlockLauncher Dialog-->
+    <string name="blocklauncher_not_installed">BlockLauncher не встановлено</string>
+
+    <!--Network Dialog-->
+
+    <!--Version Selection Dialog-->
+    <string name="version">Версія</string>
+    <string name="all_version">Всі версії</string>
+    <string name="sort_by_version">Сортування за версією</string>
+
+    <!--Error Dialog-->
+    <string name="error">Помилка</string>
+
+    <!--In-app-->
+
+    <!--Permission-->
+    <string name="permission_denied">Відмовлено</string>
+
+    <!--Rate Us Dialog-->
+    <string name="like_app">Тобі подобається %1$s ?</string>
+    <string name="rate_us_on_google">Будь ласка, оцініть наш додаток в Google Play!</string>
+
+    <!--Menu-->
+    <string name="search">Пошук</string>
+
+    <!--Email-->
+    <string name="not_email_client">Там немає поштових клієнтів встановлені.</string>
+    <string name="close">ЗАКРИТИ</string>
+    <string name="no_network">Немає підключення до мережі</string>
+    <string name="description">опис</string>
+    <string name="feedback">зворотний зв\'язок</string>
+    <string name="close_minecraft">Закрити Minecraft PE</string>
+    <string name="create_one_map">Будь ласка, створити хоча б одну карту</string>
+    <string name="no_maps_found">Карти не знайдені</string>
+    <string name="select_map">Виберіть карту</string>
+    <string name="edit">Редагувати</string>
+
+    <string name="any_fuel">Будь-яке паливо</string>
+    <string name="brewing">Зілляваріння</string>
+    <string name="crafting">Крафтінг</string>
+    <string name="drops">Випало</string>
+    <string name="eggs">Яйця</string>
+    <string name="experience">Досвід</string>
+    <string name="food">їжа</string>
+    <string name="health">Здоров\'я</string>
+    <string name="item">Предмет</string>
+    <string name="mob">Моб</string>
+    <string name="music_discs">Музичні Диски</string>
+    <string name="other">інше</string>
+    <string name="spawn_requirements">Вимоги до породження</string>
+    <string name="tap_to_open">Натисніть, щоб відкрити цей елемент</string>
+    <string name="tools">Інструменти</string>
+    <string name="transport">Транспорт</string>
+    <string name="used_to_make">Використовується для Створення</string>
+    <string name="with">разом</string>
+    <string name="biome">Биом</string>
+    <string name="biomes">Біоми</string>
+    <string name="items">Предмети</string>
+    <string name="mobs">Моби</string>
+    <string name="basic">Основне</string>
+    <string name="defence">Захист</string>
+    <string name="blocks">Блоки</string>
+    <string name="mechanism">Механізми</string>
+    <string name="wool">Вовна</string>
+    <string name="dyes">Барвники</string>
+    <string name="temperature">Температура</string>
+    <string name="features">Особливості</string>
+    <string name="none">Ніхто</string>
+    <string name="not_craft_item">Не вдається створити цей предмет</string>
+    <string name="item_not_exist">Елемент не існує</string>
+    <string name="mob_not_exist">Моб не існує</string>
+    <string name="strength">Сила</string>
+    <string name="easy">Легко</string>
+    <string name="normal">Нормально</string>
+    <string name="hard">Жорсткий</string>
+    <string name="plants">Рослини</string>
+    <string name="resources">Ресурси</string>
+    <string name="ingredients">Інгредієнти</string>
+    <string name="carpets">Килими</string>
+    <string name="glass">Скло</string>
+
+    <!--Skin Editor Strings-->
+       
+    <string name="skin_editor">Редактор Скінів</string>
+
+       
+    <string name="di_menu_title">Меню</string>
+       
+    <string name="di_menu_item_more_from_us">Більше про Нас!</string>
+       
+    <string name="di_menu_item_rate_app">Оцінити Нас</string>
+       
+    <string name="di_menu_item_about_us">Про Нас</string>
+
+       
+    <string name="di_about_us_title">Version %1$s</string>
+       
+       
+    <string name="di_error_skin_size_title">Непідтримуваний розмір Скiна</string>
+       
+    <string name="di_error_skin_size_text">Ми підтримуємо 64x32 або 64x64 скіни.</string>
+
+       
+    <string name="di_palette_title">Виберіть колір</string>
+       
+    <string name="di_palette_positive">Вибрати</string>
+       
+    <string name="di_palette_negative">Скасувати</string>
+
+       
+    <string name="di_parts_title">Сховати/Показати Частини Тіла</string>
+
+       
+    <string name="di_new_character_title">Новий персонаж</string>
+       
+    <string name="di_new_character_negative">Скасувати</string>
+       
+    <string name="di_new_character_item_steve_skin">Скін Стіва</string>
+       
+    <string name="di_new_character_item_gallery">Подивитися Галерею</string>
+
+       
+    <string name="di_save_success_title">Успішно!</string>
+       
+    <string name="di_save_success_text">Скін збережений!</string>
+
+       
+    <string name="di_save_error_title">Помилка!</string>
+       
+    <string name="di_save_error_text">Скін не зберігся в цю галерею.</string><![CDATA[
+       
+       
+    ]]>
+    <string name="permission_accepted">Дозвіл прийнято</string>
+       
+    <string name="di_skin_catalog">Каталог Скінів</string>
+    <string name="skin_dialog_description">Імпортувати шкіру в Minecraft PE?</string>
+    <string name="premium">Преміум</string>
+    <string name="unlock">Відімкнути</string>
+    <string name="settings_title_licenses">Ліцензії</string>
+    <string name="settings_summary_licenses">Ліцензійна угода використовуваного програмного забезпечення</string>
+    <string name="settings_title_confidentiality" tools:ignore="ExtraTranslation">Політика конфіденційності</string>
+    <string name="settings_summary_confidentiality" tools:ignore="ExtraTranslation">Політика конфіденційності особистої інформації</string>
+    <string name="downloading_progress_format">%1$s з %2$s</string>
+    <string name="later">Пізніше</string>
+    <string name="file_error_import">Помилка імпорту файлу</string>
+    <string name="file_success_import">Файл успішно імпортовано</string>
+    <string name="never">Ніколи</string>
+    <string name="related">Пов\'язані</string>
+    <string name="shop">Магазин</string>
+    <string name="installing">Встановлення</string>
+    <string name="free_coins">Безкоштовні монети</string>
+    <string name="watch">Дивись</string>
+    <string name="watch_and_gain">Дивіться відео та отримуйте безкоштовні монети!</string>
+    <string name="press_again_to_cancell">Натисніть ще раз, щоб скасувати завантаження та вийти</string>
+    <string name="file_storage_error">Файл не збережено через помилку зберігання</string>
+    <string name="file_network_error">Файл не збережено через помилку мережі</string>
+    <string name="you_earned_coins">Ви заробили %1$d монет!</string>
+    <string name="bonus_format">Бонус %1$d%%</string>
+    <string name="coins_amount_format">%1$d монети</string>
+    <string name="get">отримати</string>
+    <string name="settings_title_consent_policy_key">Політика згоди</string>
+    <string name="settings_summary_consent_policy_key">Політика згоди від європейських користувачів</string>
+    <string name="retry">Спробуйте ще раз</string>
+    <string name="get_more_coins">Отримайте більше монет</string>
+    <string name="get_more_coins_description">Отримайте %1$d монету з %2$d%% знижками!</string>
+    <string name="free">Безкоштовно</string>
+    <string name="watch_video">Переглянути відео</string>
+    <string name="buy">Купити</string>
+    <string name="paid">Оплачений</string>
+    <string name="more">більш</string>
+    <string name="read_more">Читати далі</string>
+
+</resources>

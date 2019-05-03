@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Drawer -->
+    <dimen name="drawer_width">320dp</dimen>
+
+    <!--Menu-->
+
+    <!--Main CardView-->
+    <dimen name="image_icon_size">110dp</dimen>
+    <dimen name="image_icon_margin">15dp</dimen>
+    <dimen name="image_icon_bottom_margin">6dp</dimen>
+
+    <!--Text-->
+    <dimen name="text_size_small">20sp</dimen>
+    <dimen name="text_size_medium">22sp</dimen>
+    <dimen name="button_text_size">18sp</dimen>
+
+    <!--Activity Content-->
+    <dimen name="image_content_height">360dp</dimen>
+    <dimen name="image_category_height">250dp</dimen>
+
+    <!--CardView with Button-->
+    <dimen name="card_view_large_button_padding_top">20dp</dimen>
+    <dimen name="card_view_large_button_padding_bottom">20dp</dimen>
+    <dimen name="card_view_large_button_margin_top">8dp</dimen>
+    <dimen name="card_view_large_button_margin_bottom">6dp</dimen>
+    <dimen name="button_height">65dp</dimen>
+
+    <!--Native Ads-->
+
+    <!--Parent-->
+    <dimen name="parent_layout_padding">40dp</dimen>
+
+    <!--Offer View-->
+    <dimen name="offer_layout_width">148dp</dimen>
+
+
+    <!--Promo-->
+    <dimen name="promo_height">300dp</dimen>
+
+</resources>

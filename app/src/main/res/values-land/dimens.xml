@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Parent-->
+    <dimen name="parent_layout_padding">40dp</dimen>
+
+    <!--Offer View-->
+    <dimen name="offer_layout_width">148dp</dimen>
+
+    <!--Banner Ads-->
+    <dimen name="banner_margin">3dp</dimen>
+
+</resources>

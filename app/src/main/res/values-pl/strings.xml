@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- settings -->
+    <string name="settings">Ustawienia</string>
+    <string name="settings_general_summary">Informacje ogólne</string>
+    <string name="settings_general">Generał</string>
+    <string name="settings_aboutus_summary">Informacja o naszej aplikacji</string>
+    <string name="settings_aboutus">O</string>
+    <string name="settings_aboutus_header">O</string>
+    <string name="settings_aboutus_version">Wersja</string>
+
+    <!-- General -->
+    <string name="loading">Ładuję…</string>
+    <string name="extra">Dodatkowy</string>
+    <string name="share">Dzielić</string>
+    <string name="send">Wysłać</string>
+    <string name="share_choise">Udostępnij to</string>
+    <string name="rate">Oceń</string>
+    <string name="download_file">Pobieranie pliku ..</string>
+    <string name="save_to_minecraft">Zapisz w Minecraft PE</string>
+    <string name="save_to_gallery">Zapisz w Galerii</string>
+    <string name="back_pressed">Proszę kliknąć ponownie, aby wyjść</string>
+
+    <!--Activity Name-->
+    <string name="activity_offerwall">Aplikacje</string>
+    <string name="activity_wallpaper">Tapety</string>
+    <string name="activity_wallpaper_set">Tapety Ustaw</string>
+    <string name="activity_skins">Skórki</string>
+    <string name="activity_skin_stealer">Złodziej skóry</string>
+    <string name="activity_favorite">Ulubiony</string>
+    <string name="activity_search">Szukanie</string>
+
+    <!--Activity Favorite-->
+    <string name="favorite_is_empty">Ulubiona jest pusty</string>
+    <string name="add_to_favorite">Dodaj do ulubionych</string>
+    <string name="added_to_favorite">Dodano do ulubionych</string>
+    <string name="removed_from_favorite">Usunięto z ulubionych</string>
+
+    <!--Activity Wallpaper-->
+    <string name="save">Zapisać</string>
+    <string name="set_as_wallpaper">Ustaw jako tapetę</string>
+    <string name="wallpaper_set_title">Tapeta zestaw</string>
+    <string name="wallpaper_set_description">Tapety z powodzeniem zainstalować na pulpicie urządzenia.</string>
+    <string name="wallpaper_not_set_title">Tapeta nie jest ustawiona</string>
+    <string name="wallpaper_not_set_description">Tapety nie jest zainstalowany na pulpicie urządzenia.</string>
+
+    <!--Activity Skins-->
+
+    <!--Activity WebView-->
+
+    <!--Activity Content-->
+
+    <!--Activity Server-->
+    <string name="server_address">Adres:</string>
+    <string name="server_port">Port:</string>
+
+    <!--Activity Offerwall-->
+
+    <!--Fragment Name-->
+
+    <!--Dialogs-->
+    <string name="open">Otwarty</string>
+    <string name="download">Pobieranie</string>
+
+    <!--File Save Dialog-->
+    <string name="file_saved">Plik został zapisany</string>
+
+    <!--Content Dialogs-->
+    <string name="skin_dialog_description_success">Zainstalowane i stosowane w Minecraft PE skóry. \n\nOtwórz Minecraft PE?</string>
+    <string name="mod_dialog_description">Importuj mod w Minecraft PE?</string>
+    <string name="texture_dialog_blocklauncher_description">Importuj tekstury w Minecraft PE?</string>
+
+    <!--Minecraft Dialog-->
+    <string name="minecraft_not_installed">Minecraft PE nie jest zainstalowane</string>
+
+    <!--BlockLauncher Dialog-->
+    <string name="blocklauncher_not_installed">BlockLauncher nie jest zainstalowane</string>
+
+    <!--Network Dialog-->
+
+    <!--Version Selection Dialog-->
+    <string name="version">Wersja</string>
+    <string name="all_version">Wszystkie wersje</string>
+    <string name="sort_by_version">Sortuj według wersji</string>
+
+    <!--Error Dialog-->
+    <string name="error">Błąd</string>
+
+    <!--In-app-->
+
+    <!--Permission-->
+    <string name="permission_denied">Permission denied</string>
+
+    <!--Rate Us Dialog-->
+    <string name="like_app">Czy lubisz %1$s ?</string>
+    <string name="rate_us_on_google">NProszę ocenić naszą aplikację w Google Play!</string>
+
+    <!--Menu-->
+    <string name="search">Szukanie</string>
+
+    <!--Email-->
+    <string name="not_email_client">Brak klientów pocztowych zainstalowanych.</string>
+    <string name="close">BLISKO</string>
+    <string name="no_network">Brak połączenia z siecią</string>
+    <string name="description">Opis</string>
+    <string name="feedback">Informacje zwrotne</string>
+    <string name="close_minecraft">Zamknij Minecraft PE</string>
+    <string name="create_one_map">Proszę utworzyć co najmniej jedną mapę</string>
+    <string name="no_maps_found">Nie znaleziono map</string>
+    <string name="select_map">Wybierz mapę</string>
+    <string name="edit">Edytować</string>
+
+    <string name="any_fuel">Dowolne paliwo</string>
+    <string name="brewing">Browarnictwo</string>
+    <string name="crafting">Rzemiosło</string>
+    <string name="drops">Krople</string>
+    <string name="eggs">Jajka</string>
+    <string name="experience">Doświadczenie</string>
+    <string name="food">Jedzenie</string>
+    <string name="health">Zdrowie</string>
+    <string name="item"> Rzecz</string>
+    <string name="mob">Mob</string>
+    <string name="music_discs">Dyski Muzyczne</string>
+    <string name="other">Inny</string>
+    <string name="spawn_requirements">Ikra Wymagania</string>
+    <string name="tap_to_open">Kliknij, aby otworzyć ten element</string>
+    <string name="tools">Instrumenty</string>
+    <string name="transport">Transport</string>
+    <string name="used_to_make">Używany aby Poczynić</string>
+    <string name="with">z</string>
+    <string name="biome">Biome</string>
+    <string name="biomes">Biomes</string>
+    <string name="items">Przedmiotów</string>
+    <string name="mobs">Mobs</string>
+    <string name="basic">Podstawowy</string>
+    <string name="defence">Obrona</string>
+    <string name="blocks">Bloki</string>
+    <string name="mechanism">Mechanizm</string>
+    <string name="wool">Wełna</string>
+    <string name="dyes">Barwniki</string>
+    <string name="temperature">Temperatura</string>
+    <string name="features">Cechy</string>
+    <string name="none">Nikt</string>
+    <string name="not_craft_item">Nie potrafię tego wyrobić rzecz</string>
+    <string name="item_not_exist">Rzecz nie istnieje</string>
+    <string name="mob_not_exist">Mob nie istnieje</string>
+    <string name="strength">Wytrzymałość</string>
+    <string name="easy">łatwy</string>
+    <string name="normal">Normalna</string>
+    <string name="hard">Ciężko</string>
+    <string name="plants">Rośliny</string>
+    <string name="resources">Zasoby</string>
+    <string name="ingredients">Składniki</string>
+    <string name="carpets">Dywany</string>
+    <string name="glass">Szkło</string>
+
+    <!--Skin Editor Strings-->
+       
+    <string name="skin_editor">Edytor Skóry</string>
+
+       
+    <string name="di_menu_title">Menu</string>
+       
+    <string name="di_menu_item_more_from_us">Więcej od Nas!</string>
+       
+    <string name="di_menu_item_rate_app">Oceń nas</string>
+       
+    <string name="di_menu_item_about_us">O nas</string>
+
+       
+    <string name="di_about_us_title">Version %1$s</string><![CDATA[
+       
+
+       
+    ]]>
+    <string name="di_error_skin_size_title">Nieobsługiwany Rozmiar Skóry</string>
+       
+    <string name="di_error_skin_size_text">Obsługujemy tylko powierzchnię 64 x 32 lub 64 x 64.</string>
+
+       
+    <string name="di_palette_title">Wybierz kolor</string>
+       
+    <string name="di_palette_positive">Wybierać</string>
+       
+    <string name="di_palette_negative">Anuluj</string>
+
+       
+    <string name="di_parts_title">Ukryć/Pokazać Ciało Części</string>
+
+       
+    <string name="di_new_character_title">Nowy charakter</string>
+       
+    <string name="di_new_character_negative">Anuluj</string>
+       
+    <string name="di_new_character_item_steve_skin">Steve Skóry</string>
+       
+    <string name="di_new_character_item_gallery">Przeglądaj Galerię</string>
+
+       
+    <string name="di_save_success_title">Powodzenie!</string>
+       
+    <string name="di_save_success_text">Skóra jest zbawiona!</string>
+
+       
+    <string name="di_save_error_title">Błąd!</string>
+       
+    <string name="di_save_error_text">Skóra nie jest zapisywana w galerii.</string><![CDATA[
+
+       
+
+       
+
+       
+    ]]>
+    <string name="permission_accepted">Zezwolenie zostało przyjęte</string>
+       
+    <string name="di_skin_catalog">Katalog Karnacji</string>
+    <string name="skin_dialog_description">Import skóry w Minecraft PE?</string>
+    <string name="premium">Ażio</string>
+    <string name="unlock">Odblokować</string>
+    <string name="settings_title_licenses">Licencje</string>
+    <string name="settings_summary_licenses">Umowa licencyjna na używane oprogramowanie</string>
+    <string name="settings_title_confidentiality" tools:ignore="ExtraTranslation">Polityka poufności</string>
+    <string name="settings_summary_confidentiality" tools:ignore="ExtraTranslation">Polityka prywatności dane osobowe</string>
+    <string name="downloading_progress_format">%1$s z %2$s</string>
+    <string name="later">Później</string>
+    <string name="file_error_import">Błąd podczas importowania pliku</string>
+    <string name="file_success_import">Plik został pomyślnie zaimportowany</string>
+    <string name="never">Nigdy</string>
+    <string name="related">Związane z</string>
+    <string name="shop">Sklep</string>
+    <string name="installing">Instalowanie</string>
+    <string name="free_coins">Darmowe monety</string>
+    <string name="watch">Zegarek</string>
+    <string name="watch_and_gain">Obejrzyj film i zdobądź darmowe monety!</string>
+    <string name="press_again_to_cancell">Naciśnij ponownie, aby anulować pobieranie i zakończenie</string>
+    <string name="file_storage_error">Plik nie został zapisany z powodu błędu przechowywania</string>
+    <string name="file_network_error">Plik nie został zapisany z powodu błędu sieci</string>
+    <string name="you_earned_coins">Zarobiłeś %1$d monet!</string>
+    <string name="bonus_format">Premia %1$d%%</string>
+    <string name="coins_amount_format">%1$d monety</string>
+    <string name="get">otrzymać</string>
+    <string name="settings_title_consent_policy_key">Polityka zgody</string>
+    <string name="settings_summary_consent_policy_key">Polityka zgody użytkowników europejskich</string>
+    <string name="retry">Ponowić</string>
+    <string name="get_more_coins">Zdobądź więcej monet</string>
+    <string name="get_more_coins_description">Zdobądź %1$d monetę z %2$d%% zniżkami!</string>
+    <string name="free">Darmowy</string>
+    <string name="watch_video">Obejrzyj wideo</string>
+    <string name="buy">Kupować</string>
+    <string name="paid">Płatny</string>
+    <string name="more">Więcej</string>
+    <string name="read_more">Czytaj więcej</string>
+
+</resources>
