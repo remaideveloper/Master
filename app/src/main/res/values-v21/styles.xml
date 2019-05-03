@@ -1,26 +1,7 @@
 <resources>
     <!--  Base application theme.  -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!--  Customize your theme here.  -->
-        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
-        <item name="windowActionModeOverlay">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="android:windowContentTransitions">true</item>
-        <item name="android:buttonStyle">@style/CustomButton</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
     </style>
 
-    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="ToolBarStyle" parent="">
-        <item name="android:elevation">@dimen/toolbar_elevation</item>
-        <item name="android:transitionName">actionBar</item>
-        <item name="android:theme">@style/ToolbarStyle</item>
-        <item name="android:popupTheme">@style/ToolbarStyle</item>
-    </style>
-    <style name="CustomButton" parent="Widget.AppCompat.Button">
-        <item name="android:textColor">@color/button_color_white</item>
-    </style>
 </resources>

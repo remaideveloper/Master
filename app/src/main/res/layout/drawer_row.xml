@@ -19,7 +19,6 @@
         android:alpha="0.87"
         android:selectable="false"
         android:gravity="center_vertical"
-        android:textColor="@color/black"
         />
     
     <TextView
@@ -36,6 +35,5 @@
         android:visibility="gone"
         android:textSize="14sp"
         android:gravity="center_vertical"
-        android:textColor="@color/black"
         />
 </LinearLayout>

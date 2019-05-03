@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="@dimen/offer_layout_width"
@@ -33,7 +32,6 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:maxLines="2"
-            android:textAppearance="@style/TextSmallStyle"
             tools:text="@string/description_example"/>
 
     </RelativeLayout>

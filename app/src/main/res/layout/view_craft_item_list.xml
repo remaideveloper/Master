@@ -3,7 +3,6 @@
                 android:id="@+id/layout_background"
                 android:layout_width="fill_parent"
                 android:layout_height="140.0dip"
-                android:background="@color/background"
                 android:focusable="false">
 
     <RelativeLayout
@@ -38,7 +37,6 @@
                 android:maxLines="2"
                 android:scrollHorizontally="true"
                 android:text="Title"
-                android:textAppearance="@style/TextMediumStyle"
                 />
         </RelativeLayout>
     </RelativeLayout>

@@ -19,7 +19,6 @@
             android:layout_centerVertical="true"
             android:text="@string/brewing"
             android:textColor="@color/text_title"
-            android:textAppearance="@style/TextMediumStyle"
             />
     </RelativeLayout>
 
@@ -104,7 +103,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-4.0dip"
                     android:textColor="@color/text_title"
-                    android:textAppearance="@style/TextMediumStyle"
                     />
 
                 <TextView
@@ -112,8 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/smeltTitle"
-                    android:layout_marginTop="-2.0dip"
-                    android:textAppearance="@style/TextSmallStyle"/>
+                    android:layout_marginTop="-2.0dip"/>
             </RelativeLayout>
         </RelativeLayout>
 
@@ -122,8 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="@string/with"
-            android:textAppearance="@style/TextMediumStyle"/>
+            android:text="@string/with"/>
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                         android:id="@+id/fuelItem"
@@ -145,7 +141,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-4.0dip"
                     android:textColor="@color/text_title"
-                    android:textAppearance="@style/TextMediumStyle"
                     />
 
                 <TextView
@@ -153,8 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/fuelTitle"
-                    android:layout_marginTop="-2.0dip"
-                    android:textAppearance="@style/TextSmallStyle"/>
+                    android:layout_marginTop="-2.0dip"/>
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

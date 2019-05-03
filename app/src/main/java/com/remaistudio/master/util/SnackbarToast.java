@@ -21,7 +21,7 @@ public class SnackbarToast {
         TextView tv = view.findViewById(com.google.android.material.R.id.snackbar_text);
         tv.setTextColor(Color.WHITE);
         snack.setAction(resIdButton, onClickListener);
-        snack.setActionTextColor(context.getResources().getColor(R.color.search_color));
+//        snack.setActionTextColor(context.getResources().getColor(R.color.search_color));
         snack.show();
     }
 

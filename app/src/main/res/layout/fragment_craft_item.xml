@@ -4,7 +4,6 @@
     android:id="@+id/container"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="@color/background"
                 android:transitionGroup="true"
     tools:targetApi="lollipop">
 
@@ -21,7 +20,6 @@
                 android:id="@+id/titleSection"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/dark"
                 android:paddingBottom="24.0dip"
                 android:paddingLeft="30.0dip"
                 android:paddingRight="30.0dip"
@@ -59,7 +57,6 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/title"
                             android:layout_marginTop="-1.0dip"
-                            android:textColor="@color/secondary"
                             android:textSize="15.0dip"/>
                     </RelativeLayout>
                 </RelativeLayout>

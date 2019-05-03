@@ -8,7 +8,6 @@
         android:id="@+id/vHead"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:background="@drawable/colorPartEnabled"
         android:layout_centerHorizontal="true"/>
 
     <View
@@ -17,7 +16,6 @@
         android:layout_height="96dp"
         android:layout_below="@+id/vHead"
         android:layout_margin="4dp"
-        android:background="@drawable/colorPartEnabled"
         android:layout_centerHorizontal="true"/>
 
     <View
@@ -27,7 +25,6 @@
         android:layout_below="@+id/vHead"
         android:layout_toLeftOf="@+id/vBody"
         android:layout_marginTop="4dp"
-        android:background="@drawable/colorPartEnabled"
         android:layout_centerHorizontal="true"/>
 
     <View
@@ -37,7 +34,6 @@
         android:layout_below="@+id/vHead"
         android:layout_toRightOf="@+id/vBody"
         android:layout_marginTop="4dp"
-        android:background="@drawable/colorPartEnabled"
         android:layout_centerHorizontal="true"/>
 
     <View
@@ -46,7 +42,6 @@
         android:layout_height="96dp"
         android:layout_below="@+id/vBody"
         android:layout_alignLeft="@+id/vBody"
-        android:background="@drawable/colorPartEnabled"
         android:layout_centerHorizontal="true"/>
 
     <View
@@ -55,7 +50,6 @@
         android:layout_height="96dp"
         android:layout_below="@+id/vBody"
         android:layout_alignRight="@+id/vBody"
-        android:background="@drawable/colorPartEnabled"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

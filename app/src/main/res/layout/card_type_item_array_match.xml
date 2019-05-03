@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background"
     android:foreground="?android:attr/selectableItemBackground">
 
     <ImageView
@@ -12,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:background="@color/background"
         android:foreground="?android:attr/selectableItemBackground"
         android:gravity="center"
         android:scaleType="centerCrop"
@@ -26,13 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_margin="8dp"
-        android:background="@color/colorPremium"
         android:ellipsize="end"
         android:maxLength="100"
         android:maxLines="1"
         android:padding="2dp"
         android:text="@string/premium"
-        android:textAppearance="@style/TextMediumStyle"
         android:textColor="#ffffff"
         android:visibility="invisible"
         app:layout_constraintRight_toRightOf="parent"

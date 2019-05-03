@@ -19,7 +19,6 @@
             android:layout_centerVertical="true"
             android:text="@string/description"
             android:textColor="@color/text_title"
-            android:textAppearance="@style/TextMediumStyle"
             />
     </RelativeLayout>
 
@@ -31,6 +30,5 @@
         android:layout_below="@+id/descriptionHeader"
         android:layout_marginTop="6.0dip"
         android:lineSpacingExtra="5.0dip"
-        android:text="N/A"
-        android:textAppearance="@style/TextSmallStyle"/>
+        android:text="N/A"/>
 </RelativeLayout>

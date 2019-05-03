@@ -31,7 +31,6 @@
             android:layout_marginLeft="@dimen/fab_margin"
             android:text="100 coins"
             android:textAllCaps="true"
-            android:textAppearance="@style/TextMediumStyle"
             app:layout_constraintLeft_toRightOf="@id/imagePurchaseIcon"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -40,7 +39,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="9.99$"
-            android:textAppearance="@style/TextSmallStyle"
             app:layout_constraintLeft_toLeftOf="@id/textPurchaseDesc"
             app:layout_constraintRight_toLeftOf="@+id/buttonBuy"
             app:layout_constraintTop_toBottomOf="@id/textPurchaseDesc"
@@ -48,7 +46,6 @@
 
         <Button
             android:id="@+id/buttonBuy"
-            style="@style/CustomButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"

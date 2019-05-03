@@ -9,7 +9,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@+id/bannerLayout"
-        android:background="@color/divider"
         android:clickable="true"
         android:clipToPadding="false"
         android:columnWidth="105.0dip"
@@ -38,7 +37,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/loading"
-        android:textAppearance="@style/TextSmallStyle"/>
+        android:text="@string/loading"/>
 
 </RelativeLayout>

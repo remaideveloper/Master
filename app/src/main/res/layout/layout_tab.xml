@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.TabLayout
+<com.google.android.material.tabs.TabLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tab_layout"
@@ -12,6 +12,5 @@
     app:tabIndicatorColor="@android:color/white"
     app:tabIndicatorHeight="6dp"
     app:tabMode="fixed"
-    app:theme="@style/TabLayoutStyle"
     app:tabSelectedTextColor="@android:color/white"
     app:tabTextColor="@android:color/white"/>

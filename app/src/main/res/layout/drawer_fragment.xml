@@ -7,5 +7,4 @@
     android:focusableInTouchMode="true"
     android:scrollbars="vertical"
     android:focusable="true"
-    android:layout_height="match_parent"
-    android:background="@color/myDrawerBackground"/>
+    android:layout_height="match_parent"/>

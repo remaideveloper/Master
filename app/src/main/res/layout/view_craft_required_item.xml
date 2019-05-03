@@ -27,7 +27,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-4.0dip"
             android:textColor="@color/text_title"
-            android:textAppearance="@style/TextMediumStyle"
             />
 
         <TextView
@@ -35,7 +34,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
-            android:layout_marginTop="-2.0dip"
-            android:textAppearance="@style/TextSmallStyle"/>
+            android:layout_marginTop="-2.0dip"/>
     </RelativeLayout>
 </RelativeLayout>

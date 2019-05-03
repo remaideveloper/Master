@@ -31,7 +31,6 @@
             android:layout_marginRight="6dp"
             android:layout_marginBottom="6dp"
             android:layout_marginLeft="6dp"
-            android:textAppearance="@style/TextSmallStyle"
             android:textStyle="bold"
             android:maxLines="2"
             android:layout_marginStart="8dp"
@@ -59,7 +58,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
             android:gravity="center"
-            style="@style/CustomButton"
             android:textSize="@dimen/button_text_size"
             tools:text="Visit site"
             app:layout_constraintTop_toBottomOf="@id/contentad_image"/>
@@ -73,7 +71,6 @@
             android:layout_marginTop="4dp"
             android:ellipsize="marquee"
             android:maxLines="3"
-            android:textAppearance="@style/TextSmallStyle"
             tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             app:layout_constraintTop_toBottomOf="@id/contentad_call_to_action"/>
 
@@ -91,7 +88,6 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/contentad_logo"
                 android:layout_toStartOf="@+id/contentad_logo"
-                android:textAppearance="@style/TextSmallStyle"
                 tools:text="Contens Advertisement"/>
 
             <ImageView

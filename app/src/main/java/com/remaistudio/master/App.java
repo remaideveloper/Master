@@ -18,7 +18,7 @@ public class App extends Application {
         super.onCreate();
         Log.d(TAG, "onCreate: ");
         Picasso.setSingletonInstance(new Builder(getApplicationContext()).memoryCache(new LruCache(10000000)).build());
-        MobileAds.initialize(this, Config.ADMOB_APP_ID);
+//        MobileAds.initialize(this, Config.ADMOB_APP_ID);
     }
 
     protected void attachBaseContext(Context context) {

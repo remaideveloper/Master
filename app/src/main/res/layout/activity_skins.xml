@@ -80,8 +80,6 @@
                     android:id="@+id/textSkin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextMediumStyle"
-                    android:textColor="@color/black"
                     tools:text="100 / 500"/>
 
             </LinearLayout>
@@ -100,10 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_margin="8dp"
-                    android:src="@drawable/ic_fab_back"
-                    app:fab_colorNormal="@color/colorNormal"
-                    app:fab_colorPressed="@color/colorPressed"
-                    app:fab_colorRipple="@color/colorRipple"/>
+                    android:src="@drawable/ic_fab_back"/>
 
                 <com.github.clans.fab.FloatingActionButton
                     android:id="@+id/fab_save"
@@ -111,10 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_margin="8dp"
-                    android:src="@drawable/ic_fab_save"
-                    app:fab_colorNormal="@color/colorNormal"
-                    app:fab_colorPressed="@color/colorPressed"
-                    app:fab_colorRipple="@color/colorRipple"/>
+                    android:src="@drawable/ic_fab_save"/>
 
                 <com.github.clans.fab.FloatingActionButton
                     android:id="@+id/fab_next"
@@ -122,10 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_margin="8dp"
-                    android:src="@drawable/ic_fab_next"
-                    app:fab_colorNormal="@color/colorNormal"
-                    app:fab_colorPressed="@color/colorPressed"
-                    app:fab_colorRipple="@color/colorRipple"/>
+                    android:src="@drawable/ic_fab_next"/>
 
             </LinearLayout>
 

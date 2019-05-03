@@ -17,9 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="@string/crafting"
-            android:textColor="@color/primary"
-            android:textAppearance="@style/TextMediumStyle"/>
+            android:text="@string/crafting"/>
 
         <TextView
             android:id="@+id/craftingProduces"
@@ -27,8 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="6 x item"
-            android:textAppearance="@style/TextSmallStyle"/>
+            android:text="6 x item"/>
     </RelativeLayout>
 
     <LinearLayout

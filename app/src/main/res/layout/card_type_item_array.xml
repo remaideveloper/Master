@@ -28,7 +28,6 @@
         android:maxLength="100"
         android:maxLines="1"
         android:padding="@dimen/layout_padding"
-        style="@style/TextMediumStyle.White"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:text="@string/title_example" />
 
@@ -39,12 +38,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_margin="8dp"
-        android:background="@color/colorPremium"
         android:ellipsize="end"
         android:maxLength="100"
         android:maxLines="1"
         android:padding="2dp"
-        style="@style/TextMediumStyle.White"
         android:visibility="gone"
         tools:visibility="visible"
         tools:text="100 coins"

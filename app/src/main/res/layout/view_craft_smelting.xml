@@ -16,7 +16,6 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="14dp"
         android:text="@string/brewing"
-        android:textAppearance="@style/TextMediumStyle"
         android:textColor="@color/text_title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -96,7 +95,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-4.0dip"
-            android:textAppearance="@style/TextMediumStyle"
             android:textColor="@color/text_title" />
 
         <TextView
@@ -104,8 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/smeltTitle"
-            android:layout_marginTop="-2.0dip"
-            android:textAppearance="@style/TextSmallStyle" />
+            android:layout_marginTop="-2.0dip"/>
 
     </RelativeLayout>
 
@@ -115,7 +112,6 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="@string/with"
-            android:textAppearance="@style/TextMediumStyle"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@id/image_smelting_container"
             app:layout_constraintBottom_toBottomOf="@id/image_smelting_container"/>
@@ -137,7 +133,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-4.0dip"
-                    android:textAppearance="@style/TextMediumStyle"
                     android:textColor="@color/text_title" />
 
                 <TextView
@@ -145,8 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/fuelTitle"
-                    android:layout_marginTop="-2.0dip"
-                    android:textAppearance="@style/TextSmallStyle" />
+                    android:layout_marginTop="-2.0dip" />
 
         </RelativeLayout>
 </androidx.constraintlayout.ConstraintLayout>

@@ -18,8 +18,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:text="@string/used_to_make"
-            android:textColor="@color/text_title"
-            android:textAppearance="@style/TextMediumStyle"/>
+            android:textColor="@color/text_title"/>
     </RelativeLayout>
 
     <LinearLayout

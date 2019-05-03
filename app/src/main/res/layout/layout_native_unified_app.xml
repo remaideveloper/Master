@@ -51,13 +51,12 @@
                 android:layout_toEndOf="@+id/appinstall_app_icon"
                 android:layout_toRightOf="@+id/appinstall_app_icon"
                 android:maxLines="2"
-                android:textAppearance="@style/TextSmallStyle"
                 android:textStyle="bold"
                 tools:text="Application Name Example"/>
 
         </RelativeLayout>
 
-        <androidx.constraintlayout.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -69,7 +68,6 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
-                tools:background="@color/white"
                 tools:ignore="ContentDescription"
                 app:layout_constraintDimensionRatio="H,16:9"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -83,14 +81,13 @@
                 app:layout_constraintTop_toBottomOf="@id/appinstall_image"
                 tools:visibility="gone"/>
 
-        </androidx.constraintlayout.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/appinstall_call_to_action"
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
             android:gravity="center"
-            style="@style/CustomButton"
             android:textSize="@dimen/button_text_size"
             tools:text="Install"/>
 
@@ -103,7 +100,6 @@
             android:layout_marginTop="4dp"
             android:ellipsize="marquee"
             android:maxLines="3"
-            android:textAppearance="@style/TextSmallStyle"
             tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
 
         <RelativeLayout
@@ -154,7 +150,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textAppearance="@style/TextSmallStyle"
                 tools:text="Contents Advertisement" />
 
         </RelativeLayout>
