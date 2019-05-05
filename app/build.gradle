@@ -63,8 +63,8 @@ dependencies {
 
 
     implementation group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
-    compile "androidx.core:core-ktx:1.0.1"
-    compile "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-alpha04"
+    implementation "androidx.core:core-ktx:1.0.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-alpha04"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     api 'tk.zielony:carbon:0.16.0.1'

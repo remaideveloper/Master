@@ -37,10 +37,10 @@ public class RecyclerViewManager extends RecyclerView {
                 super.setLayoutManager(new GridLayoutManager(getContext(), i));
                 return;
             case LinearLayoutVertical:
-                super.setLayoutManager(new LinearLayoutManager(getContext(), 1, false));
+                super.setLayoutManager(new LinearLayoutManager(getContext(), VERTICAL, false));
                 return;
             case LinearLayoutHorizontal:
-                super.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
+                super.setLayoutManager(new LinearLayoutManager(getContext(), HORIZONTAL, false));
                 return;
             default:
                 return;

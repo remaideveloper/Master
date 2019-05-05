@@ -57,7 +57,7 @@
 
         </RelativeLayout>
 
-        <androidx.constraintlayout.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -83,7 +83,7 @@
                 app:layout_constraintTop_toBottomOf="@id/appinstall_image"
                 tools:visibility="gone"/>
 
-        </androidx.constraintlayout.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/appinstall_call_to_action"
