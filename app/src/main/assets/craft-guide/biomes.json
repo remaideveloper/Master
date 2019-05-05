@@ -1,0 +1,598 @@
+[
+  {
+    "id": "11",
+    "name": "Frozen River",
+    "temperature": 0,
+    "links": [
+      "Ice",
+      "Water",
+      "Sand",
+      "Clay"
+    ],
+    "description": "This variant of the river only spawns in ice plains biomes. The surface layer of water is frozen."
+  },
+  {
+    "id": "12",
+    "name": "Ice Plains",
+    "temperature": 0,
+    "links": [
+      "Snow Block",
+      "Snowfall",
+      "Oak Tree",
+      "Ice",
+      "Spruce Tree"
+    ],
+    "description": "A relatively rare but expansive, flat biome with a huge amount of snow. It does not rain in this biome — it snows instead. Lakes and rivers are frozen over. Hills tend to be more mountainous. Sugar cane will spawn in this biome, but can become uprooted when chunks load as the water sources freeze to ice. There are very few natural oak trees in this biome. Spruce trees may also generate. Due to the biome's size, snow cover, and scarcity of wood, initial survival becomes difficult in comparison to other biomes."
+  },
+  {
+    "id": "140",
+    "name": "Ice Plains Spikes",
+    "temperature": 0,
+    "links": [
+      "Packed Ice",
+      "Snow Block"
+    ],
+    "description": "A relatively rare variation of the Ice Plains biome that features snow blocks and large spikes of packed ice, on which snow will later fall. Usually the spikes are several blocks tall, but some long, thin spikes can reach y=120 from normal ground level (Y=64). Scattered frozen lakes consisting of packed ice generate."
+  },
+  {
+    "id": "26",
+    "name": "Cold Beach",
+    "temperature": 0.05,
+    "links": [
+      "Sand",
+      "Snow Block",
+      "Snowfall"
+    ],
+    "description": "A beach with snowy weather conditions. Often found when Ice Plains biomes border an ocean biome."
+  },
+  {
+    "id": "30",
+    "name": "Cold Taiga",
+    "temperature": -0.5,
+    "links": [
+      "Snow Block",
+      "Snowfall",
+      "Ice",
+      "Spruce Tree",
+      "Sunflower",
+      "Wolf"
+    ],
+    "description": "A snowy variation of the taiga biome with fern and large fern. Before 13w36a, all taigas were snow-covered but without fern and large fern."
+  },
+  {
+    "id": "158",
+    "name": "Cold Taiga M",
+    "temperature": -0.5,
+    "links": [
+      "Spruce Tree",
+      "Snow Block",
+      "Snowfall",
+      "Large Fern",
+      "Wolf"
+    ],
+    "description": "Large, mountainous version of the snowy taiga."
+  },
+  {
+    "id": "3",
+    "name": "Extreme Hills",
+    "temperature": 0.2,
+    "links": [
+      "Oak Tree",
+      "Spruce Tree",
+      "Sunflower",
+      "Emerald Ore",
+      "Monster Egg"
+    ],
+    "description": "A highly mountainous biome (with some mountains reaching y=130) with dull green-blue grass and a few scattered oak and spruce trees. Cliffs, peaks, valleys, waterfalls, overhangs, floating islands, and many other structures exist, offering outstanding views. Snowfall may also occur at certain heights. This is a highland climate if above y95. More underground cave systems are present here than in any other biome. Falling is a significant risk, as there are many ledges and sudden drops large enough to cause severe fall damage or even death. Extreme hills are the only biomes where emerald ores and silverfish can be found naturally."
+  },
+  {
+    "id": "131",
+    "name": "Extreme Hills M",
+    "temperature": 0.2,
+    "links": [
+      "Spruce Tree",
+      "Oak Tree",
+      "Gravel"
+    ],
+    "description": "Variant of the regular extreme hills biome that features higher mountain peaks, most of which reach into the clouds. Mountains are composed mainly of gravel and a little bit of dirt and grass, with a small population of spruce trees and sparse oak trees."
+  },
+  {
+    "id": "5",
+    "name": "Taiga",
+    "temperature": 0.25,
+    "links": [
+      "Spruce Tree",
+      "Sunflower",
+      "Fern",
+      "Wolf"
+    ],
+    "description": "A biome densely filled with spruce trees, fern and large fern. Wolves tend to spawn here fairly commonly."
+  },
+  {
+    "id": "133",
+    "name": "Taiga M",
+    "temperature": 0.25,
+    "links": [
+      "Spruce Tree",
+      "Sunflower",
+      "Large Fern",
+      "Sheep"
+    ],
+    "description": "Mountainous version of the snowless taiga biome."
+  },
+  {
+    "id": "32",
+    "name": "Mega Taiga",
+    "temperature": 0.3,
+    "links": [
+      "Spruce Tree",
+      "Podzol",
+      "Large Fern",
+      "Wolf",
+      "Moss Stone",
+      "Brown Mushroom",
+      "Dirt"
+    ],
+    "description": "Mega taiga is an uncommon biome composed of spruce trees, much like the standard taiga biome. However, some trees are 2×2 thick and very tall, not unlike large Jungle trees. Moss stone boulders appear frequently, brown mushrooms are common and a dirt-type block called podzol can be found in this biome. There are also patches of coarse dirt which will not grow grass. Wolves may also spawn here, as they do in normal Taiga biomes."
+  },
+  {
+    "id": "160",
+    "name": "Mega Spruce Taiga",
+    "temperature": 0.25,
+    "links": [
+      "Spruce Tree",
+      "Podzol",
+      "Large Fern",
+      "Grass",
+      "Moss Stone",
+      "Brown Mushroom",
+      "Dirt"
+    ],
+    "description": "A variation of the mega taiga. In this biome there is a much higher density of smaller spruce trees. Also, the tall trees look like large spruce trees instead of the short-topped trees in the regular mega taiga biome."
+  },
+  {
+    "id": "34",
+    "name": "Extreme Hills+",
+    "temperature": 0.2,
+    "links": [
+      "Stone",
+      "Dirt",
+      "Spruce Tree",
+      "Oak Tree"
+    ],
+    "description": "Extreme Hills+ is a variant of the regular extreme hills biome, adding a moderate amount of spruce trees and scattered oak trees."
+  },
+  {
+    "id": "162",
+    "name": "Extreme Hills+ M",
+    "temperature": 0.2,
+    "links": [
+      "Spruce Tree",
+      "Oak Tree",
+      "Gravel",
+      "Grass"
+    ],
+    "description": "Variant of the Extreme Hills+ biome where huge gravel mountains appear with sparse oak and spruce trees and small patches of grass."
+  },
+  {
+    "id": "25",
+    "name": "Stone Beach",
+    "temperature": 0.2,
+    "links": [
+      "Stone"
+    ],
+    "description": "This stone-covered biome often appears adjacent to mountains and the ocean. Depending on the height of the nearby land, it can generate medium slopes or huge cliffs. Because of a tweet of Jeb, this biome was previously referred to as cliff biome.[4]"
+  },
+  {
+    "id": "9",
+    "name": "The End",
+    "temperature": 0.5,
+    "links": [
+      "End Stone",
+      "Enderman",
+      "Obsidian",
+      "End Crystal",
+      "Ender Dragon"
+    ],
+    "description": "Main article: The End\nThis biome is used to generate the End. Large amounts of enderman spawn in this biome. This is the only biome that the ender dragon naturally spawns in. Most of the End's structure is provided by the dimension rather than the biome. It does not rain nor snow in this biome. If the biome is used for a superflat world, the sky will be dark gray, an ender dragon will spawn at 0,0 coordinates in the Overworld, and only endermen will spawn (at night), but the world structure will be as specified in the superflat custom options, with no obsidian towers nor ender crystals, unless you add the string \"decoration\" to the superflat preset."
+  },
+  {
+    "id": "1",
+    "name": "Plains",
+    "temperature": 0.8,
+    "links": [
+      "Tall Grass",
+      "Grass",
+      "Sunflower",
+      "NPC Village",
+      "Horse"
+    ],
+    "description": "A relatively flat biome with rolling hills and much grass, and some occasional double-height tallgrass but with few trees. Gullies, water holes, and NPC villages are common. Cave openings and water or lava springs are easily identifiable due to its unobstructed terrain. Passive mobs spawn often in plains biomes, and it is also one of two biomes where horses spawn naturally, the other biome being savanna."
+  },
+  {
+    "id": "128",
+    "name": "Plains M",
+    "temperature": 0.8,
+    "links": [
+      "Tall Grass",
+      "Grass",
+      "Sunflower",
+      "Horse"
+    ],
+    "description": "A variant of the Plains biome with occasional water patches and a slightly mountainous terrain."
+  },
+  {
+    "id": "129",
+    "name": "Sunflower Plains",
+    "temperature": 0.8,
+    "links": [
+      "Grass",
+      "Sunflower",
+      "Horse"
+    ],
+    "description": "This biome is a variation of the plains biome, where sunflowers naturally spawn in abundance. Also, because it is a variation of the plains biome, horses can spawn in this biome."
+  },
+  {
+    "id": "4",
+    "name": "Forest",
+    "temperature": 0.7,
+    "links": [
+      "Oak Tree",
+      "Birch Tree",
+      "Sunflower",
+      "Wolf",
+      "Brown Mushroom"
+    ],
+    "description": "A biome with a lot of trees, occasional hills, and a fair amount of tall grass. Oak and birch trees grow in this biome. Mushrooms, grass, poppies, and dandelions can occasionally be found. Forests can occasionally be generated in the center of plains biomes. This is one of the best biomes to start out in, due to the abundance of wood. The frequency of trees makes it dangerous to navigate at night, due to obscured vision, and ease of mobs to spawn. Forest biomes are also one of the smallest biomes."
+  },
+  {
+    "id": "132",
+    "name": "Flower Forest",
+    "temperature": 0.7,
+    "links": [
+      "Sunflower",
+      "Oak Tree",
+      "Birch Tree",
+      "Acacia Tree",
+      "Dark Oak Tree",
+      "Spruce Tree"
+    ],
+    "description": "A variant of the forest biome that has fewer trees and huge amounts of various flowers. There are certain flowers that are exclusive only to the flower forest."
+  },
+  {
+    "id": "6",
+    "name": "Swampland",
+    "temperature": 0.8,
+    "links": [
+      "Witch Hut",
+      "Oak Tree",
+      "Grass",
+      "Vines",
+      "Lily Pad",
+      "Clay",
+      "Brown Mushroom",
+      "Slime",
+      "Giant Mushroom"
+    ],
+    "description": "A biome characterized by a mix of flat, dry areas around the sea level and shallow pools of water with floating lily pads. Clay, sand, and dirt are commonly found at the bottom of these pools. The colors of the water, grass, leaves, and vines are much darker than in other biomes. Trees are often covered with vines and can be found growing out from the water, and mushrooms and sugar canes are very abundant. Witch huts spawn exclusively in swamps, and slimes will also spawn naturally at night, most commonly on full moons, making this an especially dangerous biome at night. Temperature varies randomly within the biome, not affected by altitude, causing colors to vary. Giant mushrooms spawn in this biome in the 0.10.0 update of Minecraft Pocket Edition."
+  },
+  {
+    "id": "134",
+    "name": "Swampland M",
+    "temperature": 0.8,
+    "links": [
+      "Swamp Tree",
+      "Vines",
+      "Lily Pad",
+      "Water",
+      "Witch"
+    ],
+    "description": "A slightly hillier swampland with greener grass. Witch Huts do not generate in this biome, unlike the normal swampland biome."
+  },
+  {
+    "id": "7",
+    "name": "River",
+    "temperature": 0.5,
+    "links": [
+      "Water",
+      "Sand",
+      "Clay"
+    ],
+    "description": "A biome that consists of water blocks that form in an elongated, curving shape similar to a real river. Unlike real rivers, however, they have no current. Rivers cut through terrain or separate the main biomes. They attempt to join up with ocean on the other side, but will sometimes loop around to the same area of ocean. Rarely, they can have no connection to the ocean and form a circle. They have a dull green grass hue, much like the ocean, and trace amounts of oak trees tend to spawn there as well. Rivers are also a reliable source of clay. These biomes are good for fishing."
+  },
+  {
+    "id": "16",
+    "name": "Beach",
+    "temperature": 0.8,
+    "links": [
+      "Sand"
+    ],
+    "description": "Generated on the shores of oceans, beaches are composed of sand. Beaches penetrate the landscape, removing the original blocks and placing in sand blocks. Some beaches generate with gravel instead of sand. These are also useful for fishing. For the history of beaches, see the Beach page."
+  },
+  {
+    "id": "21",
+    "name": "Jungle",
+    "temperature": 0.95,
+    "links": [
+      "Jungle Tree",
+      "Jungle Temple",
+      "Large Fern",
+      "Sunflower",
+      "Vines",
+      "Ocelot",
+      "Cocoa Bean",
+      "Melon (Slice)"
+    ],
+    "description": "A very dense, but rather uncommon tropical biome. It features large jungle trees that can reach up to 31 blocks tall with 2×2 thick trunks. Oak trees are also common. The landscape is lush green and quite hilly, with many small lakes of water often nestled into deep valleys, sometimes above sea level. Leaves cover much of the forest floor—these \"bush trees\" have single-blocks of jungle wood for trunks, surrounded by oak leaves. When inside a jungle, the sky will become noticeably lighter. This is the only biome containing jungle trees. Vines are found alongside most blocks and may be found close to the surface in caves. Ocelots, jungle temples, and cocoa plants spawn exclusively in this biome. Melons can spawn here, making jungle biomes the only place where melons naturally spawn. Melons spawn in small patches, similar to pumpkins."
+  },
+  {
+    "id": "149",
+    "name": "Jungle M",
+    "temperature": 0.95,
+    "links": [
+      "Jungle Tree",
+      "Jungle Temple",
+      "Large Fern",
+      "Sunflower",
+      "Vines",
+      "Ocelot",
+      "Cocoa Bean",
+      "Melon (Slice)"
+    ],
+    "description": "Much more mountainous version of the normal jungle, with foliage so thick that the ground is barely visible. A very resource-demanding biome. Due to the hilly nature of the terrain in this biome, and the height of the tall jungle trees, trees frequently reach into and go above the clouds."
+  },
+  {
+    "id": "23",
+    "name": "Jungle Edge",
+    "temperature": 0.95,
+    "links": [
+      "Jungle Tree",
+      "Large Fern",
+      "Melon (Slice)",
+      "Sunflower",
+      "Vines",
+      "Ocelot"
+    ],
+    "description": "Only spawns at the border of a jungle biome and any other biome. It's like a jungle but with fewer trees and bushes. Additionally, huge jungle trees will not spawn there."
+  },
+  {
+    "id": "151",
+    "name": "Jungle Edge M",
+    "temperature": 0.95,
+    "links": [
+      "Jungle Tree",
+      "Oak Tree",
+      "Grass",
+      "Sunflower",
+      "Vines"
+    ],
+    "description": "An extremely rare and much more mountainous form of jungle edge sometimes found between jungle M and normal jungle edge. Very few to no tall trees."
+  },
+  {
+    "id": "27",
+    "name": "Birch Forest",
+    "temperature": 0.6,
+    "links": [
+      "Birch Tree",
+      "Sunflower"
+    ],
+    "description": "A forest made solely out of birch trees."
+  },
+  {
+    "id": "155",
+    "name": "Birch Forest M",
+    "temperature": 0.6,
+    "links": [
+      "Birch Tree",
+      "Sunflower"
+    ],
+    "description": "A variation of the birch forest biome which features taller birch trees than usual."
+  },
+  {
+    "id": "28",
+    "name": "Birch Forest Hills",
+    "temperature": 0.6,
+    "links": [
+      "Birch Tree",
+      "Grass",
+      "Dandelion",
+      "Cow"
+    ],
+    "description": "Birch forest with hills."
+  },
+  {
+    "id": "156",
+    "name": "Birch Forest Hills M",
+    "temperature": 0.6,
+    "links": [
+      "Birch Tree",
+      "Grass",
+      "Dandelion",
+      "Cow"
+    ],
+    "description": "Variation of the birch forest hills biome, featuring very large mountains and tall birch trees."
+  },
+  {
+    "id": "29",
+    "name": "Roofed Forest",
+    "temperature": 0.7,
+    "links": [
+      "Dark Oak Tree",
+      "Brown Mushroom",
+      "Rose Bush"
+    ],
+    "description": "This biome, also known as Black Forest, is composed of dark oak trees, a mostly closed roof of leaves, and occasional large mushrooms. Its trees are very close to each other and it has such a dense foliage that some of the forest will be dark enough for hostile mobs to spawn, even during the day."
+  },
+  {
+    "id": "157",
+    "name": "Roofed Forest M",
+    "temperature": 0.7,
+    "links": [
+      "Dark Oak Tree"
+    ],
+    "description": "Mountainous version of the Roofed Forest biome, with steep cliffs lining the edge."
+  },
+  {
+    "id": "14",
+    "name": "Mushroom Island",
+    "temperature": 0.9,
+    "links": [
+      "Brown Mushroom",
+      "Mycelium",
+      "Mooshroom"
+    ],
+    "description": "This rare biome consists of a mixture of flat landscape and steep hills and has mycelium instead of grass as its surface. However, if you do place down grass, it is a very bright green color, not unlike that of the jungle. Mushroom islands are most often adjacent to an ocean and are often found isolated from other biomes. It is the one of two biomes where huge mushrooms can spawn naturally, and where mushrooms can grow in full sunlight.\nTechnically no mobs other than mooshrooms spawn naturally in this biome, including the usual night-time hostile mobs. This also applies to caves, abandoned mine shafts, and other structures underground, meaning exploring underground is supposedly safe. However most mushroom islands have at least 1 square of another biome on them (a single piece of grass mixed in with the mycelium) which allows hostile mobs to spawn freely on the majority of mushroom islands. Monster spawners will still spawn mobs, and the player will still be able to breed animals and spawn mobs using items.\nTrees can be grown from saplings in this biome, as well as other dirt or grass-based plants, as long as they are not directly adjacent to mycelium, which will take over the dirt square from the plant and uproot it. Mycelium cannot be tilled directly, but it can be dug away and replaced as dirt, then immediately tilled. Once created, farmland can resist takeover by mycelium."
+  },
+  {
+    "id": "15",
+    "name": "Mushroom Island Shore",
+    "temperature": 0.9,
+    "links": [
+      "Brown Mushroom",
+      "Mycelium",
+      "Mooshroom"
+    ],
+    "description": "Mushroom shores represent the flat shore area of the mushroom biome."
+  },
+  {
+    "id": "2",
+    "name": "Desert",
+    "temperature": 2,
+    "links": [
+      "Sand",
+      "Cactus",
+      "Dead Shrub",
+      "Sandstone",
+      "Sugar Cane",
+      "Desert Well",
+      "Desert Temple",
+      "NPC Village"
+    ],
+    "description": "A barren biome consisting mostly of sand, large dunes, dead bushes, and cacti. Sandstone is commonly found underneath the sand. It never rains in this biome. No passive mobs spawn naturally in deserts. Sugar cane can be found if the desert is next to an ocean or river biome. The lack of visual obstruction makes mobs highly visible at night. Desert villages, desert wells and desert temples are found exclusively in this biome."
+  },
+  {
+    "id": "130",
+    "name": "Desert M",
+    "temperature": 2,
+    "links": [
+      "Sand",
+      "Cactus",
+      "Water",
+      "Sugar Cane"
+    ],
+    "description": "Unlike in normal deserts, patches of water can be found in desert M."
+  },
+  {
+    "id": "35",
+    "name": "Savanna",
+    "temperature": 1.2,
+    "links": [
+      "Acacia Tree",
+      "Tall Grass",
+      "NPC Village",
+      "Horse",
+      "Cow",
+      "Sheep"
+    ],
+    "description": "A relatively flat and dry biome with a dry grass color and scattered Acacia Trees. Villages can generate in this biome, and it is one of only two biomes (the other being plains) where horses spawn naturally. Rain never falls in this biome, similar to the desert."
+  },
+  {
+    "id": "163",
+    "name": "Savanna M",
+    "temperature": 1.2,
+    "links": [
+      "Acacia Tree",
+      "Tall Grass"
+    ],
+    "description": "Variant of the savanna biome. Dirt paths and giant mountains are prevalent in this biome. However, this biome is unique in that its mountains can generate past the clouds, and even to the world height limit, without using the AMPLIFIED world type."
+  },
+  {
+    "id": "37",
+    "name": "Mesa",
+    "temperature": 2,
+    "links": [
+      "Dead Shrub",
+      "Hardened Clay",
+      "Stained Clay (Black)",
+      "Red Sand",
+      "Cactus",
+      "Red Sandstone",
+      "Mineshaft"
+    ],
+    "description": "Mesa is a rare biome made of hardened clay, stained clay, and dead bushes – similar to a desert. Red sand will also generate here instead of regular sand, with occasional cacti. Its composition is useful when other sources of clay are scarce. However, finding mesa biomes can be difficult due to their rarity. They also have above ground mineshafts for Pocket Edition exclusive."
+  },
+  {
+    "id": "165",
+    "name": "Mesa (Bryce)",
+    "temperature": 2,
+    "links": [
+      "Sand",
+      "Cactus",
+      "Dead Shrub",
+      "Hardened Clay",
+      "Stained Clay (Black)"
+    ],
+    "description": "Mesa (bryce) is a variant of the mesa biome, featuring a low desert-like ground area with tall, thin, spire-shaped columns of hardened clay, similar to the structures in the real Bryce Canyon."
+  },
+  {
+    "id": "36",
+    "name": "Plateau",
+    "temperature": 0,
+    "links": [],
+    "description": "Like the hills biomes, but flattened at the top. Added for savannas and mesas. (Mesa plateau F is a variant of the mesa plateau, adding a few layers of dirt/grass and a forest of small trees with brown leaves)"
+  },
+  {
+    "id": "8",
+    "name": "Hell",
+    "temperature": 0,
+    "links": [
+      "Magma Cube",
+      "Netherrack",
+      "Glowstone",
+      "Soul Sand",
+      "Nether Brick",
+      "Gravel",
+      "Nether Quartz",
+      "Ghast",
+      "Blaze",
+      "Skeleton",
+      "Zombie Pigman",
+      "Nether Fortress",
+      "Wither Skeleton",
+      "Nether Wart"
+    ],
+    "description": "Main article: The Nether\nThis is the biome used to generate the Nether. In a Superflat world using this biome, the Overworld will contain only Nether mobs (Ghasts, packs of Zombie Pigmen and occasional Magma Cubes) and won't receive rain, but it won't have Nether structures (such as Nether Quartz or Glowstone veins or Nether Fortresses), and it can still have water lakes and mineshafts."
+  },
+  {
+    "id": "0",
+    "name": "Ocean",
+    "temperature": 0.5,
+    "links": [
+      "Water",
+      "Gravel",
+      "Squid"
+    ],
+    "description": "A large, open biome made entirely of water going up to y=63, with underwater relief on the sea floor, such as small mountains and plains, usually including gravel. Oceans typically extend under 3,000 blocks in any direction. Small islands with infrequent vegetation can be found in oceans. Passive mobs are unable to spawn on these islands, but hostiles can. Cavern entrances can be found infrequently at the bottom of the ocean. In the Console versions, they surround the edges of the map.."
+  },
+  {
+    "id": "24",
+    "name": "Deep Ocean",
+    "temperature": 0.5,
+    "links": [
+      "Water",
+      "Gravel",
+      "Clay",
+      "Squid",
+      "Guardian",
+      "Ocean Monument"
+    ],
+    "description": "A variation of the Ocean biome. In deep ocean biomes, the ocean can exceed 30 blocks in depth, making it twice as deep as the normal ocean. In contrast to default oceans, the ground is mainly covered with gravel. Ocean monuments spawn in deep oceans, which spawn guardians."
+  },
+  {
+    "id": "13",
+    "name": "Hills",
+    "temperature": 0,
+    "links": [],
+    "description": "Hills are generated within forest, taiga, desert, jungle, and ice plains biomes (as well as their variants) and are referred in the F3 menu as \"ForestHills\", \"TaigaHills\", etc. Forest hills seem to be generated more rarely than the other hills in their respective main biome. Ice Mountains are usually taller, with height comparable to Extreme Hills biomes."
+  }
+]

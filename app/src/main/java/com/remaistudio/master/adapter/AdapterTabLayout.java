@@ -81,7 +81,6 @@ public class AdapterTabLayout extends FragmentStatePagerAdapter {
 
     private void setTabLayout() {
         mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.setBackgroundColor(ColorList.BLUE);
 
         if (getCount() <= 1) {
             mTabLayout.setVisibility(View.GONE);
