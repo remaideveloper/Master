@@ -18,6 +18,8 @@ import com.remaistudio.master.util.FragmentUtil;
 import com.remaistudio.master.util.StrictModeUtil;
 import com.remaistudio.master.util.rules.GDPRHelper;
 
+import carbon.widget.BackdropLayout;
+
 public class ActivityMain extends ActivityAppParent implements FragmentAbstract.InterfaceFragment {
 
     private static final String TAG = ActivityMain.class.getSimpleName();
@@ -33,8 +35,8 @@ public class ActivityMain extends ActivityAppParent implements FragmentAbstract.
         setContentView(LAYOUT);
         StrictModeUtil.init();
         mAdMobBanner = new AdMobBanner(this);
-        mNavigationViewUtil = new NavigationDrawerUtil(this);
         ToolbarUtil.setToolbarForDrawer(this, true);
+        mNavigationViewUtil = new NavigationDrawerUtil(this);
         GDPRHelper.getRequestConsentInfo(this);
 
         //Инициализируем транзакцию первого фрагмента
@@ -62,7 +64,7 @@ public class ActivityMain extends ActivityAppParent implements FragmentAbstract.
                 if (FragmentUtil.isNotLastFragment(this)) {
                     onBackPressed();
                 } else {
-                    mNavigationViewUtil.onOpenDrawer();
+                    mNavigationViewUtil.onToggleDrawer();
                 }
                 return true;
             default:
@@ -73,7 +75,7 @@ public class ActivityMain extends ActivityAppParent implements FragmentAbstract.
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        mNavigationViewUtil.onSyncStateDrawerToggle();
+//        mNavigationViewUtil.onSyncStateDrawerToggle();
     }
 
     @Override

@@ -5,52 +5,48 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
 import com.remaistudio.master.R;
 import com.remaistudio.master.util.FragmentUtil;
 import com.remaistudio.master.util.SocialManager;
 
+import carbon.widget.BackdropLayout;
+
 public class NavigationDrawerUtil implements NavigationView.OnNavigationItemSelectedListener {
 
     private FragmentActivity mActivity;
-    private DrawerLayout mDrawerLayout;
-    private NavigationView mNavigationView;
-    private ActionBarDrawerToggle mDrawerToggle;
-    private float mAnimateValues = 0.0f;
+    private BackdropLayout mBackdropLayout;
+    private boolean opened;
 
     public NavigationDrawerUtil(FragmentActivity activity) {
         mActivity = activity;
-        initNavigationDrawer();
-        initDrawerToggle();
-    }
-
-    private void initNavigationDrawer() {
-        mDrawerLayout = mActivity.findViewById(R.id.drawer_layout);
-        mNavigationView = mActivity.findViewById(R.id.nav_view);
-        mNavigationView.setNavigationItemSelectedListener(this);
-        initDrawerToggle();
+        mBackdropLayout = mActivity.findViewById(R.id.backdrop);
+        ((AppCompatActivity)mActivity).getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+        opened = false;
     }
 
     private void initDrawerToggle() {
-        mDrawerToggle = DrawerToggleUtil.getActionBarDrawerToggle(mActivity, mDrawerLayout);
-        mDrawerToggle.setDrawerIndicatorEnabled(true);
-        mDrawerToggle.setDrawerSlideAnimationEnabled(true);
-        mDrawerToggle.syncState();
-        mDrawerLayout.addDrawerListener(mDrawerToggle); //Назначить ActionBarDrawerToggle слушателем для DrawerLayout
+//        mDrawerToggle = DrawerToggleUtil.getActionBarDrawerToggle(mActivity, mDrawerLayout);
+//        mDrawerToggle.setDrawerIndicatorEnabled(true);
+//        mDrawerToggle.setDrawerSlideAnimationEnabled(true);
+//        mDrawerToggle.syncState();
+//        mDrawerLayout.addDrawerListener(mDrawerToggle); //Назначить ActionBarDrawerToggle слушателем для DrawerLayout
     }
 
     /**
      * Обновляет состояние и доступность nawDrawer. Вызывать из фрагмента.
      */
     public void onUpdateDrawerToggle() {
-        float[] floats = FragmentUtil.isNotLastFragment(mActivity) ? new float[]{0, 1} : new float[]{1, 0};
-        if (floats[0] != mAnimateValues) return;
-        mAnimateValues = floats[1];
-        DrawerToggleUtil.onAnimateDrawerToggle(mDrawerToggle, mDrawerLayout, floats);
+//        float[] floats = FragmentUtil.isNotLastFragment(mActivity) ? new float[]{0, 1} : new float[]{1, 0};
+//        if (floats[0] != mAnimateValues) return;
+//        mAnimateValues = floats[1];
+//        DrawerToggleUtil.onAnimateDrawerToggle(mDrawerToggle, mDrawerLayout, floats);
     }
 
 
@@ -70,32 +66,31 @@ public class NavigationDrawerUtil implements NavigationView.OnNavigationItemSele
                 SocialManager.onSendMail(mActivity, null, null, null);
                 break;
         }
-        mDrawerLayout.closeDrawers();
+        onCloseDrawer();
         return true;
     }
 
-    public void onConfigurationChanged(Configuration newConfig) {
-        mDrawerToggle.onConfigurationChanged(newConfig);
+    public void onOpenDrawer() {
+        mBackdropLayout.openLayout(BackdropLayout.Side.TOP);
+        opened = true;
+        ((AppCompatActivity)mActivity).getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
     }
 
-    public void onOpenDrawer() {
-        mDrawerLayout.openDrawer(GravityCompat.START);
+    public void onToggleDrawer(){
+        if (opened)
+            onCloseDrawer();
+        else
+            onOpenDrawer();
     }
 
     public void onCloseDrawer() {
-        mDrawerLayout.closeDrawer(mNavigationView);
+       mBackdropLayout.closeLayout();
+       opened = false;
+        ((AppCompatActivity)mActivity).getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
     }
 
     public boolean isOpenDrawer() {
-        return mDrawerLayout.isDrawerOpen(mNavigationView);
+        return opened;
     }
 
-    //Синхронизировать состояние ActionBarDrawerToggle с состоянием выдвижной панели
-    public void onSyncStateDrawerToggle() {
-        mDrawerToggle.syncState();
-    }
-
-    public ActionBarDrawerToggle getDrawerToggle() {
-        return mDrawerToggle;
-    }
 }

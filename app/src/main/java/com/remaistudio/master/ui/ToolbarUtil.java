@@ -14,7 +14,6 @@ public class ToolbarUtil {
 
     public static void setToolbar(AppCompatActivity activity, boolean homeButtonEnable) {
         Toolbar toolbar = activity.findViewById(TOOLBAR);
-        toolbar.setBackgroundColor(ColorList.BLUE);
         activity.setSupportActionBar(toolbar);
         setActionBar(activity, homeButtonEnable);
         if (homeButtonEnable) {
@@ -24,7 +23,6 @@ public class ToolbarUtil {
 
     public static void setToolbarForDrawer(AppCompatActivity activity, boolean homeButtonEnable) {
         Toolbar toolbar = activity.findViewById(TOOLBAR);
-        toolbar.setBackgroundColor(ColorList.BLUE);
         activity.setSupportActionBar(toolbar);
         setActionBar(activity, homeButtonEnable);
     }

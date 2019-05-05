@@ -1,7 +1,17 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <!--  Customize your theme here.  -->
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
+
     </style>
 
+    <style name="AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/primaryColor</item>
+        <item name="android:titleTextStyle">@style/MyTextAppearance</item>
+    </style>
+
+    <style name="MyTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/carbon_white</item>
+    </style>
 </resources>

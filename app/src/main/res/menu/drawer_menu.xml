@@ -5,17 +5,9 @@
         android:checkableBehavior="none">
 
         <item
-            android:id="@+id/shop_drawer"
-            android:icon="@drawable/ic_shop"
-            android:title="@string/shop"/>
-        <item
             android:id="@+id/favorite_drawer"
             android:icon="@drawable/ic_favorite_drawer"
             android:title="@string/activity_favorite"/>
-        <item
-            android:id="@+id/apps_drawer"
-            android:icon="@drawable/ic_apps"
-            android:title="@string/activity_offerwall"/>
         <item
             android:id="@+id/settings_drawer"
             android:icon="@drawable/ic_settings"

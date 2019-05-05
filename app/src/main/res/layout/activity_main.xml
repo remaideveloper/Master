@@ -5,12 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bannerLayout"
-        android:fitsSystemWindows="true">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
@@ -18,7 +12,8 @@
 
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                style="@style/AppTheme.ActionBar">
 
                 <include layout="@layout/layout_toolbar"/>
 
@@ -26,30 +21,41 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <include layout="@layout/layout_frame"/>
+            <carbon.widget.BackdropLayout
+                android:id="@+id/backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize">
+                <carbon.widget.BackdropLayout_Back
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primaryColor">
+                    <com.google.android.material.navigation.NavigationView
+                        android:id="@+id/nav_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="@color/primaryColor"
+                        app:menu="@menu/drawer_menu"/>
+                </carbon.widget.BackdropLayout_Back>
+
+                <carbon.widget.BackdropLayout_Front
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/primaryColor">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/ShapeAppearance.MaterialComponents.Test">
+                    <include layout="@layout/layout_frame"/>
+                    </com.google.android.material.card.MaterialCardView>
+                </carbon.widget.BackdropLayout_Front>
+            </carbon.widget.BackdropLayout>
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            app:headerLayout="@layout/drawer_top"
-            app:menu="@menu/drawer_menu"/>
 
-    </androidx.drawerlayout.widget.DrawerLayout>
 
-    <LinearLayout
-        android:id="@+id/bannerLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/banner_margin"
-        android:layout_marginTop="@dimen/banner_margin"
-        android:orientation="vertical"
-        android:visibility="gone"/>
 
 </RelativeLayout>
 

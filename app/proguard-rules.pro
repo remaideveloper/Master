@@ -19,3 +19,17 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+-keep class android.support.v8.renderscript.** { *; }
+
+-dontwarn carbon.BR
+-dontwarn carbon.internal**
+-dontwarn java.lang.invoke**
+
+-dontwarn android.databinding.**
+-keep class android.databinding.** { *; }

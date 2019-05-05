@@ -25,10 +25,5 @@
             app:showAsAction="always" />
     </group>
 
-    <item
-        android:id="@+id/shop"
-        android:icon="@drawable/ic_shop_white"
-        android:title="@string/shop"
-        app:showAsAction="always"/>
 
 </menu>
