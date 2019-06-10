@@ -1,57 +1,68 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <include layout="@layout/layout_toolbar" />
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/appbar"
+        <include layout="@layout/layout_tab" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <carbon.widget.BackdropLayout
+        android:id="@+id/backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bannerLayout"
+        android:layout_below="@+id/appbar">
+
+        <carbon.widget.BackdropLayout_Back
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryColor">
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/AppTheme.ActionBar">
+                android:layout_gravity="start"
+                android:background="@color/primaryColor"
+                app:itemTextColor="@color/carbon_white"
+                app:itemIconTint="@color/carbon_white"
+                app:menu="@menu/drawer_menu" />
+        </carbon.widget.BackdropLayout_Back>
 
-                <include layout="@layout/layout_toolbar"/>
+        <carbon.widget.BackdropLayout_Front
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/primaryColor">
 
-                <include layout="@layout/layout_tab"/>
-
-            </com.google.android.material.appbar.AppBarLayout>
-
-            <carbon.widget.BackdropLayout
-                android:id="@+id/backdrop"
+            <com.google.android.material.card.MaterialCardView
+                style="@style/ShapeAppearance.MaterialComponents.Test"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/appbar">
-                <carbon.widget.BackdropLayout_Back
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/primaryColor">
-                    <com.google.android.material.navigation.NavigationView
-                        android:id="@+id/nav_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start"
-                        android:background="@color/primaryColor"
-                        app:menu="@menu/drawer_menu"/>
-                </carbon.widget.BackdropLayout_Back>
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp">
 
-                <carbon.widget.BackdropLayout_Front
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/primaryColor">
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/ShapeAppearance.MaterialComponents.Test">
-                    <include layout="@layout/layout_frame"/>
-                    </com.google.android.material.card.MaterialCardView>
-                </carbon.widget.BackdropLayout_Front>
-            </carbon.widget.BackdropLayout>
+                <include layout="@layout/layout_frame" />
+            </com.google.android.material.card.MaterialCardView>
+        </carbon.widget.BackdropLayout_Front>
+    </carbon.widget.BackdropLayout>
 
-
-
+    <LinearLayout
+        android:id="@+id/bannerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/banner_margin"
+        android:layout_marginTop="@dimen/banner_margin"
+        android:orientation="vertical"
+        android:visibility="gone"/>
 
 
 </RelativeLayout>

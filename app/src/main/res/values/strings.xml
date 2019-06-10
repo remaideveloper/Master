@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-    <string name="app_name" translatable="false">Master for MCPE</string>
+    <string name="app_name" translatable="false">Master for Minecraft PE</string>
 
     <!-- settings -->
     <string name="settings">Settings</string>
@@ -20,7 +20,7 @@
     <string name="settings_title_confidentiality">Confidentiality Policy</string>
     <string name="settings_summary_confidentiality">Privacy policy personal information</string>
     <string name="settings_confidentiality_key" translatable="false">confidentiality_key</string>
-    <string name="settings_confidentiality_link" translatable="false">https://storage.googleapis.com/json-data-base.appspot.com/policy/html/confidentiality.html</string>
+    <string name="settings_confidentiality_link" translatable="false">https://storage.googleapis.com/alegan_games/Private.pdf</string>
 
     <string name="settings_consent_policy_key" translatable="false">consent_policy_key</string>
 

@@ -12,7 +12,7 @@
         android:layout_above="@+id/bannerLayout"
         android:layout_centerHorizontal="true">
 
-        <com.appscreat.project.apps.skins.render.SkinGLSurfaceView
+        <com.alegangames.master.apps.skins.render.SkinGLSurfaceView
             android:id="@+id/skins"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

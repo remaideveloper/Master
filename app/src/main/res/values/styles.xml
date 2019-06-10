@@ -1,17 +1,118 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!--  Customize your theme here.  -->
-        <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
-
+        <item name="android:textColorPrimary">@color/carbon_black</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <!--<item name="windowActionModeOverlay">true</item>-->
+        <item name="android:textColor">@color/carbon_black</item>
+        <item name="android:buttonStyle">@style/CustomButton</item>
+        <item name="colorAccent">@color/primaryColor</item>
+        <item name="colorPrimary">@color/primaryDarkColor</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="android:background">@null</item>
+        <item name="android:actionMenuTextColor">@color/carbon_white</item>
     </style>
 
-    <style name="AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/primaryColor</item>
-        <item name="android:titleTextStyle">@style/MyTextAppearance</item>
+    <style name="TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="MyTextAppearance" parent="@android:style/TextAppearance">
+    <style name="SubtitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTheme.ActionBar" parent="Theme.MaterialComponents.Light">
+        <!--<mItem name="android:buttonStyle">@style/CustomButton</mItem>-->
+        <!--<mItem name="android:textColor">@color/black</mItem>-->
+        <item name="actionBarStyle">@style/CustomActionBar</item>
+        <item name="android:textColorPrimary">@color/carbon_white</item>
+        <item name="alertDialogTheme">@style/DialogStyle</item>
+        <item name="colorPrimary">@color/primaryDarkColor</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/carbon_black</item>
+        <item name="android:textColorSecondary">@color/carbon_black</item>
+        <item name="android:textColorPrimary">@color/carbon_black</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="ToolBarStyle" parent="">
+        <item name="android:theme">@style/ToolbarStyle</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Base.ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">#fff</item>
+        <item name="android:background" tools:ignore="NewApi">@color/primaryColor</item>
+        <item name="background">@color/primaryColor</item>
+        <item name="titleTextStyle">@style/TextStyle</item>
+        <item name="android:subtitleTextStyle">@style/TextStyle</item>
+    </style>
+
+    <style name="CustomButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/button_color_white</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:paddingBottom">@dimen/card_view_large_button_padding_bottom</item>
+        <item name="android:paddingTop">@dimen/card_view_large_button_padding_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_view_large_button_margin_bottom</item>
+        <item name="android:layout_marginTop">@dimen/card_view_large_button_margin_top</item>
+    </style>
+
+    <style name="CustomActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background" tools:ignore="NewApi">@color/primaryColor</item>
+        <item name="background">@color/primaryColor</item>
+    </style>
+
+    <style name="TextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/carbon_white</item>
     </style>
+
+    <style name="SubtitleStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/carbon_white</item>
+    </style>
+
+    <style name="Theme.CraftGuide" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/primaryDarkColor</item>
+    </style>
+
+    <style name="Theme.Home" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/primaryDarkColor</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="RatingBarHealth" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/craft_ratingbar_health</item>
+        <item name="android:minHeight">32dip</item>
+        <item name="android:maxHeight">32dip</item>
+    </style>
+
+
+    <style name="TextMediumStyle">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/carbon_black</item>
+    </style>
+
+    <style name="TextMediumStyle.White">
+        <item name="android:textColor">@color/carbon_white</item>
+    </style>
+
+    <style name="TextSmallStyle">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/carbon_black</item>
+    </style>
+
 </resources>

@@ -1,10 +1,21 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:grid="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp">
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:background="@color/carbon_white">
 
     <ImageView
         android:id="@+id/imageViewItem"
@@ -29,10 +40,11 @@
         android:maxLines="1"
         android:padding="2dp"
         android:text="@string/premium"
-        android:textColor="#ffffff"
+        android:textColor="@color/carbon_black"
         android:visibility="invisible"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+</androidx.cardview.widget.CardView>

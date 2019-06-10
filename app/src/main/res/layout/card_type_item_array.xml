@@ -1,52 +1,60 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:grid="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:foreground="?android:attr/selectableItemBackground">
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp">
 
-    <ImageView
-        android:id="@+id/imageViewItem"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/image_category_height"
-        android:adjustViewBounds="true"
-        android:background="@null"
+        android:layout_height="match_parent"
+        android:background="@color/carbon_white"
         android:foreground="?android:attr/selectableItemBackground"
-        android:gravity="center"
-        android:scaleType="centerCrop"
-        tools:ignore="contentDescription"
-        tools:src="@drawable/empty_image" />
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:scaleType="centerCrop"
+            tools:ignore="contentDescription"
+            tools:src="@drawable/empty_image" />
 
 
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:background="#7000"
-        android:ellipsize="end"
-        android:maxLength="100"
-        android:maxLines="1"
-        android:padding="@dimen/layout_padding"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="@string/title_example" />
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="100"
+            android:maxLines="1"
+            android:padding="@dimen/layout_padding"
+            android:textColor="@color/carbon_black"
+            tools:layout_editor_absoluteX="16dp"
+            tools:text="@string/title_example" />
 
 
-    <TextView
-        android:id="@+id/textViewPremium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_margin="8dp"
-        android:ellipsize="end"
-        android:maxLength="100"
-        android:maxLines="1"
-        android:padding="2dp"
-        android:visibility="gone"
-        tools:visibility="visible"
-        tools:text="100 coins"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textViewPremium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="8dp"
+            android:ellipsize="end"
+            android:maxLength="100"
+            android:maxLines="1"
+            android:padding="2dp"
+            android:textColor="@color/carbon_black"
+            android:visibility="gone"
+            tools:text="100 coins"
+            tools:visibility="visible" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

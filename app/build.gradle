@@ -5,8 +5,8 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.remaistudio.master"
-        minSdkVersion 19
+        applicationId "com.alegangames.master"
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -15,7 +15,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -32,15 +32,15 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'androidx.appcompat:appcompat:1.1.0-beta01'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0-alpha05'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha05'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.google.android.material:material:1.1.0-alpha06'
+    implementation 'com.google.android.material:material:1.1.0-alpha07'
     implementation 'com.annimon:stream:1.2.1'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha04'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0-alpha01'
     implementation 'android.arch.work:work-runtime:1.0.1'
 
     implementation 'org.greenrobot:eventbus:3.1.1'
@@ -49,8 +49,8 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     // firebase
-    implementation 'com.google.firebase:firebase-core:16.0.8'
-    implementation 'com.google.firebase:firebase-ads:17.2.0'
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-ads:17.2.1'
 
     implementation 'com.github.clans:fab:1.6.4'
 
@@ -63,11 +63,12 @@ dependencies {
 
 
     implementation group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
-    implementation "androidx.core:core-ktx:1.0.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-alpha04"
+    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha01"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     api 'tk.zielony:carbon:0.16.0.1'
+    implementation files('libs\\leveldbjni.jar')
 
 }
 repositories {

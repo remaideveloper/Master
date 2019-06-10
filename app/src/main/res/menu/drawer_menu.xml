@@ -21,14 +21,17 @@
         <item
             android:id="@+id/rate_drawer"
             android:icon="@drawable/ic_rate"
+            android:visible="false"
             android:title="@string/rate"/>
         <item
             android:id="@+id/share_drawer"
             android:icon="@drawable/ic_share_drawer"
+            android:visible="false"
             android:title="@string/share"/>
         <item
             android:id="@+id/feedback_drawer"
             android:icon="@drawable/ic_email"
+            android:visible="false"
             android:title="@string/feedback"/>
     </group>
 </menu>

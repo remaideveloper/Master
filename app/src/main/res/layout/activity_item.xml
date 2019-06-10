@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/carbon_white"
     android:layout_height="match_parent">
 
     <include layout="@layout/layout_appbar"/>
@@ -12,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
+        android:layout_above="@+id/bannerLayout"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -28,11 +30,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <com.appscreat.project.ui.CustomViewPager
+                    <com.alegangames.master.ui.CustomViewPager
                         android:id="@+id/viewPager"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/image_content_height"
-                        tools:background="@color/black"/>
+                        tools:background="@color/carbon_black"/>
 
                     <com.rd.PageIndicatorView
                         android:id="@+id/pageIndicatorView"
@@ -43,13 +45,14 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"/>
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/buttonDownload"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/button_height"
                         android:layout_gravity="center"
                         android:layout_marginBottom="2dp"
                         android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
                         android:layout_marginStart="2dp"
                         android:layout_marginTop="2dp"
                         android:text="10 COINS "
@@ -57,9 +60,10 @@
                         app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoading"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/viewPager"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintVertical_bias="0.0"
+                        android:layout_marginEnd="2dp" />
 
-                    <android.support.constraint.ConstraintLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintLayoutLoading"
                         style="?android:attr/buttonBarStyle"
                         android:layout_width="match_parent"
@@ -70,7 +74,7 @@
                         app:layout_constraintTop_toBottomOf="@id/buttonDownload"
                         tools:visibility="visible">
 
-                        <android.support.v4.widget.ContentLoadingProgressBar
+                        <androidx.core.widget.ContentLoadingProgressBar
                             android:id="@+id/progressBarLoading"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="0dp"
@@ -104,6 +108,7 @@
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
                             android:text="@string/download_file"
+                            android:textColor="@color/carbon_black"
                             app:layout_constraintLeft_toLeftOf="@id/progressBarLoading"
                             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -112,11 +117,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
+                            android:textColor="@color/carbon_black"
                             app:layout_constraintBottom_toBottomOf="@id/textViewDownloading"
                             app:layout_constraintRight_toRightOf="@id/progressBarLoading"
                             tools:text="50%"/>
 
-                    </android.support.constraint.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -130,7 +136,9 @@
                 android:maxLines="1"
                 android:paddingBottom="8dp"
                 android:text="@string/read_more"
-                android:textAllCaps="true"/>
+                android:textColor="@color/carbon_black"
+                android:textAllCaps="true"
+                android:visibility="gone"/>
 
 
             <View
@@ -147,7 +155,7 @@
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="10dp"
-                android:visibility="gone"/>
+                android:textColor="@color/carbon_black"/>
 
             <View
                 android:layout_width="match_parent"
@@ -158,7 +166,8 @@
                 android:id="@+id/layoutNativeAds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"/>
+                android:orientation="vertical"
+                android:visibility="gone"/>
 
             <View
                 android:layout_width="match_parent"
@@ -166,89 +175,20 @@
                 android:background="@android:color/darker_gray"/>
 
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/textViewOffer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="@string/activity_offerwall"
-                    android:textAllCaps="true"/>
-
-                <TextView
-                    android:id="@+id/textViewOfferMore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:maxLines="1"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="@string/more"
-                    android:textAllCaps="true"
-                    android:textStyle="bold"/>
-
-            </RelativeLayout>
-
-            <com.appscreat.project.ui.RecyclerViewManager
-                android:id="@+id/recycleViewOffers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/textViewRelated"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="2"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="@string/related"
-                    android:textAllCaps="true"/>
-
-                <TextView
-                    android:id="@+id/textViewRelatedMore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:maxLines="1"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="@string/more"
-                    android:textAllCaps="true"
-                    android:textStyle="bold"/>
-
-            </RelativeLayout>
-
-            <com.appscreat.project.ui.RecyclerViewManager
-                android:id="@+id/recycleViewRelated"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+    <LinearLayout
+        android:id="@+id/bannerLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/banner_margin"
+        android:layout_marginTop="@dimen/banner_margin"
+        android:orientation="vertical"/>
+
+
+</RelativeLayout>

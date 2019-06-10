@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         >
 
-    <com.remaistudio.master.ui.RecyclerViewManager
+    <com.alegangames.master.ui.RecyclerViewManager
 
         android:id="@+id/recycleView"
         android:layout_width="match_parent"

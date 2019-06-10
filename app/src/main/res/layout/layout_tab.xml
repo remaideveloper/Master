@@ -10,8 +10,7 @@
     android:minHeight="?attr/actionBarSize"
     android:visibility="gone"
     app:tabGravity="fill"
-    app:tabIndicatorColor="@android:color/white"
-    app:tabIndicatorHeight="6dp"
+    app:tabIndicatorHeight="0dp"
     app:tabMode="fixed"
-    app:tabSelectedTextColor="@android:color/white"
-    app:tabTextColor="@android:color/white"/>
+    app:tabSelectedTextColor="@color/carbon_white"
+    style="@style/Widget.MaterialComponents.TabLayout.Colored"/>

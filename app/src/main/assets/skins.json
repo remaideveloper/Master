@@ -1,92 +1,92 @@
 [
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/boy/preview/",
-    "file_link": "/apps/modsforminecraft/skins/boy/file/",
+    "image_link": "/data/skins/boy/images/",
+    "file_link": "/data/skins/boy/files/",
     "category": "boy",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/girl/preview/",
-    "file_link": "/apps/modsforminecraft/skins/girl/file/",
+    "image_link": "/data/skins/girl/images/",
+    "file_link": "/data/skins/girl/files/",
     "category": "girl",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/anime/preview/",
-    "file_link": "/apps/modsforminecraft/skins/anime/file/",
+    "image_link": "/data/skins/skins/anime/images/",
+    "file_link": "/data/skins/anime/files/",
     "category": "anime",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/military/preview/",
-    "file_link": "/apps/modsforminecraft/skins/military/file/",
+    "image_link": "/data/skins/military/images/",
+    "file_link": "/data/skins/military/files/",
     "category": "military",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/animal/preview/",
-    "file_link": "/apps/modsforminecraft/skins/animal/file/",
+    "image_link": "/data/skins/animal/images/",
+    "file_link": "/data/skins/animal/files/",
     "category": "animal",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/heroes/preview/",
-    "file_link": "/apps/modsforminecraft/skins/heroes/file/",
+    "image_link": "/data/skins/heroes/images/",
+    "file_link": "/data/skins/heroes/files/",
     "category": "heroes",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/monsters/preview/",
-    "file_link": "/apps/modsforminecraft/skins/monsters/file/",
+    "image_link": "/data/skins/monsters/images/",
+    "file_link": "/data/skins/monsters/files/",
     "category": "monsters",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/robots/preview/",
-    "file_link": "/apps/modsforminecraft/skins/robots/file/",
+    "image_link": "/data/skins/robots/images/",
+    "file_link": "/data/skins/robots/files/",
     "category": "robots",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/games/preview/",
-    "file_link": "/apps/modsforminecraft/skins/games/file/",
+    "image_link": "/data/skins/games/images/",
+    "file_link": "/data/skins/games/files/",
     "category": "games",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/joke/preview/",
-    "file_link": "/apps/modsforminecraft/skins/joke/file/",
+    "image_link": "/data/skins/joke/images/",
+    "file_link": "/data/skins/joke/files/",
     "category": "joke",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/characters/preview/",
-    "file_link": "/apps/modsforminecraft/skins/characters/file/",
+    "image_link": "/data/skins/characters/images/",
+    "file_link": "/data/skins/characters/files/",
     "category": "characters",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/baby/preview/",
-    "file_link": "/apps/modsforminecraft/skins/baby/file/",
+    "image_link": "/data/skins/baby/images/",
+    "file_link": "/data/skins/baby/files/",
     "category": "baby",
     "count": 500
   },
   {
     "id": "Skins Category",
-    "image_link": "/apps/modsforminecraft/skins/camouflage/preview/",
-    "file_link": "/apps/modsforminecraft/skins/camouflage/file/",
+    "image_link": "/data/skins/camouflage/images/",
+    "file_link": "/data/skins/camouflage/files/",
     "category": "camouflage",
     "count": 200
   }

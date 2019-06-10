@@ -19,11 +19,7 @@
         android:id="@+id/group_skins"
         android:visible="false"
         tools:visible="true">
-        <item
-            android:id="@+id/edit"
-            android:icon="@drawable/ic_brush_white"
-            android:title="@string/edit"
-            app:showAsAction="always"/>
+
     </group>
 
 

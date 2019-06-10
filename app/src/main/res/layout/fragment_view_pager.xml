@@ -9,7 +9,7 @@
     android:transitionGroup="true"
     tools:targetApi="lollipop">
 
-    <com.remaistudio.master.ui.CustomViewPager
+    <com.alegangames.master.ui.CustomViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

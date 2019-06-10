@@ -5,34 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bannerLayout"
+        android:background="@color/primaryColor"
         android:fitsSystemWindows="true">
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/layout_toolbar"/>
+            <include layout="@layout/layout_toolbar" />
 
-            <include layout="@layout/layout_tab"/>
+            <include layout="@layout/layout_tab" />
 
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <include layout="@layout/layout_viewpager"/>
 
-    </android.support.design.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <LinearLayout
-        android:id="@+id/bannerLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/emptyText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/banner_margin"
-        android:layout_marginTop="@dimen/banner_margin"
-        android:orientation="vertical"
-        android:visibility="gone"/>
+        android:textColor="@color/carbon_black"
+        android:text="@string/favorite_is_empty"
+        android:visibility="gone"
+        android:textSize="21sp"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>
