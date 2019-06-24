@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- settings -->
     <string name="settings">Beállítások</string>
@@ -14,7 +12,6 @@
 
     <!-- General -->
     <string name="loading">Betöltés…</string>
-    <string name="extra">Külön</string>
     <string name="share">Ossza meg</string>
     <string name="send">Elküld</string>
     <string name="share_choise">Oszd meg</string>
@@ -27,11 +24,9 @@
     <string name="feedback">Visszacsatolás</string>
 
     <!--Activity Name-->
-    <string name="activity_offerwall">Alkalmazások</string>
     <string name="activity_wallpaper">Háttérképek</string>
     <string name="activity_wallpaper_set">Háttérkép</string>
     <string name="activity_skins">Bőr</string>
-    <string name="activity_skin_stealer">Tolvaj</string>
     <string name="activity_favorite">Kedvenc</string>
     <string name="activity_search">Keresés</string>
 
@@ -45,9 +40,7 @@
     <string name="save">Mentés</string>
     <string name="set_as_wallpaper">Beállítás háttérképként</string>
     <string name="wallpaper_set_title">Háttérkép</string>
-    <string name="wallpaper_set_description">A háttérképek sikeresen telepítésre kerültek az eszköz asztalán.</string>
     <string name="wallpaper_not_set_title">Háttérkép nincs beállítva</string>
-    <string name="wallpaper_not_set_description">Háttérképek nincsenek telepítve az eszköz asztalán.</string>
 
     <!--Activity Skins-->
 
@@ -129,85 +122,11 @@
     <string name="select_map">Válasszon ki egy térképet</string>
     <string name="no_maps_found">Nincs térkép</string>
     <string name="create_one_map">Legalább egy térképet hozzon létre</string>
-    <string name="edit">Szerkesztése</string>
 
     <!--Craft Guide Strings-->
-    <string name="any_fuel">Bármely üzemanyag</string>
-    <string name="brewing">Bájitalok</string>
-    <string name="crafting">Gyárts</string>
-    <string name="drops">Cseppek</string>
-    <string name="eggs">Tojás</string>
-    <string name="experience">Tapasztalat</string>
-    <string name="food">Élelmiszer</string>
-    <string name="health">Egészség</string>
-    <string name="item">Tétel</string>
-    <string name="mob">Mob</string>
-    <string name="music_discs">Zenei lemezek</string>
-    <string name="other">Más</string>
-    <string name="spawn_requirements">Spawn követelmények</string>
-    <string name="tap_to_open">Érintse meg az elem megnyitásához</string>
-    <string name="tools">Eszközök</string>
-    <string name="transport">Szállítás</string>
-    <string name="used_to_make">Használt a Make</string>
-    <string name="with">val vel</string>
-    <string name="biome">Biome</string>
-    <string name="biomes">Biomes</string>
-    <string name="items">Példány</string>
-    <string name="mobs">Mobs</string>
-    <string name="basic">Alapvető</string>
-    <string name="defence">Védelem</string>
-    <string name="blocks">Blocks</string>
-    <string name="mechanism">Mechanizmus</string>
-    <string name="wool">Gyapjú</string>
-    <string name="dyes">Színezékek</string>
-    <string name="temperature">Hőmérséklet</string>
-    <string name="features">Jellemzők</string>
-    <string name="none">Egyik sem</string>
-    <string name="not_craft_item">Nem lehet kézbesíteni ezt az elemet</string>
-    <string name="item_not_exist">A tétel nem létezik</string>
-    <string name="mob_not_exist">A mob nem létezik</string>
-    <string name="strength">Erő</string>
-    <string name="easy">Könnyen</string>
-    <string name="normal">Normál</string>
-    <string name="hard">Kemény</string>
-    <string name="plants">Növények</string>
-    <string name="resources">Erőforrások</string>
-    <string name="ingredients">Hozzávalók</string>
-    <string name="carpets">Szőnyegek</string>
-    <string name="glass">Üveg</string>
 
     <!--Skin Editor Strings-->
-    <string name="skin_editor">Skins Szerkesztő</string>
 
-    <string name="di_menu_title">Menü</string>
-    <string name="di_menu_item_more_from_us">Többet tőlünk!</string>
-    <string name="di_menu_item_rate_app">Értékelj minket</string>
-    <string name="di_menu_item_about_us">Rólunk</string>
-
-    <string name="di_about_us_title">Változat %1$s</string>
-
-    <string name="di_error_skin_size_title">Nem támogatott bőrméret</string>
-    <string name="di_error_skin_size_text">Csak 64x32 vagy 64x64 bõrt támogatunk.</string>
-
-    <string name="di_palette_title">Válasszon színt</string>
-    <string name="di_palette_positive">Választ</string>
-    <string name="di_palette_negative">Megszünteti</string>
-
-    <string name="di_parts_title">Elrejt/Előadás Test Alkatrészek</string>
-
-    <string name="di_new_character_title">Új karakter</string>
-    <string name="di_new_character_negative">Megszünteti</string>
-    <string name="di_new_character_item_steve_skin">Steve Bőrét</string>
-    <string name="di_new_character_item_gallery">Tallózás a Galériában</string>
-
-    <string name="di_save_success_title">Siker!</string>
-    <string name="di_save_success_text">Bőr mentett!</string>
-
-    <string name="di_save_error_title">Hiba!</string>
-    <string name="di_save_error_text">A bőrt nem mentették a galériába.</string>
-
-    <string name="permission_accepted">Engedély elfogadva</string>
-    <string name="di_skin_catalog">Skins Katalógus</string>
     <string name="premium">Prémium</string>
     <string name="unlock">Kinyit</string>
     <string name="settings_title_licenses">Az engedélyeket</string>
@@ -229,7 +148,6 @@
     <string name="file_storage_error">A fájl nem menthető tárolási hiba miatt</string>
     <string name="file_network_error">A fájl nem mentett hálózati hiba miatt</string>
     <string name="you_earned_coins">%1$d érmet szerzett!</string>
-    <string name="bonus_format">pótlék %1$d%%</string>
     <string name="coins_amount_format">%1$d érmék</string>
     <string name="get">kap</string>
     <string name="settings_title_consent_policy_key">Hozzájárulási irányelvek</string>
@@ -237,12 +155,11 @@
     <string name="retry">Próbálja újra</string>
     <string name="get_more_coins">Szerezz több érmét</string>
     <string name="get_more_coins_description">Szerezd meg az %1$d érmét egy %2$d%% kedvezményes áron!</string>
-    <string name="free">Ingyenes</string>
-    <string name="watch_video">Videót nézni</string>
-    <string name="buy">megvesz</string>
-    <string name="paid">Fizetett</string>
-    <string name="more">Több</string>
     <string name="read_more">Olvass tovább</string>
+    <string name="term_of_use">Felhasználási feltételek</string>
+    <string name="accept">Elfogadás</string>
+    <string name="term_of_use_message">Elfogadom a %1$s.</string>
+    <string name="privacy_policy">Adatvédelmi Szabályzat</string>
 
     <!-- licenses -->
 

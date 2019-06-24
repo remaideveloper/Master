@@ -10,6 +10,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
+    <!-- Required for in-app purchase -->
+    <uses-permission android:name="com.android.vending.BILLING" />
+
     <application
         android:name="com.alegangames.master.App"
         android:allowBackup="true"
@@ -25,13 +28,18 @@
             android:value="ca-app-pub-1243937460165985~6891592351"/>
 
         <activity
+            android:name=".activity.ActivityLoading"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.alegangames.master.activity.ActivityMain"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity
             android:name="com.alegangames.master.activity.ActivityWebView"
@@ -47,6 +55,10 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/activity_wallpaper_set"/>
         <activity
+            android:name="com.alegangames.master.activity.ActivityShop"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="@string/shop"/>
+        <activity
             android:name="com.alegangames.master.activity.ActivityItem"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
         <activity
@@ -57,18 +69,6 @@
             android:label="@string/related"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
-        <activity
-            android:name="com.alegangames.master.apps.skins.ActivitySkinsStealer"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:label="@string/activity_skin_stealer"
-            android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize|adjustPan">
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH"/>
-            </intent-filter>
-        </activity>
         <activity
             android:name="com.alegangames.master.activity.ActivitySearch"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"

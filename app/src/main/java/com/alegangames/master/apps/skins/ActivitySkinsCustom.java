@@ -1,5 +1,6 @@
 package com.alegangames.master.apps.skins;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
+import com.alegangames.master.activity.ActivityShop;
 import com.github.clans.fab.FloatingActionButton;
 import com.alegangames.master.R;
 import com.alegangames.master.ads.admob.AdMobBanner;
@@ -133,6 +135,8 @@ public class ActivitySkinsCustom extends ActivitySkins {
             case R.id.share:
                 onAskPermissionSkin(this, DownloadViewModel.DOWNLOAD_IMAGE_SHARE);
                 return true;
+            case R.id.shop:
+                startActivity(new Intent(this, ActivityShop.class));
             default:
                 return super.onOptionsItemSelected(item);
         }

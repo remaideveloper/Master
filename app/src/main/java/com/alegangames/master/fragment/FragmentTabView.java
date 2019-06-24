@@ -69,7 +69,7 @@ public class FragmentTabView extends FragmentAbstract {
         mProgressBarLoading = mRootView.findViewById(R.id.progressBarLoading);
 
         //Необходимо задать пустой адаптер
-//        if (getArguments().getString(FRAGMENT_DATA).equalsIgnoreCase("data-main.json"))
+//        if (getArguments().getString(FRAGMENT_DATA).equalsIgnoreCase("main.txt"))
 //            mAdapter = new AdapterRecyclerView(mRecyclerView, false);
 //        else {
             mAdapter = new AdapterRecyclerView(mRecyclerView);

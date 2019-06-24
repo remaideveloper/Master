@@ -49,4 +49,15 @@
         <attr name="editorTextColor" format="color|reference" />
         <attr name="editorDrawable" format="integer|reference" />
     </declare-styleable>
+
+    <declare-styleable name="side_sheet_behaviour_layout">
+        <attr name="side_sheet_behavior_peek_width" format="reference"/>
+        <attr name="side_sheet_behavior_layout_behavior_hideable" format="boolean"/>
+        <attr name="side_sheet_behavior_layout_behavior_skip_collapsed" format="boolean"/>
+        <attr name="sideSheetDialogTheme" format="reference" />
+        <attr name="sideSheetStyle" format="reference" />
+        <attr name="behavior_peekWidth" format="dimension|integer|string"/>
+        <attr name="behavior_hideable" format="boolean"/>
+        <attr name="behavior_skipCollapsed" format="boolean"/>
+    </declare-styleable>
 </resources>

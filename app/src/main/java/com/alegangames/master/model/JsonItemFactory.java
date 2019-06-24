@@ -4,8 +4,7 @@ import androidx.annotation.Nullable;
 
 import com.alegangames.master.activity.ActivityItem;
 import com.alegangames.master.apps.skins.ActivitySkinsCustom;
-import com.alegangames.master.apps.skins.ActivitySkinsStealer;
-import com.alegangames.master.apps.wallpaper.ActivityWallpaperPreview;
+ import com.alegangames.master.apps.wallpaper.ActivityWallpaperPreview;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -19,7 +18,6 @@ import static com.alegangames.master.adapter.AdapterRecyclerView.CONTENT_MATCH_V
 import static com.alegangames.master.adapter.AdapterRecyclerView.CONTENT_VIEW_TYPE;
 import static com.alegangames.master.adapter.AdapterRecyclerView.MENU_VIEW_TYPE;
 import static com.alegangames.master.adapter.AdapterRecyclerView.OFFER_VIEW_TYPE;
-import static com.alegangames.master.adapter.AdapterRecyclerView.PROMO_PAGER_VIEW_TYPE;
 
 public class JsonItemFactory {
 
@@ -56,8 +54,6 @@ public class JsonItemFactory {
                 return ActivityItem.class;
             case SKIN_CUSTOM:
                 return ActivitySkinsCustom.class;
-            case SKIN_STEALER:
-                return ActivitySkinsStealer.class;
             case WALLPAPERS:
                 return ActivityWallpaperPreview.class;
         }
@@ -80,8 +76,6 @@ public class JsonItemFactory {
                 return CONTENT_MATCH_VIEW_TYPE;
             case OFFER:
                 return OFFER_VIEW_TYPE;
-            case PROMO_PAGER:
-                return PROMO_PAGER_VIEW_TYPE;
             case MENU:
                 return MENU_VIEW_TYPE;
         }

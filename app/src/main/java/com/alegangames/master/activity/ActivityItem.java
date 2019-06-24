@@ -70,7 +70,7 @@ import static com.alegangames.master.util.BlockLauncherHelper.REQUEST_CODE_MOD;
 import static com.alegangames.master.util.BlockLauncherHelper.REQUEST_CODE_TEXTURE;
 
 public class ActivityItem extends ActivityAppParent implements BuildingInstaller.BuildingListener,
-        PermissionManager.InterfacePermission, InterfaceDownload, PurchaseManager.InterfacePurchase, AdMobVideoRewarded.RewardedVideoAdListener {
+        PermissionManager.InterfacePermission, InterfaceDownload, PurchaseManager.InterfacePurchase {
 
     public static final String TAG = ActivityItem.class.getSimpleName();
 
@@ -151,7 +151,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         mViewPager = findViewById(R.id.viewPager);
 
         mAdMobVideoRewarded = new AdMobVideoRewarded(this);
-        mAdMobVideoRewarded.setRewardedVideoAdListener(this);
+        mAdMobVideoRewarded.getRewardedVideoAd().setRewardedVideoAdListener(mAdMobVideoRewarded.getDefaultVideoRewardAdListener());
         mAdMobVideoRewarded.forceLoadRewardedVideo();
 
         //mButtonDownloadFree.setEnabled(false);
@@ -223,6 +223,9 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
                 return true;
             case R.id.share:
                 PermissionManager.onAskStoragePermission(this, DownloadViewModel.DOWNLOAD_IMAGE_SHARE);
+                return true;
+            case R.id.shop:
+                startActivity(new Intent(this, ActivityShop.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -573,7 +576,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         Log.d(TAG, "onBillingError");
         // Предлагаем посмотреть видеорекламу
         runOnUiThread(() -> {
-            if (mAdMobVideoRewarded.isLoaded() && !isFinishing()) {
+            if (!isFinishing()) {
                 new AlertDialog.Builder(ActivityItem.this)
                         .setTitle(R.string.free_coins)
                         .setMessage(R.string.watch_and_gain)
@@ -695,8 +698,6 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
 
     private void onClickButtonMain() {
         PermissionManager.onAskStoragePermission(this, DownloadViewModel.DOWNLOAD_CONTENT);
-
-        FirebaseAnalyticsHelper.sendEvent(this, "item_content_download_click", "content", mItem.getName());
     }
 
     /**
@@ -710,7 +711,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
             onClickButtonMain();
         } else {
             runOnUiThread(() -> {
-                if (mAdMobVideoRewarded.isLoaded() && !isFinishing()) {
+                if (!isFinishing()) {
                     new MaterialAlertDialogBuilder(ActivityItem.this)
                             .setTitle(R.string.free_coins)
                             .setMessage(R.string.watch_and_gain)
@@ -722,7 +723,6 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
             });
         }
 
-        FirebaseAnalyticsHelper.sendEvent(this, "item_content_buy_click", "content", mItem.getName());
     }
 
     /**
@@ -805,27 +805,27 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
 
 
 
-    @Override
-    public void onAdsClosed(boolean rewarded) {
-        Log.d(TAG, "onAdsClosed: ");
-        //Вознаграждаем пользователя монеткой
-        if (rewarded) {
-            PurchaseManager.addCoins(10, this);
-            ToolbarUtil.setCoinsSubtitle(this);
-            String message = getString(R.string.you_earned_coins, 10);
-            ToastUtil.show(this, message);
-        }
-
-        if (mAdMobVideoRewarded != null)
-            mAdMobVideoRewarded.forceLoadRewardedVideo();
-
-    }
-
-    @Override
-    public void onAdsLoaded() {
-        /*mButtonDownloadFree.setEnabled(true);
-        ButtonColorManager.setBackgroundButton(mButtonDownloadFree, ColorList.BLUE);
-        ButtonColorManager.setTextColorButton(mButtonDownloadFree, ColorList.WHITE);*/
-    }
+//    @Override
+//    public void onAdsClosed(boolean rewarded) {
+//        Log.d(TAG, "onAdsClosed: ");
+//        //Вознаграждаем пользователя монеткой
+//        if (rewarded) {
+//            PurchaseManager.addCoins(10, this);
+//            ToolbarUtil.setCoinsSubtitle(this);
+//            String message = getString(R.string.you_earned_coins, 10);
+//            ToastUtil.show(this, message);
+//        }
+//
+//        if (mAdMobVideoRewarded != null)
+//            mAdMobVideoRewarded.forceLoadRewardedVideo();
+//
+//    }
+//
+//    @Override
+//    public void onAdsLoaded() {
+//        /*mButtonDownloadFree.setEnabled(true);
+//        ButtonColorManager.setBackgroundButton(mButtonDownloadFree, ColorList.BLUE);
+//        ButtonColorManager.setTextColorButton(mButtonDownloadFree, ColorList.WHITE);*/
+//    }
 
 }

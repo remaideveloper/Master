@@ -12,19 +12,19 @@ public class ContentHelper {
     public static String getJsonNameItem(JsonItemContent item) {
         switch (item.getId()) {
             case JsonItemFactory.MAPS:
-                return "maps.json";
+                return "ma.txt";
             case JsonItemFactory.MODS:
-                return "mods.json";
+                return "mo.txt";
             case JsonItemFactory.BUILDING:
-                return "building.json";
+                return "b.txt";
             case JsonItemFactory.PACKS:
-                return "packs.json";
+                return "p.txt";
             case JsonItemFactory.SEEDS:
-                return "seeds.json";
+                return "see.txt";
             case JsonItemFactory.SERVERS:
-                return "servers.json";
+                return "ser.txt";
             case JsonItemFactory.TEXTURES:
-                return "textures.json";
+                return "t.txt";
             default:
                 return "";
         }

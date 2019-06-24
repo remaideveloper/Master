@@ -6,17 +6,17 @@ import com.alegangames.master.fragment.FragmentViewPager;
 
 public enum JsonItemFragmentEnum {
 
-    MAIN("Main", "data-main.json", 3, false, false, false),
-    SKINS("Skins", "skins.json", 2, false, true, true),
-    PACKS("Packs", "packs.json", 2, false, true, true),
-    MODS("Mods", "mods.json", 2, false, true, true),
-    BUILDING("Building", "building.json", 2, false, true, true),
+    MAIN("Main", "main.txt", 2, false, false, false),
+    SKINS("Skins", "sk.txt", 2, false, true, true),
+    PACKS("Packs", "p.txt", 2, false, true, true),
+    MODS("Mods", "mo.txt", 2, false, true, true),
+    BUILDING("Building", "b.txt", 2, false, true, true),
     ADDONS("Addons", "addons.json", 2, false, true, true),
-    SEEDS("Seeds", "seeds.json", 2, false, true, true),
-    TEXTURES("Textures", "textures.json", 2, false, true, true),
-    SERVERS("Servers", "servers.json", 2, false, true, true),
-    WALLPAPERS("Wallpapers", "wallpapers.json", 2, false, true, true),
-    MAPS("Maps", "maps.json", 2, false, true, true);
+    SEEDS("Seeds", "see.txt", 2, false, true, true),
+    TEXTURES("Textures", "t.txt", 2, false, true, true),
+    SERVERS("Servers", "ser.txt", 2, false, true, true),
+    WALLPAPERS("Wallpapers", "w.txt", 2, false, true, true),
+    MAPS("Maps", "ma.txt", 2, false, true, true);
 
     private String mTitle;
     private String mData;

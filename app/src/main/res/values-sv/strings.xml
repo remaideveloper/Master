@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- settings -->
     <string name="settings">Settings</string>
@@ -14,7 +12,6 @@
 
     <!-- General -->
     <string name="loading">Läser in…</string>
-    <string name="extra">Extra</string>
     <string name="share">Dela med sig</string>
     <string name="send">Skicka</string>
     <string name="share_choise">Dela det</string>
@@ -27,11 +24,9 @@
     <string name="feedback">Återkoppling</string>
 
     <!--Activity Name-->
-    <string name="activity_offerwall">Tillämpningar</string>
     <string name="activity_wallpaper">Bakgrunds</string>
     <string name="activity_wallpaper_set">Bakgrundssats</string>
     <string name="activity_skins">Skinn</string>
-    <string name="activity_skin_stealer">Stealer</string>
     <string name="activity_favorite">Favorit</string>
     <string name="activity_search">Sök</string>
 
@@ -45,9 +40,7 @@
     <string name="save">Spara</string>
     <string name="set_as_wallpaper">Använd som bakgrund</string>
     <string name="wallpaper_set_title">Bakgrundsbild</string>
-    <string name="wallpaper_set_description">Bakgrundsbilder har installerats på skrivbordet på din enhet.</string>
     <string name="wallpaper_not_set_title">Bakgrunden är inte inställd</string>
-    <string name="wallpaper_not_set_description">Bakgrundsbilder inte installerade på skrivbordet på din enhet.</string>
 
     <!--Activity Skins-->
 
@@ -129,85 +122,11 @@
     <string name="select_map">Välj en karta</string>
     <string name="no_maps_found">Inga kartor hittades</string>
     <string name="create_one_map">Var god skapa minst en karta</string>
-    <string name="edit">Redigera</string>
 
     <!--Craft Guide Strings-->
-    <string name="any_fuel">Eventuellt bränsle</string>
-    <string name="brewing">Potions</string>
-    <string name="crafting">Crafting</string>
-    <string name="drops">Droppar</string>
-    <string name="eggs">ägg</string>
-    <string name="experience">Erfarenhet</string>
-    <string name="food">Mat</string>
-    <string name="health">Hälsa</string>
-    <string name="item">Artikel</string>
-    <string name="mob">Folkhop</string>
-    <string name="music_discs">Musik skivor</string>
-    <string name="other">Andra</string>
-    <string name="spawn_requirements">Kryddkrav</string>
-    <string name="tap_to_open">Tryck för att öppna det här objektet</string>
-    <string name="tools">Verktyg</string>
-    <string name="transport">Transport</string>
-    <string name="used_to_make">Brukade göra</string>
-    <string name="with">med</string>
-    <string name="biome">Biome</string>
-    <string name="biomes">Biomes</string>
-    <string name="items">Artiklar</string>
-    <string name="mobs">Mobs</string>
-    <string name="basic">Grundläggande</string>
-    <string name="defence">Försvar</string>
-    <string name="blocks">Blockera</string>
-    <string name="mechanism">Mekanism</string>
-    <string name="wool">Ull</string>
-    <string name="dyes">Färgämnen</string>
-    <string name="temperature">Temperatur</string>
-    <string name="features">Funktioner</string>
-    <string name="none">Ingen</string>
-    <string name="not_craft_item">Kan inte skapa denna artikel</string>
-    <string name="item_not_exist">Artikeln finns inte</string>
-    <string name="mob_not_exist">Mob existerar inte</string>
-    <string name="strength">Styrka</string>
-    <string name="easy">Lätt</string>
-    <string name="normal">Vanligt</string>
-    <string name="hard">Hård</string>
-    <string name="plants">Växter</string>
-    <string name="resources">Medel</string>
-    <string name="ingredients">Ingredienser</string>
-    <string name="carpets">Mattor</string>
-    <string name="glass">Glas</string>
 
     <!--Skin Editor Strings-->
-    <string name="skin_editor">Skinnredigerare</string>
 
-    <string name="di_menu_title">Meny</string>
-    <string name="di_menu_item_more_from_us">Mer från oss!</string>
-    <string name="di_menu_item_rate_app">Gradera oss</string>
-    <string name="di_menu_item_about_us">Om oss</string>
-
-    <string name="di_about_us_title">Version %1$s</string>
-
-    <string name="di_error_skin_size_title">Utan stöd Hud Storlek</string>
-    <string name="di_error_skin_size_text">Vi stöder endast 64x32 eller 64x64 hud.</string>
-
-    <string name="di_palette_title">Välj färg</string>
-    <string name="di_palette_positive">Välja</string>
-    <string name="di_palette_negative">Annullera</string>
-
-    <string name="di_parts_title">Dölj/Visa Kropp Delar</string>
-
-    <string name="di_new_character_title">Ny karaktär</string>
-    <string name="di_new_character_negative">Annullera</string>
-    <string name="di_new_character_item_steve_skin">Steve Hud</string>
-    <string name="di_new_character_item_gallery">Bläddra i Galleri</string>
-
-    <string name="di_save_success_title">Framgång!</string>
-    <string name="di_save_success_text">Hud är sparad!</string>
-
-    <string name="di_save_error_title">Fel!</string>
-    <string name="di_save_error_text">Hud sparas inte i galleriet.</string>
-
-    <string name="permission_accepted">Tillstånd accepterat</string>
-    <string name="di_skin_catalog">Skinn Katalog</string>
     <string name="premium">Premie</string>
     <string name="unlock">Låsa upp</string>
     <string name="settings_title_licenses">Llicenser</string>
@@ -229,7 +148,6 @@
     <string name="file_storage_error">Filen sparades inte på grund av lagringsfel</string>
     <string name="file_network_error">Filen sparades inte på grund av nätverksfel</string>
     <string name="you_earned_coins">Du har tjänat %1$d mynt!</string>
-    <string name="bonus_format">Bonus %1$d%%</string>
     <string name="coins_amount_format">%1$d mynt</string>
     <string name="get">skaffa sig</string>
     <string name="settings_title_consent_policy_key">Samtyckepolitik</string>
@@ -237,12 +155,11 @@
     <string name="retry">Försök igen</string>
     <string name="get_more_coins">Få fler mynt</string>
     <string name="get_more_coins_description">Få %1$d mynt med %2$d%% rabatt!</string>
-    <string name="free">Fri</string>
-    <string name="watch_video">Kolla på video</string>
-    <string name="buy">köpa</string>
-    <string name="paid">betald</string>
-    <string name="more">Mer</string>
     <string name="read_more">Läs mer</string>
+    <string name="term_of_use">Användningsvillkor</string>
+    <string name="accept">Acceptera</string>
+    <string name="term_of_use_message">Jag accepterar %1$s.</string>
+    <string name="privacy_policy">Sekretesspolicy</string>
 
     <!-- licenses -->
 

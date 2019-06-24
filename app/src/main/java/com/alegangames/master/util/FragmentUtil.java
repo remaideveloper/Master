@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.alegangames.master.R;
-import com.alegangames.master.apps.skins.ActivitySkinsStealer;
 import com.alegangames.master.fragment.FragmentViewPager;
 import com.alegangames.master.model.enums.JsonItemFragmentEnum;
 
@@ -107,9 +106,6 @@ public class FragmentUtil {
         Log.d(TAG, "onTransactionFragmentByName: " + fragmentName);
         if (activity != null && fragmentName != null) {
             switch (fragmentName) {
-                case "#SkinsStealer":
-                    activity.startActivity(new Intent(activity, ActivitySkinsStealer.class));
-                    break;
 //                case "#SkinsEditor":
 //                    activity.startActivity(new Intent(activity, ActivitySkinEditor.class));
 //                    break;

@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,12 +22,13 @@ public class PurchaseManager {
     public static final String ITEMS_PREF = "items_pref";
 
     public static final String PRODUCT_TEST = "android.test.purchased";
+    public static final String PRODUCT_NO_ADS = "no_ads";
     public static final String PRODUCT_100_COINS = "100_coins";
-    public static final String PRODUCT_500_COINS = "500_coins";
-    public static final String PRODUCT_2000_COINS = "2000_coins";
-    public static final String PRODUCT_6000_COINS = "6000_coins";
-    public static final String PRODUCT_20000_COINS = "20000_coins";
-    public static final String PRODUCT_50000_COINS = "50000_coins";
+//    public static final String PRODUCT_500_COINS = "500_coins";
+//    public static final String PRODUCT_2000_COINS = "2000_coins";
+//    public static final String PRODUCT_6000_COINS = "6000_coins";
+//    public static final String PRODUCT_20000_COINS = "20000_coins";
+//    public static final String PRODUCT_50000_COINS = "50000_coins";
 
     private static final int DEFAULT_COINS = 0;
 
@@ -153,22 +155,8 @@ public class PurchaseManager {
      */
     private static void createProducts(Context context) {
         productMap = new LinkedHashMap<>();
-        productMap.put(PRODUCT_100_COINS, new Product(PRODUCT_100_COINS, context.getString(R.string.coins_amount_format, 100),
-                context.getString(R.string.bonus_format, 0), R.drawable.money_icon_1, 100, 0));
-
-        productMap.put(PRODUCT_500_COINS, new Product(PRODUCT_500_COINS, context.getString(R.string.coins_amount_format, 500),
-                context.getString(R.string.bonus_format, 100), R.drawable.money_icon_2, 500, 100));
-
-        productMap.put(PRODUCT_2000_COINS, new Product(PRODUCT_2000_COINS, context.getString(R.string.coins_amount_format, 2000),
-                context.getString(R.string.bonus_format, 300), R.drawable.money_icon_3, 2000, 300));
-
-        productMap.put(PRODUCT_6000_COINS, new Product(PRODUCT_6000_COINS, context.getString(R.string.coins_amount_format, 6000),
-                context.getString(R.string.bonus_format, 500), R.drawable.money_icon_4, 6000, 500));
-
-        productMap.put(PRODUCT_20000_COINS, new Product(PRODUCT_20000_COINS, context.getString(R.string.coins_amount_format, 20000),
-                context.getString(R.string.bonus_format, 700), R.drawable.money_icon_5, 20000, 700));
-
-        productMap.put(PRODUCT_50000_COINS, new Product(PRODUCT_50000_COINS, context.getString(R.string.coins_amount_format, 50000),
-                context.getString(R.string.bonus_format, 1000), R.drawable.money_icon_6, 50000, 1000));
+//        productMap.put(PRODUCT_NO_ADS, new Product(PRODUCT_NO_ADS, context.getString(R.string.coins_amount_format, 100),
+//                context.getString(R.string.bonus_format, 0), R.drawable.icon_no_ads, 0, 0));
     }
+
 }

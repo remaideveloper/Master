@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
+import com.alegangames.master.util.preference.UtilPreference;
 import com.google.ads.consent.ConsentForm;
 import com.google.ads.consent.ConsentFormListener;
 import com.google.ads.consent.ConsentInfoUpdateListener;
@@ -26,17 +27,17 @@ public class GDPRHelper {
     private ConsentForm mConsentForm;
     private ConsentInformation mConsentInformation;
 
-    public static final String EXTRA_NPA_KEY = "npa";
-    public static final String EXTRA_NPA_VALUE = "1";
 
     private GDPRHelper(Context context) {
         mContext = context;
         mConsentInformation = ConsentInformation.getInstance(context);
-        mConsentInformation.addTestDevice("844023D1927C77FA71E83A6A2B865F9E");
+        mConsentInformation.addTestDevice(Config.DEVICE_ID[0]);
+        mConsentInformation.addTestDevice(Config.DEVICE_ID[1]);
+        mConsentInformation.addTestDevice(Config.DEVICE_ID[2]);
 //        mConsentInformation.setDebugGeography(DebugGeography.DEBUG_GEOGRAPHY_EEA);
     }
 
-    public static boolean isRequestLocationInEeaOrUnknown(Context context){
+    public static boolean isRequestLocationInEeaOrUnknown(Context context) {
         return new GDPRHelper(context).mConsentInformation.isRequestLocationInEeaOrUnknown();
     }
 
@@ -53,12 +54,15 @@ public class GDPRHelper {
     }
 
     /**
-     * Пользователь, не достигшиг возраста согласия
-     *
-     * @param context
+     * Узнать является ли пользователь гражданином Европейского союза
+     * Пометить что пользователь, не достиг возраста согласия
      */
     public static void setTagForUnderAgeOfConsent(Context context) {
-        new GDPRHelper(context).setTagForUnderAgeOfConsent();
+        if (isRequestLocationInEeaOrUnknown(context)) {
+            new GDPRHelper(context).setTagForUnderAgeOfConsent();
+            UtilPreference.setUserUnderAgeOfConsent(context, true);
+        }
+
     }
 
     private void setTagForUnderAgeOfConsent() {
@@ -174,7 +178,7 @@ public class GDPRHelper {
     }
 
     private void setNonPersonAds() {
-        AdMobRequest.setExtraBundle(EXTRA_NPA_KEY, EXTRA_NPA_VALUE);
+        UtilPreference.setNonPersonAdsPref(mContext, AdMobRequest.EXTRA_NPA_VALUE);
     }
 
 }

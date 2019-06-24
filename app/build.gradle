@@ -8,8 +8,8 @@ android {
         applicationId "com.alegangames.master"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 103
+        versionName "1.0.3"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -49,8 +49,8 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     // firebase
-    implementation 'com.google.firebase:firebase-core:16.0.9'
-    implementation 'com.google.firebase:firebase-ads:17.2.1'
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-ads:18.0.0'
 
     implementation 'com.github.clans:fab:1.6.4'
 
@@ -58,17 +58,22 @@ dependencies {
 
     implementation 'com.takisoft.fix:preference-v7:27.0.0.0'
 
-    implementation 'androidx.preference:preference:1.0.0'
+    implementation 'com.takisoft.fix:preference-v7:27.0.0.0'
     implementation "net.xpece.android:support-preference:1.2.1"
+    implementation 'com.anjlab.android.iab.v3:library:1.0.44'
 
 
     implementation group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha01"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     api 'tk.zielony:carbon:0.16.0.1'
     implementation files('libs\\leveldbjni.jar')
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'androidx.annotation:annotation:1.1.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
 
 }
 repositories {

@@ -17,9 +17,22 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Locale;
 
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+
 public class JsonHelper {
 
     private static final String TAG = JsonHelper.class.getSimpleName();
+    private static SecretKey secretKey;
+
+    static {
+        try {
+            secretKey = generateKey("&^*aleganGames_master&^*");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * Получить JsonObject из файла находящегося в папке Assets
@@ -58,11 +71,22 @@ public class JsonHelper {
             is.read(buffer);
             is.close();
             Log.d(TAG, "getJsonArrayFromStorage size: " + size);
-            return new JSONArray(new String(buffer));
+            return new JSONArray(decryptString(buffer, secretKey));
         } catch (OutOfMemoryError | Exception e) {
             e.printStackTrace();
         }
         return new JSONArray();
+    }
+
+    public static SecretKey generateKey(String password) throws Exception {
+        return  new SecretKeySpec(password.getBytes(), "AES");
+    }
+
+    public static String decryptString(byte[] cipherText, SecretKey secret) throws Exception {
+        Cipher cipher = null;
+        cipher = Cipher.getInstance("AES");
+        cipher.init(Cipher.DECRYPT_MODE, secret);
+        return new String(cipher.doFinal(cipherText), Charset.forName("UTF8"));
     }
 
 

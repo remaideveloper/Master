@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import com.alegangames.master.activity.ActivityShop;
 import com.google.android.material.navigation.NavigationView;
 import com.alegangames.master.R;
 import com.alegangames.master.activity.ActivityFavorite;
@@ -64,6 +65,9 @@ public class NavigationDrawerUtil implements NavigationView.OnNavigationItemSele
                 break;
             case R.id.favorite_drawer:
                 mActivity.startActivity(new Intent(mActivity, ActivityFavorite.class));
+                return true;
+            case R.id.shop:
+                mActivity.startActivity(new Intent(mActivity, ActivityShop.class));
                 return true;
             case R.id.settings_drawer:
                 FragmentUtil.onTransactionFragment(mActivity, R.id.main_container, new FragmentSettings());

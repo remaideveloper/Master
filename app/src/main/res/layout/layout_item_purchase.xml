@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:background="@color/carbon_white"
+    android:layout_marginTop="1dp"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin">
+
+        <ImageView
+            android:id="@+id/imagePurchaseIcon"
+            android:layout_width="@dimen/product_icon_size"
+            android:layout_height="@dimen/product_icon_size"
+            android:src="@mipmap/ic_launcher_round"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textPurchaseDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="100 coins"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextMediumStyle"
+            app:layout_constraintLeft_toRightOf="@id/imagePurchaseIcon"
+
+            app:layout_constraintRight_toLeftOf="@+id/buttonBuy"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textSubDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="9.99$"
+            android:textAppearance="@style/TextSmallStyle"
+            app:layout_constraintLeft_toLeftOf="@id/textPurchaseDesc"
+            app:layout_constraintRight_toLeftOf="@+id/buttonBuy"
+            app:layout_constraintTop_toBottomOf="@id/textPurchaseDesc" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonBuy"
+            style="@style/CustomButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextMediumStyle.White"
+            android:layout_weight="0.5"
+            android:text="@string/get"
+            android:textSize="@dimen/button_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:backgroundTint="@color/primaryColor"
+            android:background="@color/primaryColor"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

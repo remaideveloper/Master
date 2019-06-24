@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- offerwall -->
-    <string name="activity_offerwall">Applications</string>
 
     <!--in-app-->
 
@@ -18,7 +17,6 @@
     <!-- General -->
     <string name="settings">Paramètres</string>
     <string name="loading">Chargement…</string>
-    <string name="extra">Supplémentaire</string>
     <string name="share">Partager</string>
     <string name="share_choise">Partagez-le</string>
     <string name="rate">Taux</string>
@@ -52,10 +50,7 @@
     <string name="save_to_gallery">Sauvegarder dans la gallerie</string>
     <string name="save_to_minecraft">Envoyer à Minecraft PE</string>
     <string name="wallpaper_set_title">Wallpaper jeu</string>
-    <string name="wallpaper_set_description">Fonds d\'écran installé avec succès sur le bureau de votre appareil.</string>
-    <string name="wallpaper_not_set_description">Fonds d\'écran pas installé sur le bureau de votre appareil.</string>
     <string name="wallpaper_not_set_title">Fond d\'écran pas fixé</string>
-    <string name="activity_skin_stealer">Skin Stealer</string>
     <string name="activity_skins">Skins</string>
     <string name="activity_wallpaper">Wallpapers</string>
     <string name="activity_wallpaper_set">Wallpaper Set</string>
@@ -88,113 +83,69 @@
     <string name="create_one_map">Créez au moins une carte</string>
     <string name="no_maps_found">Aucune carte trouvée</string>
     <string name="select_map">Sélectionnez une carte</string>
-    <string name="edit">Modifier</string>
 
-    <string name="any_fuel">Tout carburant</string>
-    <string name="brewing">Brassage</string>
-    <string name="crafting">Artisanat</string>
-    <string name="drops">Gouttes</string>
-    <string name="eggs">Des œufs</string>
-    <string name="experience">Expérience</string>
-    <string name="food">Aliments</string>
-    <string name="health">Santé</string>
-    <string name="item">Les item</string>
-    <string name="mob">Mob</string>
-    <string name="music_discs">Disques de musique</string>
-    <string name="other">Autre</string>
-    <string name="spawn_requirements">Exigences de Spawn</string>
-    <string name="tap_to_open">Appuyez pour ouvrir cet élément</string>
-    <string name="tools">Outils</string>
-    <string name="transport">Transport</string>
-    <string name="used_to_make">Utilisé pour faire</string>
-    <string name="with">avec</string>
-    <string name="biome">Biome</string>
-    <string name="biomes">Biomes</string>
-    <string name="items">Les items</string>
-    <string name="mobs">Mobs</string>
-    <string name="basic">De base</string>
-    <string name="defence">La défense</string>
-    <string name="blocks">Blocs</string>
-    <string name="mechanism">Mécanisme</string>
-    <string name="wool">La laine</string>
-    <string name="dyes">Colorants</string>
-    <string name="temperature">Température</string>
-    <string name="features">Caractéristiques</string>
-    <string name="none">Aucun</string>
-    <string name="not_craft_item">Impossible de créer cet objet</string>
-    <string name="item_not_exist">L\'article n\'existe pas</string>
-    <string name="mob_not_exist">Mob n\'existe pas</string>
-    <string name="strength">Force</string>
-    <string name="easy">Facile</string>
-    <string name="normal">Normal</string>
-    <string name="hard">Difficile</string>
-    <string name="plants">Les plantes</string>
-    <string name="resources">Ressources</string>
-    <string name="ingredients">Ingrédients</string>
-    <string name="carpets">Les tapis</string>
-    <string name="glass">Glass</string>
-
-    <!--Skin Editor Strings-->
+    <!--Skin Editor Strings--><![CDATA[
        
-    <string name="skin_editor">Peaux Éditeur</string>
+
 
        
-    <string name="di_menu_title">Menu</string>
-       
-    <string name="di_menu_item_more_from_us">Plus de nous!</string>
-       
-    <string name="di_menu_item_rate_app">Taux Nous</string>
-       
-    <string name="di_menu_item_about_us">Environ Nous</string>
 
        
-    <string name="di_about_us_title">Version %1$s</string><![CDATA[
+
        
+
+       
+
+
+       
+
+       
+
+       
+
+
+       
+
+
+       
+
+       
+
+       
+
+
+       
+
+
+       
+
+       
+
+       
+
+       
+
+
+       
+
+       
+
+
+       
+
+       
+
+
+
+       
+
+       
+
+       
+
 
        
     ]]>
-    <string name="di_error_skin_size_title">Taille de la peau non prise en charge</string>
-       
-    <string name="di_error_skin_size_text">Nous prenons uniquement en charge la peau 64x32 ou 64x64.</string>
-
-       
-    <string name="di_palette_title">Choisir la couleur</string>
-       
-    <string name="di_palette_positive">Choisir</string>
-       
-    <string name="di_palette_negative">Annuler</string>
-
-       
-    <string name="di_parts_title">Cacher/Montrer Corps les Parties</string>
-
-       
-    <string name="di_new_character_title">Nouveau caractère</string>
-       
-    <string name="di_new_character_negative">Annuler</string>
-       
-    <string name="di_new_character_item_steve_skin">La peau de Steve</string>
-       
-    <string name="di_new_character_item_gallery">Parcourir la galerie</string>
-
-       
-    <string name="di_save_success_title">Succès!</string>
-       
-    <string name="di_save_success_text">La peau est enregistrée!</string>
-
-       
-    <string name="di_save_error_title">Erreur!</string>
-       
-    <string name="di_save_error_text">La peau n\'est pas enregistrée dans la galerie.</string><![CDATA[
-
-       
-
-       
-
-       
-    ]]>
-    <string name="permission_accepted">Autorisation acceptée</string>
-       
-    <string name="di_skin_catalog">Catalogue de peaux</string>
     <string name="skin_dialog_description">Importer de la peau dans Minecraft PE?</string>
     <string name="premium">Premium</string>
     <string name="unlock">Ouvrir</string>
@@ -217,7 +168,6 @@
     <string name="file_storage_error">Fichier non enregistré en raison d\'une erreur de stockage</string>
     <string name="file_network_error">Fichier non enregistré en raison d\'une erreur réseau</string>
     <string name="you_earned_coins">Vous avez gagné %1$d pièces!</string>
-    <string name="bonus_format">Prime %1$d%%</string>
     <string name="coins_amount_format">%1$d pièces de monnaie</string>
     <string name="get">obtenir</string>
     <string name="settings_title_consent_policy_key">Politique de consentement</string>
@@ -225,12 +175,11 @@
     <string name="retry">Retenter</string>
     <string name="get_more_coins">Obtenez plus de pièces</string>
     <string name="get_more_coins_description">Obtenez %1$d pièces avec un rabais de %2$d%%!</string>
-    <string name="free">Gratuit</string>
-    <string name="watch_video">Regarder la vidéo</string>
-    <string name="buy">Acheter</string>
-    <string name="paid">Payé</string>
-    <string name="more">Plus</string>
     <string name="read_more">Lire la suite</string>
+    <string name="term_of_use">Conditions d\'utilisation</string>
+    <string name="accept">Accepter</string>
+    <string name="term_of_use_message">J\'accepte le %1$s.</string>
+    <string name="privacy_policy">confidentialité</string>
 
 
 </resources>

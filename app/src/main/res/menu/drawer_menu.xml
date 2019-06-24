@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group
-        android:id="@+id/menu_main"
-        android:checkableBehavior="none">
+    <group android:checkableBehavior="none">
 
         <item
             android:id="@+id/favorite_drawer"
             android:icon="@drawable/ic_favorite_drawer"
             android:title="@string/activity_favorite"/>
         <item
+            android:id="@+id/shop"
+            android:icon="@drawable/ic_shop"
+            android:title="@string/shop"/>
+        <item
             android:id="@+id/settings_drawer"
             android:icon="@drawable/ic_settings"
             android:title="@string/settings"/>
     </group>
 
-    <group
-        android:id="@+id/menu_soc"
-        android:checkableBehavior="none">
+    <group android:checkableBehavior="none">
 
         <item
             android:id="@+id/rate_drawer"
             android:icon="@drawable/ic_rate"
-            android:visible="false"
             android:title="@string/rate"/>
         <item
             android:id="@+id/share_drawer"
             android:icon="@drawable/ic_share_drawer"
-            android:visible="false"
             android:title="@string/share"/>
         <item
             android:id="@+id/feedback_drawer"
             android:icon="@drawable/ic_email"
-            android:visible="false"
             android:title="@string/feedback"/>
     </group>
 </menu>

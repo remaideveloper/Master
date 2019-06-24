@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.alegangames.master.fragment.sideSheet.DemoSideSheetDialogFragment;
 import com.annimon.stream.Stream;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.alegangames.master.R;
@@ -287,6 +288,10 @@ public class FragmentViewPager extends FragmentAbstract {
         if (mVersionList != null && !mVersionList.isEmpty()) {
             adapter.addAll(mVersionList);
         }
+
+//        DemoSideSheetDialogFragment dialog = new DemoSideSheetDialogFragment();
+//        dialog.setCancelable(true);
+//        dialog.show(getActivity().getSupportFragmentManager(), DemoSideSheetDialogFragment.class.getName());
 
         new MaterialAlertDialogBuilder(context)
                 .setTitle(R.string.sort_by_version)

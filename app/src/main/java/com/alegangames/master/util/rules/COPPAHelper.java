@@ -3,20 +3,23 @@ package com.alegangames.master.util.rules;
 import android.content.Context;
 
 import com.alegangames.master.util.AppUtil;
+import com.alegangames.master.util.preference.UtilPreference;
 
 import java.util.Locale;
 
 public class COPPAHelper {
 
-    private static boolean sChildDirectedTreatment = false;
-
-    public static void setChildDirectedTreatment(Context context) {
+    /**
+     * Узнать является ли пользователь гражданином США,
+     * Пометить весь контент как ориентированный на детей.
+     */
+    public static void setChildDirectedTreatment(Context context, boolean bool) {
         if (AppUtil.getCurrentLocale(context).equals(Locale.US)) {
-            sChildDirectedTreatment = true;
+            UtilPreference.setChildDirectedTreatmentPref(context, bool);
         }
     }
 
-    public static boolean isChildDirectedTreatment() {
-        return sChildDirectedTreatment;
+    public static boolean isChildDirectedTreatment(Context context) {
+        return UtilPreference.isChildDirectedTreatmentPref(context);
     }
 }

@@ -12,7 +12,6 @@
 
     <!-- General -->
     <string name="loading">تحميل…</string>
-    <string name="extra">إضافية</string>
     <string name="share">حصة</string>
     <string name="send">إرسال</string>
     <string name="share_choise">حصة</string>
@@ -23,11 +22,9 @@
     <string name="back_pressed">الرجاء النقر مرة أخرى للخروج</string>
 
     <!--Activity Name-->
-    <string name="activity_offerwall">تطبيقات</string>
     <string name="activity_wallpaper">خلفيات</string>
     <string name="activity_wallpaper_set">خلفية تعيين</string>
     <string name="activity_skins">جلود</string>
-    <string name="activity_skin_stealer">الجلد سارق</string>
     <string name="activity_favorite">المفضلة</string>
     <string name="activity_search">البحث</string>
 
@@ -41,9 +38,7 @@
     <string name="save">حفظ</string>
     <string name="set_as_wallpaper">تعيين كخلفية</string>
     <string name="wallpaper_set_title">خلفية تعيين</string>
-    <string name="wallpaper_set_description">خلفيات تثبيت بنجاح على سطح المكتب من جهازك.</string>
     <string name="wallpaper_not_set_title">خلفية عدم تعيين</string>
-    <string name="wallpaper_not_set_description">خلفيات غير مثبت على سطح المكتب في جهازك.</string>
 
     <!--Activity Skins-->
 
@@ -108,112 +103,112 @@
     <string name="close_minecraft">إغلاق مينكرافت بي</string>
     <string name="create_one_map">يرجى إنشاء خريطة واحدة على الأقل</string>
     <string name="no_maps_found">لم يتم العثور على خرائط</string>
-    <string name="select_map">حدد خريطة</string>
-    <string name="edit">تصحيح</string>
+    <string name="select_map">حدد خريطة</string><![CDATA[
 
-    <string name="any_fuel">أي وقود</string>
-    <string name="brewing">تخمير الجعة</string>
-    <string name="crafting">حرفة</string>
-    <string name="drops">قطرات</string>
-    <string name="eggs">بيض</string>
-    <string name="experience">حنكة</string>
-    <string name="food">طعام</string>
-    <string name="health">الصحة</string>
-    <string name="item">بند</string>
-    <string name="mob">تجمهر</string>
-    <string name="music_discs">أقراص مدمجة</string>
-    <string name="other">ثان</string>
-    <string name="spawn_requirements">مشيجة الفطر المتطلبات</string>
-    <string name="tap_to_open">انقر لفتح هذا العنصر</string>
-    <string name="tools">أدوات</string>
-    <string name="transport">المواصلات</string>
-    <string name="used_to_make">مستعمل ليصنع</string>
-    <string name="with">مع</string>
-    <string name="biome">إحيائية</string>
-    <string name="biomes">المناطق الأحيائية</string>
-    <string name="items">بند</string>
-    <string name="mobs">الغوغاء</string>
-    <string name="basic">الأساسية</string>
-    <string name="defence">دفاع</string>
-    <string name="blocks">كتل</string>
-    <string name="mechanism">آلية</string>
-    <string name="wool">صوف</string>
-    <string name="dyes">الأصباغ</string>
-    <string name="temperature">درجة الحرارة</string>
-    <string name="features">الميزات</string>
-    <string name="none">لا احد</string>
-    <string name="not_craft_item">لا يمكنك إنشاء هذا موضوع</string>
-    <string name="item_not_exist">موضوع غير موجود</string>
-    <string name="mob_not_exist">الغوغاء غير موجود</string>
-    <string name="strength">قوة</string>
-    <string name="easy">سهل</string>
-    <string name="normal">عادي</string>
-    <string name="hard">الصعب</string>
-    <string name="plants">النباتات</string>
-    <string name="resources">موارد</string>
-    <string name="ingredients">مكونات</string>
-    <string name="carpets">السجاد</string>
-    <string name="glass">زجاج</string>
 
-    <string name="skin_editor">محرر الجلد</string>
 
-       
-    <string name="di_menu_title">قائمة طعام</string>
-       
-    <string name="di_menu_item_more_from_us">أكثر منا!</string>
-       
-    <string name="di_menu_item_rate_app">قيمنا</string>
-       
-    <string name="di_menu_item_about_us">مومات عنا</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
        
-    <string name="di_about_us_title">Version %1$s</string><![CDATA[
+
        
+
+       
+
+       
+
+
+       
+
+       
+
+       
+
+
+       
+
+
+       
+
+       
+
+       
+
+
+       
+
+
+       
+
+       
+
+       
+
+       
+
+
+       
+
+       
+
+
+       
+
+       
+
+
+       
+
+       
+
+       
+
 
        
     ]]>
-    <string name="di_error_skin_size_title">حجم الجلد غير معتمد</string>
-       
-    <string name="di_error_skin_size_text">نحن نؤيد فقط skin64x32 64x64.</string>
-
-       
-    <string name="di_palette_title">اختيار اللون</string>
-       
-    <string name="di_palette_positive">أختر</string>
-       
-    <string name="di_palette_negative">إلغاء</string>
-
-       
-    <string name="di_parts_title">إخفاء/عرض أجزاء الجسم</string>
-
-       
-    <string name="di_new_character_title">شخصية جديدة</string>
-       
-    <string name="di_new_character_negative">إلغاء</string>
-       
-    <string name="di_new_character_item_steve_skin">ستيف الجلد</string>
-       
-    <string name="di_new_character_item_gallery">تصفح المعرض</string>
-
-       
-    <string name="di_save_success_title">نجاح!</string>
-       
-    <string name="di_save_success_text">يتم حفظ الجلد!</string>
-
-       
-    <string name="di_save_error_title">خطأ!</string>
-       
-    <string name="di_save_error_text">لا يتم حفظ الجلد إلى المعرض.</string><![CDATA[
-
-       
-
-       
-
-       
-    ]]>
-    <string name="permission_accepted">تم قبول الإذن</string>
-       
-    <string name="di_skin_catalog">كتالوج الجلود</string>
     <string name="skin_dialog_description">استيراد الجلد في ماين كرافت بي؟</string>
     <string name="premium">علاوة</string>
     <string name="unlock">فتح</string>
@@ -236,7 +231,6 @@
     <string name="file_storage_error">لم يتم حفظ الملف بسبب خطأ في التخزين</string>
     <string name="file_network_error">لم يتم حفظ الملف بسبب خطأ في الشبكة</string>
     <string name="you_earned_coins">كنت قد حصلت على %1$d قطعة نقدية!</string>
-    <string name="bonus_format">علاوة %1$d%%</string>
     <string name="coins_amount_format">عملات معدنية %1$d</string>
     <string name="get">احصل على</string>
     <string name="settings_title_consent_policy_key">سياسة الموافقة</string>
@@ -244,12 +238,10 @@
     <string name="retry">إعادة المحاولة</string>
     <string name="get_more_coins">الحصول على المزيد من النقود</string>
     <string name="get_more_coins_description">الحصول على %1$d قطعة نقدية مع خصم %2$d%%!</string>
-    <string name="free">حر</string>
-    <string name="watch_video">شاهد الفيديو</string>
-    <string name="buy">يشترى</string>
-    <string name="paid">دفع</string>
-    <string name="more">أكثر من</string>
     <string name="read_more">قراءة المزيد</string>
+    <string name="accept">اقبل</string>
+    <string name="term_of_use">المصطلحات المستخدمة</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
 
 
 </resources>

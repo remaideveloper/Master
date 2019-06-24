@@ -28,7 +28,6 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public static final int MENU_VIEW_TYPE = R.layout.card_type_menu;
     public static final int OFFER_VIEW_TYPE = R.layout.card_type_offer;
-    public static final int PROMO_PAGER_VIEW_TYPE = R.layout.card_type_promo;
     public static final int CONTENT_VIEW_TYPE = R.layout.card_type_item_array;
     public static final int CONTENT_MATCH_VIEW_TYPE = R.layout.card_type_item_array_match;
 

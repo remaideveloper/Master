@@ -14,6 +14,11 @@
         android:icon="@drawable/ic_share_white"
         android:title="@string/share"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/shop"
+        android:icon="@drawable/ic_shop_white"
+        android:title="@string/shop"
+        app:showAsAction="ifRoom"/>
 
     <group
         android:id="@+id/group_skins"

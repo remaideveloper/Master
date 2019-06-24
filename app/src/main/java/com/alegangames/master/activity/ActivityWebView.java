@@ -22,21 +22,30 @@ import com.alegangames.master.ui.ToolbarUtil;
 public class ActivityWebView extends ActivityAppParent {
 
     public static final String URL_EXTRA = "EXTRA";
+    public static final String BACK_EXTRA = "BACK";
     public static final String URL_EXTERNAL = "EXTERNAL";
     private WebView webView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    private boolean backFlag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
         ToolbarUtil.setToolbar(this, true);
+
         String url = getIntent().getStringExtra(URL_EXTRA);
+
+        backFlag = getIntent().getBooleanExtra(BACK_EXTRA, false);
+
         webView = findViewById(R.id.webView);
         mSwipeRefreshLayout = findViewById(R.id.refreshlayout);
         mSwipeRefreshLayout.setOnRefreshListener(() -> webView.reload());
         browserSettings();
-        webView.loadUrl(url);
+        if (url.contains(".pdf"))
+            webView.loadUrl("https://docs.google.com/viewer?url=" + url);
+        else
+            webView.loadUrl(url);
     }
 
     @Override
@@ -65,6 +74,7 @@ public class ActivityWebView extends ActivityAppParent {
         Log.d(TAG, "onDestroy: WebView");
         webView.destroy();
     }
+
 
     @SuppressLint("SetJavaScriptEnabled")
     @SuppressWarnings("deprecation")
@@ -154,9 +164,11 @@ public class ActivityWebView extends ActivityAppParent {
     public void onBackPressed() {
         if (webView.canGoBack()) {
             webView.goBack();
-        } else {
+        } else if (backFlag) {
+            finish();
+            startActivity(new Intent(this, ActivityLoading.class));
+        } else
             super.onBackPressed();
-        }
     }
 
 }

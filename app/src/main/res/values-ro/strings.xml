@@ -12,7 +12,6 @@
 
     <!-- General -->
     <string name="loading">Se incarca…</string>
-    <string name="extra">Suplimentar</string>
     <string name="share">Acțiune</string>
     <string name="send">Trimite</string>
     <string name="share_choise">Împărtășește-l</string>
@@ -23,11 +22,9 @@
     <string name="back_pressed">Vă rugăm să faceți clic din nou pentru a ieși</string>
 
     <!--Activity Name-->
-    <string name="activity_offerwall">aplicaţii</string>
     <string name="activity_wallpaper">Imagini de Fundal</string>
     <string name="activity_wallpaper_set">Setare imagine de fundal</string>
     <string name="activity_skins">Skin-uri</string>
-    <string name="activity_skin_stealer">Stealer pielii</string>
     <string name="activity_favorite">Favorit</string>
     <string name="activity_search">Căutare</string>
 
@@ -41,9 +38,7 @@
     <string name="save">Save</string>
     <string name="set_as_wallpaper">Seteaza ca Imagine de fundal</string>
     <string name="wallpaper_set_title">Set imagine de fundal</string>
-    <string name="wallpaper_set_description">Imagini de fundal instalat cu succes pe spațiul de lucru al dispozitivului.</string>
     <string name="wallpaper_not_set_title">Imagine de fundal nu este setat</string>
-    <string name="wallpaper_not_set_description">Nu este instalat pe imagini de fundal desktop-ul dispozitivului.</string>
 
     <!--Activity Skins-->
 
@@ -109,106 +104,61 @@
     <string name="create_one_map">Creați cel puțin o hartă</string>
     <string name="no_maps_found">Nu au fost găsite hărți</string>
     <string name="select_map">Selectați o hartă</string>
-    <string name="edit">Edita</string>
 
-    <string name="any_fuel">Orice combustibil</string>
-    <string name="brewing">Poțiuni</string>
-    <string name="crafting">Crafting</string>
-    <string name="drops">Picături</string>
-    <string name="eggs">Ouă</string>
-    <string name="experience">Experienţă</string>
-    <string name="food">Alimente</string>
-    <string name="health">Sănătate</string>
-    <string name="item">Articol</string>
-    <string name="mob">Mob</string>
-    <string name="music_discs">Discuri muzicale</string>
-    <string name="other">Alte</string>
-    <string name="spawn_requirements">Cerințe pentru spawn</string>
-    <string name="tap_to_open">Apăsați pentru a deschide acest element</string>
-    <string name="tools">Unelte</string>
-    <string name="transport">Transport</string>
-    <string name="used_to_make">Folosit la Face</string>
-    <string name="with">cu</string>
-    <string name="biome">Biome</string>
-    <string name="biomes">Biomes</string>
-    <string name="items">Articole</string>
-    <string name="mobs">Mobs</string>
-    <string name="basic">De bază</string>
-    <string name="defence">Apărare</string>
-    <string name="blocks">Blocuri</string>
-    <string name="mechanism">Mecanism</string>
-    <string name="wool">Lână</string>
-    <string name="dyes">Coloranți</string>
-    <string name="temperature">Temperatura</string>
-    <string name="features">Caracteristici</string>
-    <string name="none">Nici unul</string>
-    <string name="not_craft_item">Nu pot face acest articol</string>
-    <string name="item_not_exist">Elementul nu există</string>
-    <string name="mob_not_exist">Mob nu există</string>
-    <string name="strength">Putere</string>
-    <string name="easy">Uşor</string>
-    <string name="normal">Normal</string>
-    <string name="hard">Greu</string>
-    <string name="plants">Plante</string>
-    <string name="resources">Resurse</string>
-    <string name="ingredients">Ingrediente</string>
-    <string name="carpets">Covoare</string>
-    <string name="glass">Sticlă</string>
-
-    <!--Skin Editor Strings-->
+    <!--Skin Editor Strings--><![CDATA[
        
-    <string name="skin_editor">Piei Editor</string>
+
 
        
-    <string name="di_menu_title">Meniul</string>
-       
-    <string name="di_menu_item_more_from_us">Mai mult de la noi!</string>
-       
-    <string name="di_menu_item_rate_app">Rată Noi </string>
-       
-    <string name="di_menu_item_about_us">Despre Noi</string>
 
        
-    <string name="di_about_us_title">Version %1$s</string>
-       
-    <string name="di_error_skin_size_title">Dimensiunea pielii neacceptată</string>
-       
-    <string name="di_error_skin_size_text">Suportăm doar pielea de 64x32 sau 64x64.</string>
 
        
-    <string name="di_palette_title">Alegeți culoarea</string>
-       
-    <string name="di_palette_positive">Alege</string>
-       
-    <string name="di_palette_negative">Anulare</string>
 
        
-    <string name="di_parts_title">Ascunde/Spectacol Corp Parte</string>
+
 
        
-    <string name="di_new_character_title">Noul personaj</string>
-       
-    <string name="di_new_character_negative">Anulare</string>
-       
-    <string name="di_new_character_item_steve_skin">Steve Skin</string>
-       
-    <string name="di_new_character_item_gallery">Navigați în Galerie</string>
 
        
-    <string name="di_save_success_title">Succes!</string>
-       
-    <string name="di_save_success_text">Pielea este salvată!</string>
 
        
-    <string name="di_save_error_title">Eroare!</string>
+
+
        
-    <string name="di_save_error_text">Pielea nu este salvată în galerie.</string><![CDATA[
+
        
+
+       
+
+
+       
+
+
+       
+
+       
+
+       
+
+       
+
+
+       
+
+       
+
+
+       
+
+       
+
+       
+       
+
+
        
     ]]>
-    <string name="permission_accepted">Permisiunea a fost acceptată</string>
-       
-    <string name="di_skin_catalog">Catalog de Piele</string>
     <string name="skin_dialog_description">Importați pielea în Minecraft PE?</string>
     <string name="premium">Premium</string>
     <string name="unlock">Descuia</string>
@@ -231,7 +181,6 @@
     <string name="file_storage_error">Fișierul nu a fost salvat din cauza erorilor de stocare</string>
     <string name="file_network_error">Fișierul nu a fost salvat din cauza erorii de rețea</string>
     <string name="you_earned_coins">Ai câștigat %1$d de monede!</string>
-    <string name="bonus_format">Primă %1$d%%</string>
     <string name="coins_amount_format">%1$d monede</string>
     <string name="get">obține</string>
     <string name="settings_title_consent_policy_key">Politica de consimțământ</string>
@@ -239,12 +188,11 @@
     <string name="retry">Reîncercați</string>
     <string name="get_more_coins">Obțineți mai multe monede</string>
     <string name="get_more_coins_description">Obțineți %1$d monedă cu %2$d%% reduceri!</string>
-    <string name="free">Gratuit</string>
-    <string name="watch_video">Vizionați videoclipul</string>
-    <string name="buy">A cumpara</string>
-    <string name="paid">Plătit</string>
-    <string name="more">Mai Mult</string>
     <string name="read_more">Citeste mai mult</string>
+    <string name="term_of_use_message">Accept %1$s.</string>
+    <string name="term_of_use">Termeni de utilizare</string>
+    <string name="accept">Accepta</string>
+    <string name="privacy_policy">Politica De Confidențialitate</string>
 
 
 </resources>

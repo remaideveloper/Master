@@ -12,7 +12,6 @@
 
     <!-- General -->
     <string name="loading">読み込み中…</string>
-    <string name="extra">追加</string>
     <string name="share">シェア</string>
     <string name="send">送信</string>
     <string name="share_choise">シェアで</string>
@@ -23,11 +22,9 @@
     <string name="back_pressed">をクリックしてください。終了</string>
 
     <!--Activity Name-->
-    <string name="activity_offerwall">アプリ</string>
     <string name="activity_wallpaper">壁紙</string>
     <string name="activity_wallpaper_set">壁紙に設定</string>
     <string name="activity_skins">皮</string>
-    <string name="activity_skin_stealer">皮膚Stealer</string>
     <string name="activity_favorite">好きな</string>
     <string name="activity_search">検索</string>
 
@@ -41,9 +38,7 @@
     <string name="save">Save</string>
     <string name="set_as_wallpaper">壁紙登</string>
     <string name="wallpaper_set_title">壁紙に設定</string>
-    <string name="wallpaper_set_description">壁紙の設置に成功し、デスクトップのデバイスです。</string>
     <string name="wallpaper_not_set_title">壁紙に設定しない</string>
-    <string name="wallpaper_not_set_description">壁紙インストールされていないのデスクトップのデバイスです。</string>
 
     <!--Activity Skins-->
 
@@ -109,113 +104,68 @@
     <string name="create_one_map">地図を少なくとも1つ作成してください</string>
     <string name="no_maps_found">地図が見つかりません</string>
     <string name="select_map">地図を選択</string>
-    <string name="edit">編集</string>
 
-    <string name="any_fuel">どれか 燃料</string>
-    <string name="brewing">ポーション</string>
-    <string name="crafting">製作</string>
-    <string name="drops">ドロップ</string>
-    <string name="eggs">卵</string>
-    <string name="experience">経験</string>
-    <string name="food">フード</string>
-    <string name="health">健康</string>
-    <string name="item">項目</string>
-    <string name="mob">Mob</string>
-    <string name="music_discs">音楽ディスク</string>
-    <string name="other">その他</string>
-    <string name="spawn_requirements">スポーン 要件</string>
-    <string name="tap_to_open">タップするとこのアイテムが開きます</string>
-    <string name="tools">ツール</string>
-    <string name="transport">輸送</string>
-    <string name="used_to_make">中古 に 作る</string>
-    <string name="with">〜と</string>
-    <string name="biome">バイオーム</string>
-    <string name="biomes">バイオーム</string>
-    <string name="items">項目</string>
-    <string name="mobs">モッブ</string>
-    <string name="basic">基本的な</string>
-    <string name="defence">防衛</string>
-    <string name="blocks">ブロック</string>
-    <string name="mechanism">機構</string>
-    <string name="wool">ウール</string>
-    <string name="dyes">染料</string>
-    <string name="temperature">温度</string>
-    <string name="features">特徴</string>
-    <string name="none">なし</string>
-    <string name="not_craft_item">このアイテムを作ることはできません</string>
-    <string name="item_not_exist">アイテムが存在しません</string>
-    <string name="mob_not_exist">モブは存在しない</string>
-    <string name="strength">強</string>
-    <string name="easy">簡単</string>
-    <string name="normal">正常</string>
-    <string name="hard">ハード</string>
-    <string name="plants">工場</string>
-    <string name="resources">リソース</string>
-    <string name="ingredients">材料</string>
-    <string name="carpets">カーペット</string>
-    <string name="glass">ガラス</string>
-
-    <!--Skin Editor Strings-->
+    <!--Skin Editor Strings--><![CDATA[
        
-    <string name="skin_editor">スキンエディタ</string>
+
 
        
-    <string name="di_menu_title">メニュー</string>
-       
-    <string name="di_menu_item_more_from_us">もっと私たちから!</string>
-       
-    <string name="di_menu_item_rate_app">私たちを評価してください</string>
-       
-    <string name="di_menu_item_about_us">私たちに関しては</string>
 
        
-    <string name="di_about_us_title">Version %1$s</string><![CDATA[
+
        
+
+       
+
+
+       
+
+       
+
+       
+
+
+       
+
+
+       
+
+       
+
+       
+
+
+       
+
+
+       
+
+       
+
+       
+
+       
+
+
+       
+
+       
+
+
+       
+
+       
+
+
+       
+
+       
+
+       
+
 
        
     ]]>
-    <string name="di_error_skin_size_title">サポートされていないスキンサイズ</string>
-       
-    <string name="di_error_skin_size_text">64x32または64x64のスキンのみがサポートされています。</string>
-
-       
-    <string name="di_palette_title">色を選択してください</string>
-       
-    <string name="di_palette_positive">選択する</string>
-       
-    <string name="di_palette_negative">キャンセル</string>
-
-       
-    <string name="di_parts_title">隠す/ショー 体 部品</string>
-
-       
-    <string name="di_new_character_title">新しいキャラクター</string>
-       
-    <string name="di_new_character_negative">キャンセル</string>
-       
-    <string name="di_new_character_item_steve_skin">スティーブスキン</string>
-       
-    <string name="di_new_character_item_gallery">ブラウズギャラリー</string>
-
-       
-    <string name="di_save_success_title">成功!</string>
-       
-    <string name="di_save_success_text">皮膚が保存されます!</string>
-
-       
-    <string name="di_save_error_title">エラー!</string>
-       
-    <string name="di_save_error_text">スキンはギャラリーに保存されません。</string><![CDATA[
-
-       
-
-       
-
-       
-    ]]>
-    <string name="permission_accepted">許可された許可</string>
-       
-    <string name="di_skin_catalog">スキンカタログ</string>
     <string name="skin_dialog_description">Minecraft PEのスキンをインポートしますか？</string>
     <string name="premium">プレミアム</string>
     <string name="unlock">ロックを解除する</string>
@@ -238,7 +188,6 @@
     <string name="file_storage_error">保存エラーのため保存されなかったファイル</string>
     <string name="file_network_error">ネットワークエラーのため保存されていないファイル</string>
     <string name="you_earned_coins">あなたは%1$dコインを獲得しました！</string>
-    <string name="bonus_format">ボーナス %1$d%%</string>
     <string name="coins_amount_format">%1$d コイン</string>
     <string name="get">取得する</string>
     <string name="settings_title_consent_policy_key">同意ポリシー</string>
@@ -246,11 +195,9 @@
     <string name="retry">リトライ</string>
     <string name="get_more_coins">より多くのコインを得る</string>
     <string name="get_more_coins_description">%2$d%%個の割引で%1$d個のコインを手に入れよう！</string>
-    <string name="free">無料</string>
-    <string name="watch_video">ビデオを見る</string>
-    <string name="buy">購入</string>
-    <string name="paid">有料</string>
-    <string name="more">もっと</string>
     <string name="read_more">続きを読む</string>
+    <string name="accept">受け入れる</string>
+    <string name="term_of_use">ﾂつ\"ﾂづｩﾂ</string>
+    <string name="privacy_policy">ﾂつ\"ﾂづｩﾂ</string>
 
 </resources>

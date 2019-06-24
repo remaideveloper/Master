@@ -9,17 +9,9 @@
         <item name="android:buttonStyle">@style/CustomButton</item>
         <item name="colorAccent">@color/primaryColor</item>
         <item name="colorPrimary">@color/primaryDarkColor</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="preferenceTheme">@style/PreferenceFixTheme.Light</item>
         <item name="android:background">@null</item>
         <item name="android:actionMenuTextColor">@color/carbon_white</item>
-    </style>
-
-    <style name="TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="SubtitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="AppTheme.ActionBar" parent="Theme.MaterialComponents.Light">
@@ -72,32 +64,11 @@
         <item name="android:textColor">@color/carbon_white</item>
     </style>
 
-    <style name="SubtitleStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
-        <item name="android:textColor">@color/carbon_white</item>
+    <style name="TextLargeStyle">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/carbon_black</item>
     </style>
-
-    <style name="Theme.CraftGuide" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/primaryDarkColor</item>
-    </style>
-
-    <style name="Theme.Home" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/primaryDarkColor</item>
-    </style>
-
-    <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
-        <item name="textAllCaps">true</item>
-    </style>
-
-    <style name="RatingBarHealth" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/craft_ratingbar_health</item>
-        <item name="android:minHeight">32dip</item>
-        <item name="android:maxHeight">32dip</item>
-    </style>
-
 
     <style name="TextMediumStyle">
         <item name="android:textSize">@dimen/text_size_medium</item>
@@ -113,6 +84,25 @@
         <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:typeface">sans</item>
         <item name="android:textColor">@color/carbon_black</item>
+    </style>
+
+    <style name="Animation.Design.SideSheetDialog" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/side_sheet_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/side_sheet_slide_out</item>
+    </style>
+
+    <style name="Theme.Me.Light.SideSheetDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.SideSheetDialog</item>
+        <item name="sideSheetStyle">@style/Widget.Me.SideSheet.Modal</item>
+    </style>
+
+    <style name="Widget.Me.SideSheet.Modal" parent="android:Widget">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:elevation" tools:ignore="NewApi">16dp</item>
+        <item name="behavior_peekWidth">auto</item>
+        <item name="behavior_hideable">true</item>
+        <item name="behavior_skipCollapsed">false</item>
     </style>
 
 </resources>

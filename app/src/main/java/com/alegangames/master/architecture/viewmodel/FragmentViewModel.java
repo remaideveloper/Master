@@ -36,7 +36,7 @@ public class FragmentViewModel extends AndroidViewModel {
     }
 
     private void loadData() {
-        AsyncTask.execute(() -> mJsonItemLiveData.postValue(JsonItemFactory.getListJsonItemFragmentFromJsonArray(JsonHelper.getJsonArrayFromStorage(getApplication(), "data-master.json"))));
+        AsyncTask.execute(() -> mJsonItemLiveData.postValue(JsonItemFactory.getListJsonItemFragmentFromJsonArray(JsonHelper.getJsonArrayFromStorage(getApplication(), "m.txt"))));
     }
 }
 

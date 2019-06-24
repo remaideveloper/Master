@@ -66,7 +66,7 @@ import static com.alegangames.master.download.DownloadAsyncTask.STATUS_SUCCESS;
 import static com.alegangames.master.util.BlockLauncherHelper.REQUEST_CODE_SKIN;
 
 
-public abstract class ActivitySkins extends ActivityAppParent implements PermissionManager.InterfacePermission, PurchaseManager.InterfacePurchase, AdMobVideoRewarded.RewardedVideoAdListener {
+public abstract class ActivitySkins extends ActivityAppParent implements PermissionManager.InterfacePermission, PurchaseManager.InterfacePurchase {
 
 
     public static final String TAG = ActivitySkins.class.getSimpleName();
@@ -92,6 +92,7 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
         mInterfacePermission = this;
 
         mAdMobVideoRewarded = new AdMobVideoRewarded(this);
+        mAdMobVideoRewarded.getRewardedVideoAd().setRewardedVideoAdListener(mAdMobVideoRewarded.getDefaultVideoRewardAdListener());
         mAdMobVideoRewarded.forceLoadRewardedVideo();
 
         downloadViewModel = ViewModelProviders.of(this).get(DownloadViewModel.class);
@@ -391,7 +392,7 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
         Log.d(TAG, "onBillingError");
         // Предлагаем посмотреть видеорекламу
         runOnUiThread(() -> {
-            if (mAdMobVideoRewarded.isLoaded() && !isFinishing()) {
+            if (!isFinishing()) {
                 new AlertDialog.Builder(ActivitySkins.this)
                         .setTitle(R.string.free_coins)
                         .setMessage(R.string.watch_and_gain)
@@ -632,25 +633,25 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
         }
     }
 
-    @Override
-    public void onAdsClosed(boolean rewarded) {
-        Log.d(TAG, "onAdsClosed: ");
-        //Вознаграждаем пользователя монеткой
-        if (rewarded) {
-            PurchaseManager.addCoins(10, this);
-            ToolbarUtil.setCoinsSubtitle(this);
-            String message = getString(R.string.you_earned_coins, 10);
-            ToastUtil.show(this, message);
-        }
-
-        if (mAdMobVideoRewarded != null)
-            mAdMobVideoRewarded.forceLoadRewardedVideo();
-    }
-
-    @Override
-    public void onAdsLoaded() {
-
-    }
+//    @Override
+//    public void onAdsClosed(boolean rewarded) {
+//        Log.d(TAG, "onAdsClosed: ");
+//        //Вознаграждаем пользователя монеткой
+//        if (rewarded) {
+//            PurchaseManager.addCoins(10, this);
+//            ToolbarUtil.setCoinsSubtitle(this);
+//            String message = getString(R.string.you_earned_coins, 10);
+//            ToastUtil.show(this, message);
+//        }
+//
+//        if (mAdMobVideoRewarded != null)
+//            mAdMobVideoRewarded.forceLoadRewardedVideo();
+//    }
+//
+//    @Override
+//    public void onAdsLoaded() {
+//
+//    }
 
 
 }

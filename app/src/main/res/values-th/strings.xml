@@ -12,7 +12,6 @@
 
     <!-- General -->
     <string name="loading">กำลังโหลด …</string>
-    <string name="extra">พิเศษ</string>
     <string name="share">หุ้น</string>
     <string name="send">ส่ง</string>
     <string name="share_choise">แบ่งปัน</string>
@@ -23,11 +22,9 @@
     <string name="back_pressed">กรุณาคลิกที่กลับมาอีกครั้งเพื่อออกจาก</string>
 
     <!--Activity Name-->
-    <string name="activity_offerwall">ปพลิเคชัน</string>
     <string name="activity_wallpaper">วอลล์เปเปอร์</string>
     <string name="activity_wallpaper_set">วอลล์เปเปอร์ชุด</string>
     <string name="activity_skins">สกิน</string>
-    <string name="activity_skin_stealer">มือกาวผิว</string>
     <string name="activity_favorite">ที่ชื่นชอบ</string>
     <string name="activity_search">ค้นหา</string>
 
@@ -41,9 +38,7 @@
     <string name="save">Save</string>
     <string name="set_as_wallpaper">ตั้งเป็นภาพพื้นหลัง</string>
     <string name="wallpaper_set_title">ชุดวอลล์เปเปอร์</string>
-    <string name="wallpaper_set_description">วอลล์เปเปอร์ติดตั้งเรียบร้อยแล้วบนเดสก์ทอปของอุปกรณ์ของคุณ</string>
     <string name="wallpaper_not_set_title">วอลล์เปเปอร์ไม่ได้ตั้งค่า</string>
-    <string name="wallpaper_not_set_description">วอลล์เปเปอร์ไม่ได้ติดตั้งบนเดสก์ทอปของอุปกรณ์ของคุณ</string>
 
     <!--Activity Skins-->
 
@@ -109,106 +104,61 @@
     <string name="create_one_map">โปรดสร้างแผนที่อย่างน้อยหนึ่งรายการ</string>
     <string name="no_maps_found">ไม่พบแผนที่</string>
     <string name="select_map">เลือกแผนที่</string>
-    <string name="edit">แก้ไข</string>
 
-    <string name="any_fuel">น้ำมันเชื้อเพลิงใด ๆ</string>
-    <string name="brewing">Potions</string>
-    <string name="crafting">งานหัตถกรรม</string>
-    <string name="drops">ยาหยอด</string>
-    <string name="eggs">ไข่</string>
-    <string name="experience">ประสบการณ์</string>
-    <string name="food">อาหาร</string>
-    <string name="health">สุขภาพ</string>
-    <string name="item">สิ่ง</string>
-    <string name="mob">Mob</string>
-    <string name="music_discs">เพลง จาน</string>
-    <string name="other">อื่น ๆ</string>
-    <string name="spawn_requirements">กฎระเบียบของการเกิด</string>
-    <string name="tap_to_open">แตะเพื่อเปิดรายการนี้</string>
-    <string name="tools">เครื่องมือ</string>
-    <string name="transport">ขนส่ง</string>
-    <string name="used_to_make">เคยทำ</string>
-    <string name="with">กับ</string>
-    <string name="biome">นิเวศน์วิทยา</string>
-    <string name="biomes">นิเวศน์วิทยา</string>
-    <string name="items">สิ่ง</string>
-    <string name="mobs">Mobs</string>
-    <string name="basic">ขั้นพื้นฐาน</string>
-    <string name="defence">ป้องกัน</string>
-    <string name="blocks">บล็อก</string>
-    <string name="mechanism">กลไก</string>
-    <string name="wool">ขนสัตว์</string>
-    <string name="dyes">สีย้อม</string>
-    <string name="temperature">อุณหภูมิ</string>
-    <string name="features">คุณสมบัติ</string>
-    <string name="none">ไม่มี</string>
-    <string name="not_craft_item">ไม่สามารถสร้างรายการนี้ได้</string>
-    <string name="item_not_exist">รายการไม่มีอยู่</string>
-    <string name="mob_not_exist">Mob ไม่ได้อยู่</string>
-    <string name="strength">ความแข็งแรง</string>
-    <string name="easy">ง่าย</string>
-    <string name="normal">ปกติ</string>
-    <string name="hard">ยาก</string>
-    <string name="plants">ปลูก</string>
-    <string name="resources">ทรัพยากร</string>
-    <string name="ingredients">ส่วนผสม</string>
-    <string name="carpets">พรม</string>
-    <string name="glass">กระจก</string>
-
-    <!--Skin Editor Strings-->
+    <!--Skin Editor Strings--><![CDATA[
        
-    <string name="skin_editor">โปรแกรมแก้ไขผิว</string>
+
 
        
-    <string name="di_menu_title">เมนู</string>
-       
-    <string name="di_menu_item_more_from_us">เพิ่มเติมจากเรา!</string>
-       
-    <string name="di_menu_item_rate_app">ให้คะแนนเรา</string>
-       
-    <string name="di_menu_item_about_us">เกี่ยวกับเรา</string>
 
        
-    <string name="di_about_us_title">Version %1$s</string>
-       
-    <string name="di_error_skin_size_title">ขนาดผิวที่ไม่สนับสนุน</string>
-       
-    <string name="di_error_skin_size_text">เราสนับสนุนเฉพาะ 64x32 หรือ 64x64 skin</string>
 
        
-    <string name="di_palette_title">เลือกสี</string>
-       
-    <string name="di_palette_positive">เลือก</string>
-       
-    <string name="di_palette_negative">ยกเลิก</string>
 
        
-    <string name="di_parts_title">ปิดบัง/แสดง ร่างกาย ชิ้นส่วน</string>
+
 
        
-    <string name="di_new_character_title">ตัวละครใหม่</string>
-       
-    <string name="di_new_character_negative">ยกเลิก</string>
-       
-    <string name="di_new_character_item_steve_skin">ผิวของสตีฟ</string>
-       
-    <string name="di_new_character_item_gallery">เรียกดูแกลเลอรี่</string>
 
        
-    <string name="di_save_success_title">ความสำเร็จ!</string>
-       
-    <string name="di_save_success_text">ผิวหนังได้รับการบันทึกแล้ว!</string>
 
        
-    <string name="di_save_error_title">ผิดพลาด!</string>
+
+
        
-    <string name="di_save_error_text">ผิวหนังไม่ได้รับการบันทึกไว้ในแกลเลอรี</string><![CDATA[
+
        
+
+       
+
+
+       
+
+
+       
+
+       
+
+       
+
+       
+
+
+       
+
+       
+
+
+       
+
+       
+
+       
+       
+
+
        
     ]]>
-    <string name="permission_accepted">การอนุญาต ได้รับการยอมรับ</string>
-       
-    <string name="di_skin_catalog">แคตตาล็อกสกิน</string>
     <string name="skin_dialog_description">นำเข้าผิวใน Minecraft PE?</string>
     <string name="premium">เบี้ยประกันภัย</string>
     <string name="unlock">ปลดล็อค</string>
@@ -231,7 +181,6 @@
     <string name="file_storage_error">ไฟล์ไม่ได้รับการบันทึกเนื่องจากข้อผิดพลาดในการจัดเก็บ</string>
     <string name="file_network_error">ไฟล์ไม่ได้รับการบันทึกเนื่องจากข้อผิดพลาดของเครือข่าย</string>
     <string name="you_earned_coins">คุณได้รับ %1$d เหรียญ!</string>
-    <string name="bonus_format">โบนัส %1$d%%</string>
     <string name="coins_amount_format">%1$d เหรียญ</string>
     <string name="get">ได้รับ</string>
     <string name="settings_title_consent_policy_key">นโยบายความยินยอม</string>
@@ -239,11 +188,10 @@
     <string name="retry">ลองใหม่อีกครั้ง</string>
     <string name="get_more_coins">รับเหรียญมากขึ้น</string>
     <string name="get_more_coins_description">รับ %1$d เหรียญพร้อมส่วนลด %2$d%% ใบ!</string>
-    <string name="free">ฟรี</string>
-    <string name="watch_video">ดูวีดีโอ</string>
-    <string name="buy">ซื้อ</string>
-    <string name="paid">ต้องจ่าย</string>
-    <string name="more">มากกว่า</string>
     <string name="read_more">อ่านเพิ่มเติม</string>
+    <string name="accept">ยอมรับ</string>
+    <string name="term_of_use">เงื่อนไขของใช้</string>
+    <string name="term_of_use_message">ฉันยอมรับค %1$s.</string>
+    <string name="privacy_policy">ข้อกำหนดความเป็นส่วนตัว</string>
 
 </resources>

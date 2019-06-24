@@ -21,7 +21,9 @@
 -keepattributes *Annotation*
 -renamesourcefileattribute SourceFile
 -keepattributes SourceFile,LineNumberTable
--repackageclasses ''
+-repackageclasses "master"
+
+-keep class com.android.vending.billing.**
 
 -dontnote com.android.vending.licensing.ILicensingService
 
@@ -79,6 +81,7 @@
 -keep class com.parse.*{ *; }
 -dontwarn com.parse.**
 -dontwarn com.squareup.picasso.**
+-dontwarn com.bumptech.glide.**
 -keepclasseswithmembernames class * { native <methods>; }
 
 -dontwarn okhttp3.**
