@@ -31,9 +31,6 @@ public class GDPRHelper {
     private GDPRHelper(Context context) {
         mContext = context;
         mConsentInformation = ConsentInformation.getInstance(context);
-        mConsentInformation.addTestDevice(Config.DEVICE_ID[0]);
-        mConsentInformation.addTestDevice(Config.DEVICE_ID[1]);
-        mConsentInformation.addTestDevice(Config.DEVICE_ID[2]);
 //        mConsentInformation.setDebugGeography(DebugGeography.DEBUG_GEOGRAPHY_EEA);
     }
 

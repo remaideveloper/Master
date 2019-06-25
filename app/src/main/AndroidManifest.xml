@@ -10,8 +10,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
-    <!-- Required for in-app purchase -->
-    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
         android:name="com.alegangames.master.App"

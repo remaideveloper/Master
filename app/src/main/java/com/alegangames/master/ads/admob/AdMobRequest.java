@@ -30,9 +30,6 @@ public class AdMobRequest {
     public static AdRequest getRequest() {
         AdRequest.Builder builder = new AdRequest.Builder();
         builder.addTestDevice(AdRequest.DEVICE_ID_EMULATOR);
-        builder.addTestDevice(Config.DEVICE_ID[0]);
-        builder.addTestDevice(Config.DEVICE_ID[1]);
-        builder.addTestDevice(Config.DEVICE_ID[2]);
         builder.addNetworkExtrasBundle(AdMobAdapter.class, bundle);
         if (isChildDirectTreatmentPref) {
             builder.tagForChildDirectedTreatment(true);
