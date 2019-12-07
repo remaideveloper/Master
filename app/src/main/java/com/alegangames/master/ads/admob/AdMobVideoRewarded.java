@@ -70,7 +70,10 @@ public final class AdMobVideoRewarded implements LifecycleObserver {
     public void forceLoadRewardedVideo() {
         Log.d(TAG, "forceLoadRewardedVideo");
         if (mRewardedVideoAd != null) {
-            mRewardedVideoAd.loadAd(VIDEO_REWARD_ID, AdMobRequest.getRequest());
+            if (!BuildConfig.DEBUG)
+                mRewardedVideoAd.loadAd(VIDEO_REWARD_ID, AdMobRequest.getRequest());
+            else
+                mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", AdMobRequest.getRequest());
         }
     }
 
@@ -95,10 +98,10 @@ public final class AdMobVideoRewarded implements LifecycleObserver {
         //Если пользователь не вознагражден прервать
         if (!isRewarded()) return;
         //Вознаграждаем пользователя монеткой
-        PurchaseManager.addCoins(COUNT_COINS, mContext);
-        ToolbarUtil.setCoinsSubtitle((AppCompatActivity) mActivity);
-        String message = mContext.getString(R.string.you_earned_coins, COUNT_COINS);
-        ToastUtil.show(mContext, message);
+//        PurchaseManager.addCoins(COUNT_COINS, mContext);
+////        ToolbarUtil.setCoinsSubtitle((AppCompatActivity) mActivity);
+//        String message = mContext.getString(R.string.you_earned_coins, COUNT_COINS);
+//        ToastUtil.show(mContext, message);
         //Возвращаем значение в прежнее состояние
         setRewarded(false);
     }

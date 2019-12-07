@@ -29,7 +29,7 @@
         android:id="@+id/emptyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/carbon_black"
+        android:textColor="@color/carbon_white"
         android:text="@string/favorite_is_empty"
         android:visibility="gone"
         android:textSize="21sp"

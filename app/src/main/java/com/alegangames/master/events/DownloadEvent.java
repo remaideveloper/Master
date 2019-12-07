@@ -6,6 +6,7 @@ public class DownloadEvent {
 
     public static final int PROGRESS = 0;
     public static final int FINISHED = 1;
+    public static final int CANCELED = 2;
 
     //Тип события - прогресс или окончание загрузки
     public int type;
@@ -33,5 +34,9 @@ public class DownloadEvent {
         this.status = status;
         this.requestCode = requestCode;
         type = FINISHED;
+    }
+
+    public DownloadEvent() {
+        type = CANCELED;
     }
 }

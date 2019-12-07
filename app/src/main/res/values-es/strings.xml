@@ -179,6 +179,7 @@
     <string name="term_of_use">Condiciones de uso</string>
     <string name="term_of_use_message">Acepto el %1$s.</string>
     <string name="privacy_policy">Política De Privacidad</string>
+    <string name="select_your_age">" Selecciona tu edad:"</string>
 
 
 </resources>

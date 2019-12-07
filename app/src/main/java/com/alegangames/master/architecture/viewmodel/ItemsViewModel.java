@@ -15,6 +15,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.alegangames.master.util.FirebaseManager;
 import com.annimon.stream.Stream;
 import com.alegangames.master.R;
 import com.alegangames.master.fragment.FragmentAbstract;
@@ -70,13 +71,10 @@ public class ItemsViewModel extends AndroidViewModel {
     private boolean mFragmentShuffle;
     private int mFragmentColumn;
 
-    Observer observerFragment = new Observer<List<JsonItemContent>>() {
-        @Override
-        public void onChanged(@Nullable List<JsonItemContent> jsonItemContents) {
-            if (jsonItemContents!=null && jsonItemContents.size()!=0) {
-                createAndPostTabs(jsonItemContents);
-                //mListJsonItemLiveData.removeObserver(this);
-            }
+    Observer observerFragment = (Observer<List<JsonItemContent>>) jsonItemContents -> {
+        if (jsonItemContents!=null && jsonItemContents.size()!=0) {
+            createAndPostTabs(jsonItemContents);
+            //mListJsonItemLiveData.removeObserver(this);
         }
     };
 
@@ -115,8 +113,14 @@ public class ItemsViewModel extends AndroidViewModel {
 
     private void checkListJsonItem() {
         if (mListJsonItemLiveData.getValue() == null) {
-            new JsonItemAsyncTask(getApplication(), mListJsonItem, mListJsonItemLiveData, mListVersionLiveData, mItemFile)
-                    .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            if (mItemFile.contains("main.txt")){
+                new JsonItemAsyncTask(getApplication(), mListJsonItem, mListJsonItemLiveData, mListVersionLiveData, mItemFile)
+                        .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            } else
+                FirebaseManager.loading(getApplication(), response -> {
+                    new JsonItemAsyncTask(getApplication(), mListJsonItem, mListJsonItemLiveData, mListVersionLiveData, response)
+                            .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                }, mItemFile);
         }
     }
 
@@ -189,7 +193,16 @@ public class ItemsViewModel extends AndroidViewModel {
         private WeakReference<List<JsonItemContent>> mListJsonItemWeakReference;
         private WeakReference<MutableLiveData<List<JsonItemContent>>> mMutableLiveDataListJsonItemWeakReference;
         private WeakReference<MutableLiveData<List<String>>> mMutableLiveDataListVersionWeakReference;
+        private JSONArray mJsonArray;
         private String mItemFile;
+
+        JsonItemAsyncTask(Context context, List<JsonItemContent> listJsonItem, MutableLiveData<List<JsonItemContent>> liveDataListJsonItem, MutableLiveData<List<String>> liveDataListVersion, JSONArray jsonArray) {
+            mContextWeakReference = new WeakReference<>(context);
+            mListJsonItemWeakReference = new WeakReference<>(listJsonItem);
+            mMutableLiveDataListJsonItemWeakReference = new WeakReference<>(liveDataListJsonItem);
+            mMutableLiveDataListVersionWeakReference = new WeakReference<>(liveDataListVersion);
+            mJsonArray = jsonArray;
+        }
 
         JsonItemAsyncTask(Context context, List<JsonItemContent> listJsonItem, MutableLiveData<List<JsonItemContent>> liveDataListJsonItem, MutableLiveData<List<String>> liveDataListVersion, String itemFile) {
             mContextWeakReference = new WeakReference<>(context);
@@ -205,8 +218,12 @@ public class ItemsViewModel extends AndroidViewModel {
             try {
                 Log.d(TAG, "doInBackground: mItemFile Url " + StorageUtil.STORAGE + "/content" + "/master/" + mItemFile);
 
+                JSONArray jsonArray;
                 //Получаем JSONArray из файла
-                JSONArray jsonArray = JsonHelper.getJsonArrayFromStorage(mContextWeakReference.get(), mItemFile);
+                if (mJsonArray == null)
+                    jsonArray = JsonHelper.getJsonArrayFromStorage(mContextWeakReference.get(), mItemFile);
+                else
+                    jsonArray = mJsonArray;
 //                VolleyManager.getInstance(mContextWeakReference.get()).getJsonArrayRequest(
 //                        response -> {
 //                            Log.d(TAG, "doInBackground: " + response);

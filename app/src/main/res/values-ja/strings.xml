@@ -197,7 +197,9 @@
     <string name="get_more_coins_description">%2$d%%個の割引で%1$d個のコインを手に入れよう！</string>
     <string name="read_more">続きを読む</string>
     <string name="accept">受け入れる</string>
-    <string name="term_of_use">ﾂつ\"ﾂづｩﾂ</string>
+    <string name="term_of_use">ﾂつ\"ﾂづｩﾂ %1$s</string>
     <string name="privacy_policy">ﾂつ\"ﾂづｩﾂ</string>
+    <string name="select_your_age">" 年齢を選択してください："</string>
+    <string name="term_of_use_message">私は受け入れます</string>
 
 </resources>

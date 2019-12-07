@@ -10,11 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.alegangames.master.R;
+import com.alegangames.master.activity.ActivityAppParent;
 import com.alegangames.master.activity.ActivityFavorite;
 import com.alegangames.master.adapter.AdapterRecyclerView;
+import com.alegangames.master.adapter.NativeAdapterRecyclerView;
 import com.alegangames.master.architecture.viewmodel.FavoriteViewModel;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.ui.RecyclerViewManager;
+import com.alegangames.master.util.screen.ScreenSize;
 
 import java.util.List;
 
@@ -24,7 +27,7 @@ public class FragmentFavorite extends FragmentAbstract {
 
     private View mRootView;
     private RecyclerViewManager mRecyclerView;
-    private AdapterRecyclerView mAdapter;
+    private NativeAdapterRecyclerView mAdapter;
     private ProgressBar mProgressBarLoading;
 
     private FavoriteViewModel mFavoriteViewModel;
@@ -40,10 +43,17 @@ public class FragmentFavorite extends FragmentAbstract {
         mRecyclerView = mRootView.findViewById(R.id.recycleView);
         mProgressBarLoading = mRootView.findViewById(R.id.progressBarLoading);
 
+        ActivityAppParent activityAppParent = ((ActivityAppParent) requireActivity());
+
         //Необходимо задать пустой адаптер
-        mAdapter = new AdapterRecyclerView(mRecyclerView);
-        mRecyclerView.setLayoutManager(RecyclerViewManager.LayoutManagerEnum.GridLayout);
+        mAdapter = new NativeAdapterRecyclerView(activityAppParent, mRecyclerView, activityAppParent.mAdMobInterstitial, activityAppParent.mAdMobVideoRewarded);
+        mRecyclerView.setLayoutManager(RecyclerViewManager.LayoutManagerEnum.GridLayout, ScreenSize.getColumnSize(2, getContext()));
         mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setItemViewCacheSize(10);
+        mRecyclerView.setDrawingCacheEnabled(true);
+        mRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
         mFavoriteViewModel = ViewModelProviders.of(this).get(FavoriteViewModel.class);
         //Запрашиваем итемы для данной категории и подписываемся на обновления
@@ -60,8 +70,12 @@ public class FragmentFavorite extends FragmentAbstract {
                 mAdapter.setOnLoadMoreListener(() -> mAdapter.loadNextItems(items));
                 mRecyclerView.removeAllViews();
                 mRecyclerView.setNestedScrollingEnabled(false);
-                mRecyclerView.setHasFixedSize(false);
                 mRecyclerView.setAdapter(mAdapter);
+                mRecyclerView.setAdapter(mAdapter);
+                mRecyclerView.setHasFixedSize(true);
+                mRecyclerView.setItemViewCacheSize(10);
+                mRecyclerView.setDrawingCacheEnabled(true);
+                mRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
                 mRecyclerView.getAdapter().notifyDataSetChanged();
                 mProgressBarLoading.setVisibility(View.GONE);
             }

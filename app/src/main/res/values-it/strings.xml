@@ -200,6 +200,7 @@
     <string name="accept">Accettare</string>
     <string name="term_of_use_message">Accetto la %1$s.</string>
     <string name="privacy_policy">Privacy Politica</string>
+    <string name="select_your_age">" Seleziona la tua età:"</string>
 
 
 </resources>

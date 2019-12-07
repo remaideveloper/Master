@@ -71,7 +71,7 @@ public class JsonHelper {
             is.read(buffer);
             is.close();
             Log.d(TAG, "getJsonArrayFromStorage size: " + size);
-            return new JSONArray(decryptString(buffer, secretKey));
+            return new JSONArray(decryptString(buffer));
         } catch (OutOfMemoryError | Exception e) {
             e.printStackTrace();
         }
@@ -82,10 +82,10 @@ public class JsonHelper {
         return  new SecretKeySpec(password.getBytes(), "AES");
     }
 
-    public static String decryptString(byte[] cipherText, SecretKey secret) throws Exception {
+    public static String decryptString(byte[] cipherText) throws Exception {
         Cipher cipher = null;
         cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.DECRYPT_MODE, secret);
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
         return new String(cipher.doFinal(cipherText), Charset.forName("UTF8"));
     }
 

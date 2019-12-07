@@ -15,7 +15,9 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.alegangames.master.R;
+import com.alegangames.master.activity.ActivityAppParent;
 import com.alegangames.master.adapter.AdapterRecyclerView;
+import com.alegangames.master.adapter.NativeAdapterRecyclerView;
 import com.alegangames.master.architecture.viewmodel.ItemsViewModel;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.ui.RecyclerViewManager;
@@ -40,7 +42,7 @@ public class FragmentTabView extends FragmentAbstract {
     private String mFragmentSettings;
     private ProgressBar mProgressBarLoading;
     private RecyclerViewManager mRecyclerView;
-    private AdapterRecyclerView mAdapter;
+    private NativeAdapterRecyclerView mAdapter;
     ItemsViewModel viewModel;
     LiveData<List<JsonItemContent>> liveData;
 
@@ -68,15 +70,21 @@ public class FragmentTabView extends FragmentAbstract {
         mRecyclerView = mRootView.findViewById(R.id.recycleView);
         mProgressBarLoading = mRootView.findViewById(R.id.progressBarLoading);
 
+        ActivityAppParent activityAppParent = ((ActivityAppParent) requireActivity());
+
         //Необходимо задать пустой адаптер
-//        if (getArguments().getString(FRAGMENT_DATA).equalsIgnoreCase("main.txt"))
-//            mAdapter = new AdapterRecyclerView(mRecyclerView, false);
-//        else {
-            mAdapter = new AdapterRecyclerView(mRecyclerView);
-//        }
+        if (getArguments().getString(FRAGMENT_DATA).equalsIgnoreCase("main.txt"))
+            mAdapter = new NativeAdapterRecyclerView(activityAppParent, mRecyclerView, false, activityAppParent.mAdMobInterstitial, activityAppParent.mAdMobVideoRewarded);
+        else {
+            mAdapter = new NativeAdapterRecyclerView(activityAppParent, mRecyclerView, activityAppParent.mAdMobInterstitial, activityAppParent.mAdMobVideoRewarded);
+        }
         mRecyclerView.setLayoutManager(RecyclerViewManager.LayoutManagerEnum.GridLayout);
+
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setItemViewCacheSize(10);
+        mRecyclerView.setDrawingCacheEnabled(true);
+        mRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
         //Получаем аргументы переданные фрагменту
 //        mFragmentSettings = getArguments().getString(FRAGMENT_SETTINGS);

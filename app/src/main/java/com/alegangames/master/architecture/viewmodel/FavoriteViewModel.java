@@ -32,14 +32,9 @@ public class FavoriteViewModel extends AndroidViewModel {
     private MutableLiveData<List<FragmentAbstract>> mFragmentLiveData = new MutableLiveData<>();
     private MutableLiveData<List<JsonItemContent>> mJsonItemLiveData = new MutableLiveData<>();
 
-    private JsonItemContent mItem;
     private MutableLiveData<Boolean> mFavoriteLiveData;
     private boolean isFavorite;
 
-    public FavoriteViewModel(@NonNull Application application, JsonItemContent item) {
-        super(application);
-        mItem = item;
-    }
 
     public FavoriteViewModel(@NonNull Application application) {
         super(application);
@@ -75,17 +70,15 @@ public class FavoriteViewModel extends AndroidViewModel {
         return mJsonItemLiveData;
     }
 
-    public LiveData<Boolean> getFavoriteLiveData() {
-        if (mFavoriteLiveData == null) {
-            mFavoriteLiveData = new MutableLiveData<>();
-            isFavorite = FavoriteManager.isFavoriteContent(getApplication(), mItem);
-            AsyncTask.execute(() -> mFavoriteLiveData.postValue(isFavorite));
-        }
+    public LiveData<Boolean> getFavoriteLiveData(JsonItemContent mItem) {
+        mFavoriteLiveData = new MutableLiveData<>();
+        isFavorite = FavoriteManager.isFavoriteContent(getApplication(), mItem);
+        AsyncTask.execute(() -> mFavoriteLiveData.postValue(isFavorite));
 
         return mFavoriteLiveData;
     }
 
-    public void setFavoriteLiveData() {
+    public void setFavoriteLiveData(JsonItemContent mItem) {
         if (mFavoriteLiveData == null) mFavoriteLiveData = new MutableLiveData<>();
         AsyncTask.execute(() -> {
             if (isFavorite) {
@@ -127,17 +120,15 @@ public class FavoriteViewModel extends AndroidViewModel {
 
     public static class FavoriteViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         private Application mApplication;
-        private JsonItemContent mItem;
 
 
-        public FavoriteViewModelFactory(Application application, JsonItemContent item) {
+        public FavoriteViewModelFactory(Application application) {
             mApplication = application;
-            mItem = item;
         }
 
         @Override
         public <T extends ViewModel> T create(Class<T> modelClass) {
-            return (T) new FavoriteViewModel(mApplication, mItem);
+            return (T) new FavoriteViewModel(mApplication);
         }
     }
 }

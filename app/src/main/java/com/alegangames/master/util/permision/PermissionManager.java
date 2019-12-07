@@ -26,14 +26,14 @@ public class PermissionManager {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
-    public static void onAskStoragePermission(Activity activity, int requestCode, InterfaceCallback interfaceListener) {
+    public static void onAskStoragePermission(Activity activity, int requestCode, InterfacePermission interfaceListener) {
 
         if (onSdkMoreThanLollipopMR1()) {
             if (shouldAskStoragePermission(activity, requestCode)) {
-                interfaceListener.onCallback();
+                onPermissionInterface(requestCode, interfaceListener);
             }
         } else {
-            interfaceListener.onCallback();
+            onPermissionInterface(requestCode, interfaceListener);
         }
     }
 

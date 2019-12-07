@@ -1,23 +1,108 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/carbon_black"
     tools:context=".activity.ActivityLoading">
 
+
     <ImageView
+        android:id="@+id/imageLogo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:padding="@dimen/loading_image_padding"
         android:scaleType="centerInside"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintBottom_toTopOf="@id/containerDialog"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="contentDescription" />
 
     <ProgressBar
+        android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLogo"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="20dp" />
-</RelativeLayout>
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/containerDialog"
+        android:theme="@style/progressBarWhite"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <LinearLayout
+
+        android:id="@+id/containerDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/border"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/term_of_use"
+            android:textAppearance="@style/TextLargeStyle"
+            android:textColor="@color/carbon_white"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textViewUnder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"
+            android:text="@string/select_your_age"
+            android:textAppearance="@style/TextLargeStyle"
+            android:textColor="@color/carbon_white"
+            android:textStyle="bold" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/number_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:np_width="64dp"
+            app:np_height="180dp"
+            app:np_dividerColor="@color/carbon_white"
+            app:np_max="59"
+            app:np_min="3"
+            app:np_selectedTextColor="@color/carbon_white"
+            app:np_textColor="@color/carbon_white"
+            app:np_value="18" />
+
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Text"
+            android:textColor="@color/carbon_white"
+            android:textAppearance="@style/TextMediumStyle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#976928"
+            android:backgroundTint="#976928"
+            android:text="@string/accept"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textAppearance="@style/TextMediumStyle" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,11 @@ import com.alegangames.master.util.rules.COPPAHelper;
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.alegangames.master.Config;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdMobRequest {
 
@@ -31,9 +36,39 @@ public class AdMobRequest {
         AdRequest.Builder builder = new AdRequest.Builder();
         builder.addTestDevice(AdRequest.DEVICE_ID_EMULATOR);
         builder.addNetworkExtrasBundle(AdMobAdapter.class, bundle);
-        if (isChildDirectTreatmentPref) {
-            builder.tagForChildDirectedTreatment(true);
+        return builder.build();
+    }
+
+    public static RequestConfiguration getRequestConfiguration(Context context){
+        RequestConfiguration.Builder builder = MobileAds.getRequestConfiguration().toBuilder();
+        List<String> testIds = new ArrayList<>();
+        testIds.add(AdRequest.DEVICE_ID_EMULATOR);
+        builder.setTestDeviceIds(testIds);
+        if (isChildDirectTreatmentPref)
+            builder.setTagForChildDirectedTreatment(RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE);
+        else
+            builder.setTagForChildDirectedTreatment(RequestConfiguration.TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE);
+        String maxAdContentRating = UtilPreference.getMaxAdContentRatingPref(context);
+
+        switch (maxAdContentRating) {
+            case EXTRA_ACR_VALUE_G:
+                builder.setMaxAdContentRating(EXTRA_ACR_VALUE_G);
+                break;
+            case EXTRA_ACR_VALUE_PG:
+                builder.setMaxAdContentRating(EXTRA_ACR_VALUE_PG);
+                break;
+            case EXTRA_ACR_VALUE_T:
+                builder.setMaxAdContentRating(EXTRA_ACR_VALUE_T);
+                break;
+            case EXTRA_ACR_VALUE_MA:
+                builder.setMaxAdContentRating(EXTRA_ACR_VALUE_MA);
+                break;
+            default:
+                builder.setMaxAdContentRating(EXTRA_NPA_VALUE);
+                break;
         }
+
+
         return builder.build();
     }
 
@@ -41,10 +76,26 @@ public class AdMobRequest {
      * Вызывать каждый раз, для загрузки рекламных ограничений пользователя
      */
     public static void setBundle(Context context) {
-        if (UtilPreference.getMaxAdContentRatingPref(context).equals(EXTRA_ACR_VALUE_G)) {
-            bundle.putString(EXTRA_ACR_KEY, EXTRA_ACR_VALUE_G);
-            Log.d(TAG, "setBundle: getMaxAdContentRatingPref");
+        String maxAdContentRating = UtilPreference.getMaxAdContentRatingPref(context);
+
+        switch (maxAdContentRating) {
+            case EXTRA_ACR_VALUE_G:
+                bundle.putString(EXTRA_ACR_KEY, EXTRA_ACR_VALUE_G);
+                break;
+            case EXTRA_ACR_VALUE_PG:
+                bundle.putString(EXTRA_ACR_KEY, EXTRA_ACR_VALUE_PG);
+                break;
+            case EXTRA_ACR_VALUE_T:
+                bundle.putString(EXTRA_ACR_KEY, EXTRA_ACR_VALUE_T);
+                break;
+            case EXTRA_ACR_VALUE_MA:
+                bundle.putString(EXTRA_ACR_KEY, EXTRA_ACR_VALUE_MA);
+                break;
+            default:
+                bundle.putString(EXTRA_NPA_KEY, EXTRA_NPA_VALUE);
+                break;
         }
+        Log.d(TAG, "setBundle: getMaxAdContentRatingPref");
         if (UtilPreference.isUserUnderAgeOfConsentPref(context)) {
             bundle.putBoolean(EXTRA_UAC_KEY, true);
             Log.d(TAG, "setBundle: isUserUnderAgeOfConsentPref");

@@ -27,7 +27,15 @@ public class UtilPreference {
         SharedPreferenceManager.getInstance(context).putBoolean(context.getString(R.string.under_age_pref), bool);
     }
 
-    /**
+    public static void setAge(Context context, int age){
+        SharedPreferenceManager.getInstance(context).putInt("age", age);
+    }
+
+    public static int getAge(Context context){
+        return SharedPreferenceManager.getInstance(context).getInt("age", -1);
+    }
+
+    /**under_age_pref
      * @@return bool Пользователь ответил на опрос о возрасте
      */
     public static boolean getUnderAgePref(Context context) {
@@ -57,7 +65,7 @@ public class UtilPreference {
     }
 
     public static String getMaxAdContentRatingPref(Context context) {
-        return SharedPreferenceManager.getInstance(context).getString(context.getString(R.string.max_ad_content_rating_pref), AdMobRequest.EXTRA_ACR_VALUE_MA);
+        return SharedPreferenceManager.getInstance(context).getString(context.getString(R.string.max_ad_content_rating_pref), "");
     }
 
     public static void setMaxAdContentRatingPref(Context context, String value) {

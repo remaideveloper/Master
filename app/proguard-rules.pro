@@ -62,6 +62,8 @@
 # platform version. We know about them, and they are safe.
 -dontwarn android.support.**
 -dontwarn com.google.ads.**
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.android.gms.**
 ##---------------End: proguard configuration for Gson  ----------
 
 ##---------------Begin: proguard configuration for Gson  ----------
@@ -92,17 +94,17 @@
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 
 # Libgdx stuff
--dontwarn com.badlogic.gdx.jnigen.*
--keep class com.badlogic.**
+#-dontwarn com.badlogic.gdx.jnigen.*
+#-keep class com.badlogic.**
 -keep public class android.content.Context
--keep public interface com.badlogic.gdx.Application
+#-keep public interface com.badlogic.gdx.Application
 #-keep public class com.badlogic.gdx.backends.android.AndroidApplicationConfiguration
 #-keep public class com.badlogic.gdx.backends.android.AndroidApplication
 #-keep public class com.badlogic.gdx.backends.android.AndroidInput
 
 -keepattributes *Annotation*
 
--keepclasseswithmembers class com.badlogic.gdx.** {*;}
+#-keepclasseswithmembers class com.badlogic.gdx.** {*;}
 
 -dontwarn android.support.v4.**
 # Remove Debug and Verbose Logs
@@ -124,9 +126,8 @@
 #
 #-keep
 
--keep class com.alegangames.master.apps.builder.** {*;}
--keep class com.litl.leveldb.** {*;}
--keep class com.alegangames.maste.project.ads.** {*;}
+#-keep class com.alegangames.master.apps.builder.** {*;}
+#-keep class com.litl.leveldb.** {*;}
 
 
 

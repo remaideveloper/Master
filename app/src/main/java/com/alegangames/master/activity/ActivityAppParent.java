@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.alegangames.master.Config;
 import com.alegangames.master.R;
 import com.alegangames.master.ads.admob.AdMobInterstitial;
+import com.alegangames.master.ads.admob.AdMobVideoRewarded;
 import com.alegangames.master.model.JsonItem;
 import com.alegangames.master.model.JsonItemFactory;
 import com.alegangames.master.util.ToastUtil;
@@ -41,6 +42,9 @@ public abstract class ActivityAppParent extends AppCompatActivity {
 
     public PermissionManager.InterfacePermission mInterfacePermission;
     public AdMobInterstitial mAdMobInterstitial;
+    public AdMobVideoRewarded mAdMobVideoRewarded;
+
+    public int countShowAd = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,6 +58,8 @@ public abstract class ActivityAppParent extends AppCompatActivity {
         NetworkManager.getInstance(this);
 
         mAdMobInterstitial = new AdMobInterstitial(this, Config.INTERSTITIAL_ID);
+        mAdMobVideoRewarded = new AdMobVideoRewarded(this);
+        mAdMobVideoRewarded.forceLoadRewardedVideo();
 
     }
 
@@ -119,7 +125,10 @@ public abstract class ActivityAppParent extends AppCompatActivity {
         SerializableJSONObject serializableJSONObject = new SerializableJSONObject(item.getJsonObject());
         intent.putExtra(JSON_OBJECT_KEY, serializableJSONObject);
         startActivity(intent);
-        mAdMobInterstitial.onShowAd();
+        if (countShowAd !=0 && (countShowAd == 1 || countShowAd % 4 == 0)) {
+            mAdMobInterstitial.onShowAd();
+        }
+        ++countShowAd;
     }
 
 }

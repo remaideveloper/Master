@@ -85,7 +85,7 @@ public class ActivitySkinsCustom extends ActivitySkins {
 
         initFAB();
         ToolbarUtil.setToolbar(this, true);
-        ToolbarUtil.setCoinsSubtitle(this);
+//        ToolbarUtil.setCoinsSubtitle(this);
 
         initGLSurfaceView();
         getSkinsFromSite(mItem.getFileLink());

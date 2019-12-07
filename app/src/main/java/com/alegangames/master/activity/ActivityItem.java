@@ -24,6 +24,7 @@ import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
+import com.alegangames.master.ads.admob.AdMobInterstitial;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.rd.PageIndicatorView;
 import com.rd.animation.type.AnimationType;
@@ -95,6 +96,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
 //    private AdMobNativeAdvanceUnified mAdMobNativeAdvance;
     private AdMobBanner mAdMobBanner;
     private AdMobVideoRewarded mAdMobVideoRewarded;
+    private AdMobInterstitial mAdMobInterstitial;
 
 
     private LinearLayout mLayoutNative;
@@ -132,6 +134,8 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
 
         mAdMobBanner = new AdMobBanner(this);
         mAdMobBanner.onCreate();
+
+        mAdMobInterstitial = new AdMobInterstitial(this, Config.INTERSTITIAL_ID);
 
         mConstraintLayoutProgress = findViewById(R.id.constraintLayoutLoading);
         mLoadingProgressBar = findViewById(R.id.progressBarLoading);
@@ -204,7 +208,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.content_menu, menu);
 
-        mFavoriteViewModel.getFavoriteLiveData().observe(this, this::setFavorite);
+        mFavoriteViewModel.getFavoriteLiveData(mItem).observe(this, this::setFavorite);
         return true;
     }
 
@@ -219,7 +223,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_to_favorite:
-                mFavoriteViewModel.setFavoriteLiveData();
+                mFavoriteViewModel.setFavoriteLiveData(mItem);
                 return true;
             case R.id.share:
                 PermissionManager.onAskStoragePermission(this, DownloadViewModel.DOWNLOAD_IMAGE_SHARE);
@@ -475,6 +479,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
                             mBuildingInstaller.initList(this);
                             break;
                     }
+                    mAdMobInterstitial.onShowAd();
                     SocialManager.onShowRateDialogOrToastFileSave(this);
                     break;
             }
@@ -495,7 +500,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
     }
 
     private void setViewModel() {
-        mFavoriteViewModel = ViewModelProviders.of(this, new FavoriteViewModel.FavoriteViewModelFactory(getApplication(), mItem)).get(FavoriteViewModel.class);
+        mFavoriteViewModel = ViewModelProviders.of(this, new FavoriteViewModel.FavoriteViewModelFactory(getApplication())).get(FavoriteViewModel.class);
 
         mPurchaseViewModel = ViewModelProviders.of(this, new PurchaseViewModel.PurchaseViewModelFactory(getApplication(), mItem)).get(PurchaseViewModel.class);
         mPurchaseViewModel.getPremiumLiveData().observe(this, this::setButtonDownload);
@@ -558,12 +563,12 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         //Скачивание предмета
         //Предложить купить больше монет
         ToolbarUtil.setCoinsSubtitle(this);
-        switch (productId) {
-            case PurchaseManager.PRODUCT_100_COINS:
-                mPurchaseViewModel.buyItem();
-                onClickButtonMain();
-                break;
-        }
+//        switch (productId) {
+//            case PurchaseManager.PRODUCT_100_COINS:
+//                mPurchaseViewModel.buyItem();
+//                onClickButtonMain();
+//                break;
+//        }
     }
 
     /**

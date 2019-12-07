@@ -7,6 +7,7 @@ import androidx.lifecycle.Lifecycle.Event;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 
+import com.alegangames.master.BuildConfig;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.InterstitialAd;
 import com.alegangames.master.Config;
@@ -19,7 +20,10 @@ public final class AdMobInterstitial implements LifecycleObserver {
     public AdMobInterstitial(FragmentActivity fragmentActivity, String str) {
         Log.d(TAG, TAG);
         this.mInterstitialAd = new InterstitialAd(fragmentActivity.getApplicationContext());
-        this.mInterstitialAd.setAdUnitId(str);
+        if (!BuildConfig.DEBUG)
+            this.mInterstitialAd.setAdUnitId(str);
+        else
+            this.mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         fragmentActivity.getLifecycle().addObserver(this);
     }
 
@@ -36,7 +40,7 @@ public final class AdMobInterstitial implements LifecycleObserver {
 
     public void onShowAd() {
         Log.d(TAG, "onShowAd");
-        if (!(Config.ADMIN_MODE || Config.INTERSTITIAL_DISABLE || !this.mInterstitialAd.isLoaded())) {
+        if (!(Config.ADMIN_MODE || !this.mInterstitialAd.isLoaded() || Config.NO_ADS)) {
             this.mInterstitialAd.show();
         }
     }

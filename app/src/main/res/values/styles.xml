@@ -8,10 +8,13 @@
         <item name="android:textColor">@color/carbon_black</item>
         <item name="android:buttonStyle">@style/CustomButton</item>
         <item name="colorAccent">@color/primaryColor</item>
-        <item name="colorPrimary">@color/primaryDarkColor</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="preferenceTheme">@style/PreferenceFixTheme.Light</item>
         <item name="android:background">@null</item>
         <item name="android:actionMenuTextColor">@color/carbon_white</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="AppTheme.ActionBar" parent="Theme.MaterialComponents.Light">
@@ -19,19 +22,23 @@
         <!--<mItem name="android:textColor">@color/black</mItem>-->
         <item name="actionBarStyle">@style/CustomActionBar</item>
         <item name="android:textColorPrimary">@color/carbon_white</item>
-        <item name="alertDialogTheme">@style/DialogStyle</item>
         <item name="colorPrimary">@color/primaryDarkColor</item>
+        <item name="android:textColor">@color/carbon_black</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:textColor">@color/carbon_black</item>
         <item name="android:textColorSecondary">@color/carbon_black</item>
         <item name="android:textColorPrimary">@color/carbon_black</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="ToolBarStyle" parent="">
@@ -44,6 +51,7 @@
         <item name="background">@color/primaryColor</item>
         <item name="titleTextStyle">@style/TextStyle</item>
         <item name="android:subtitleTextStyle">@style/TextStyle</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="CustomButton" parent="Widget.AppCompat.Button">
@@ -53,37 +61,49 @@
         <item name="android:paddingTop">@dimen/card_view_large_button_padding_top</item>
         <item name="android:layout_marginBottom">@dimen/card_view_large_button_margin_bottom</item>
         <item name="android:layout_marginTop">@dimen/card_view_large_button_margin_top</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="CustomActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background" tools:ignore="NewApi">@color/primaryColor</item>
         <item name="background">@color/primaryColor</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="TextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/carbon_white</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="TextLargeStyle">
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:typeface">sans</item>
         <item name="android:textColor">@color/carbon_black</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="TextMediumStyle">
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:typeface">sans</item>
         <item name="android:textColor">@color/carbon_black</item>
+        <item name="android:fontFamily">@font/minefont</item>
+    </style>
+
+    <style name="progressBarWhite" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/carbon_white</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="TextMediumStyle.White">
         <item name="android:textColor">@color/carbon_white</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="TextSmallStyle">
         <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:typeface">sans</item>
         <item name="android:textColor">@color/carbon_black</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="Animation.Design.SideSheetDialog" parent="Animation.AppCompat.Dialog">
@@ -95,6 +115,7 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@style/Animation.Design.SideSheetDialog</item>
         <item name="sideSheetStyle">@style/Widget.Me.SideSheet.Modal</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
     <style name="Widget.Me.SideSheet.Modal" parent="android:Widget">
@@ -103,6 +124,7 @@
         <item name="behavior_peekWidth">auto</item>
         <item name="behavior_hideable">true</item>
         <item name="behavior_skipCollapsed">false</item>
+        <item name="android:fontFamily">@font/minefont</item>
     </style>
 
 </resources>

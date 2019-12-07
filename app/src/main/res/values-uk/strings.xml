@@ -194,5 +194,6 @@
     <string name="term_of_use">Умови користування</string>
     <string name="term_of_use_message">Я приймаю %1$s.</string>
     <string name="privacy_policy">Політика Конфіденційності</string>
+    <string name="select_your_age">" Виберіть свій вік:"</string>
 
 </resources>

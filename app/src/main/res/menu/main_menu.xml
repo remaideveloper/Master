@@ -11,7 +11,7 @@
             android:id="@+id/search"
             android:icon="@drawable/ic_search"
             android:title="@string/search"
-            app:showAsAction="always" />
+            app:showAsAction="always"/>
     </group>
 
     <group
@@ -22,6 +22,17 @@
             android:id="@+id/version"
             android:icon="@drawable/ic_sort"
             android:title="@string/version"
+            app:showAsAction="always" />
+    </group>
+
+    <group
+        android:id="@+id/group_instagram"
+        android:visible="true"
+        tools:visible="true">
+        <item
+            android:id="@+id/instagram"
+            android:icon="@drawable/ic_instagram"
+            android:title="instagram"
             app:showAsAction="always" />
     </group>
 

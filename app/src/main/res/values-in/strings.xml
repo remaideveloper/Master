@@ -138,5 +138,6 @@
     <string name="accept">Terima</string>
     <string name="term_of_use">Ketentuan Penggunaan</string>
     <string name="privacy_policy">Kebijakan Privasi</string>
+    <string name="select_your_age">Pilih umur Anda:</string>
 
 </resources>

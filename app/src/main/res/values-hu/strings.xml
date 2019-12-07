@@ -13,7 +13,7 @@
     <!-- General -->
     <string name="loading">Betöltés…</string>
     <string name="share">Ossza meg</string>
-    <string name="send">Elküld</string>
+    <string name="send">" Elküld"</string>
     <string name="share_choise">Oszd meg</string>
     <string name="rate">Rate</string>
     <string name="download_file">Fájl letöltése ..</string>
@@ -160,6 +160,7 @@
     <string name="accept">Elfogadás</string>
     <string name="term_of_use_message">Elfogadom a %1$s.</string>
     <string name="privacy_policy">Adatvédelmi Szabályzat</string>
+    <string name="select_your_age">" Válassza ki korát:"</string>
 
     <!-- licenses -->
 

@@ -1,4 +1,5 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:grid="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,36 +9,96 @@
     app:cardCornerRadius="8dp">
 
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/carbon_white"
+        android:background="@drawable/ic_old_content"
         android:foreground="?android:attr/selectableItemBackground"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageViewItem"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:scaleType="centerCrop"
-            tools:ignore="contentDescription"
-            tools:src="@drawable/empty_image" />
+            android:layout_margin="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardUseCompatPadding="true">
 
+            <ImageView
+                android:id="@+id/imageViewItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                tools:ignore="contentDescription"
+                tools:src="@drawable/empty_image" />
 
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textViewTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLength="100"
-            android:maxLines="1"
             android:padding="@dimen/layout_padding"
-            android:textColor="@color/carbon_black"
+            android:textColor="@color/carbon_white"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="16dp"
-            tools:text="@string/title_example" />
+            tools:text="@string/title_example"
+            app:layout_constraintRight_toLeftOf="@+id/layoutShow"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:maxLines="2"
+            android:layout_weight="1"
+            android:singleLine="false"/>
+
+            <LinearLayout
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/layoutShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="0"
+                android:visibility="gone">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnFavorite"
+                    style="@style/Widget.MaterialComponents.FloatingActionButton"
+                    app:fabSize="mini"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_favorite_false"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    app:tint="@color/carbon_white"
+                    app:fab_progress="10"
+                    app:fab_progress_backgroundColor="@color/carbon_white"
+
+                    android:layout_marginRight="15dp"/>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    style="@style/Widget.MaterialComponents.FloatingActionButton"
+                    app:fabSize="mini"
+                    android:id="@+id/btnShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_share_white"
+                    app:tint="@color/carbon_white"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    />
+            </LinearLayout>
+        </LinearLayout>
 
 
         <TextView
@@ -50,11 +111,28 @@
             android:maxLength="100"
             android:maxLines="1"
             android:padding="2dp"
-            android:textColor="@color/carbon_black"
+            android:textColor="@color/carbon_white"
+            android:textStyle="bold"
             android:visibility="gone"
-            tools:text="100 coins"
-            tools:visibility="visible" />
+            tools:text="100 coins"/>
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/privateImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|right"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_video" />
 </androidx.cardview.widget.CardView>

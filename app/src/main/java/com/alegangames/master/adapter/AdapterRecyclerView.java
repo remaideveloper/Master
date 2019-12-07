@@ -9,11 +9,18 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alegangames.master.Config;
 import com.alegangames.master.R;
+import com.alegangames.master.ads.admob.AdMobInterstitial;
+import com.alegangames.master.ads.admob.AdMobVideoRewarded;
+import com.alegangames.master.architecture.viewmodel.DownloadViewModel;
+import com.alegangames.master.architecture.viewmodel.FavoriteViewModel;
 import com.alegangames.master.holder.ItemContentViewHolder;
 import com.alegangames.master.holder.ItemMenuViewHolder;
 import com.alegangames.master.holder.ItemOfferViewHolder;
@@ -37,6 +44,14 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
     private String query;
     private int lastPosition = -1;
 
+    public int a = -1;
+    public int countShowAd = 0;
+
+    private FavoriteViewModel mFavoriteViewModel;
+    private DownloadViewModel mDownloadViewModel;
+
+    private AdMobVideoRewarded mAdMobVideoRewarded;
+    private AdMobInterstitial mAdMobInterstitial;
 
     private static final int VISIBLE_THRESHOLD_ITEM = 4; //За сколько элементов до конца листа начинается загрузка следующей части
     private static final int COUNT_LOAD_ITEM = 4; //Количество загружаемых элементов при подгрузке списка
@@ -46,8 +61,15 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
     private OnLoadMoreListener onLoadMoreListener;
     private OnLoadFullListener mOnLoadFullListener;
 
-    public AdapterRecyclerView(RecyclerView recyclerView) {
+    public AdapterRecyclerView(FragmentActivity activity, RecyclerView recyclerView, AdMobInterstitial adMobInterstitial, AdMobVideoRewarded adMobVideoRewarded) {
         this.mRecyclerView = recyclerView;
+        mAdMobInterstitial = adMobInterstitial;
+        mAdMobVideoRewarded = adMobVideoRewarded;
+        mAdMobVideoRewarded.getRewardedVideoAd().setRewardedVideoAdListener(mAdMobVideoRewarded.getDefaultVideoRewardAdListener());
+//        mAdMobVideoRewarded.forceLoadRewardedVideo();
+
+        mFavoriteViewModel = ViewModelProviders.of(activity, new FavoriteViewModel.FavoriteViewModelFactory(activity.getApplication())).get(FavoriteViewModel.class);
+        mDownloadViewModel = ViewModelProviders.of(activity).get(DownloadViewModel.class);
     }
 
     @Override
@@ -86,6 +108,10 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
         try {
             switch (holder.getItemViewType()) {
                 case CONTENT_VIEW_TYPE:
+                    ((ItemContentViewHolder) holder).setHolder(getItemAtPosition(position), query);
+
+                    break;
+//                    ((ItemContentViewHolder) holder).show(a == position, getItemAtPosition(position));
                 case CONTENT_MATCH_VIEW_TYPE:
                     ((ItemContentViewHolder) holder).setHolder(getItemAtPosition(position), query);
                     break;
@@ -103,6 +129,41 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
+    public void onBindViewHolder(NativeAdapterRecyclerView nativeAdapterRecyclerView, @NonNull RecyclerView.ViewHolder holder, int position, int positionNative) {
+
+        if (holder instanceof ItemContentViewHolder) {
+            ((ItemContentViewHolder) holder).itemView.setOnClickListener(v -> {
+                if (a == positionNative) {
+                    a = -1;
+                    ((ItemContentViewHolder) holder).hide();
+                } else {
+                    if (a == -1) {
+                        a = positionNative;
+                    } else {
+                        int b = a;
+                        a = positionNative;
+                        nativeAdapterRecyclerView.notifyItemChanged(b);
+                    }
+
+                    if (countShowAd != 0 && (countShowAd == 1 || countShowAd % 3 == 0))
+                        mAdMobInterstitial.onShowAd();
+                    ++countShowAd;
+
+                }
+                nativeAdapterRecyclerView.notifyItemChanged(positionNative);
+                mRecyclerView.scrollToPosition(positionNative);
+            });
+
+            if (a!=positionNative)
+                ((ItemContentViewHolder) holder).hide();
+            else {
+                ((ItemContentViewHolder) holder).show(getItemAtPosition(position), mFavoriteViewModel, mDownloadViewModel, mAdMobVideoRewarded);
+            }
+        }
+
+        onBindViewHolder(holder, position);
+    }
+
     @Override
     public int getItemCount() {
         return mItemList.size();
@@ -110,6 +171,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public int getItemViewType(int position) {
+        Log.d("TEST_POSITION_NO", String.valueOf(position));
         return JsonItemFactory.getViewType(mItemList.get(position).getId());
     }
 
@@ -258,6 +320,8 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
     public void notifyItems() {
         mRecyclerView.post(this::notifyDataSetChanged);
     }
+
+
 
 }
 

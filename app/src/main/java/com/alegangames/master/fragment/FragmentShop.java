@@ -12,9 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alegangames.master.R;
+import com.alegangames.master.activity.ActivityShop;
 import com.alegangames.master.ads.admob.AdMobVideoRewarded;
 import com.alegangames.master.holder.PurchaseHolder;
 import com.alegangames.master.ui.ToolbarUtil;
+import com.alegangames.master.util.billing.BillingManager;
 import com.alegangames.master.util.billing.Product;
 import com.alegangames.master.util.billing.PurchaseManager;
 import com.google.android.gms.ads.reward.RewardItem;
@@ -36,7 +38,7 @@ public class FragmentShop extends FragmentAbstract implements PurchaseHolder.Pur
     private LinearLayout productsLayout;
     private AdMobVideoRewarded mAdMobVideoRewarded;
     private PurchaseHolder adsHolder;
-//    public BillingManager billingManager;
+    public BillingManager billingManager;
 
     public static FragmentShop getInstance() {
         return new FragmentShop();
@@ -46,7 +48,7 @@ public class FragmentShop extends FragmentAbstract implements PurchaseHolder.Pur
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mRootView = inflater.inflate(LAYOUT, container, false);
 
-//        billingManager = ((ActivityShop)getActivity()).billingManager;
+        billingManager = ((ActivityShop)getActivity()).billingManager;
 
         productsLayout = mRootView.findViewById(R.id.linearLayoutPurchases);
 
@@ -66,13 +68,13 @@ public class FragmentShop extends FragmentAbstract implements PurchaseHolder.Pur
 //            holder.getRoot().setVisibility(View.GONE);
             productsLayout.addView(holder.getRoot());
             //Получаем информацию о продукте
-//            billingManager.getProductDetailsAsynk(product.getId()).observe(this, skuDetails -> {
-//                if (skuDetails != null) {
-//                    String text = skuDetails.priceText + " " + skuDetails.currency;
-//                    holder.setButtonText(text);
-////                    holder.getRoot().setVisibility(View.VISIBLE);
-//                }
-//            });
+            billingManager.getProductDetailsAsynk(product.getId()).observe(getViewLifecycleOwner(), skuDetails -> {
+                if (skuDetails != null) {
+                    String text = skuDetails.priceText + " " + skuDetails.currency;
+                    holder.setButtonText(text);
+//                    holder.getRoot().setVisibility(View.VISIBLE);
+                }
+            });
         }
 
         mAdMobVideoRewarded = new AdMobVideoRewarded(getActivity());
@@ -148,7 +150,7 @@ public class FragmentShop extends FragmentAbstract implements PurchaseHolder.Pur
     @Override
     public void onPurchase(Product product) {
         Log.d(TAG, "onPurchase: " + product.getId());
-//        billingManager.onPurchaseProduct(product.getId());
+        billingManager.onPurchaseProduct(product.getId());
     }
 
     /**
@@ -158,7 +160,7 @@ public class FragmentShop extends FragmentAbstract implements PurchaseHolder.Pur
      */
     @Override
     public void onProductPurchased(String productId) {
-        ToolbarUtil.setCoinsSubtitle(((AppCompatActivity) getActivity()));
+//        ToolbarUtil.setCoinsSubtitle(((AppCompatActivity) getActivity()));
     }
 
     @Override

@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.alegangames.master.R;
@@ -23,11 +24,11 @@ public class AdapterTabLayout extends FragmentStatePagerAdapter {
     public final static int VIEW_PAGER = R.id.view_pager;
     public final static int TAB_LAYOUT = R.id.tab_layout;
     private List<FragmentAbstract> mTabs = new ArrayList<>();
-    private CustomViewPager mViewPager;
+    private ViewPager mViewPager;
     private TabLayout mTabLayout;
 
-    public AdapterTabLayout(@NonNull FragmentManager fragmentManager, CustomViewPager viewPager, TabLayout tabLayout, List<? extends FragmentAbstract> tabs) {
-        super(fragmentManager);
+    public AdapterTabLayout(@NonNull FragmentManager fragmentManager, ViewPager viewPager, TabLayout tabLayout, List<? extends FragmentAbstract> tabs) {
+        super(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         Log.d(TAG, "AdapterTabLayout");
 
         this.mViewPager = viewPager;
@@ -37,7 +38,7 @@ public class AdapterTabLayout extends FragmentStatePagerAdapter {
         setTabLayout();
     }
 
-    public static void init(@NonNull FragmentManager fragmentManager, CustomViewPager viewPager, TabLayout tabLayout, List<? extends FragmentAbstract> tabs) {
+    public static void init(@NonNull FragmentManager fragmentManager, ViewPager viewPager, TabLayout tabLayout, List<? extends FragmentAbstract> tabs) {
         new AdapterTabLayout(fragmentManager, viewPager, tabLayout, tabs);
     }
 

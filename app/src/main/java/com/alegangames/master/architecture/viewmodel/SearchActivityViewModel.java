@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.alegangames.master.util.FirebaseManager;
 import com.annimon.stream.Stream;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.model.JsonItemFactory;
@@ -73,18 +74,17 @@ public class SearchActivityViewModel extends AndroidViewModel{
 //                },
 //                error -> ToastUtil.showToast(getApplication(), R.string.error),
 //                StorageUtil.STORAGE_APPSCREAT + "/content" + "/master/" + data);
+        FirebaseManager.loading(getApplication(), response -> {
+            AsyncTask.execute(() -> {
+                //Получаем JSONArray из файла
+                JSONArray jsonArray = response;
 
-        AsyncTask.execute(() -> {
-            //Получаем JSONArray из файла
-            JSONArray jsonArray = JsonHelper.getJsonArrayFromStorage(
-                    getApplication(),
-                    data);
-
-            //Получаем список элементов
-            List<JsonItemContent> items = JsonItemFactory.getListJsonItemFromJsonArray(jsonArray);
-            itemList = items;
-            itemsData.postValue(items);
-        });
+                //Получаем список элементов
+                List<JsonItemContent> items = JsonItemFactory.getListJsonItemFromJsonArray(jsonArray);
+                itemList = items;
+                itemsData.postValue(items);
+            });
+        }, data);
     }
 
     /**

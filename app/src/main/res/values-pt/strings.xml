@@ -179,5 +179,6 @@
     <string name="term_of_use">Termo</string>
     <string name="term_of_use_message">Aceito o %1$s.</string>
     <string name="privacy_policy">Privacidade</string>
+    <string name="select_your_age">Selecione sua idade:</string>
 
 </resources>

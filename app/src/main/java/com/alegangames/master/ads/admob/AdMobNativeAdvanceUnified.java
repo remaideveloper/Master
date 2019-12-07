@@ -33,6 +33,7 @@ public class AdMobNativeAdvanceUnified {
 
     private String mAdUnitId;
     private UnifiedNativeAdView mNativeAdView;
+    private UnifiedNativeAd mNativeAd;
 
     public AdMobNativeAdvanceUnified(String adUnitId) {
         this.mAdUnitId = adUnitId;
@@ -44,6 +45,7 @@ public class AdMobNativeAdvanceUnified {
 
         // OnUnifiedNativeAdLoadedListener implementation.
         builder.forUnifiedNativeAd(unifiedNativeAd -> {
+            mNativeAd = unifiedNativeAd;
             mNativeAdView = (UnifiedNativeAdView) ((Activity) viewGroup.getContext()).getLayoutInflater()
                     .inflate(R.layout.layout_native_unified_app, null);
             populateUnifiedNativeAdView(unifiedNativeAd, mNativeAdView);
@@ -70,6 +72,19 @@ public class AdMobNativeAdvanceUnified {
         }).build();
 
         adLoader.loadAd(AdMobRequest.getRequest());
+    }
+
+    public void updateAdvanceView(final ViewGroup viewGroup){
+        if (mNativeAd == null){
+//            addNativeAdvanceView(viewGroup);
+        } else {
+            populateUnifiedNativeAdView(mNativeAd, mNativeAdView);
+            viewGroup.removeAllViews();
+            ViewGroup parent = (ViewGroup) mNativeAdView.getParent();
+            if (parent!=null)
+                parent.removeAllViews();
+            viewGroup.addView(mNativeAdView);
+        }
     }
 
     private void populateUnifiedNativeAdView(UnifiedNativeAd nativeAd, UnifiedNativeAdView adView) {

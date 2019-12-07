@@ -13,4 +13,5 @@
     app:tabIndicatorHeight="0dp"
     app:tabMode="fixed"
     app:tabSelectedTextColor="@color/carbon_white"
-    style="@style/Widget.MaterialComponents.TabLayout.Colored"/>
+    style="@style/Widget.MaterialComponents.TabLayout.Colored"
+    android:fontFamily="@font/minefont"/>

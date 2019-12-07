@@ -193,5 +193,6 @@
     <string name="term_of_use">เงื่อนไขของใช้</string>
     <string name="term_of_use_message">ฉันยอมรับค %1$s.</string>
     <string name="privacy_policy">ข้อกำหนดความเป็นส่วนตัว</string>
+    <string name="select_your_age">เลือกอายุของคุณ:</string>
 
 </resources>

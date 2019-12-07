@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alegangames.master.adapter.AdapterRecyclerView;
 import com.alegangames.master.adapter.NativeAdapterRecyclerView;
+import com.alegangames.master.model.JsonItemFactory;
 
 public class RecyclerViewManager extends RecyclerView {
 
@@ -41,10 +43,28 @@ public class RecyclerViewManager extends RecyclerView {
                 glm.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
                     @Override
                     public int getSpanSize(int position) {
-                        if (getAdapter() instanceof NativeAdapterRecyclerView){
-                            if (getAdapter().getItemViewType(position) == NativeAdapterRecyclerView.CONTENT_NATIVE){
+                        Adapter adapter = getAdapter();
+                        if (adapter instanceof NativeAdapterRecyclerView){
+                            int type = getAdapter().getItemViewType(position);
+                            if (type == JsonItemFactory.getViewType(JsonItemFactory.MENU)){
+                                if (position == 6)
+                                    return finalI;
+                                else
+                                    return 1;
+                            } else if (type == NativeAdapterRecyclerView.CONTENT_NATIVE){
                                 return finalI;
+                            } else {
+                                int a = ((NativeAdapterRecyclerView) adapter).getA();
+                                if (a == -1)
+                                    return 1;
+                                else if (position == a)
+                                    return finalI;
                             }
+                        } else if (adapter instanceof AdapterRecyclerView) {
+                            if (((AdapterRecyclerView)adapter).a == -1)
+                                return 1;
+                            else if (position == ((AdapterRecyclerView)adapter).a)
+                                return finalI;
                         }
                         return 1;
                     }

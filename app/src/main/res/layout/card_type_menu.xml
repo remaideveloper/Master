@@ -11,9 +11,11 @@ app:cardUseCompatPadding="true"
 app:cardCornerRadius="8dp">
 
 <LinearLayout
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/carbon_white"
+    android:background="#9f876b"
+    android:backgroundTint="#9f876b"
     android:foreground="?android:attr/selectableItemBackground"
     android:orientation="vertical">
 
@@ -39,6 +41,7 @@ app:cardCornerRadius="8dp">
         android:padding="@dimen/layout_padding"
         android:textColor="@color/carbon_black"
         tools:layout_editor_absoluteX="16dp"
+        android:fontFamily="@font/minefont"
         tools:text="@string/title_example" />
 
 

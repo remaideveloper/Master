@@ -20,19 +20,19 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.alegangames.master.fragment.sideSheet.DemoSideSheetDialogFragment;
-import com.annimon.stream.Stream;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.alegangames.master.R;
 import com.alegangames.master.activity.ActivityMain;
 import com.alegangames.master.activity.ActivitySearch;
 import com.alegangames.master.adapter.AdapterTabLayout;
 import com.alegangames.master.architecture.viewmodel.ItemsViewModel;
 import com.alegangames.master.model.JsonItemFactory;
+import com.annimon.stream.Stream;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +46,7 @@ import static com.alegangames.master.activity.ActivityAppParent.FRAGMENT_SHUFFLE
 import static com.alegangames.master.activity.ActivityAppParent.FRAGMENT_TITLE;
 import static com.alegangames.master.activity.ActivityAppParent.VERSION;
 
-public class FragmentViewPager extends FragmentAbstract {
+public class FragmentViewPager extends FragmentAbstract implements SearchView.OnQueryTextListener{
 
     private static final String TAG = FragmentViewPager.class.getSimpleName();
 
@@ -228,6 +228,7 @@ public class FragmentViewPager extends FragmentAbstract {
 
             if (JsonItemFactory.isContentFragment(mFragmentTitle)) {
                 menu.setGroupVisible(R.id.group_search, true);
+                menu.setGroupVisible(R.id.group_instagram, false);
 
                 if (mVersionList != null && mVersionList.size() > 1) {
                     menu.setGroupVisible(R.id.group_version, true);
@@ -252,6 +253,7 @@ public class FragmentViewPager extends FragmentAbstract {
                 intent.putExtra(FRAGMENT_TITLE, mFragmentTitle);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.enter, R.anim.exit);
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -318,5 +320,15 @@ public class FragmentViewPager extends FragmentAbstract {
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
     }
 }

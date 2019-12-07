@@ -170,7 +170,8 @@
     <string name="read_more">Подробнее</string>
     <string name="term_of_use_message">Я принимаю %1$s.</string>
     <string name="accept">Принимаю</string>
-    <string name="term_of_use">Условия пользования</string>
+    <string name="term_of_use">Условия использования</string>
     <string name="privacy_policy">Политика Конфиденциальности</string>
+    <string name="select_your_age">Выберите ваш возраст:</string>
 
 </resources>

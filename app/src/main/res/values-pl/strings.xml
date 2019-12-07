@@ -13,7 +13,7 @@
     <!-- General -->
     <string name="loading">Ładuję…</string>
     <string name="share">Dzielić</string>
-    <string name="send">Wysłać</string>
+    <string name="send">" Wysłać"</string>
     <string name="share_choise">Udostępnij to</string>
     <string name="rate">Oceń</string>
     <string name="download_file">Pobieranie pliku ..</string>
@@ -200,5 +200,6 @@
     <string name="accept">Podejmować</string>
     <string name="term_of_use_message">Akceptuję %1$s.</string>
     <string name="privacy_policy">Polityka Prywatności</string>
+    <string name="select_your_age">" Wybierz swój wiek:"</string>
 
 </resources>

@@ -13,8 +13,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.alegangames.master.Config;
 import com.alegangames.master.R;
 import com.alegangames.master.adapter.AdapterRecyclerView;
+import com.alegangames.master.adapter.NativeAdapterRecyclerView;
+import com.alegangames.master.ads.admob.AdMobInterstitial;
+import com.alegangames.master.ads.admob.AdMobVideoRewarded;
 import com.alegangames.master.architecture.viewmodel.SearchActivityViewModel;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.ui.RecyclerViewManager;
@@ -34,7 +38,7 @@ public class ActivitySearch extends ActivityAppParent implements SearchView.OnQu
     private SearchActivityViewModel viewModel;
 
     private RecyclerViewManager mRecyclerView;
-    private AdapterRecyclerView mAdapter;
+    private NativeAdapterRecyclerView mAdapter;
     private ProgressBar mProgressBarLoading;
 
     @Override
@@ -50,10 +54,13 @@ public class ActivitySearch extends ActivityAppParent implements SearchView.OnQu
         mProgressBarLoading = findViewById(R.id.progressBarLoading);
 
         //Необходимо задать пустой адаптер
-        mAdapter = new AdapterRecyclerView(mRecyclerView);
+        mAdapter = new NativeAdapterRecyclerView(this, mRecyclerView, mAdMobInterstitial, mAdMobVideoRewarded);
         mRecyclerView.setLayoutManager(RecyclerViewManager.LayoutManagerEnum.GridLayout);
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setHasFixedSize(false);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setItemViewCacheSize(10);
+        mRecyclerView.setDrawingCacheEnabled(true);
+        mRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
         String data = getIntent().getStringExtra(FRAGMENT_DATA);
 

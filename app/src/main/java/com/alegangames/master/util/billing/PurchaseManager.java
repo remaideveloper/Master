@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.alegangames.master.Config;
 import com.alegangames.master.R;
+import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.util.preference.SharedPreferenceManager;
 
 import org.json.JSONArray;
@@ -21,14 +22,8 @@ public class PurchaseManager {
     public static final String COINS_PREF = "coins_pref";
     public static final String ITEMS_PREF = "items_pref";
 
-    public static final String PRODUCT_TEST = "android.test.purchased";
-    public static final String PRODUCT_NO_ADS = "no_ads";
-    public static final String PRODUCT_100_COINS = "100_coins";
-//    public static final String PRODUCT_500_COINS = "500_coins";
-//    public static final String PRODUCT_2000_COINS = "2000_coins";
-//    public static final String PRODUCT_6000_COINS = "6000_coins";
-//    public static final String PRODUCT_20000_COINS = "20000_coins";
-//    public static final String PRODUCT_50000_COINS = "50000_coins";
+//    public static final String PRODUCT_TEST = "android.test.purchased";
+//    public static final String PRODUCT_NO_ADS = "no_ads";
 
     private static final int DEFAULT_COINS = 0;
 
@@ -56,6 +51,69 @@ public class PurchaseManager {
         coins = coins + addCoins;
         SharedPreferenceManager.getInstance(context).putInt(COINS_PREF, coins);
         return coins;
+    }
+
+    public static void addAdItem(Context context, JsonItemContent mItem){
+        JSONArray jsonArray = null;
+        try {
+            jsonArray = new JSONArray(SharedPreferenceManager.getInstance(context).getString(ITEMS_PREF, "[]"));
+        } catch (JSONException e) {
+//            Crashlytics.logException(e);
+        }
+        if (jsonArray != null) {
+            JSONObject item = null;
+            int index = -1;
+            List<JSONObject> list = new ArrayList<>();
+
+            for (int i = 0;i<jsonArray.length();i++){
+                JSONObject jsonObject = jsonArray.optJSONObject(i);
+                if (jsonObject!=null){
+                    list.add(jsonObject);
+                    if (index == -1 && jsonObject.optJSONObject("item").toString().equals(mItem.mJSONObject.toString())){
+                        item = jsonObject;
+                        index = i;
+                    }
+                }
+            }
+
+            try {
+
+                if (item == null) {
+                    item = new JSONObject();
+                    item.put("item", mItem.mJSONObject);
+                    item.put("count", 1);
+                    list.add(item);
+                } else {
+                    int count = item.optInt("count") + 1;
+                    item.remove("count");
+                    item.put("count", count);
+                    list.set(index, item);
+                }
+            } catch (JSONException e){}
+
+            jsonArray = new JSONArray(list);
+
+            SharedPreferenceManager.getInstance(context).putString(ITEMS_PREF, jsonArray.toString());
+
+        }
+    }
+
+    public static int getBoughtItem(Context context, JSONObject mItem){
+        JSONArray jsonArray = null;
+        try {
+            jsonArray = new JSONArray(SharedPreferenceManager.getInstance(context).getString(ITEMS_PREF, "[]"));
+        } catch (JSONException e) {
+//            Crashlytics.logException(e);
+        }
+
+        if (jsonArray!=null){
+            for (int i = 0;i<jsonArray.length();i++){
+                JSONObject jsonObject = jsonArray.optJSONObject(i);
+                if (jsonObject!=null &&  jsonObject.optJSONObject("item")!=null && jsonObject.optJSONObject("item").toString().equals(mItem.toString()))
+                    return jsonObject.optInt("count");
+            }
+        }
+        return 0;
     }
 
     /**
@@ -117,7 +175,7 @@ public class PurchaseManager {
      * Продукт вызываемый по умолчанию при попытке загрузить премиум контент
      */
     public static String getDefaultProductId() {
-        return PRODUCT_100_COINS;
+        return "";
     }
 
     /**
@@ -155,8 +213,6 @@ public class PurchaseManager {
      */
     private static void createProducts(Context context) {
         productMap = new LinkedHashMap<>();
-//        productMap.put(PRODUCT_NO_ADS, new Product(PRODUCT_NO_ADS, context.getString(R.string.coins_amount_format, 100),
-//                context.getString(R.string.bonus_format, 0), R.drawable.icon_no_ads, 0, 0));
     }
 
 }

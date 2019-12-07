@@ -10,6 +10,9 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.alegangames.master.Config;
+import com.alegangames.master.ads.admob.AdMobInterstitial;
+import com.alegangames.master.ads.admob.AdMobVideoRewarded;
 import com.annimon.stream.Stream;
 import com.alegangames.master.R;
 import com.alegangames.master.adapter.AdapterRecyclerView;
@@ -45,7 +48,7 @@ public class FragmentOfferWall extends FragmentAbstract {
         mProgressBarLoading = mRootView.findViewById(R.id.progressBarLoading);
 
         //Необходимо задать пустой адаптер
-        mAdapter = new AdapterRecyclerView(mRecyclerView);
+        mAdapter = new AdapterRecyclerView(getActivity(), mRecyclerView, new AdMobInterstitial(requireActivity(), Config.INTERSTITIAL_ID), new AdMobVideoRewarded(requireActivity()));
         mRecyclerView.setLayoutManager(RecyclerViewManager.LayoutManagerEnum.GridLayout);
         mRecyclerView.setAdapter(mAdapter);
 

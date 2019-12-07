@@ -4,7 +4,6 @@ import androidx.annotation.Nullable;
 
 import com.alegangames.master.activity.ActivityItem;
 import com.alegangames.master.apps.skins.ActivitySkinsCustom;
- import com.alegangames.master.apps.wallpaper.ActivityWallpaperPreview;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -54,8 +53,6 @@ public class JsonItemFactory {
                 return ActivityItem.class;
             case SKIN_CUSTOM:
                 return ActivitySkinsCustom.class;
-            case WALLPAPERS:
-                return ActivityWallpaperPreview.class;
         }
         return null;
     }
@@ -72,7 +69,6 @@ public class JsonItemFactory {
             case TEXTURES:
                 return CONTENT_VIEW_TYPE;
             case SKIN_CUSTOM:
-            case WALLPAPERS:
                 return CONTENT_MATCH_VIEW_TYPE;
             case OFFER:
                 return OFFER_VIEW_TYPE;

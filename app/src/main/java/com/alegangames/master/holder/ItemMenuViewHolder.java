@@ -1,8 +1,11 @@
 package com.alegangames.master.holder;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -40,9 +43,14 @@ public class ItemMenuViewHolder extends RecyclerView.ViewHolder {
             if (itemView.getContext() == null) {
                 return;
             }
-            if (jsonItemContent.getFileLink() != null && !jsonItemContent.getFileLink().isEmpty()) {
+            if (jsonItemContent.getFileLink().equalsIgnoreCase("#instagram")){
+                Uri address = Uri.parse("https://www.instagram.com/master_for_minecraft_pe/");
+                Intent openLinkIntent = new Intent(Intent.ACTION_VIEW, address);
+                itemView.getContext().startActivity(openLinkIntent);
+            } else if (jsonItemContent.getFileLink() != null && !jsonItemContent.getFileLink().isEmpty()) {
                 FragmentUtil.onTransactionFragmentByName(((FragmentActivity) itemView.getContext()), jsonItemContent.getFileLink());
                 ((ActivityMain) itemView.getContext()).mNavigationViewUtil.openFragment();
+                ((ActivityMain) itemView.getContext()).countShowAd = 0;
             }
         };
 

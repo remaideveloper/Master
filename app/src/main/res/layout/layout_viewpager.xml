@@ -18,12 +18,12 @@
             android:layout_centerInParent="true"
             android:text="@string/loading" />
 
-        <com.alegangames.master.ui.CustomViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:background="@color/carbon_white"/>
+            android:background="@drawable/ic_background"/>
     </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>

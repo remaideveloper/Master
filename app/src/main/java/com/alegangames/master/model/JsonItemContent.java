@@ -35,7 +35,7 @@ public class JsonItemContent extends JsonItem {
     }
 
     public Boolean isPremium() {
-        return mJSONObject.optInt("price") > 0;
+        return true;
     }
 
     public int getCount() {
@@ -43,7 +43,8 @@ public class JsonItemContent extends JsonItem {
     }
 
     public int getPrice() {
-        return mJSONObject.optInt("price");
+        int price = mJSONObject.optInt("price");
+        return price == 0 ? 1 :price;
     }
 
 }

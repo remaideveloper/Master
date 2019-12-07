@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.alegangames.master.download.DownloadAsyncTask;
@@ -56,6 +57,16 @@ public class DownloadViewModel extends AndroidViewModel {
         mAsyncTask.execute();
     }
 
+    public LiveData<DownloadEvent> onStartDownload1(String url, String savePath, String saveName, int requestCode) {
+        MutableLiveData<DownloadEvent> mDownloadEventLiveData = new MutableLiveData<>();
+        if (isRunning())
+            mAsyncTask.cancel(true);
+
+        mAsyncTask = new DownloadAsyncTask(getApplication(), saveName, savePath, url, requestCode, mDownloadEventLiveData);
+        mAsyncTask.execute();
+        return mDownloadEventLiveData;
+    }
+
     /**
      * Проверяет условие не является ли AsyncTask null и запущен ли он
      *
@@ -69,8 +80,10 @@ public class DownloadViewModel extends AndroidViewModel {
      * Отменяет AsyncTask
      */
     public void onCancelDownload() {
-        if (mAsyncTask != null)
+        if (mAsyncTask != null) {
             mAsyncTask.cancel(false);
+            mDownloadEventLiveData.postValue(new DownloadEvent());
+        }
     }
 
 

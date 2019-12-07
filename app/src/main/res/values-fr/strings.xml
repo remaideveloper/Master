@@ -180,6 +180,7 @@
     <string name="accept">Accepter</string>
     <string name="term_of_use_message">J\'accepte le %1$s.</string>
     <string name="privacy_policy">confidentialité</string>
+    <string name="select_your_age">Sélectionnez votre âge:</string>
 
 
 </resources>

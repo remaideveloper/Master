@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/carbon_white"
+    android:background="@drawable/ic_background_ad"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -18,7 +18,8 @@
             android:layout_marginBottom="2dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/carbon_white"
             android:text="@string/ad"
             android:textSize="12sp"/>
 
@@ -53,7 +54,7 @@
                 android:layout_toRightOf="@+id/appinstall_app_icon"
                 android:maxLines="2"
                 android:textStyle="bold"
-                android:textColor="@color/carbon_black"
+                android:textColor="@color/carbon_white"
                 tools:text="Application Name Example"/>
 
         </RelativeLayout>
@@ -73,7 +74,8 @@
                 tools:ignore="ContentDescription"
                 app:layout_constraintDimensionRatio="H,16:9"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <com.google.android.gms.ads.formats.MediaView
                 android:id="@+id/appinstall_media"
@@ -90,8 +92,11 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
             android:gravity="center"
-            android:background="@color/primaryColor"
+            android:background="#42aaff"
+            android:backgroundTint="#42aaff"
             android:textSize="@dimen/button_text_size"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             tools:text="Install"/>
 
         <TextView
@@ -103,7 +108,7 @@
             android:layout_marginTop="4dp"
             android:ellipsize="marquee"
             android:maxLines="3"
-            android:textColor="@color/carbon_black"
+            android:textColor="@color/carbon_white"
             tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
 
         <RelativeLayout
@@ -135,7 +140,7 @@
                 android:paddingRight="5dp"
                 android:paddingStart="5dp"
                 android:textSize="12sp"
-                android:textColor="@color/carbon_black"
+                android:textColor="@color/carbon_white"
                 tools:visibility="gone" />
 
             <TextView
@@ -147,7 +152,7 @@
                 android:paddingRight="5dp"
                 android:paddingStart="5dp"
                 android:textSize="12sp"
-                android:textColor="@color/carbon_black"
+                android:textColor="@color/carbon_white"
                 tools:visibility="gone" />
 
             <TextView
@@ -155,7 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textColor="@color/carbon_black"
+                android:textColor="@color/carbon_white"
                 tools:text="Contents Advertisement" />
 
         </RelativeLayout>

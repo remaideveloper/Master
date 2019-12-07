@@ -10,6 +10,7 @@ import androidx.lifecycle.Lifecycle.Event;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 
+import com.alegangames.master.BuildConfig;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -35,11 +36,14 @@ public final class AdMobBanner implements LifecycleObserver {
     }
 
     public void onCreate() {
-        if (!Config.ADMIN_MODE) {
+        if (!Config.ADMIN_MODE && !Config.NO_ADS) {
             Log.d(TAG, "onCreate");
             this.mAdView = new AdView(this.mActivity);
             this.mAdView.setAdSize(AdSize.SMART_BANNER);
-            this.mAdView.setAdUnitId(Config.BANNER_ID);
+            if (!BuildConfig.DEBUG)
+                this.mAdView.setAdUnitId(Config.BANNER_ID);
+            else
+                this.mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
             this.mAdRequest = AdMobRequest.getRequest();
             this.mViewGroup = (ViewGroup) this.mActivity.findViewById(R.id.bannerLayout);
             if (this.mViewGroup != null) {

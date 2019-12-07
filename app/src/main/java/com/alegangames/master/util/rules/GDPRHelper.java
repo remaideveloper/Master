@@ -95,7 +95,10 @@ public class GDPRHelper {
                         case UNKNOWN:
                             //Запросить диалоговое окно
                             try {
-                                getConsentForm();
+                                if (UtilPreference.getAge(mContext) >= 16)
+                                    getConsentForm();
+                                else
+                                    setNonPersonAds();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
