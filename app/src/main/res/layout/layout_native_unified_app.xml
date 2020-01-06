@@ -21,7 +21,7 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/carbon_white"
             android:text="@string/ad"
-            android:textSize="12sp"/>
+            android:textSize="15sp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"

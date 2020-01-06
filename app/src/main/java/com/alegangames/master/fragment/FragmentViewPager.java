@@ -216,9 +216,11 @@ public class FragmentViewPager extends FragmentAbstract implements SearchView.On
     }
 
     public void onTabsReady(List<FragmentAbstract> tabs) {
-        mTabs = Stream.of(tabs).filter(fragment -> fragment != null).toList();
-        mAdapterTabLayout.setAdapterList(mTabs);
-        mProgressBarLoading.setVisibility(View.GONE);
+        if (tabs != null && !tabs.isEmpty()) {
+            mTabs = Stream.of(tabs).filter(fragment -> fragment != null).toList();
+            mAdapterTabLayout.setAdapterList(mTabs);
+            mProgressBarLoading.setVisibility(View.GONE);
+        }
     }
 
     @Override

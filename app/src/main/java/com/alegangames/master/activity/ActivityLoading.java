@@ -13,8 +13,10 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.URLSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,7 +29,6 @@ import com.alegangames.master.util.StrictModeUtil;
 import com.alegangames.master.util.network.NetworkManager;
 import com.alegangames.master.util.preference.UtilPreference;
 import com.alegangames.master.util.rules.GDPRHelper;
-import com.shawnlin.numberpicker.NumberPicker;
 
 public class ActivityLoading extends AppCompatActivity {
 
@@ -46,6 +47,21 @@ public class ActivityLoading extends AppCompatActivity {
                 UtilPreference.getAge(this) == -1) {
             findViewById(R.id.progressBar).setVisibility(View.GONE);
             findViewById(R.id.containerDialog).setVisibility(View.VISIBLE);
+
+            String[] values = new String[]{
+                    "3", "4", "5", "6", "7", "8", "9", "10",
+                    "11", "12", "13", "14", "15", "16", "17", "---",
+                    "18", "19", "20", "21", "22", "23", "24", "25",
+                    "26", "27", "28", "29", "30", "31", "32", "33",
+                    "34", "35", "36", "37", "38", "39", "40", "41",
+                    "42", "43", "44", "45", "46", "47", "48", "49",
+                    "50", "51", "52", "53", "54", "55", "56", "57"
+            };
+
+            NumberPicker numberPicker = findViewById(R.id.number_picker);
+            numberPicker.setMinValue(0);
+            numberPicker.setMaxValue(55);
+            numberPicker.setDisplayedValues(values);
 
             TextView textViewMessage = findViewById(R.id.textViewMessage);
             String privacyPolisy = "<a href=" + getString(R.string.settings_confidentiality_link) + ">" + getString(R.string.privacy_policy) + "</a>";
@@ -72,10 +88,18 @@ public class ActivityLoading extends AppCompatActivity {
             textViewMessage.setText(style);
 
             Button button = findViewById(R.id.button);
+            button.setEnabled(false);
+            numberPicker.setOnValueChangedListener((picker, oldVal, newVal) -> {
+                if (newVal == 15)
+                    button.setEnabled(false);
+                else if (oldVal == 15)
+                    button.setEnabled(true);
+            });
+            numberPicker.setValue(15);
             button.setText(R.string.accept);
             button.setOnClickListener(v -> {
                 GDPRHelper.getRequestConsentInfo(this);
-                int age = ((NumberPicker) findViewById(R.id.number_picker)).getValue();
+                int age = Integer.valueOf(values[numberPicker.getValue()]);
                 UtilPreference.setAge(this, age);
                 if (age >= 18)
                     UtilPreference.setMaxAdContentRatingPref(this, AdMobRequest.EXTRA_ACR_VALUE_MA);

@@ -58,7 +58,7 @@
             <com.google.android.material.card.MaterialCardView
                 style="@style/ShapeAppearance.MaterialComponents.Test"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:transitionGroup="true"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:cardCornerRadius="8dp">

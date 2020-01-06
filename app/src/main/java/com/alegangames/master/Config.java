@@ -1,5 +1,6 @@
 package com.alegangames.master;
 
+
 public class Config {
     public static boolean ADMIN_MODE = false;
     public static final String ADMOB_APP_ID = "ca-app-pub-1243937460165985~6891592351";

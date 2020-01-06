@@ -118,6 +118,15 @@
         <item name="android:fontFamily">@font/minefont</item>
     </style>
 
+    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorAlertDialogListItem">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:editTextColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
+
     <style name="Widget.Me.SideSheet.Modal" parent="android:Widget">
         <item name="android:background">?android:attr/colorBackground</item>
         <item name="android:elevation" tools:ignore="NewApi">16dp</item>
@@ -125,6 +134,11 @@
         <item name="behavior_hideable">true</item>
         <item name="behavior_skipCollapsed">false</item>
         <item name="android:fontFamily">@font/minefont</item>
+    </style>
+
+    <style name="Theme.TabText" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/minefont</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>

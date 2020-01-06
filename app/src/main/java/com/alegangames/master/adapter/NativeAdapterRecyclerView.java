@@ -115,7 +115,6 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
     }
 
     private int getRealPosition(int position) {
-        Log.d("TEST_POSITION", String.valueOf(position));
         if (!onAd || Config.NO_ADS) {
             return position;
         } else {

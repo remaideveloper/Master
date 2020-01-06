@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -28,6 +30,7 @@ import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.model.JsonItemFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -60,12 +63,18 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
     private boolean threshold;
     private OnLoadMoreListener onLoadMoreListener;
     private OnLoadFullListener mOnLoadFullListener;
+    private View bannerLayout;
+    private RelativeLayout.LayoutParams layoutParams;
+    private List<Integer> listIds = Arrays.asList(4, 13, 22, 31, 40);
 
     public AdapterRecyclerView(FragmentActivity activity, RecyclerView recyclerView, AdMobInterstitial adMobInterstitial, AdMobVideoRewarded adMobVideoRewarded) {
         this.mRecyclerView = recyclerView;
         mAdMobInterstitial = adMobInterstitial;
         mAdMobVideoRewarded = adMobVideoRewarded;
         mAdMobVideoRewarded.getRewardedVideoAd().setRewardedVideoAdListener(mAdMobVideoRewarded.getDefaultVideoRewardAdListener());
+        bannerLayout = activity.findViewById(R.id.bannerLayout);
+        if (bannerLayout != null)
+            layoutParams = (RelativeLayout.LayoutParams) bannerLayout.getLayoutParams();
 //        mAdMobVideoRewarded.forceLoadRewardedVideo();
 
         mFavoriteViewModel = ViewModelProviders.of(activity, new FavoriteViewModel.FavoriteViewModelFactory(activity.getApplication())).get(FavoriteViewModel.class);
@@ -171,7 +180,6 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public int getItemViewType(int position) {
-        Log.d("TEST_POSITION_NO", String.valueOf(position));
         return JsonItemFactory.getViewType(mItemList.get(position).getId());
     }
 
@@ -200,17 +208,34 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
                 Log.d(TAG, "onScrolled");
 
                 RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
-
+                int firstVisibleItem = -1;
                 if (layoutManager instanceof GridLayoutManager) {
                     GridLayoutManager gridLayoutManager = (GridLayoutManager) layoutManager;
                     totalItemCount = gridLayoutManager.getItemCount();
                     lastVisibleItem = gridLayoutManager.findLastVisibleItemPosition();
+                    firstVisibleItem = gridLayoutManager.findFirstVisibleItemPosition();
                 } else if (layoutManager instanceof LinearLayoutManager) {
                     LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
                     totalItemCount = linearLayoutManager.getItemCount();
                     lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition();
+                    firstVisibleItem = linearLayoutManager.findFirstVisibleItemPosition();
                 }
 
+                int index = -1;
+
+                for (Integer i: listIds)
+                    if (i>=firstVisibleItem && i<=lastVisibleItem) {
+                        index = i;
+                        break;
+                    }
+                if (bannerLayout!=null){
+                    if (index!=-1 && bannerLayout.getVisibility() != View.GONE) {
+                        bannerLayout.setVisibility(View.GONE);
+                    }
+                    else if (index==-1 && bannerLayout.getVisibility() != View.VISIBLE) {
+                        bannerLayout.setVisibility(View.VISIBLE);
+                    }
+                }
                 Log.d(TAG, "onScrolled: loading " + loading);
                 Log.d(TAG, "onScrolled: threshold " + threshold);
                 Log.d(TAG, "onScrolled: totalItemCount " + totalItemCount);
