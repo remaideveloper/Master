@@ -222,9 +222,13 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
                 }
 
                 int index = -1;
-
-                for (Integer i: listIds)
-                    if (i>=firstVisibleItem && i<=lastVisibleItem) {
+//                for (Integer i: listIds)
+////                    if (i>=firstVisibleItem && i<=lastVisibleItem) {
+////                        index = i;
+////                        break;
+////                    }
+                for (int i = firstVisibleItem;i<=lastVisibleItem;i++)
+                    if (i!=8 && (i % ((int)Math.floor(i/(9))*(9)+4) == 0)){
                         index = i;
                         break;
                     }

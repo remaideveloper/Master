@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Maps for Minecraft PE</string>
+    <string name="settings_confidentiality_link" translatable="false">https://storage.googleapis.com/alegan_games/Private_maps.pdf</string>
+</resources>

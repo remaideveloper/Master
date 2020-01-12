@@ -1,6 +1,7 @@
 <com.google.android.gms.ads.formats.UnifiedNativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nativeAdView"
     android:layout_width="match_parent"
     android:background="@drawable/ic_background_ad"
     android:layout_height="wrap_content">

@@ -459,7 +459,7 @@ public class ItemsViewModel extends AndroidViewModel {
                 //Фильтрует элементы по категории, сортирует их по премиуму и создает лист
                 completeList = Stream.of(list)
                         .filter(item -> StringUtil.containsIgnoreCase(item.getCategory(), mCategory))
-                        .sorted((i1, i2) -> Boolean.compare(i2.isPremium(), i1.isPremium()))
+                        .sorted((i1, i2) -> Integer.compare(i2.getPrice(), i1.getPrice()))
                         .toList();
 
             }

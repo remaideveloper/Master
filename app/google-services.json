@@ -3,9 +3,38 @@
     "project_number": "1052785686846",
     "firebase_url": "https://concise-rex-243215.firebaseio.com",
     "project_id": "concise-rex-243215",
-    "storage_bucket": "alegan_games"
+    "storage_bucket": "concise-rex-243215.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052785686846:android:7c910672cce59c4b04546f",
+        "android_client_info": {
+          "package_name": "com.alegangames.maps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052785686846-rfbcikk8so8jfhftk8pbkg0h1hnnoib7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0LGOzY6Sw14k5yQLEiw6rV5V9bhPjtqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052785686846-rfbcikk8so8jfhftk8pbkg0h1hnnoib7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:1052785686846:android:5e1847d19e533b03",

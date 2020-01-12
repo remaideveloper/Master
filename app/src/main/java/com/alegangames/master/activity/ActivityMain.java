@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
 
+import com.alegangames.master.Config;
 import com.alegangames.master.R;
 import com.alegangames.master.ads.admob.AdMobBanner;
 import com.alegangames.master.ads.admob.AdMobRequest;
@@ -54,7 +55,7 @@ public class ActivityMain extends ActivityAppParent implements FragmentAbstract.
         GDPRHelper.getRequestConsentInfo(this);
 
         //Инициализируем транзакцию первого фрагмента
-        FragmentUtil.onTransactionFragmentByItem(this, R.id.main_container, JsonItemFragmentEnum.MAIN);
+        FragmentUtil.onTransactionFragmentByItem(this, R.id.main_container, Config.MAIN_FRAGMENT);
     }
 
     @Override

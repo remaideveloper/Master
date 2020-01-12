@@ -28,6 +28,7 @@ import com.alegangames.master.ads.admob.AdMobRequest;
 import com.alegangames.master.util.StrictModeUtil;
 import com.alegangames.master.util.network.NetworkManager;
 import com.alegangames.master.util.preference.UtilPreference;
+import com.alegangames.master.util.rules.COPPAHelper;
 import com.alegangames.master.util.rules.GDPRHelper;
 
 public class ActivityLoading extends AppCompatActivity {
@@ -110,6 +111,8 @@ public class ActivityLoading extends AppCompatActivity {
                 else if (age>=3)
                     UtilPreference.setMaxAdContentRatingPref(this, AdMobRequest.EXTRA_ACR_VALUE_G);
                 UtilPreference.setUnderAgePref(this, true);
+                if (age<14)
+                    COPPAHelper.setChildDirectedTreatment(this, true);
                 startActivity(new Intent(this, ActivityMain.class));
             });
         } else {

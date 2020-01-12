@@ -46,11 +46,14 @@ public class AdMobNativeAdvanceUnified {
         // OnUnifiedNativeAdLoadedListener implementation.
         builder.forUnifiedNativeAd(unifiedNativeAd -> {
             mNativeAd = unifiedNativeAd;
-            mNativeAdView = (UnifiedNativeAdView) ((Activity) viewGroup.getContext()).getLayoutInflater()
-                    .inflate(R.layout.layout_native_unified_app, null);
+            mNativeAdView = viewGroup.findViewById(R.id.nativeAdView);
+            if (mNativeAdView == null) {
+                mNativeAdView = (UnifiedNativeAdView) ((Activity) viewGroup.getContext()).getLayoutInflater()
+                        .inflate(R.layout.layout_native_unified_app, null);
+                viewGroup.removeAllViews();
+                viewGroup.addView(mNativeAdView);
+            }
             populateUnifiedNativeAdView(unifiedNativeAd, mNativeAdView);
-            viewGroup.removeAllViews();
-            viewGroup.addView(mNativeAdView);
         });
 
         VideoOptions videoOptions = new VideoOptions.Builder()
@@ -69,6 +72,17 @@ public class AdMobNativeAdvanceUnified {
                 Log.d(TAG, "onAdFailedToLoad: " + errorCode);
                 super.onAdFailedToLoad(errorCode);
             }
+
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                super.onAdLeftApplication();
+
+            }
         }).build();
 
         adLoader.loadAd(AdMobRequest.getRequest());
@@ -76,14 +90,21 @@ public class AdMobNativeAdvanceUnified {
 
     public void updateAdvanceView(final ViewGroup viewGroup){
         if (mNativeAd == null){
-//            addNativeAdvanceView(viewGroup);
+            addNativeAdvanceView(viewGroup);
         } else {
+            mNativeAdView = viewGroup.findViewById(R.id.nativeAdView);
+            if (mNativeAdView == null) {
+                mNativeAdView = (UnifiedNativeAdView) ((Activity) viewGroup.getContext()).getLayoutInflater()
+                        .inflate(R.layout.layout_native_unified_app, null);
+                viewGroup.removeAllViews();
+                viewGroup.addView(mNativeAdView);
+            }
             populateUnifiedNativeAdView(mNativeAd, mNativeAdView);
-            viewGroup.removeAllViews();
-            ViewGroup parent = (ViewGroup) mNativeAdView.getParent();
-            if (parent!=null)
-                parent.removeAllViews();
-            viewGroup.addView(mNativeAdView);
+//            viewGroup.removeAllViews();
+//            ViewGroup parent = (ViewGroup) mNativeAdView.getParent();
+//            if (parent!=null)
+//                parent.removeAllViews();
+//            viewGroup.addView(mNativeAdView);
         }
     }
 

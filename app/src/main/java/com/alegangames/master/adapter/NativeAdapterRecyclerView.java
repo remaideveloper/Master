@@ -1,6 +1,5 @@
 package com.alegangames.master.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alegangames.master.Config;
 import com.alegangames.master.R;
+import com.alegangames.master.ads.admob.AdManager;
 import com.alegangames.master.ads.admob.AdMobInterstitial;
 import com.alegangames.master.ads.admob.AdMobNativeAdvanceUnified;
 import com.alegangames.master.ads.admob.AdMobVideoRewarded;
@@ -28,8 +28,6 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
 
     public static final int CONTENT_NATIVE = R.layout.layout_native_ads;
 
-    private List<Integer> adIndex =  new ArrayList<>();
-
     private List<JsonItemContent> mItemList = new ArrayList<>();
     private AdapterRecyclerView adapterRecyclerView;
     private RecyclerView mRecyclerView;
@@ -44,17 +42,14 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
     private AdapterRecyclerView.OnLoadFullListener mOnLoadFullListener;
 
     private List<AdMobNativeAdvanceUnified> nativeList = new ArrayList<>();
+    private AdManager mAdManager;
 
-    private int maxCountNative = 3;
     private int hNative = 8;
-    private int countShowNative = 0;
 
     public NativeAdapterRecyclerView(FragmentActivity activity, RecyclerView recyclerView, AdMobInterstitial adMobInterstitial, AdMobVideoRewarded adMobVideoRewarded) {
         this.mRecyclerView = recyclerView;
         adapterRecyclerView = new AdapterRecyclerView(activity, recyclerView, adMobInterstitial, adMobVideoRewarded);
-//        adIndex.add(4);
-//        adIndex.add(17);
-//        adIndex.add(30);
+        mAdManager = new AdManager(activity);
     }
 
     public NativeAdapterRecyclerView(FragmentActivity activity, RecyclerView recyclerView, boolean onAd, AdMobInterstitial adMobInterstitial, AdMobVideoRewarded adMobVideoRewarded) {
@@ -68,7 +63,6 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         if (viewType == CONTENT_NATIVE) {
-            ++countShowNative;
             return new NativeViewHolder(inflater.inflate(R.layout.layout_native_ads, parent, false));
         }
         else
@@ -138,7 +132,7 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
 //        if (onAd && position>0 && countShowNative<maxCountNative && (position%((countShowNative*countShowNative*hNative)+4)==0))
 //            return CONTENT_NATIVE;
 //        if (onAd && position>0 && countShowNative<maxCountNative && adIndex.contains(position))
-        if (!Config.NO_ADS && onAd && position!=0 && (position % ((int)Math.floor(position/hNative)*(hNative+1)+4) == 0))
+        if (!Config.NO_ADS && onAd && position!=0 && position!=8 && (position % ((int)Math.floor(position/(hNative+1))*(hNative+1)+4) == 0))
             return CONTENT_NATIVE;
         else
             return adapterRecyclerView.getItemViewType(getRealPosition(position));
@@ -268,22 +262,24 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
         }
 
         public void init(int position){
-            if (nativeList.isEmpty()){
-                adMobNativeAdvanceUnified = new AdMobNativeAdvanceUnified(Config.NATIVE_ADVANCE_ID);
-                nativeList.add(adMobNativeAdvanceUnified);
-                adMobNativeAdvanceUnified.addNativeAdvanceView(itemView.findViewById(R.id.layoutNativeAds));
-            }else if (position>=4){
-                int pos = (position+5)/(hNative+1);
-                if (nativeList.size()>pos) {
-                    adMobNativeAdvanceUnified = nativeList.get(pos);
-                    adMobNativeAdvanceUnified.updateAdvanceView(itemView.findViewById(R.id.layoutNativeAds));
-                }
-                else {
-                    adMobNativeAdvanceUnified = new AdMobNativeAdvanceUnified(Config.NATIVE_ADVANCE_ID);
-                    nativeList.add(adMobNativeAdvanceUnified);
-                    adMobNativeAdvanceUnified.addNativeAdvanceView(itemView.findViewById(R.id.layoutNativeAds));
-                }
-            }
+            adMobNativeAdvanceUnified = mAdManager.getNativeAd((position+5)/(hNative+1));
+            adMobNativeAdvanceUnified.updateAdvanceView(itemView.findViewById(R.id.layoutNativeAds));
+//            if (nativeList.isEmpty()){
+//                adMobNativeAdvanceUnified = new AdMobNativeAdvanceUnified(Config.NATIVE_ADVANCE_ID);
+//                nativeList.add(adMobNativeAdvanceUnified);
+//                adMobNativeAdvanceUnified.updateAdvanceView(itemView.findViewById(R.id.layoutNativeAds));
+//            }else if (position>=4){
+//                int pos = (position+5)/(hNative+1);
+//                if (nativeList.size()>pos) {
+//                    adMobNativeAdvanceUnified = nativeList.get(pos);
+//                    adMobNativeAdvanceUnified.updateAdvanceView(itemView.findViewById(R.id.layoutNativeAds));
+//                }
+//                else {
+//                    adMobNativeAdvanceUnified = new AdMobNativeAdvanceUnified(Config.NATIVE_ADVANCE_ID);
+//                    nativeList.add(adMobNativeAdvanceUnified);
+//                    adMobNativeAdvanceUnified.updateAdvanceView(itemView.findViewById(R.id.layoutNativeAds));
+//                }
+//            }
         }
     }
 }
