@@ -13,10 +13,10 @@ import androidx.annotation.Nullable;
 import com.alegangames.master.Config;
 import com.alegangames.master.ads.admob.AdMobInterstitial;
 import com.alegangames.master.ads.admob.AdMobVideoRewarded;
+import com.alegangames.master.architecture.viewmodel.AppViewModel;
 import com.annimon.stream.Stream;
 import com.alegangames.master.R;
 import com.alegangames.master.adapter.AdapterRecyclerView;
-import com.alegangames.master.architecture.viewmodel.OfferViewModel;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.ui.RecyclerViewManager;
 import com.alegangames.master.util.StringUtil;
@@ -33,7 +33,7 @@ public class FragmentOfferWall extends FragmentAbstract {
     private ProgressBar mProgressBarLoading;
     private RecyclerViewManager mRecyclerView;
     private AdapterRecyclerView mAdapter;
-    private OfferViewModel viewModel;
+    private AppViewModel viewModel;
 
     public static FragmentOfferWall getInstance() {
         return new FragmentOfferWall();
@@ -52,7 +52,7 @@ public class FragmentOfferWall extends FragmentAbstract {
         mRecyclerView.setLayoutManager(RecyclerViewManager.LayoutManagerEnum.GridLayout);
         mRecyclerView.setAdapter(mAdapter);
 
-        viewModel = OfferViewModel.get(getActivity());
+        viewModel = AppViewModel.get(getActivity());
         viewModel.getItemLiveData().observe(this, this::onChanged);
 
         return mRootView;

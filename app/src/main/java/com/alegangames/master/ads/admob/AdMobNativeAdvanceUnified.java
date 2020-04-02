@@ -1,6 +1,7 @@
 package com.alegangames.master.ads.admob;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,11 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.alegangames.master.BuildConfig;
+import com.alegangames.master.R;
+import com.alegangames.master.util.ButtonColorManager;
+import com.alegangames.master.util.ColorList;
+import com.annimon.stream.Stream;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.VideoController;
@@ -19,11 +25,8 @@ import com.google.android.gms.ads.formats.NativeAdOptions;
 import com.google.android.gms.ads.formats.UnifiedNativeAd;
 import com.google.android.gms.ads.formats.UnifiedNativeAdView;
 import com.google.android.material.button.MaterialButton;
-import com.alegangames.master.BuildConfig;
-import com.alegangames.master.R;
-import com.alegangames.master.util.ButtonColorManager;
-import com.alegangames.master.util.ColorList;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -34,39 +37,34 @@ public class AdMobNativeAdvanceUnified {
     private String mAdUnitId;
     private UnifiedNativeAdView mNativeAdView;
     private UnifiedNativeAd mNativeAd;
+    private boolean loading = false;
+    private int mSize;
+    private List<UnifiedNativeAd> mListAds;
+
+    public AdMobNativeAdvanceUnified(Context context, String adUnitId, int size) {
+        this.mAdUnitId = adUnitId;
+        mSize = size;
+        mListAds = new ArrayList<>();
+        loadNativeAds(context);
+    }
 
     public AdMobNativeAdvanceUnified(String adUnitId) {
         this.mAdUnitId = adUnitId;
     }
 
-    public void addNativeAdvanceView(final ViewGroup viewGroup) {
-
+    public void addNativeAdvanceView(ViewGroup viewGroup){
         AdLoader.Builder builder = new AdLoader.Builder(viewGroup.getContext(), (BuildConfig.DEBUG) ? TEST_NATIVE_ADVANCE_ID : mAdUnitId);
 
         // OnUnifiedNativeAdLoadedListener implementation.
-        builder.forUnifiedNativeAd(unifiedNativeAd -> {
+        final AdLoader adLoader = builder.forUnifiedNativeAd(unifiedNativeAd -> {
             mNativeAd = unifiedNativeAd;
-            mNativeAdView = viewGroup.findViewById(R.id.nativeAdView);
-            if (mNativeAdView == null) {
-                mNativeAdView = (UnifiedNativeAdView) ((Activity) viewGroup.getContext()).getLayoutInflater()
+            mNativeAdView = (UnifiedNativeAdView) ((Activity) viewGroup.getContext()).getLayoutInflater()
                         .inflate(R.layout.layout_native_unified_app, null);
-                viewGroup.removeAllViews();
-                viewGroup.addView(mNativeAdView);
-            }
-            populateUnifiedNativeAdView(unifiedNativeAd, mNativeAdView);
-        });
-
-        VideoOptions videoOptions = new VideoOptions.Builder()
-                .setStartMuted(true)
-                .build();
-
-        NativeAdOptions adOptions = new NativeAdOptions.Builder()
-                .setVideoOptions(videoOptions)
-                .build();
-
-        builder.withNativeAdOptions(adOptions);
-
-        AdLoader adLoader = builder.withAdListener(new AdListener() {
+            viewGroup.removeAllViews();
+            viewGroup.addView(mNativeAdView);
+                populateUnifiedNativeAdView(unifiedNativeAd, mNativeAdView);
+                viewGroup.setVisibility(View.VISIBLE);
+        }).withAdListener(new AdListener() {
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 Log.d(TAG, "onAdFailedToLoad: " + errorCode);
@@ -85,27 +83,90 @@ public class AdMobNativeAdvanceUnified {
             }
         }).build();
 
+        VideoOptions videoOptions = new VideoOptions.Builder()
+                .setStartMuted(true)
+                .build();
+
+        NativeAdOptions adOptions = new NativeAdOptions.Builder()
+                .setVideoOptions(videoOptions)
+                .build();
+
+        builder.withNativeAdOptions(adOptions);
+
         adLoader.loadAd(AdMobRequest.getRequest());
     }
 
-    public void updateAdvanceView(final ViewGroup viewGroup){
-        if (mNativeAd == null){
-            addNativeAdvanceView(viewGroup);
-        } else {
-            mNativeAdView = viewGroup.findViewById(R.id.nativeAdView);
-            if (mNativeAdView == null) {
-                mNativeAdView = (UnifiedNativeAdView) ((Activity) viewGroup.getContext()).getLayoutInflater()
-                        .inflate(R.layout.layout_native_unified_app, null);
-                viewGroup.removeAllViews();
-                viewGroup.addView(mNativeAdView);
+    public void loadNativeAds(Context context) {
+
+        loading = true;
+
+        AdLoader.Builder builder = new AdLoader.Builder(context, (BuildConfig.DEBUG) ? TEST_NATIVE_ADVANCE_ID : mAdUnitId);
+
+        // OnUnifiedNativeAdLoadedListener implementation.
+        final AdLoader adLoader = builder.forUnifiedNativeAd(unifiedNativeAd -> {
+//            mNativeAd = unifiedNativeAd;
+//            mNativeAdView = (UnifiedNativeAdView) ((Activity) viewGroup.getContext()).getLayoutInflater()
+//                        .inflate(R.layout.layout_native_unified_app, null);
+//            viewGroup.removeAllViews();
+//            viewGroup.addView(mNativeAdView);
+//                populateUnifiedNativeAdView(unifiedNativeAd, mNativeAdView);
+            mListAds.add(unifiedNativeAd);
+        }).withAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                Log.d(TAG, "onAdFailedToLoad: " + errorCode);
+                super.onAdFailedToLoad(errorCode);
             }
+
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                super.onAdLeftApplication();
+
+            }
+        }).build();
+
+        VideoOptions videoOptions = new VideoOptions.Builder()
+                .setStartMuted(true)
+                .build();
+
+        NativeAdOptions adOptions = new NativeAdOptions.Builder()
+                .setVideoOptions(videoOptions)
+                .build();
+
+        builder.withNativeAdOptions(adOptions);
+
+        adLoader.loadAds(AdMobRequest.getRequest(), mSize);
+    }
+
+    public void onDestroy(){
+        Stream.of(mListAds).forEach(UnifiedNativeAd::destroy);
+        mListAds.clear();
+    }
+
+    public void updateAdvanceView(final View viewGroup, int position){
+        UnifiedNativeAdView mNativeAdView = viewGroup.findViewById(R.id.nativeAdView);
+        if (mListAds.isEmpty()) {
+            mNativeAdView.setVisibility(View.GONE);
+            return;
+        }
+        int pos = position;
+        if (mListAds.size()<=position){
+            pos = mListAds.size()-1;
+        }
+            mNativeAdView.setVisibility(View.VISIBLE);
+
+                UnifiedNativeAd mNativeAd = mListAds.get(pos);
             populateUnifiedNativeAdView(mNativeAd, mNativeAdView);
 //            viewGroup.removeAllViews();
 //            ViewGroup parent = (ViewGroup) mNativeAdView.getParent();
 //            if (parent!=null)
 //                parent.removeAllViews();
 //            viewGroup.addView(mNativeAdView);
-        }
     }
 
     private void populateUnifiedNativeAdView(UnifiedNativeAd nativeAd, UnifiedNativeAdView adView) {

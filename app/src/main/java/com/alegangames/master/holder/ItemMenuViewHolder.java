@@ -14,12 +14,15 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alegangames.master.R;
+import com.alegangames.master.activity.ActivityContent;
 import com.alegangames.master.activity.ActivityMain;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.util.FragmentUtil;
 import com.alegangames.master.util.firebase.FirebaseAnalyticsHelper;
 import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
+
+import static com.alegangames.master.activity.ActivityAppParent.FRAGMENT_DATA;
 
 public class ItemMenuViewHolder extends RecyclerView.ViewHolder {
 
@@ -48,9 +51,12 @@ public class ItemMenuViewHolder extends RecyclerView.ViewHolder {
                 Intent openLinkIntent = new Intent(Intent.ACTION_VIEW, address);
                 itemView.getContext().startActivity(openLinkIntent);
             } else if (jsonItemContent.getFileLink() != null && !jsonItemContent.getFileLink().isEmpty()) {
-                FragmentUtil.onTransactionFragmentByName(((FragmentActivity) itemView.getContext()), jsonItemContent.getFileLink());
-                ((ActivityMain) itemView.getContext()).mNavigationViewUtil.openFragment();
-                ((ActivityMain) itemView.getContext()).countShowAd = 0;
+//                FragmentUtil.onTransactionFragmentByName(((FragmentActivity) itemView.getContext()), jsonItemContent.getFileLink());
+//                ((ActivityMain) itemView.getContext()).mNavigationViewUtil.openFragment();
+//                ((ActivityMain) itemView.getContext()).countShowAd = 0;
+                Intent intent = new Intent(itemView.getContext(), ActivityContent.class);
+                intent.putExtra(FRAGMENT_DATA, jsonItemContent.getFileLink());
+                itemView.getContext().startActivity(intent);
             }
         };
 

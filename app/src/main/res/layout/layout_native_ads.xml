@@ -5,13 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardUseCompatPadding="true"
-    app:cardCornerRadius="8dp">
-    <LinearLayout
-        android:id="@+id/layoutNativeAds"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_columnSpan = "2">
+    app:cardCornerRadius="3dp">
 
-    </LinearLayout>
+    <include layout="@layout/layout_native_unified_app"/>
 </com.google.android.material.card.MaterialCardView>

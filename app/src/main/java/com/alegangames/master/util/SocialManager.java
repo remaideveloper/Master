@@ -14,6 +14,7 @@ import androidx.core.content.FileProvider;
 import com.alegangames.master.BuildConfig;
 import com.alegangames.master.R;
 import com.alegangames.master.util.preference.SharedPreferenceManager;
+import com.crashlytics.android.Crashlytics;
 
 import java.io.File;
 
@@ -61,7 +62,7 @@ public class SocialManager {
             sendIntent.setType("text/plain");
             context.startActivity(Intent.createChooser(sendIntent, context.getString(R.string.share_choise)));
         } catch (Exception e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 
@@ -103,7 +104,7 @@ public class SocialManager {
         try {
             context.startActivity(Intent.createChooser(i, context.getString(R.string.send)));
         } catch (android.content.ActivityNotFoundException e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
             ToastUtil.show(context, R.string.not_email_client);
         }
     }

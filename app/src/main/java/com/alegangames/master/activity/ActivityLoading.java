@@ -99,7 +99,7 @@ public class ActivityLoading extends AppCompatActivity {
             numberPicker.setValue(15);
             button.setText(R.string.accept);
             button.setOnClickListener(v -> {
-                GDPRHelper.getRequestConsentInfo(this);
+                GDPRHelper gdprHelper = new GDPRHelper(this);
                 int age = Integer.valueOf(values[numberPicker.getValue()]);
                 UtilPreference.setAge(this, age);
                 if (age >= 18)
@@ -111,8 +111,10 @@ public class ActivityLoading extends AppCompatActivity {
                 else if (age>=3)
                     UtilPreference.setMaxAdContentRatingPref(this, AdMobRequest.EXTRA_ACR_VALUE_G);
                 UtilPreference.setUnderAgePref(this, true);
-                if (age<14)
+                if (age<14) {
                     COPPAHelper.setChildDirectedTreatment(this, true);
+                    gdprHelper.setTagForUnderAgeOfConsent(this);
+                }
                 startActivity(new Intent(this, ActivityMain.class));
             });
         } else {

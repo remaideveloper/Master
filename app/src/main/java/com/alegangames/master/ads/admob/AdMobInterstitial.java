@@ -19,7 +19,7 @@ public final class AdMobInterstitial implements LifecycleObserver {
 
     public AdMobInterstitial(FragmentActivity fragmentActivity, String str) {
         Log.d(TAG, TAG);
-        this.mInterstitialAd = new InterstitialAd(fragmentActivity.getApplicationContext());
+        this.mInterstitialAd = new InterstitialAd(fragmentActivity);
         if (!BuildConfig.DEBUG)
             this.mInterstitialAd.setAdUnitId(str);
         else

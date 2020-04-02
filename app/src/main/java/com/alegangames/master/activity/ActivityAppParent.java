@@ -16,10 +16,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.alegangames.master.Config;
 import com.alegangames.master.R;
+import com.alegangames.master.ads.admob.AdManager;
 import com.alegangames.master.ads.admob.AdMobInterstitial;
 import com.alegangames.master.ads.admob.AdMobVideoRewarded;
 import com.alegangames.master.model.JsonItem;
 import com.alegangames.master.model.JsonItemFactory;
+import com.alegangames.master.ui.ToolbarUtil;
 import com.alegangames.master.util.ToastUtil;
 import com.alegangames.master.util.json.SerializableJSONObject;
 import com.alegangames.master.util.network.NetworkManager;
@@ -57,9 +59,9 @@ public abstract class ActivityAppParent extends AppCompatActivity {
         }
         NetworkManager.getInstance(this);
 
-        mAdMobInterstitial = new AdMobInterstitial(this, Config.INTERSTITIAL_ID);
-        mAdMobVideoRewarded = new AdMobVideoRewarded(this);
-        mAdMobVideoRewarded.forceLoadRewardedVideo();
+//        mAdMobInterstitial = new AdMobInterstitial(this, Config.INTERSTITIAL_ID);
+//        mAdMobVideoRewarded = new AdMobVideoRewarded(this);
+//        mAdMobVideoRewarded.forceLoadRewardedVideo();
 
     }
 
@@ -67,6 +69,7 @@ public abstract class ActivityAppParent extends AppCompatActivity {
     protected void onResume() {
         Log.d(TAG, "onResume");
         NetworkManager.onNetworkCondition(this);
+        ToolbarUtil.setCoinsSubtitle(this);
         super.onResume();
     }
 
@@ -125,10 +128,15 @@ public abstract class ActivityAppParent extends AppCompatActivity {
         SerializableJSONObject serializableJSONObject = new SerializableJSONObject(item.getJsonObject());
         intent.putExtra(JSON_OBJECT_KEY, serializableJSONObject);
         startActivity(intent);
-        if (countShowAd !=0 && (countShowAd == 1 || countShowAd % 4 == 0)) {
+        if (mAdMobInterstitial != null) {
             mAdMobInterstitial.onShowAd();
         }
         ++countShowAd;
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AdManager.onDestroy(this);
+    }
 }

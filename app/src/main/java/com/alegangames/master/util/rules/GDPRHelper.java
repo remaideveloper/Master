@@ -28,7 +28,7 @@ public class GDPRHelper {
     private ConsentInformation mConsentInformation;
 
 
-    private GDPRHelper(Context context) {
+    public GDPRHelper(Context context) {
         mContext = context;
         mConsentInformation = ConsentInformation.getInstance(context);
 //        mConsentInformation.setDebugGeography(DebugGeography.DEBUG_GEOGRAPHY_EEA);
@@ -54,7 +54,7 @@ public class GDPRHelper {
      * Узнать является ли пользователь гражданином Европейского союза
      * Пометить что пользователь, не достиг возраста согласия
      */
-    public static void setTagForUnderAgeOfConsent(Context context) {
+    public void setTagForUnderAgeOfConsent(Context context) {
         if (isRequestLocationInEeaOrUnknown(context)) {
             new GDPRHelper(context).setTagForUnderAgeOfConsent();
             UtilPreference.setUserUnderAgeOfConsent(context, true);
@@ -71,7 +71,7 @@ public class GDPRHelper {
     /**
      * Отправляем запрос согласия пользователя
      */
-    private void getRequestConsentInfo() {
+    public void getRequestConsentInfo() {
         String[] publisherIds = {Config.ADMOB_PUB_ID};
 
         mConsentInformation.requestConsentInfoUpdate(publisherIds, new ConsentInfoUpdateListener() {

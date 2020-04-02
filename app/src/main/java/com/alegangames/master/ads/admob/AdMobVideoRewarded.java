@@ -10,6 +10,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 
+import com.alegangames.master.BuildConfig;
 import com.alegangames.master.R;
 import com.alegangames.master.ui.ToolbarUtil;
 import com.alegangames.master.util.ToastUtil;
@@ -18,12 +19,15 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
-import com.alegangames.master.BuildConfig;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 import static com.alegangames.master.Config.VIDEO_REWARD_ID;
 
 public final class AdMobVideoRewarded implements LifecycleObserver {
+
+    public interface Listener{
+        void onRewarded(boolean b);
+    }
 
     private static final String TAG = AdMobVideoRewarded.class.getSimpleName();
     private static final String VIDEO_REWARD_TEST_ID = "ca-app-pub-3940256099942544/5224354917";
@@ -31,7 +35,8 @@ public final class AdMobVideoRewarded implements LifecycleObserver {
     private Context mContext;
     private FragmentActivity mActivity;
     private boolean isRewarded;
-    private static int COUNT_COINS = 10;
+    private static int COUNT_COINS = 25;
+    private Listener mListener;
 
     /**
      * Конструткор
@@ -42,8 +47,12 @@ public final class AdMobVideoRewarded implements LifecycleObserver {
         Log.d(TAG, "AdMobVideoRewarded");
         activity.getLifecycle().addObserver(this);
         mActivity = activity;
-        mContext = activity.getApplicationContext();
+        mContext = activity;
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(mContext);
+    }
+
+    public void setListener(Listener listener){
+        mListener = listener;
     }
 
     /**
@@ -98,10 +107,10 @@ public final class AdMobVideoRewarded implements LifecycleObserver {
         //Если пользователь не вознагражден прервать
         if (!isRewarded()) return;
         //Вознаграждаем пользователя монеткой
-//        PurchaseManager.addCoins(COUNT_COINS, mContext);
-////        ToolbarUtil.setCoinsSubtitle((AppCompatActivity) mActivity);
-//        String message = mContext.getString(R.string.you_earned_coins, COUNT_COINS);
-//        ToastUtil.show(mContext, message);
+        PurchaseManager.addCoins(COUNT_COINS, mContext);
+        ToolbarUtil.setCoinsSubtitle((AppCompatActivity) mActivity);
+        String message = mContext.getString(R.string.you_earned_coins, COUNT_COINS);
+        ToastUtil.show(mContext, message);
         //Возвращаем значение в прежнее состояние
         setRewarded(false);
     }
@@ -158,6 +167,7 @@ public final class AdMobVideoRewarded implements LifecycleObserver {
             public void onRewardedVideoAdClosed() {
                 Log.d(TAG, "onRewardedVideoAdClosed");
                 forceLoadRewardedVideo();
+//                mListener.onRewarded(isRewarded);
                 onReward();
             }
 

@@ -1,5 +1,6 @@
 package com.alegangames.master.adapter;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,7 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
     public NativeAdapterRecyclerView(FragmentActivity activity, RecyclerView recyclerView, AdMobInterstitial adMobInterstitial, AdMobVideoRewarded adMobVideoRewarded) {
         this.mRecyclerView = recyclerView;
         adapterRecyclerView = new AdapterRecyclerView(activity, recyclerView, adMobInterstitial, adMobVideoRewarded);
-        mAdManager = new AdManager(activity);
+        mAdManager = AdManager.getInstance(activity);
     }
 
     public NativeAdapterRecyclerView(FragmentActivity activity, RecyclerView recyclerView, boolean onAd, AdMobInterstitial adMobInterstitial, AdMobVideoRewarded adMobVideoRewarded) {
@@ -63,7 +64,7 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         if (viewType == CONTENT_NATIVE) {
-            return new NativeViewHolder(inflater.inflate(R.layout.layout_native_ads, parent, false));
+            return new NativeViewHolder(inflater.inflate(viewType, parent, false));
         }
         else
             return adapterRecyclerView.onCreateViewHolder(parent, viewType);
@@ -202,7 +203,6 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
     }
 
     public void setOnLoadMoreListener(AdapterRecyclerView.OnLoadMoreListener onLoadMoreListener) {
-        this.onLoadMoreListener = onLoadMoreListener;
         adapterRecyclerView.setOnLoadMoreListener(onLoadMoreListener);
     }
 
@@ -262,8 +262,8 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
         }
 
         public void init(int position){
-            adMobNativeAdvanceUnified = mAdManager.getNativeAd((position+5)/(hNative+1));
-            adMobNativeAdvanceUnified.updateAdvanceView(itemView.findViewById(R.id.layoutNativeAds));
+            mAdManager.getNativeAd(itemView, (position+5)/(hNative+1));
+//            adMobNativeAdvanceUnified.updateAdvanceView(itemView.findViewById(R.id.layoutNativeAds));
 //            if (nativeList.isEmpty()){
 //                adMobNativeAdvanceUnified = new AdMobNativeAdvanceUnified(Config.NATIVE_ADVANCE_ID);
 //                nativeList.add(adMobNativeAdvanceUnified);
@@ -281,5 +281,12 @@ public class NativeAdapterRecyclerView  extends RecyclerView.Adapter<RecyclerVie
 //                }
 //            }
         }
+    }
+
+    public void onDestroy(){
+        mRecyclerView = null;
+        adapterRecyclerView.onDestroy();
+        adapterRecyclerView = null;
+        mAdManager = null;
     }
 }

@@ -10,6 +10,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.alegangames.master.util.FirebaseManager;
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.alegangames.master.fragment.FragmentAbstract;
@@ -24,19 +25,19 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OfferViewModel extends AndroidViewModel {
+public class AppViewModel extends AndroidViewModel {
 
-    private static final String TAG = OfferViewModel.class.getSimpleName();
+    private static final String TAG = AppViewModel.class.getSimpleName();
 
     //Observer связан со своим Lifecycle и автоматически отписывается в случае, когда его Lifecycle уничтожен
     private MutableLiveData<List<FragmentAbstract>> mFragmentMutableLiveData = new MutableLiveData<>();
     private MutableLiveData<List<JsonItemContent>> mItemMutableLiveData = new MutableLiveData<>();
 
-    public static OfferViewModel get(FragmentActivity activity){
-        return ViewModelProviders.of(activity).get(OfferViewModel.class);
+    public static AppViewModel get(FragmentActivity activity){
+        return ViewModelProviders.of(activity).get(AppViewModel.class);
     }
 
-    public OfferViewModel(@NonNull Application application) {
+    public AppViewModel(@NonNull Application application) {
         super(application);
     }
 
@@ -45,7 +46,7 @@ public class OfferViewModel extends AndroidViewModel {
      */
     public LiveData<List<FragmentAbstract>> getFragmentLiveData() {
         if (mFragmentMutableLiveData.getValue() == null) {
-//            requestData(this::getDataFragment);
+            requestData(this::getDataFragment);
         }
         return mFragmentMutableLiveData;
     }
@@ -55,7 +56,7 @@ public class OfferViewModel extends AndroidViewModel {
      */
     public LiveData<List<JsonItemContent>> getItemLiveData() {
         if (mItemMutableLiveData.getValue() == null) {
-//            requestData(this::getDataItem);
+            requestData(this::getDataItem);
         }
         return mItemMutableLiveData;
     }
@@ -66,7 +67,7 @@ public class OfferViewModel extends AndroidViewModel {
      */
     private void getDataFragment(JSONArray jsonArray) {
         AsyncTask.execute(() -> {
-            List<JsonItemContent> itemList = getOfferList(jsonArray);
+            List<JsonItemContent> itemList = getAppList(jsonArray);
             List<FragmentAbstract> fragmentList = new ArrayList<>();
             Stream.of(itemList)
                     .map(JsonItemContent::getCategory) //получаем категории
@@ -88,7 +89,7 @@ public class OfferViewModel extends AndroidViewModel {
      */
     private void getDataItem(JSONArray jsonArray) {
         AsyncTask.execute(() -> {
-            List<JsonItemContent> itemList = getOfferList(jsonArray);
+            List<JsonItemContent> itemList = getAppList(jsonArray);
             mItemMutableLiveData.postValue(itemList);
         });
     }
@@ -96,7 +97,7 @@ public class OfferViewModel extends AndroidViewModel {
     /**
      * Создает объекты офферов, содержащихся в переданном JSONArray
      */
-    private List<JsonItemContent> getOfferList(JSONArray jsonArray) {
+    private List<JsonItemContent> getAppList(JSONArray jsonArray) {
         return Stream.of(JsonItemFactory.getListJsonItemFromJsonArray(jsonArray))
                 .filter(item -> !DeviceManager.checkAppInDevice(getApplication(), UrlHelper.getPackageNameFromUrl(item.getFileLink())))
                 .collect(Collectors.toList());
@@ -106,9 +107,9 @@ public class OfferViewModel extends AndroidViewModel {
 //     * Получает JsonArray с итемами от сервера, передает
 //     * полученный массив в переданный слушатель
 //     */
-//    private void requestData(Response.Listener<JSONArray> jsonArrayListener) {
-//        VolleyManager.getInstance(getApplication()).getJsonArrayRequest(jsonArrayListener, Config.APPS_URL);
-//    }
+    private void requestData(FirebaseManager.Listener<JSONArray> jsonArrayListener) {
+        FirebaseManager.loading(getApplication(), jsonArrayListener, "apps.txt");
+    }
 
     /**
      * Заного устанавливает данные в mItemMutableLiveData

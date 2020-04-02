@@ -40,7 +40,7 @@ public class PurchaseViewModel extends AndroidViewModel {
      */
     public void updatePremium() {
         AsyncTask.execute(() -> {
-            boolean premium = mItem.isPremium() && !PurchaseManager.isItemBought(mItem.getJsonObject(), getApplication());
+            boolean premium = mItem.isPremium() && !PurchaseManager.isItemBought(mItem, getApplication());
             if (mPurchaseLiveData != null) mPurchaseLiveData.postValue(premium);
         });
     }
@@ -49,7 +49,7 @@ public class PurchaseViewModel extends AndroidViewModel {
      * Вызывает покупку итема.
      */
     public void buyItem() {
-        PurchaseManager.onItemsBought(mItem.getJsonObject(), getApplication());
+        PurchaseManager.onItemsBought(mItem, getApplication());
         updatePremium();
     }
 

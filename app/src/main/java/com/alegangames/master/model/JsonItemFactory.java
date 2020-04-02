@@ -36,7 +36,7 @@ public class JsonItemFactory {
     public static final String WALLPAPERS_CATEGORY = "Wallpapers Category";
     public static final String WALLPAPERS = "Wallpapers";
     public static final String MENU = "Menu";
-    public static final String OFFER = "Offer";
+    public static final String OFFER = "Apps";
     public static final String PROMO_PAGER = "Promo_Pager";
     public static final String FRAGMENT = "Fragment";
 

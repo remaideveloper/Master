@@ -8,14 +8,15 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
 app:cardUseCompatPadding="true"
+    android:elevation="8dp"
 app:cardCornerRadius="8dp">
 
 <LinearLayout
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9f876b"
-    android:backgroundTint="#9f876b"
+    android:background="@color/carbon_white"
+    android:backgroundTint="@color/carbon_white"
     android:foreground="?android:attr/selectableItemBackground"
     android:orientation="vertical">
 

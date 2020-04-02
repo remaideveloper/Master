@@ -43,8 +43,8 @@ public class JsonItemContent extends JsonItem {
     }
 
     public int getPrice() {
-        int price = mJSONObject.optInt("price");
-        return price == 0 ? 1 :price;
+        int price = mJSONObject.optInt("price",0);
+        return (price == 0 ? 1 :price)*25;
     }
 
 }

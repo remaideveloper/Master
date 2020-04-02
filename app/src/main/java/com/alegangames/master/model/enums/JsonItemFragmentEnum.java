@@ -9,6 +9,7 @@ public enum JsonItemFragmentEnum {
     MAIN("Main", "main.txt", 2, false, false, false),
     SKINS("Skins", "sk.txt", 2, false, true, true),
     PACKS("Packs", "p.txt", 2, false, true, true),
+    ADDONS("Addons", "mo.txt", 2, false, true, true),
     MODS("Mods", "mo.txt", 2, false, true, true),
     BUILDING("Building", "b.txt", 2, false, true, true),
     SEEDS("Seeds", "see.txt", 2, false, true, true),

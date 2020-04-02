@@ -56,8 +56,8 @@
             android:textSize="@dimen/button_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:backgroundTint="@color/primaryColor"
-            android:background="@color/primaryColor"
+            android:background="#42aaff"
+            android:backgroundTint="#42aaff"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,10 +20,11 @@
     <style name="AppTheme.ActionBar" parent="Theme.MaterialComponents.Light">
         <!--<mItem name="android:buttonStyle">@style/CustomButton</mItem>-->
         <!--<mItem name="android:textColor">@color/black</mItem>-->
+        <item name="android:actionBarStyle">@style/CustomActionBar</item>
         <item name="actionBarStyle">@style/CustomActionBar</item>
         <item name="android:textColorPrimary">@color/carbon_white</item>
         <item name="colorPrimary">@color/primaryDarkColor</item>
-        <item name="android:textColor">@color/carbon_black</item>
+        <item name="android:textColor">@color/carbon_white</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:fontFamily">@font/minefont</item>
     </style>
@@ -68,6 +69,11 @@
         <item name="android:background" tools:ignore="NewApi">@color/primaryColor</item>
         <item name="background">@color/primaryColor</item>
         <item name="android:fontFamily">@font/minefont</item>
+        <item name="android:subtitleTextStyle">@style/TextStyle</item>
+    </style>
+
+    <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/carbon_white</item>
     </style>
 
     <style name="TextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">

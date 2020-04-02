@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import com.alegangames.master.activity.ActivityShop;
+import com.alegangames.master.util.ColorList;
+import com.crashlytics.android.Crashlytics;
 import com.github.clans.fab.FloatingActionButton;
 import com.alegangames.master.R;
 import com.alegangames.master.ads.admob.AdMobBanner;
@@ -85,7 +87,7 @@ public class ActivitySkinsCustom extends ActivitySkins {
 
         initFAB();
         ToolbarUtil.setToolbar(this, true);
-//        ToolbarUtil.setCoinsSubtitle(this);
+        ToolbarUtil.setCoinsSubtitle(this);
 
         initGLSurfaceView();
         getSkinsFromSite(mItem.getFileLink());
@@ -248,7 +250,7 @@ public class ActivitySkinsCustom extends ActivitySkins {
         try {
             mTextViewSkin.setText(String.format(AppUtil.getCurrentLocale(this), "%d / %d", numberCurrentSkin, numberAmountSkin));
         } catch (Exception e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 

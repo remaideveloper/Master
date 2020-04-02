@@ -70,7 +70,7 @@ public class FragmentShop extends FragmentAbstract implements PurchaseHolder.Pur
             //Получаем информацию о продукте
             billingManager.getProductDetailsAsynk(product.getId()).observe(getViewLifecycleOwner(), skuDetails -> {
                 if (skuDetails != null) {
-                    String text = skuDetails.priceText + " " + skuDetails.currency;
+                    String text = skuDetails.getPrice() + " " + skuDetails.getPriceCurrencyCode();
                     holder.setButtonText(text);
 //                    holder.getRoot().setVisibility(View.VISIBLE);
                 }
@@ -160,7 +160,7 @@ public class FragmentShop extends FragmentAbstract implements PurchaseHolder.Pur
      */
     @Override
     public void onProductPurchased(String productId) {
-//        ToolbarUtil.setCoinsSubtitle(((AppCompatActivity) getActivity()));
+        ToolbarUtil.setCoinsSubtitle(((AppCompatActivity) getActivity()));
     }
 
     @Override

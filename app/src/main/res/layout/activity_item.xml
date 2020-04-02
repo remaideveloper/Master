@@ -15,6 +15,7 @@
         android:fillViewport="true"
         android:layout_above="@+id/bannerLayout"
         android:layout_below="@+id/appbar"
+        android:background="#E1ECF3"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -35,7 +36,7 @@
                         android:id="@+id/viewPager"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/image_content_height"
-                        tools:background="@color/carbon_black"/>
+                        tools:background="@color/carbon_white"/>
 
                     <com.rd.PageIndicatorView
                         android:id="@+id/pageIndicatorView"
@@ -53,8 +54,8 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="2dp"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginStart="2dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginStart="5dp"
                         android:layout_marginTop="2dp"
                         android:text="10 COINS "
                         android:textSize="@dimen/button_text_size"
@@ -62,9 +63,9 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/viewPager"
                         app:layout_constraintVertical_bias="0.0"
-                        android:backgroundTint="@color/primaryColor"
-                        android:background="@color/primaryColor"
-                        android:layout_marginEnd="2dp" />
+                        android:background="#458FB3"
+                        android:backgroundTint="#458FB3"
+                        android:layout_marginEnd="5dp" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintLayoutLoading"
@@ -131,17 +132,24 @@
 
             </RelativeLayout>
 
-            <TextView
+            <com.google.android.material.button.MaterialButton
                 android:layout_gravity="center"
                 android:id="@+id/textViewDescriptionMore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
                 android:maxLines="1"
                 android:paddingBottom="8dp"
                 android:text="@string/read_more"
-                android:textColor="@color/carbon_black"
+                android:textColor="@color/carbon_white"
+                android:background="#EDCB24"
+                android:backgroundTint="#EDCB24"
+                android:textAlignment="center"
                 android:textAllCaps="true"
-                android:visibility="gone"/>
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                />
 
 
             <View
@@ -158,7 +166,8 @@
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="10dp"
-                android:textColor="@color/carbon_black"/>
+                android:textColor="@color/carbon_black"
+                android:visibility="gone"/>
 
             <View
                 android:layout_width="match_parent"
@@ -171,6 +180,35 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="gone"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewOffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/carbon_black"
+                    android:text="Apps"
+                    android:textAppearance="@style/TextMediumStyle"/>
+
+            </RelativeLayout>
+
+            <com.alegangames.master.ui.RecyclerViewManager
+                android:id="@+id/recycleViewOffers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
             <View
                 android:layout_width="match_parent"

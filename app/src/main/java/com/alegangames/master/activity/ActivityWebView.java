@@ -36,6 +36,9 @@ public class ActivityWebView extends ActivityAppParent {
 
         String url = getIntent().getStringExtra(URL_EXTRA);
 
+        if (url == null)
+            url = "";
+
         backFlag = getIntent().getBooleanExtra(BACK_EXTRA, false);
 
         webView = findViewById(R.id.webView);

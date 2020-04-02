@@ -14,6 +14,7 @@ import androidx.core.content.FileProvider;
 
 import com.alegangames.master.BuildConfig;
 import com.alegangames.master.R;
+import com.crashlytics.android.Crashlytics;
 
 import java.io.File;
 import java.util.Locale;
@@ -79,7 +80,7 @@ public class AppUtil {
             context.startActivity(newIntent);
         } catch (Exception e) {
             e.printStackTrace();
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
             ToastUtil.show(context, R.string.error);
         }
     }

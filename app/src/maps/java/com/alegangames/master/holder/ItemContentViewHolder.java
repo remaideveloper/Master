@@ -3,6 +3,7 @@ package com.alegangames.master.holder;
 
 import android.content.ActivityNotFoundException;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.Log;
@@ -105,7 +106,7 @@ public class ItemContentViewHolder extends RecyclerView.ViewHolder implements Pe
 
         //ImageView
         if (mImageView != null) {
-            if (item.getId().equals(JsonItemFactory.SKIN_CUSTOM))
+//            if (item.getId().equals(JsonItemFactory.SKIN_CUSTOM))
                 mImageView.setOnClickListener(onClickListener);
             Picasso
                     .get()
@@ -119,18 +120,18 @@ public class ItemContentViewHolder extends RecyclerView.ViewHolder implements Pe
 
         //Premium
         if (mTextViewPremium != null) {
-            if (item.getPrice() > 1) {
+            if (item.getPrice() > 25) {
                 String text = itemView.getContext().getString(R.string.coins_amount_format, item.getPrice());
                 mTextViewPremium.setText(text);
                 mTextViewPremium.setVisibility(View.GONE);
 //                mTitle.setTextColor(itemView.getContext().getResources().getColor(R.color.carbon_white));
 //                mTextViewPremium.setTextColor(itemView.getContext().getResources().getColor(R.color.carbon_white));
-                itemView.findViewById(R.id.layout).setBackgroundResource(R.drawable.ic_new_content);
+                itemView.findViewById(R.id.layout).setBackground(itemView.getResources().getDrawable(R.drawable.border_new_content));
                 itemView.findViewById(R.id.privateImage).setVisibility(View.VISIBLE);
             } else {
                 mTextViewPremium.setVisibility(View.GONE);
                 itemView.findViewById(R.id.privateImage).setVisibility(View.GONE);
-                itemView.findViewById(R.id.layout).setBackgroundResource(R.drawable.ic_old_content);
+                itemView.findViewById(R.id.layout).setBackground(itemView.getResources().getDrawable(R.drawable.border_old_content));
 //                mTitle.setTextColor(Color.parseColor("#d6bf96"));
 //                mTextViewPremium.setTextColor(Color.parseColor("#d6bf96"));
             }

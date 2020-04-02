@@ -2,6 +2,7 @@ package com.alegangames.master.apps.builder.utils.leveldb;
 
 import com.alegangames.master.apps.builder.entities.Level;
 import com.alegangames.master.apps.builder.litl.leveldb.DB;
+import com.crashlytics.android.Crashlytics;
 
 import org.spout.nbt.CompoundTag;
 import org.spout.nbt.stream.NBTInputStream;
@@ -31,7 +32,7 @@ public class LevelDBConverter {
         } catch (Exception localException1) {
             localException1.printStackTrace();
         } catch (UnsatisfiedLinkError error) {
-//            Crashlytics.logException(error);
+            Crashlytics.logException(error);
         }
         return null;
     }
@@ -47,7 +48,7 @@ public class LevelDBConverter {
                 level.setPlayer(NBTConverter.readPlayer((CompoundTag) new NBTInputStream(new ByteArrayInputStream(value), false, true).readTag()));
             }
         } catch (NullPointerException ex) {
-//            Crashlytics.logException(ex);
+            Crashlytics.logException(ex);
         } finally {
             System.out.println("Closing db");
             if(db != null) db.close();

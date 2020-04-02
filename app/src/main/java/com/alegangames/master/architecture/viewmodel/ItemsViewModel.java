@@ -71,6 +71,10 @@ public class ItemsViewModel extends AndroidViewModel {
     private boolean mFragmentShuffle;
     private int mFragmentColumn;
 
+    private interface Listener<T>{
+        void response(T list);
+    }
+
     Observer observerFragment = (Observer<List<JsonItemContent>>) jsonItemContents -> {
         if (jsonItemContents!=null && jsonItemContents.size()!=0) {
             createAndPostTabs(jsonItemContents);
@@ -114,11 +118,11 @@ public class ItemsViewModel extends AndroidViewModel {
     private void checkListJsonItem() {
         if (mListJsonItemLiveData.getValue() == null) {
             if (mItemFile.contains("main.txt")){
-                new JsonItemAsyncTask(getApplication(), mListJsonItem, mListJsonItemLiveData, mListVersionLiveData, mItemFile)
+                new JsonItemAsyncTask(getApplication(), mListJsonItem, mListJsonItemLiveData, mListVersionLiveData, mItemFile, this::createAndPostTabs)
                         .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             } else
                 FirebaseManager.loading(getApplication(), response -> {
-                    new JsonItemAsyncTask(getApplication(), mListJsonItem, mListJsonItemLiveData, mListVersionLiveData, response)
+                    new JsonItemAsyncTask(getApplication(), mListJsonItem, mListJsonItemLiveData, mListVersionLiveData, response, this::createAndPostTabs)
                             .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 }, mItemFile);
         }
@@ -195,21 +199,26 @@ public class ItemsViewModel extends AndroidViewModel {
         private WeakReference<MutableLiveData<List<String>>> mMutableLiveDataListVersionWeakReference;
         private JSONArray mJsonArray;
         private String mItemFile;
+        private Listener mListener;
 
-        JsonItemAsyncTask(Context context, List<JsonItemContent> listJsonItem, MutableLiveData<List<JsonItemContent>> liveDataListJsonItem, MutableLiveData<List<String>> liveDataListVersion, JSONArray jsonArray) {
+        JsonItemAsyncTask(Context context, List<JsonItemContent> listJsonItem, MutableLiveData<List<JsonItemContent>> liveDataListJsonItem,
+                          MutableLiveData<List<String>> liveDataListVersion, JSONArray jsonArray, Listener<List<JsonItemContent>> listener) {
             mContextWeakReference = new WeakReference<>(context);
             mListJsonItemWeakReference = new WeakReference<>(listJsonItem);
             mMutableLiveDataListJsonItemWeakReference = new WeakReference<>(liveDataListJsonItem);
             mMutableLiveDataListVersionWeakReference = new WeakReference<>(liveDataListVersion);
             mJsonArray = jsonArray;
+            mListener = listener;
         }
 
-        JsonItemAsyncTask(Context context, List<JsonItemContent> listJsonItem, MutableLiveData<List<JsonItemContent>> liveDataListJsonItem, MutableLiveData<List<String>> liveDataListVersion, String itemFile) {
+        JsonItemAsyncTask(Context context, List<JsonItemContent> listJsonItem, MutableLiveData<List<JsonItemContent>> liveDataListJsonItem,
+                          MutableLiveData<List<String>> liveDataListVersion, String itemFile, Listener<List<JsonItemContent>> listener) {
             mContextWeakReference = new WeakReference<>(context);
             mListJsonItemWeakReference = new WeakReference<>(listJsonItem);
             mMutableLiveDataListJsonItemWeakReference = new WeakReference<>(liveDataListJsonItem);
             mMutableLiveDataListVersionWeakReference = new WeakReference<>(liveDataListVersion);
             mItemFile = itemFile;
+            mListener = listener;
         }
 
         @Override
@@ -243,6 +252,7 @@ public class ItemsViewModel extends AndroidViewModel {
 
                 mListJsonItemWeakReference.get().addAll(items);
                 mMutableLiveDataListJsonItemWeakReference.get().postValue(items);
+                mListener.response(items);
 
                 setLiveDataVersionList(items);
             } catch (Exception e) {

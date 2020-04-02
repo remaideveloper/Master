@@ -26,6 +26,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.alegangames.master.fragment.FragmentBuy;
+import com.alegangames.master.util.billing.BillingManager;
+import com.crashlytics.android.Crashlytics;
 import com.github.clans.fab.FloatingActionButton;
 import com.alegangames.master.R;
 import com.alegangames.master.activity.ActivityAppParent;
@@ -61,12 +64,13 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.alegangames.master.Config.API_KEY;
 import static com.alegangames.master.activity.ActivityItem.JSON_OBJECT_KEY;
 import static com.alegangames.master.download.DownloadAsyncTask.STATUS_SUCCESS;
 import static com.alegangames.master.util.BlockLauncherHelper.REQUEST_CODE_SKIN;
 
 
-public abstract class ActivitySkins extends ActivityAppParent implements PermissionManager.InterfacePermission, PurchaseManager.InterfacePurchase {
+public abstract class ActivitySkins extends ActivityAppParent implements PermissionManager.InterfacePermission, PurchaseManager.InterfacePurchase, AdMobVideoRewarded.Listener {
 
 
     public static final String TAG = ActivitySkins.class.getSimpleName();
@@ -80,7 +84,8 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
     public JsonItemContent mItem;
     public FloatingActionButton saveButton;
     public boolean isFavorite = false;
-    private AdMobVideoRewarded mAdMobVideoRewarded;
+    public AdMobVideoRewarded mAdMobVideoRewarded;
+    public BillingManager mBillingManager;
 
     public BitmapTarget target;
 
@@ -91,7 +96,12 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
         super.onCreate(savedInstanceState);
         mInterfacePermission = this;
 
+        mBillingManager = new BillingManager(this, PurchaseManager.PRODUCT_100_MONEY);
+        mBillingManager.registerInterfacePurchase(this);
+        mBillingManager.initBilling(API_KEY);
+
         mAdMobVideoRewarded = new AdMobVideoRewarded(this);
+        mAdMobVideoRewarded.setListener(this);
         mAdMobVideoRewarded.getRewardedVideoAd().setRewardedVideoAdListener(mAdMobVideoRewarded.getDefaultVideoRewardAdListener());
         mAdMobVideoRewarded.forceLoadRewardedVideo();
 
@@ -107,7 +117,7 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
         try {
             glSurfaceView.onResume();
         } catch (Exception e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
 
         this.getSkinsFromSite(mItem.getFileLink());
@@ -119,7 +129,7 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
         try {
             glSurfaceView.onPause();
         } catch (Exception e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 
@@ -183,7 +193,7 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
     public void initFAB() {
         saveButton = findViewById(R.id.fab_save);
         saveButton.setOnClickListener(v -> onAskPermissionSkin(this, DownloadViewModel.DOWNLOAD_SKIN_TO_GALLERY));
-        setFabMain(R.drawable.ic_fab_save, ColorList.BLUE, ColorList.BLUE_LIGHT, ColorList.BLUE_DARK);
+        setFabMain(R.drawable.ic_fab_save, ColorList.RED, ColorList.RED_LIGHT, ColorList.RED_DARK);
     }
 
     protected void setFabMain(@DrawableRes int id, int normal, int pressed, int ripple) {
@@ -273,8 +283,12 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
 
             int height = (int) Math.round(ScreenSize.getHeightPX(this) * 0.52);
             int width = (int) Math.round(ScreenSize.getWidthPX(this) * 0.85);
+            Log.d(TAG, "GLSurfaceView: height1 " + height);
+            Log.d(TAG, "GLSurfaceView: width1 " + width);
             if (height > width) {
+                int p = width;
                 width = height;
+                height = p;
             }
             Log.d(TAG, "GLSurfaceView: Full height " + ScreenSize.getHeightPX(this));
             Log.d(TAG, "GLSurfaceView: Full width " + ScreenSize.getWidthPX(this));
@@ -290,7 +304,7 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
 
             Log.d(TAG, "initGLSurfaceView: glSurfaceView");
         } catch (Exception e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
 
     }
@@ -299,7 +313,9 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
         int height = (int) Math.round(ScreenSize.getHeightPX(this) * 0.52);
         int width = (int) Math.round(ScreenSize.getWidthPX(this) * 0.85);
         if (height > width) {
+            int p = width;
             width = height;
+            height = p;
         }
         Log.d(TAG, "GLSurfaceView: Full height " + ScreenSize.getHeightPX(this));
         Log.d(TAG, "GLSurfaceView: Full width " + ScreenSize.getWidthPX(this));
@@ -342,7 +358,7 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
         } catch (Exception e) {
             Log.d(TAG, "setSkinBitmap Catch");
             e.printStackTrace();
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 
@@ -351,7 +367,7 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
             this.mRenderer.updateTexture(BitmapFactory.decodeStream(this.getResources().openRawResource(R.raw.nullchar)));
             this.mProgressBar.setVisibility(View.VISIBLE);
         } catch (Exception e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 
@@ -362,19 +378,20 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
             }
             Picasso.get().load(url).into(target);
         } catch (Exception e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 
     public void onAskPermissionSkin(Activity activity, final int requestCode) {
 
         //Если скин стоит монет и не куплен
-        if (mItem.isPremium() && !PurchaseManager.isItemBought(mItem.getJsonObject(), this)) {
-            if (PurchaseManager.getCoins(this) > mItem.getPrice()) {
-                PurchaseManager.onItemsBought(mItem.getJsonObject(), this);
+        if (mItem.isPremium() && !PurchaseManager.isItemBought(mItem, this)) {
+            if (PurchaseManager.getCoins(this) >= mItem.getPrice()) {
+                PurchaseManager.onItemsBought(mItem, this);
+                ToolbarUtil.setCoinsSubtitle(this);
                 PermissionManager.onAskStoragePermission(activity, requestCode);
             } else {
-              onBillingError(0);
+                getSupportFragmentManager().beginTransaction().add(new FragmentBuy(), "").commit();
             }
         } else {
             PermissionManager.onAskStoragePermission(activity, requestCode);
@@ -383,7 +400,14 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
 
     @Override
     public void onProductPurchased(String productId) {
-        PurchaseManager.onItemsBought(mItem.getJsonObject(), this);
+        PurchaseManager.onItemsBought(mItem, this);
+        ToolbarUtil.setCoinsSubtitle(this);
+        switch (productId) {
+            case PurchaseManager.PRODUCT_100_MONEY:
+//                PurchaseManager.onItemsBought(mItem, this);
+                mBillingManager.getMoreCoinsDialog(PurchaseManager.getProduct(PurchaseManager.PRODUCT_500_MONEY, this));
+                break;
+        }
         onAskPermissionSkin(this, DownloadViewModel.DOWNLOAD_SKIN_TO_GALLERY);
     }
 
@@ -391,17 +415,17 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
     public void onBillingError(int errorCode) {
         Log.d(TAG, "onBillingError");
         // Предлагаем посмотреть видеорекламу
-        runOnUiThread(() -> {
-            if (!isFinishing()) {
-                new AlertDialog.Builder(ActivitySkins.this)
-                        .setTitle(R.string.free_coins)
-                        .setMessage(R.string.watch_and_gain)
-                        .setPositiveButton(R.string.watch, (dialog, which) -> mAdMobVideoRewarded.onShow())
-                        .setNegativeButton(android.R.string.cancel, null)
-                        .create()
-                        .show();
-            }
-        });
+//        runOnUiThread(() -> {
+//            if (!isFinishing()) {
+//                new AlertDialog.Builder(ActivitySkins.this)
+//                        .setTitle(R.string.free_coins)
+//                        .setMessage(R.string.watch_and_gain)
+//                        .setPositiveButton(R.string.watch, (dialog, which) -> mAdMobVideoRewarded.onShow())
+//                        .setNegativeButton(android.R.string.cancel, null)
+//                        .create()
+//                        .show();
+//            }
+//        });
     }
 
     @Override
@@ -629,8 +653,22 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
             bw.flush();
             bw.close();
         } catch (IOException e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
+    }
+
+    @Override
+    public void onRewarded(boolean b) {
+//        PurchaseManager.addAdItem(this, mItem);
+        if (b) {
+            PurchaseManager.addCoins(25, this);
+            ToolbarUtil.setCoinsSubtitle(this);
+            String message = getString(R.string.you_earned_coins, 25);
+            ToastUtil.show(this, message);
+        }
+
+        if (mAdMobVideoRewarded != null)
+            mAdMobVideoRewarded.forceLoadRewardedVideo();
     }
 
 //    @Override
@@ -638,15 +676,15 @@ public abstract class ActivitySkins extends ActivityAppParent implements Permiss
 //        Log.d(TAG, "onAdsClosed: ");
 //        //Вознаграждаем пользователя монеткой
 //        if (rewarded) {
-//            PurchaseManager.addCoins(10, this);
+//            PurchaseManager.addCoins(50, this);
 //            ToolbarUtil.setCoinsSubtitle(this);
-//            String message = getString(R.string.you_earned_coins, 10);
-//            ToastUtil.show(this, message);
+//           String message = getString(R.string.you_earned_coins, 50);
+//           ToastUtil.show(this, message);
 //        }
 //
 //        if (mAdMobVideoRewarded != null)
 //            mAdMobVideoRewarded.forceLoadRewardedVideo();
-//    }
+//   }
 //
 //    @Override
 //    public void onAdsLoaded() {

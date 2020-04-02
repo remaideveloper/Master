@@ -52,6 +52,7 @@ public class ActivitySearch extends ActivityAppParent implements SearchView.OnQu
         //Находим View элементы
         mRecyclerView = findViewById(R.id.recycleView);
         mProgressBarLoading = findViewById(R.id.progressBarLoading);
+        mAdMobInterstitial = new AdMobInterstitial(this, Config.INTERSTITIAL_ID);
 
         //Необходимо задать пустой адаптер
         mAdapter = new NativeAdapterRecyclerView(this, mRecyclerView, mAdMobInterstitial, mAdMobVideoRewarded);
@@ -146,6 +147,13 @@ public class ActivitySearch extends ActivityAppParent implements SearchView.OnQu
     @Override
     protected void onStop() {
         super.onStop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setSubtitle("");
     }
 }
 

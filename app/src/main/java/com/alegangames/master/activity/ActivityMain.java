@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import com.alegangames.master.Config;
 import com.alegangames.master.R;
 import com.alegangames.master.ads.admob.AdMobBanner;
+import com.alegangames.master.ads.admob.AdMobInterstitial;
 import com.alegangames.master.ads.admob.AdMobRequest;
 import com.alegangames.master.architecture.viewmodel.DownloadViewModel;
 import com.alegangames.master.fragment.FragmentAbstract;
@@ -30,6 +31,7 @@ import com.alegangames.master.util.StringUtil;
 import com.alegangames.master.util.ToastUtil;
 import com.alegangames.master.util.UrlHelper;
 import com.alegangames.master.util.permision.PermissionManager;
+import com.alegangames.master.util.preference.UtilPreference;
 import com.alegangames.master.util.rules.GDPRHelper;
 import com.google.android.gms.ads.MobileAds;
 
@@ -49,6 +51,16 @@ public class ActivityMain extends ActivityAppParent implements FragmentAbstract.
         StrictModeUtil.init();
         AdMobRequest.setBundle(this);
         MobileAds.setRequestConfiguration(AdMobRequest.getRequestConfiguration(this));
+
+        if (Config.MAIN_FRAGMENT != JsonItemFragmentEnum.MAIN){
+            mAdMobInterstitial = new AdMobInterstitial(this, Config.INTERSTITIAL_ID);
+        }
+
+        GDPRHelper gdprHelper = new GDPRHelper(this);
+        if (UtilPreference.isUserUnderAgeOfConsentPref(this))
+            gdprHelper.setTagForUnderAgeOfConsent(this);
+        gdprHelper.getRequestConsentInfo();
+
         mAdMobBanner = new AdMobBanner(this);
         ToolbarUtil.setToolbarForDrawer(this, true);
         mNavigationViewUtil = new NavigationDrawerUtil(this);
@@ -90,6 +102,11 @@ public class ActivityMain extends ActivityAppParent implements FragmentAbstract.
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 //        mNavigationViewUtil.onSyncStateDrawerToggle();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override

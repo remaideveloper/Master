@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.alegangames.master.adapter.AdapterRecyclerView;
 import com.alegangames.master.adapter.NativeAdapterRecyclerView;
@@ -17,7 +18,8 @@ public class RecyclerViewManager extends RecyclerView {
     public enum LayoutManagerEnum {
         GridLayout,
         LinearLayoutHorizontal,
-        LinearLayoutVertical
+        LinearLayoutVertical,
+        StaggeredGridLayout
     }
 
     public RecyclerViewManager(Context context) {
@@ -71,6 +73,14 @@ public class RecyclerViewManager extends RecyclerView {
                 });
                 super.setLayoutManager(glm);
 
+                return;
+            case StaggeredGridLayout:
+                if (i <= 0) {
+                    i = 1;
+                }
+                StaggeredGridLayoutManager glm1 = new StaggeredGridLayoutManager(i, StaggeredGridLayoutManager.VERTICAL);
+                glm1.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
+                super.setLayoutManager(glm1);
                 return;
             case LinearLayoutVertical:
                 super.setLayoutManager(new LinearLayoutManager(getContext(), VERTICAL, false));

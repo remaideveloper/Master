@@ -20,6 +20,6 @@ public class Config {
 
     //Billing
     public static final String PRODUCT_ID = "premium";
-    public static final String API_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoXEkdHHJTTgBzLAJ0X1FYTLwQSQFekhrAAI0q2JndvZHiDHEDx9HCTyYTXSeRS6LIhEu2plWmFv+Tdrlj99sfLWOcltr6U+Loq7VVISrmuhuHzeTPJ1EWQBlynGwnr+YuwBsKjAsIPr+X2Hh7509sieyBBF0ITiwrMm9epUJUbvVc8X8T48JMcXAEf5uaio+L5GFdrOTIzOVFVb9b76ZVMBIzXEXxcJcAddM0Zzmo/OxCmLuDK+D0Umx5QzOtSrM89R2zIHM2s5neNv1jXn3MsHQ/zUCv5gOfRdx9PCNd+oH9DDzVKuLyxRyEkRe2Hb7NijfzeSUxG5LzOX1Ef6ZpQIDAQAB";
-    public static final String MERCHANT_ID = "01660388305663034344";
+    public static final String API_KEY = "";
+    public static final String MERCHANT_ID = "";
 }

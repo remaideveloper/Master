@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.alegangames.master.R;
 import com.alegangames.master.fragment.FragmentViewPager;
 import com.alegangames.master.model.enums.JsonItemFragmentEnum;
+import com.crashlytics.android.Crashlytics;
 
 import static com.alegangames.master.activity.ActivityAppParent.FRAGMENT_BANNER;
 import static com.alegangames.master.activity.ActivityAppParent.FRAGMENT_COLUMN;
@@ -60,7 +61,7 @@ public class FragmentUtil {
             }
         } catch (Exception e) {
             e.printStackTrace();
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 
@@ -76,7 +77,7 @@ public class FragmentUtil {
             }
         } catch (Exception e) {
             e.printStackTrace();
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 
@@ -98,7 +99,7 @@ public class FragmentUtil {
             }
         } catch (Exception e) {
             e.printStackTrace();
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/carbon_white"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_appbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_above="@+id/bannerLayout"
+        android:layout_below="@+id/appbar"
+        android:background="@color/carbon_white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/image_content_height"
+                        tools:background="@color/carbon_white"/>
+
+                    <com.rd.PageIndicatorView
+                        android:id="@+id/pageIndicatorView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/page_indicator_bottom_margin"
+                        app:layout_constraintBottom_toBottomOf="@id/viewPager"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonDownload"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="2dp"
+                        android:text="10 COINS "
+                        android:textSize="@dimen/button_text_size"
+                        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoading"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/viewPager"
+                        app:layout_constraintVertical_bias="0.0"
+                        android:background="#42aaff"
+                        android:backgroundTint="#42aaff"
+                        android:layout_marginEnd="5dp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayoutLoading"
+                        style="?android:attr/buttonBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/buttonDownload"
+                        tools:visibility="visible">
+
+                        <androidx.core.widget.ContentLoadingProgressBar
+                            android:id="@+id/progressBarLoading"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="16dp"
+                            android:max="100"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/imageButtonCancel"
+                            app:layout_constraintTop_toBottomOf="@id/textViewProgress"/>
+
+                        <ImageButton
+                            android:id="@+id/imageButtonCancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@null"
+                            android:src="@drawable/ic_cancel"
+                            android:tint="@color/carbon_white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@id/progressBarLoading"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/textViewDownloading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:text="@string/download_file"
+                            android:textColor="@color/carbon_black"
+                            app:layout_constraintLeft_toLeftOf="@id/progressBarLoading"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/textViewProgress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:textColor="@color/carbon_black"
+                            app:layout_constraintBottom_toBottomOf="@id/textViewDownloading"
+                            app:layout_constraintRight_toRightOf="@id/progressBarLoading"
+                            tools:text="50%"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RelativeLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_gravity="center"
+                android:id="@+id/textViewDescriptionMore"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:maxLines="1"
+                android:paddingBottom="8dp"
+                android:text="@string/read_more"
+                android:textColor="@color/carbon_white"
+                android:background="#ffc840"
+                android:backgroundTint="#ffc840"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/carbon_black"
+                android:visibility="gone"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <LinearLayout
+                android:id="@+id/layoutNativeAds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewOffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/carbon_black"
+                    android:text="Apps"
+                    android:textAppearance="@style/TextMediumStyle"/>
+
+            </RelativeLayout>
+
+            <com.alegangames.master.ui.RecyclerViewManager
+                android:id="@+id/recycleViewOffers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bannerLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/banner_margin"
+        android:layout_marginTop="@dimen/banner_margin"
+        android:orientation="vertical"/>
+
+
+</RelativeLayout>

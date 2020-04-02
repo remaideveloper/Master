@@ -10,7 +10,11 @@ import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 
@@ -18,6 +22,7 @@ import com.alegangames.master.R;
 import com.alegangames.master.activity.ActivityAppParent;
 import com.alegangames.master.adapter.AdapterRecyclerView;
 import com.alegangames.master.adapter.NativeAdapterRecyclerView;
+import com.alegangames.master.ads.admob.AdManager;
 import com.alegangames.master.architecture.viewmodel.ItemsViewModel;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.ui.RecyclerViewManager;
@@ -82,9 +87,9 @@ public class FragmentTabView extends FragmentAbstract {
 
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setItemViewCacheSize(10);
-        mRecyclerView.setDrawingCacheEnabled(true);
-        mRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+//        mRecyclerView.setItemViewCacheSize(10);
+//        mRecyclerView.setDrawingCacheEnabled(true);
+//        mRecyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
         //Получаем аргументы переданные фрагменту
 //        mFragmentSettings = getArguments().getString(FRAGMENT_SETTINGS);
@@ -103,27 +108,27 @@ public class FragmentTabView extends FragmentAbstract {
         String category = getFragmentTitle();
         if (category.equals(CATEGORY_ALL)) category = "";
 
-        viewModel = ViewModelProviders.of(getParentFragment(),
+        viewModel = new ViewModelProvider(getViewModelStore(),
                 new ItemsViewModel.ItemsViewModelFactory(getActivity().getApplication(),
                         getArguments().getString(FRAGMENT_DATA))).get(ItemsViewModel.class);
 
         liveData = viewModel.getListJsonItemLiveDataCategory(category, mShuffle);
-        liveData.observe(this, this::updateRecyclerView);
+        liveData.observe(getViewLifecycleOwner(), this::updateRecyclerView);
         return mRootView;
     }
 
     @Override
     public void onDestroyView() {
+        super.onDestroyView();
         mRecyclerView.removeAllViews();
 //        mRecyclerView.setAdapter(new ArrayList<>());
-
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onDestroy() {
-
-        super.onDestroy();
+        liveData.removeObservers(this);
+        mAdapter.setOnLoadMoreListener(null);
+        mAdapter.onDestroy();
+        mRecyclerView = null;
+        mAdapter = null;
+        viewModel = null;
+        mProgressBarLoading = null;
     }
 
     //При повороте экрана меняем количество колонок в листе, сохраняя позицию
@@ -179,7 +184,6 @@ public class FragmentTabView extends FragmentAbstract {
 
     @Override
     public void onPause() {
-        liveData.removeObservers(this);
         super.onPause();
     }
 }

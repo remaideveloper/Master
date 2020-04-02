@@ -28,6 +28,7 @@ import com.alegangames.master.holder.ItemMenuViewHolder;
 import com.alegangames.master.holder.ItemOfferViewHolder;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.model.JsonItemFactory;
+import com.crashlytics.android.Crashlytics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,7 +72,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
         this.mRecyclerView = recyclerView;
         mAdMobInterstitial = adMobInterstitial;
         mAdMobVideoRewarded = adMobVideoRewarded;
-        mAdMobVideoRewarded.getRewardedVideoAd().setRewardedVideoAdListener(mAdMobVideoRewarded.getDefaultVideoRewardAdListener());
+//        mAdMobVideoRewarded.getRewardedVideoAd().setRewardedVideoAdListener(mAdMobVideoRewarded.getDefaultVideoRewardAdListener());
         bannerLayout = activity.findViewById(R.id.bannerLayout);
         if (bannerLayout != null)
             layoutParams = (RelativeLayout.LayoutParams) bannerLayout.getLayoutParams();
@@ -83,7 +84,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(viewGroup .getContext());
+        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         try {
             View view = inflater.inflate(viewType, viewGroup, false);
             switch (viewType) {
@@ -134,41 +135,41 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
             setAnimation(holder.itemView, position);
         } catch (Exception e) {
             e.printStackTrace();
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 
     public void onBindViewHolder(NativeAdapterRecyclerView nativeAdapterRecyclerView, @NonNull RecyclerView.ViewHolder holder, int position, int positionNative) {
 
-        if (holder instanceof ItemContentViewHolder) {
-            ((ItemContentViewHolder) holder).itemView.setOnClickListener(v -> {
-                if (a == positionNative) {
-                    a = -1;
-                    ((ItemContentViewHolder) holder).hide();
-                } else {
-                    if (a == -1) {
-                        a = positionNative;
-                    } else {
-                        int b = a;
-                        a = positionNative;
-                        nativeAdapterRecyclerView.notifyItemChanged(b);
-                    }
-
-                    if (countShowAd != 0 && (countShowAd == 1 || countShowAd % 3 == 0))
-                        mAdMobInterstitial.onShowAd();
-                    ++countShowAd;
-
-                }
-                nativeAdapterRecyclerView.notifyItemChanged(positionNative);
-                mRecyclerView.scrollToPosition(positionNative);
-            });
-
-            if (a!=positionNative)
-                ((ItemContentViewHolder) holder).hide();
-            else {
-                ((ItemContentViewHolder) holder).show(getItemAtPosition(position), mFavoriteViewModel, mDownloadViewModel, mAdMobVideoRewarded);
-            }
-        }
+//        if (holder instanceof ItemContentViewHolder) {
+//            ((ItemContentViewHolder) holder).itemView.setOnClickListener(v -> {
+//                if (a == positionNative) {
+//                    a = -1;
+//                    ((ItemContentViewHolder) holder).hide();
+//                } else {
+//                    if (a == -1) {
+//                        a = positionNative;
+//                    } else {
+//                        int b = a;
+//                        a = positionNative;
+//                        nativeAdapterRecyclerView.notifyItemChanged(b);
+//                    }
+//
+//                    if (countShowAd != 0 && (countShowAd == 1 || countShowAd % 3 == 0))
+//                        mAdMobInterstitial.onShowAd();
+//                    ++countShowAd;
+//
+//                }
+//                nativeAdapterRecyclerView.notifyItemChanged(positionNative);
+//                mRecyclerView.scrollToPosition(positionNative);
+//            });
+//
+//            if (a!=positionNative)
+//                ((ItemContentViewHolder) holder).hide();
+//            else {
+//                ((ItemContentViewHolder) holder).show(getItemAtPosition(position), mFavoriteViewModel, mDownloadViewModel, mAdMobVideoRewarded);
+//            }
+//        }
 
         onBindViewHolder(holder, position);
     }
@@ -257,6 +258,17 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewH
                 }
             }
         });
+    }
+
+    public void onDestroy(){
+        mAdMobInterstitial = null;
+        mAdMobVideoRewarded = null;
+        mDownloadViewModel = null;
+        mFavoriteViewModel = null;
+        mOnLoadFullListener = null;
+        onLoadMoreListener = null;
+        mRecyclerView = null;
+        bannerLayout = null;
     }
 
 

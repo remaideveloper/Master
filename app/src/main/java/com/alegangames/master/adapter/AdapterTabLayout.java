@@ -95,6 +95,12 @@ public class AdapterTabLayout extends FragmentStatePagerAdapter {
         }
     }
 
+    public void onDestroy(){
+        mTabs.clear();
+        mTabLayout = null;
+        mViewPager = null;
+    }
+
     public void setAdapterList(List<FragmentAbstract> tabs) {
         Log.d(TAG, "setAdapterList");
         this.mTabs.clear();

@@ -64,6 +64,6 @@ public class SkinUtil {
             if (i == 194 || i == 191 || i == 161 || i == 186)
                 isPremium = true;
         }
-        return isPremium ? 100 : 0;
+        return isPremium ? 1 : 0;
     }
 }

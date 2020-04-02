@@ -7,6 +7,10 @@ android {
     compileSdkVersion 28
 
     sourceSets {
+        addons {
+            assets.srcDirs = ['assets/addons', 'src/addons/assets']
+            java.srcDirs = ['src/addons/java',]
+        }
         master {
             assets.srcDirs = ['src/master/assets']
             java.srcDirs = ['src/master/java']
@@ -14,6 +18,22 @@ android {
         maps {
             assets.srcDirs = ['assets/maps', 'src/maps/assets']
             java.srcDirs = ['src/maps/java',]
+        }
+        mods {
+            assets.srcDirs = ['assets/mods', 'src/mods/assets']
+            java.srcDirs = ['src/mods/java',]
+        }
+        packs {
+            assets.srcDirs = ['assets/packs', 'src/packs/assets']
+            java.srcDirs = ['src/packs/java',]
+        }
+        skins {
+            assets.srcDirs = ['assets/skins', 'src/skins/assets']
+            java.srcDirs = ['src/skins/java',]
+        }
+        textures {
+            assets.srcDirs = ['assets/textures', 'src/textures/assets']
+            java.srcDirs = ['src/textures/java',]
         }
     }
 
@@ -36,6 +56,7 @@ android {
 
     buildTypes {
         release {
+            shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -56,26 +77,61 @@ android {
 
         def signingDefault = signingConfigs.releaseDefault
 
+        addons {
+            applicationId 'com.alegangames.addons'
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+            versionCode 101
+            versionName '1.0.1'
+            signingConfig signingDefault
+        }
         master {
             dimension "default"
             applicationId 'com.alegangames.master'
             testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-            versionCode 115
-            versionName "1.1.5"
+            versionCode 128
+            versionName "1.2.8"
             signingConfig signingDefault
         }
         maps {
             applicationId 'com.alegangames.maps'
             testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+            versionCode 109
+            versionName '1.0.9'
+            signingConfig signingDefault
+        }
+        mods {
+            applicationId 'com.alegangames.mods'
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+            versionCode 105
+            versionName '1.0.5'
+            signingConfig signingDefault
+        }
+        packs {
+            applicationId 'com.alegangames.packs'
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
             versionCode 101
             versionName '1.0.1'
+            signingConfig signingDefault
+        }
+        skins {
+            applicationId 'com.alegangames.skins'
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+            versionCode 104
+            versionName '1.0.4'
+            signingConfig signingDefault
+        }
+        textures {
+            applicationId 'com.alegangames.textures'
+            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+            versionCode 107
+            versionName '1.0.7'
             signingConfig signingDefault
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
@@ -93,9 +149,9 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     // firebase
-    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.google.firebase:firebase-core:17.2.2'
     implementation 'com.google.firebase:firebase-ads:18.3.0'
-    implementation 'com.google.firebase:firebase-storage:19.1.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 
     implementation 'com.github.clans:fab:1.6.4'
@@ -113,14 +169,16 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     api 'tk.zielony:carbon:0.16.0.1'
-    implementation files('libs\\leveldbjni.jar')
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'androidx.annotation:annotation:1.1.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
-    implementation 'com.anjlab.android.iab.v3:library:1.0.44'
+//    implementation 'com.anjlab.android.iab.v3:library:1.0.44'
     implementation 'com.shawnlin:number-picker:2.4.8'
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.1'
+
+    implementation 'com.android.billingclient:billing:2.1.0'
 
 }
 repositories {

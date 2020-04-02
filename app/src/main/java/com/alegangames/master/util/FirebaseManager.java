@@ -1,7 +1,6 @@
 package com.alegangames.master.util;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -9,27 +8,21 @@ import com.alegangames.master.util.json.Cache;
 import com.alegangames.master.util.json.CacheManager;
 import com.alegangames.master.util.json.JsonHelper;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import static com.alegangames.master.util.StorageUtil.STORAGE;
-
 public class FirebaseManager {
 
-    final static long ONE_MEGABYTE = 1024 * 1024;
+    final static long TWO_MEGABYTE = 1024 * 1024 * 2;
 
     static FirebaseStorage storage = FirebaseStorage.getInstance("gs://alegan_games");
 
@@ -62,7 +55,7 @@ public class FirebaseManager {
 
                 //Если локальная дата последнего обновления не совпадает с датой на сервере
                 if (cacheJSONArray.getmUpdateTime()!=updateTime){
-                    storageReference.getBytes(ONE_MEGABYTE).addOnSuccessListener(bytes -> {
+                    storageReference.getBytes(TWO_MEGABYTE).addOnSuccessListener(bytes -> {
                         String str = null;
                         try {
                             str = JsonHelper.decryptString(bytes);
@@ -90,7 +83,7 @@ public class FirebaseManager {
             });
         }else {
             storageReference.getMetadata().addOnSuccessListener(storageMetadata -> {
-                storageReference.getBytes(ONE_MEGABYTE).addOnSuccessListener(bytes -> {
+                storageReference.getBytes(TWO_MEGABYTE).addOnSuccessListener(bytes -> {
                     String str = null;
                     try {
                         str = JsonHelper.decryptString(bytes);

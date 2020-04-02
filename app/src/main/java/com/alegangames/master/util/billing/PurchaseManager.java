@@ -6,6 +6,7 @@ import com.alegangames.master.Config;
 import com.alegangames.master.R;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.util.preference.SharedPreferenceManager;
+import com.crashlytics.android.Crashlytics;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +24,12 @@ public class PurchaseManager {
     public static final String ITEMS_PREF = "items_pref";
 
 //    public static final String PRODUCT_TEST = "android.test.purchased";
-//    public static final String PRODUCT_NO_ADS = "no_ads";
+    public static final String PRODUCT_100_MONEY = "com.alegangames.money1";
+    public static final String PRODUCT_500_MONEY = "com.alegangames.money2";
+    public static final String PRODUCT_1000_MONEY = "com.alegangames.money3";
+    public static final String PRODUCT_2000_MONEY = "com.alegangames.money4";
+    public static final String PRODUCT_5000_MONEY = "com.alegangames.money5";
+    public static final String PRODUCT_10000_MONEY = "com.alegangames.money6";
 
     private static final int DEFAULT_COINS = 0;
 
@@ -36,10 +42,35 @@ public class PurchaseManager {
 
     private static Map<String, Product> productMap;
 
-    public static boolean isItemBought(JSONObject item, Context context) {
+    public static boolean isItemBought(JsonItemContent mItem, Context context) {
+//        String boughtItems = SharedPreferenceManager.getInstance(context).getString(ITEMS_PREF, "[]");
+//        //Если есть админ режим то любой контент считается купленным
+//
+//        try {
+//            JSONArray jsonArray = new JSONArray(boughtItems);
+//            JSONObject jsonItem = null;
+//            for (int i = 0;i<jsonArray.length();i++){
+//                JSONObject jsonObject = jsonArray.optJSONObject(i);
+//                if (jsonObject!=null){
+//                    if (jsonObject.optJSONObject("item").toString().equals(mItem.getJsonObject().toString())){
+//                        jsonItem = jsonObject;
+//                        break;
+//                    }
+//                }
+//            }
+//
+//            if (jsonItem != null){
+//                int count =  jsonItem.getInt("count");
+//                return (count == mItem.getPrice()) || Config.ADMIN_MODE;
+//            } else
+//                return Config.ADMIN_MODE;
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        return Config.ADMIN_MODE;
         String boughtItems = SharedPreferenceManager.getInstance(context).getString(ITEMS_PREF, "");
         //Если есть админ режим то любой контент считается купленным
-        return boughtItems.contains(item.toString()) || Config.ADMIN_MODE;
+        return boughtItems.contains(mItem.getJsonObject().toString()) || Config.ADMIN_MODE;
     }
 
     public static int getCoins(Context context) {
@@ -58,7 +89,7 @@ public class PurchaseManager {
         try {
             jsonArray = new JSONArray(SharedPreferenceManager.getInstance(context).getString(ITEMS_PREF, "[]"));
         } catch (JSONException e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
         if (jsonArray != null) {
             JSONObject item = null;
@@ -103,7 +134,7 @@ public class PurchaseManager {
         try {
             jsonArray = new JSONArray(SharedPreferenceManager.getInstance(context).getString(ITEMS_PREF, "[]"));
         } catch (JSONException e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
 
         if (jsonArray!=null){
@@ -123,9 +154,9 @@ public class PurchaseManager {
      * @param context контекст для доступа к ресурсам
      * @return успешность покупки
      */
-    public static boolean onItemsBought(JSONObject item, Context context) {
+    public static boolean onItemsBought(JsonItemContent item, Context context) {
         int coins = SharedPreferenceManager.getInstance(context).getInt(COINS_PREF, DEFAULT_COINS);
-        int itemPrice = item.optInt("price");
+        int itemPrice = item.getPrice();
 
         if (coins < itemPrice) return false;
 
@@ -133,11 +164,11 @@ public class PurchaseManager {
         try {
             jsonArray = new JSONArray(SharedPreferenceManager.getInstance(context).getString(ITEMS_PREF, "[]"));
         } catch (JSONException e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
 
         if (jsonArray != null) {
-            jsonArray.put(item);
+            jsonArray.put(item.getJsonObject());
 
             SharedPreferenceManager.getInstance(context).putString(ITEMS_PREF, jsonArray.toString());
             SharedPreferenceManager.getInstance(context).putInt(COINS_PREF, coins - itemPrice);
@@ -156,7 +187,7 @@ public class PurchaseManager {
         try {
             itemsArray = new JSONArray(itemsString);
         } catch (JSONException ex) {
-//            Crashlytics.logException(ex);
+            Crashlytics.logException(ex);
         }
 
         return itemsArray;
@@ -192,6 +223,17 @@ public class PurchaseManager {
         return new ArrayList<>(productMap.values());
     }
 
+    public static List<String> getProductIds(){
+        List<String> ids = new ArrayList<>();
+        ids.add(PRODUCT_100_MONEY);
+        ids.add(PRODUCT_500_MONEY);
+        ids.add(PRODUCT_1000_MONEY);
+        ids.add(PRODUCT_2000_MONEY);
+        ids.add(PRODUCT_5000_MONEY);
+        ids.add(PRODUCT_10000_MONEY);
+        return ids;
+    }
+
     /**
      * Возвращает продукт по id
      *
@@ -213,6 +255,23 @@ public class PurchaseManager {
      */
     private static void createProducts(Context context) {
         productMap = new LinkedHashMap<>();
+        productMap.put(PRODUCT_100_MONEY, new Product(PRODUCT_100_MONEY, context.getString(R.string.coins_amount_format, 100),
+                context.getString(R.string.bonus_format, 0), R.drawable.money_icon_1, 100, 0));
+
+        productMap.put(PRODUCT_500_MONEY, new Product(PRODUCT_500_MONEY, context.getString(R.string.coins_amount_format, 500),
+                context.getString(R.string.bonus_format, 100), R.drawable.money_icon_2, 500, 100));
+
+        productMap.put(PRODUCT_1000_MONEY, new Product(PRODUCT_1000_MONEY, context.getString(R.string.coins_amount_format, 1000),
+                context.getString(R.string.bonus_format, 300), R.drawable.money_icon_3, 1000, 300));
+
+        productMap.put(PRODUCT_2000_MONEY, new Product(PRODUCT_2000_MONEY, context.getString(R.string.coins_amount_format, 2000),
+                context.getString(R.string.bonus_format, 500), R.drawable.money_icon_4, 2000, 500));
+
+        productMap.put(PRODUCT_5000_MONEY, new Product(PRODUCT_5000_MONEY, context.getString(R.string.coins_amount_format, 5000),
+                context.getString(R.string.bonus_format, 700), R.drawable.money_icon_5, 5000, 700));
+
+        productMap.put(PRODUCT_10000_MONEY, new Product(PRODUCT_10000_MONEY, context.getString(R.string.coins_amount_format, 10000),
+                context.getString(R.string.bonus_format, 1000), R.drawable.money_icon_6, 10000, 1000));
     }
 
 }

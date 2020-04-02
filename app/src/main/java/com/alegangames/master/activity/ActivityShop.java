@@ -26,7 +26,7 @@ public class ActivityShop extends ActivityAppParent implements PurchaseManager.I
         super.onCreate(savedInstanceState);
         NetworkManager.onNetworkCondition(this);
         setContentView(LAYOUT);
-        billingManager = new BillingManager(this, PRODUCT_ID);
+        billingManager = new BillingManager(this, PurchaseManager.PRODUCT_100_MONEY);
         billingManager.registerInterfacePurchase(this);
         billingManager.initBilling(API_KEY);
         ToolbarUtil.setToolbar(this, true);

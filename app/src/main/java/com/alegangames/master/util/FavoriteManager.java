@@ -7,6 +7,7 @@ import com.alegangames.master.R;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.model.JsonItemFactory;
 import com.alegangames.master.util.preference.SharedPreferenceManager;
+import com.crashlytics.android.Crashlytics;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,7 +25,7 @@ public class FavoriteManager {
         try {
             jsonArray = new JSONArray(SharedPreferenceManager.getInstance(context.getApplicationContext()).getString(context.getString(R.string.favorite_pref), "[]"));
         } catch (JSONException e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
         return jsonArray;
     }
@@ -40,7 +41,7 @@ public class FavoriteManager {
             jsonArray = new JSONArray(SharedPreferenceManager.getInstance(context.getApplicationContext()).getString(context.getApplicationContext().getString(R.string.favorite_pref), "[]"));
             jsonArray.put(item.getJsonObject());
         } catch (JSONException e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
         if (jsonArray != null) {
             SharedPreferenceManager.getInstance(context.getApplicationContext()).putString(context.getApplicationContext().getString(R.string.favorite_pref), jsonArray.toString());
@@ -72,7 +73,7 @@ public class FavoriteManager {
                 jsonArray.put(jsonItemContent.getJsonObject());
             }
         } catch (JSONException e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
         if (jsonArray != null) {
             SharedPreferenceManager.getInstance(context.getApplicationContext()).putString(context.getApplicationContext().getString(R.string.favorite_pref), jsonArray.toString());

@@ -23,9 +23,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.alegangames.master.R;
+import com.alegangames.master.activity.ActivityAppParent;
 import com.alegangames.master.activity.ActivityMain;
 import com.alegangames.master.activity.ActivitySearch;
 import com.alegangames.master.adapter.AdapterTabLayout;
@@ -140,7 +142,7 @@ public class FragmentViewPager extends FragmentAbstract implements SearchView.On
         }
 
         //Создаем ViewModel
-        viewModel = ViewModelProviders.of(this, new ItemsViewModel.ItemsViewModelFactory(getActivity().getApplication(),
+        viewModel = new ViewModelProvider(getViewModelStore(), new ItemsViewModel.ItemsViewModelFactory(getActivity().getApplication(),
                 mFragmentData)).get(ItemsViewModel.class);
         viewModel.setSettings(mFragmentTitle,
                 getArguments().getBoolean(FRAGMENT_BANNER),
@@ -172,12 +174,24 @@ public class FragmentViewPager extends FragmentAbstract implements SearchView.On
 
     @Override
     public void onDestroyView() {
-        listLiveData.removeObservers(this);
-        liveDataFragment.removeObservers(this);
         super.onDestroyView();
         Log.d(TAG, "onDestroyView");
+//        mAdapterTabLayout.setAdapterList(mTabs);
+        listLiveData.removeObservers(this);
+        listLiveData = null;
+        liveDataFragment.removeObservers(this);
+        liveDataFragment = null;
         mTabs.clear();
-        mAdapterTabLayout.setAdapterList(mTabs);
+        mAdapterTabLayout.onDestroy();
+        mAdapterTabLayout = null;
+        viewModel = null;
+        mRootView = null;
+        mProgressBarLoading = null;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 
     @Override
@@ -192,6 +206,8 @@ public class FragmentViewPager extends FragmentAbstract implements SearchView.On
         //listLiveData.observe(this, this::initV);
         //liveDataFragment.observe(this, this::onTabsReady);
         Log.d(TAG, "onResume");
+        if (getActivity() != null && ((ActivityAppParent) getActivity()).getSupportActionBar() != null)
+            ((ActivityAppParent) getActivity()).getSupportActionBar().setTitle(mFragmentTitle);
 
         //Если приложение не отдельное, проиграть анимацию и создать HomeButton
         if (SINGLE_APP) return;
@@ -200,7 +216,6 @@ public class FragmentViewPager extends FragmentAbstract implements SearchView.On
             try {
                 if (getActivity() != null) {
                     ((ActivityMain) getActivity()).mNavigationViewUtil.onUpdateDrawerToggle();
-                    ((ActivityMain) getActivity()).getSupportActionBar().setTitle(mFragmentTitle);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

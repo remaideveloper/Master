@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
@@ -24,23 +25,24 @@ import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
-import com.alegangames.master.ads.admob.AdMobInterstitial;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.rd.PageIndicatorView;
-import com.rd.animation.type.AnimationType;
 import com.alegangames.master.Config;
 import com.alegangames.master.R;
+import com.alegangames.master.adapter.AdapterRecyclerView;
 import com.alegangames.master.adapter.ImageViewPagerAdapter;
-import com.alegangames.master.ads.admob.AdMobBanner;
+import com.alegangames.master.ads.admob.AdMobInterstitial;
+import com.alegangames.master.ads.admob.AdMobNativeAdvanceUnified;
 import com.alegangames.master.ads.admob.AdMobVideoRewarded;
 import com.alegangames.master.apps.builder.dialog.BuildingInstaller;
+import com.alegangames.master.architecture.viewmodel.AppViewModel;
 import com.alegangames.master.architecture.viewmodel.DownloadViewModel;
 import com.alegangames.master.architecture.viewmodel.FavoriteViewModel;
 import com.alegangames.master.architecture.viewmodel.PurchaseViewModel;
 import com.alegangames.master.events.DownloadEvent;
+import com.alegangames.master.fragment.FragmentBuy;
 import com.alegangames.master.interfaces.InterfaceDownload;
 import com.alegangames.master.model.JsonItemContent;
 import com.alegangames.master.model.JsonItemFactory;
+import com.alegangames.master.ui.RecyclerViewManager;
 import com.alegangames.master.ui.ToolbarUtil;
 import com.alegangames.master.util.AppUtil;
 import com.alegangames.master.util.BlockLauncherHelper;
@@ -54,15 +56,21 @@ import com.alegangames.master.util.StorageUtil;
 import com.alegangames.master.util.StringUtil;
 import com.alegangames.master.util.ToastUtil;
 import com.alegangames.master.util.UrlHelper;
+import com.alegangames.master.util.billing.BillingManager;
 import com.alegangames.master.util.billing.PurchaseManager;
-import com.alegangames.master.util.firebase.FirebaseAnalyticsHelper;
 import com.alegangames.master.util.json.SerializableJSONObject;
 import com.alegangames.master.util.permision.PermissionManager;
+import com.google.android.material.button.MaterialButton;
+import com.rd.PageIndicatorView;
+import com.rd.animation.type.AnimationType;
 
 import java.io.File;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+import static com.alegangames.master.Config.API_KEY;
 import static com.alegangames.master.download.DownloadAsyncTask.STATUS_CANCELED;
 import static com.alegangames.master.download.DownloadAsyncTask.STATUS_MEMORY_ERROR;
 import static com.alegangames.master.download.DownloadAsyncTask.STATUS_NETWORK_ERROR;
@@ -71,7 +79,7 @@ import static com.alegangames.master.util.BlockLauncherHelper.REQUEST_CODE_MOD;
 import static com.alegangames.master.util.BlockLauncherHelper.REQUEST_CODE_TEXTURE;
 
 public class ActivityItem extends ActivityAppParent implements BuildingInstaller.BuildingListener,
-        PermissionManager.InterfacePermission, InterfaceDownload, PurchaseManager.InterfacePurchase {
+        PermissionManager.InterfacePermission, InterfaceDownload, PurchaseManager.InterfacePurchase, AdMobVideoRewarded.Listener{
 
     public static final String TAG = ActivityItem.class.getSimpleName();
 
@@ -91,11 +99,10 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
     private TextView mTextViewProgressPercent;
     private TextView mTextViewProgressSize;
     private TextView mTextViewDescription;
-    private TextView mTextViewDescriptionMore;
+    private MaterialButton mTextViewDescriptionMore;
 
-//    private AdMobNativeAdvanceUnified mAdMobNativeAdvance;
-    private AdMobBanner mAdMobBanner;
-    private AdMobVideoRewarded mAdMobVideoRewarded;
+    private AdMobNativeAdvanceUnified mAdMobNativeAdvance;
+//    private AdMobVideoRewarded mAdMobVideoRewarded;
     private AdMobInterstitial mAdMobInterstitial;
 
 
@@ -107,10 +114,15 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
     private PageIndicatorView mPageIndicatorView;
     private ViewPager mViewPager;
     private BuildingInstaller mBuildingInstaller;
+    private AdapterRecyclerView mAdapterOffers;
+    private RecyclerViewManager mRecyclerViewOffers;
 
     private DownloadViewModel mDownloadViewModel;
     private FavoriteViewModel mFavoriteViewModel;
     private PurchaseViewModel mPurchaseViewModel;
+    private AppViewModel mAppViewModel;
+    private int countAd = 0;
+    public BillingManager mBillingManager;
 
     private boolean exitPressed = false;
 
@@ -130,10 +142,13 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
             return;
         }
 
-        mInterfacePermission = this;
+        mBillingManager = new BillingManager(this, PurchaseManager.PRODUCT_100_MONEY);
+        mBillingManager.registerInterfacePurchase(this);
+        mBillingManager.initBilling(API_KEY);
 
-        mAdMobBanner = new AdMobBanner(this);
-        mAdMobBanner.onCreate();
+        countAd = PurchaseManager.getBoughtItem(this, mItem.mJSONObject);
+
+        mInterfacePermission = this;
 
         mAdMobInterstitial = new AdMobInterstitial(this, Config.INTERSTITIAL_ID);
 
@@ -143,7 +158,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         mTextViewProgressSize = findViewById(R.id.textViewDownloading);
         mButtonCancel = findViewById(R.id.imageButtonCancel);
 //        mRecycleViewRelated = findViewById(R.id.recycleViewRelated);
-//        mRecyclerViewOffers = findViewById(R.id.recycleViewOffers);
+        mRecyclerViewOffers = findViewById(R.id.recycleViewOffers);
         mPageIndicatorView = findViewById(R.id.pageIndicatorView);
         mLayoutNative = findViewById(R.id.layoutNativeAds);
         mTextViewDescription = findViewById(R.id.textViewDescription);
@@ -154,7 +169,12 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         mButtonDownload = findViewById(R.id.buttonDownload);
         mViewPager = findViewById(R.id.viewPager);
 
+        mAdapterOffers = new AdapterRecyclerView(this, mRecyclerViewOffers, null, null);
+        mRecyclerViewOffers.setLayoutManager(RecyclerViewManager.LayoutManagerEnum.LinearLayoutHorizontal);
+        mRecyclerViewOffers.setAdapter(mAdapterOffers);
+
         mAdMobVideoRewarded = new AdMobVideoRewarded(this);
+        mAdMobVideoRewarded.setListener(this);
         mAdMobVideoRewarded.getRewardedVideoAd().setRewardedVideoAdListener(mAdMobVideoRewarded.getDefaultVideoRewardAdListener());
         mAdMobVideoRewarded.forceLoadRewardedVideo();
 
@@ -239,10 +259,12 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-//        if (mAdMobNativeAdvance != null && mLayoutNative != null) {
-//            mAdMobNativeAdvance.addNativeAdvanceView(mLayoutNative);
-//        }
-        mAdMobBanner.onCreate();
+        if (mAdMobNativeAdvance != null && mLayoutNative != null) {
+            mAdMobNativeAdvance.addNativeAdvanceView(mLayoutNative);
+        }
+
+        mAppViewModel.notifyViewModel();
+
     }
 
     /**
@@ -266,6 +288,8 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
                     ToastUtil.show(this, R.string.close_minecraft);
                     return;
                 }
+
+                mViewPager.setVisibility(View.GONE);
 
                 switch (mItem.getId()) {
                     case JsonItemFactory.SERVERS:
@@ -508,6 +532,29 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         mDownloadViewModel = ViewModelProviders.of(this).get(DownloadViewModel.class);
         mDownloadViewModel.getDownloadLiveData().observe(this, this::onDownloadEvent);
 
+
+        mAppViewModel = AppViewModel.get(this);
+        mAppViewModel.getItemLiveData().observe(this, this::setRecyclerViewAppItems);
+
+    }
+
+    private void setRecyclerViewAppItems(@Nullable List<JsonItemContent> items) {
+
+        if (items != null && !items.isEmpty()) {
+            List<JsonItemContent> itemList = new ArrayList<>(items);
+            mAdapterOffers.setItemList(itemList);
+            mRecyclerViewOffers.removeAllViews();
+            mRecyclerViewOffers.setHasFixedSize(false);
+            mRecyclerViewOffers.setNestedScrollingEnabled(false);
+            mRecyclerViewOffers.setLayoutManager(RecyclerViewManager.LayoutManagerEnum.LinearLayoutHorizontal);
+            mRecyclerViewOffers.setAdapter(mAdapterOffers);
+            mRecyclerViewOffers.getAdapter().notifyDataSetChanged();
+            for (int i = 0; i < mRecyclerViewOffers.getChildCount(); i++) {
+                mRecyclerViewOffers.getChildAt(i).setScaleX(0.1F);
+            }
+        } else {
+            mRecyclerViewOffers.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -563,12 +610,13 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         //Скачивание предмета
         //Предложить купить больше монет
         ToolbarUtil.setCoinsSubtitle(this);
-//        switch (productId) {
-//            case PurchaseManager.PRODUCT_100_COINS:
-//                mPurchaseViewModel.buyItem();
-//                onClickButtonMain();
-//                break;
-//        }
+        switch (productId) {
+            case PurchaseManager.PRODUCT_100_MONEY:
+                mPurchaseViewModel.buyItem();
+                onClickButtonMain();
+                mBillingManager.getMoreCoinsDialog(PurchaseManager.getProduct(PurchaseManager.PRODUCT_500_MONEY, this));
+                break;
+        }
     }
 
     /**
@@ -580,17 +628,17 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
     public void onBillingError(int errorCode) {
         Log.d(TAG, "onBillingError");
         // Предлагаем посмотреть видеорекламу
-        runOnUiThread(() -> {
-            if (!isFinishing()) {
-                new AlertDialog.Builder(ActivityItem.this)
-                        .setTitle(R.string.free_coins)
-                        .setMessage(R.string.watch_and_gain)
-                        .setPositiveButton(R.string.watch, (dialog, which) -> mAdMobVideoRewarded.onShow())
-                        .setNegativeButton(android.R.string.cancel, null)
-                        .create()
-                        .show();
-            }
-        });
+//        runOnUiThread(() -> {
+//            if (!isFinishing()) {
+//                new AlertDialog.Builder(ActivityItem.this)
+//                        .setTitle(R.string.free_coins)
+//                        .setMessage(R.string.watch_and_gain)
+//                        .setPositiveButton(R.string.watch, (dialog, which) -> mAdMobVideoRewarded.onShow())
+//                        .setNegativeButton(android.R.string.cancel, null)
+//                        .create()
+//                        .show();
+//            }
+//        });
     }
 
 
@@ -679,11 +727,11 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
      * @param isPremium true если итем премиум и не куплен
      */
     public void setButtonDownload(boolean isPremium) {
-        ButtonColorManager.setBackgroundButton(mButtonDownload, ColorList.BLUE);
-        ButtonColorManager.setTextColorButton(mButtonDownload, ColorList.WHITE);
+//        ButtonColorManager.setBackgroundButton(mButtonDownload, ColorList.BLUE);
+//        ButtonColorManager.setTextColorButton(mButtonDownload, ColorList.WHITE);
 
         if (isPremium) {
-            String textPaid = getString(R.string.unlock) + " " + getString(R.string.coins_amount_format, 100);
+            String textPaid = getString(R.string.unlock) + " " + getString(R.string.coins_amount_format, mItem.getPrice());
             //mButtonDownloadFree.setText(textFree);
             mButtonDownload.setText(textPaid);
             mButtonDownload.setOnClickListener(view -> onClickBuy());
@@ -715,17 +763,19 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
             ToolbarUtil.setCoinsSubtitle(this);
             onClickButtonMain();
         } else {
-            runOnUiThread(() -> {
-                if (!isFinishing()) {
-                    new MaterialAlertDialogBuilder(ActivityItem.this)
-                            .setTitle(R.string.free_coins)
-                            .setMessage(R.string.watch_and_gain)
-                            .setPositiveButton(R.string.watch, (dialog, which) -> mAdMobVideoRewarded.onShow())
-                            .setNegativeButton(android.R.string.cancel, null)
-                            .create()
-                            .show();
-                }
-            });
+            getSupportFragmentManager().beginTransaction().add(new FragmentBuy(), "").commit();
+//            mBillingManager.onPurchaseProduct(PurchaseManager.PRODUCT_100_MONEY);
+//            runOnUiThread(() -> {
+//                if (!isFinishing()) {
+//                    new MaterialAlertDialogBuilder(ActivityItem.this)
+//                            .setTitle(R.string.free_coins)
+//                            .setMessage(R.string.watch_and_gain)
+//                            .setPositiveButton(R.string.watch, (dialog, which) -> mAdMobVideoRewarded.onShow())
+//                            .setNegativeButton(android.R.string.cancel, null)
+//                            .create()
+//                            .show();
+//                }
+//            });
         }
 
     }
@@ -737,8 +787,8 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         if (Config.ADMIN_MODE) {
             return;
         }
-//        mAdMobNativeAdvance = new AdMobNativeAdvanceUnified(Config.NATIVE_ADVANCE_ID);
-//        mAdMobNativeAdvance.addNativeAdvanceView(mLayoutNative);
+        mAdMobNativeAdvance = new AdMobNativeAdvanceUnified(Config.NATIVE_ADVANCE_ID);
+        mAdMobNativeAdvance.addNativeAdvanceView(mLayoutNative);
     }
 
     /**
@@ -808,6 +858,25 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
         mButtonDownload.setOnClickListener(v -> AppUtil.onOpenFileWithApp(this, file, MinecraftHelper.MINECRAFT_PACKAGE_NAME));
     }
 
+    @Override
+    public void onRewarded(boolean b) {
+//        if (b) {
+//            PurchaseManager.addAdItem(this, mItem);
+//            if (++countAd == mItem.getPrice())
+//                mPurchaseViewModel.updatePremium();
+//        }
+
+        if (b) {
+            PurchaseManager.addCoins(25, this);
+            ToolbarUtil.setCoinsSubtitle(this);
+            String message = getString(R.string.you_earned_coins, 25);
+            ToastUtil.show(this, message);
+        }
+
+        if (mAdMobVideoRewarded != null)
+            mAdMobVideoRewarded.forceLoadRewardedVideo();
+
+    }
 
 
 //    @Override
@@ -815,7 +884,7 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
 //        Log.d(TAG, "onAdsClosed: ");
 //        //Вознаграждаем пользователя монеткой
 //        if (rewarded) {
-//            PurchaseManager.addCoins(10, this);
+//            PurchaseManager.addCoins(50, this);
 //            ToolbarUtil.setCoinsSubtitle(this);
 //            String message = getString(R.string.you_earned_coins, 10);
 //            ToastUtil.show(this, message);
@@ -824,13 +893,6 @@ public class ActivityItem extends ActivityAppParent implements BuildingInstaller
 //        if (mAdMobVideoRewarded != null)
 //            mAdMobVideoRewarded.forceLoadRewardedVideo();
 //
-//    }
-//
-//    @Override
-//    public void onAdsLoaded() {
-//        /*mButtonDownloadFree.setEnabled(true);
-//        ButtonColorManager.setBackgroundButton(mButtonDownloadFree, ColorList.BLUE);
-//        ButtonColorManager.setTextColorButton(mButtonDownloadFree, ColorList.WHITE);*/
 //    }
 
 }

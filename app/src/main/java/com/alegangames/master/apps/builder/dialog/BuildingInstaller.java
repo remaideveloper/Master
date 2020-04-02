@@ -16,6 +16,7 @@ import com.alegangames.master.apps.builder.BuildBuildingTask;
 import com.alegangames.master.apps.builder.entities.World;
 import com.alegangames.master.apps.builder.utils.MinecraftWorldUtil;
 import com.alegangames.master.events.BuildingProgressEvent;
+import com.crashlytics.android.Crashlytics;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -79,7 +80,7 @@ public class BuildingInstaller {
                     .setCancelable(true)
                     .setAdapter(adapter, (dialog, position) -> runBuilding(worldList.get(position).getFolder_name())).create().show();
         } catch (Exception e) {
-//            Crashlytics.logException(e);
+            Crashlytics.logException(e);
         }
     }
 
